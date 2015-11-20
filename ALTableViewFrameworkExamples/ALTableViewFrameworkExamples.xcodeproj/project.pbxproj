@@ -26,8 +26,6 @@
 		ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */; };
 		ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */; };
 		ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */; };
-		ED375A9E1BFFC9E00080D158 /* Example1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A9C1BFFC9E00080D158 /* Example1ViewController.m */; };
-		ED375A9F1BFFC9E00080D158 /* Example1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A9D1BFFC9E00080D158 /* Example1ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,9 +97,6 @@
 		ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample1TableViewCell.m; sourceTree = "<group>"; };
 		ED375A981BFFC5130080D158 /* MasterExample2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample2TableViewCell.h; sourceTree = "<group>"; };
 		ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample2TableViewCell.m; sourceTree = "<group>"; };
-		ED375A9B1BFFC9E00080D158 /* Example1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1ViewController.h; sourceTree = "<group>"; };
-		ED375A9C1BFFC9E00080D158 /* Example1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1ViewController.m; sourceTree = "<group>"; };
-		ED375A9D1BFFC9E00080D158 /* Example1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +230,6 @@
 		ED375A8E1BFFC3800080D158 /* Example 1 */ = {
 			isa = PBXGroup;
 			children = (
-				ED375A9B1BFFC9E00080D158 /* Example1ViewController.h */,
-				ED375A9C1BFFC9E00080D158 /* Example1ViewController.m */,
-				ED375A9D1BFFC9E00080D158 /* Example1ViewController.xib */,
 			);
 			path = "Example 1";
 			sourceTree = "<group>";
@@ -364,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED375A881BFFC1720080D158 /* ALTableViewController.xib in Resources */,
-				ED375A9F1BFFC9E00080D158 /* Example1ViewController.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
@@ -402,7 +393,6 @@
 				ED375A871BFFC1720080D158 /* ALTableViewController.m in Sources */,
 				ED375A8C1BFFC1720080D158 /* ExtendNSLogFunctionality.m in Sources */,
 				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
-				ED375A9E1BFFC9E00080D158 /* Example1ViewController.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
 				ED375A891BFFC1720080D158 /* RowElement.m in Sources */,
 				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
