@@ -1,0 +1,6 @@
+framework module ALTableviewFramework {
+  umbrella header "ALTableviewFramework.h"
+
+  export *
+  module * { export * }
+}

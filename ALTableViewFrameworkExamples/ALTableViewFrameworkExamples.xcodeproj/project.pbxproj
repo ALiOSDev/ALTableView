@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FC732D51BFFA0C000AA134C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732D41BFFA0C000AA134C /* main.m */; };
+		5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732D71BFFA0C000AA134C /* AppDelegate.m */; };
+		5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732DA1BFFA0C000AA134C /* MasterViewController.m */; };
+		5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732DD1BFFA0C000AA134C /* DetailViewController.m */; };
+		5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC732DF1BFFA0C000AA134C /* Main.storyboard */; };
+		5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC732E21BFFA0C000AA134C /* Assets.xcassets */; };
+		5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */; };
+		5FC732F11BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732F01BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m */; };
+		5FC732FC1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */; };
+		5FC733431BFFAAE700AA134C /* ALTableviewFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */; };
+		5FC733441BFFAAE700AA134C /* ALTableviewFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FC7334A1BFFAB5A00AA134C /* ButtonLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC733481BFFAB5A00AA134C /* ButtonLabelTableViewCell.m */; };
+		5FC7334B1BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC733491BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FC732ED1BFFA0C000AA134C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC732C81BFFA0C000AA134C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FC732CF1BFFA0C000AA134C;
+			remoteInfo = ALTableViewFrameworkExamples;
+		};
+		5FC732F81BFFA0C100AA134C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC732C81BFFA0C000AA134C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FC732CF1BFFA0C000AA134C;
+			remoteInfo = ALTableViewFrameworkExamples;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FC733451BFFAAE700AA134C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FC733441BFFAAE700AA134C /* ALTableviewFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5FC732D01BFFA0C000AA134C /* ALTableViewFrameworkExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALTableViewFrameworkExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC732D41BFFA0C000AA134C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FC732D61BFFA0C000AA134C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5FC732D71BFFA0C000AA134C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5FC732D91BFFA0C000AA134C /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		5FC732DA1BFFA0C000AA134C /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		5FC732DC1BFFA0C000AA134C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5FC732DD1BFFA0C000AA134C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5FC732E01BFFA0C000AA134C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5FC732E21BFFA0C000AA134C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5FC732E51BFFA0C000AA134C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FC732E71BFFA0C000AA134C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FC732EC1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableViewFrameworkExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC732F01BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTableViewFrameworkExamplesTests.m; sourceTree = "<group>"; };
+		5FC732F21BFFA0C000AA134C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FC732F71BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableViewFrameworkExamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTableViewFrameworkExamplesUITests.m; sourceTree = "<group>"; };
+		5FC732FD1BFFA0C100AA134C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALTableviewFramework.framework; sourceTree = "<group>"; };
+		5FC733471BFFAB5A00AA134C /* ButtonLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonLabelTableViewCell.h; sourceTree = "<group>"; };
+		5FC733481BFFAB5A00AA134C /* ButtonLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelTableViewCell.m; sourceTree = "<group>"; };
+		5FC733491BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonLabelTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FC732CD1BFFA0C000AA134C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC733431BFFAAE700AA134C /* ALTableviewFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC732E91BFFA0C000AA134C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC732F41BFFA0C000AA134C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5FC732C71BFFA0C000AA134C = {
+			isa = PBXGroup;
+			children = (
+				5FC732D21BFFA0C000AA134C /* ALTableViewFrameworkExamples */,
+				5FC732EF1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests */,
+				5FC732FA1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests */,
+				5FC732D11BFFA0C000AA134C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FC732D11BFFA0C000AA134C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FC732D01BFFA0C000AA134C /* ALTableViewFrameworkExamples.app */,
+				5FC732EC1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.xctest */,
+				5FC732F71BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FC732D21BFFA0C000AA134C /* ALTableViewFrameworkExamples */ = {
+			isa = PBXGroup;
+			children = (
+				5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */,
+				5FC732D61BFFA0C000AA134C /* AppDelegate.h */,
+				5FC732D71BFFA0C000AA134C /* AppDelegate.m */,
+				5FC732E21BFFA0C000AA134C /* Assets.xcassets */,
+				5FC733471BFFAB5A00AA134C /* ButtonLabelTableViewCell.h */,
+				5FC733481BFFAB5A00AA134C /* ButtonLabelTableViewCell.m */,
+				5FC733491BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib */,
+				5FC732DC1BFFA0C000AA134C /* DetailViewController.h */,
+				5FC732DD1BFFA0C000AA134C /* DetailViewController.m */,
+				5FC732E71BFFA0C000AA134C /* Info.plist */,
+				5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */,
+				5FC732DF1BFFA0C000AA134C /* Main.storyboard */,
+				5FC732D91BFFA0C000AA134C /* MasterViewController.h */,
+				5FC732DA1BFFA0C000AA134C /* MasterViewController.m */,
+				5FC732D31BFFA0C000AA134C /* Supporting Files */,
+			);
+			path = ALTableViewFrameworkExamples;
+			sourceTree = "<group>";
+		};
+		5FC732D31BFFA0C000AA134C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FC732D41BFFA0C000AA134C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FC732EF1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FC732F01BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m */,
+				5FC732F21BFFA0C000AA134C /* Info.plist */,
+			);
+			path = ALTableViewFrameworkExamplesTests;
+			sourceTree = "<group>";
+		};
+		5FC732FA1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */,
+				5FC732FD1BFFA0C100AA134C /* Info.plist */,
+			);
+			path = ALTableViewFrameworkExamplesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FC732CF1BFFA0C000AA134C /* ALTableViewFrameworkExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FC733001BFFA0C100AA134C /* Build configuration list for PBXNativeTarget "ALTableViewFrameworkExamples" */;
+			buildPhases = (
+				5FC732CC1BFFA0C000AA134C /* Sources */,
+				5FC732CD1BFFA0C000AA134C /* Frameworks */,
+				5FC732CE1BFFA0C000AA134C /* Resources */,
+				5FC733451BFFAAE700AA134C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALTableViewFrameworkExamples;
+			productName = ALTableViewFrameworkExamples;
+			productReference = 5FC732D01BFFA0C000AA134C /* ALTableViewFrameworkExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FC732EB1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FC733031BFFA0C100AA134C /* Build configuration list for PBXNativeTarget "ALTableViewFrameworkExamplesTests" */;
+			buildPhases = (
+				5FC732E81BFFA0C000AA134C /* Sources */,
+				5FC732E91BFFA0C000AA134C /* Frameworks */,
+				5FC732EA1BFFA0C000AA134C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FC732EE1BFFA0C000AA134C /* PBXTargetDependency */,
+			);
+			name = ALTableViewFrameworkExamplesTests;
+			productName = ALTableViewFrameworkExamplesTests;
+			productReference = 5FC732EC1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5FC732F61BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FC733061BFFA0C100AA134C /* Build configuration list for PBXNativeTarget "ALTableViewFrameworkExamplesUITests" */;
+			buildPhases = (
+				5FC732F31BFFA0C000AA134C /* Sources */,
+				5FC732F41BFFA0C000AA134C /* Frameworks */,
+				5FC732F51BFFA0C000AA134C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FC732F91BFFA0C100AA134C /* PBXTargetDependency */,
+			);
+			name = ALTableViewFrameworkExamplesUITests;
+			productName = ALTableViewFrameworkExamplesUITests;
+			productReference = 5FC732F71BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FC732C81BFFA0C000AA134C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Abimael Barea Puyana";
+				TargetAttributes = {
+					5FC732CF1BFFA0C000AA134C = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = UJTEW5KUXC;
+					};
+					5FC732EB1BFFA0C000AA134C = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = UJTEW5KUXC;
+						TestTargetID = 5FC732CF1BFFA0C000AA134C;
+					};
+					5FC732F61BFFA0C000AA134C = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = UJTEW5KUXC;
+						TestTargetID = 5FC732CF1BFFA0C000AA134C;
+					};
+				};
+			};
+			buildConfigurationList = 5FC732CB1BFFA0C000AA134C /* Build configuration list for PBXProject "ALTableViewFrameworkExamples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FC732C71BFFA0C000AA134C;
+			productRefGroup = 5FC732D11BFFA0C000AA134C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FC732CF1BFFA0C000AA134C /* ALTableViewFrameworkExamples */,
+				5FC732EB1BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests */,
+				5FC732F61BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FC732CE1BFFA0C000AA134C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC7334B1BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib in Resources */,
+				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
+				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
+				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC732EA1BFFA0C000AA134C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC732F51BFFA0C000AA134C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FC732CC1BFFA0C000AA134C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
+				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
+				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
+				5FC7334A1BFFAB5A00AA134C /* ButtonLabelTableViewCell.m in Sources */,
+				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC732E81BFFA0C000AA134C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC732F11BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC732F31BFFA0C000AA134C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC732FC1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FC732EE1BFFA0C000AA134C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FC732CF1BFFA0C000AA134C /* ALTableViewFrameworkExamples */;
+			targetProxy = 5FC732ED1BFFA0C000AA134C /* PBXContainerItemProxy */;
+		};
+		5FC732F91BFFA0C100AA134C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FC732CF1BFFA0C000AA134C /* ALTableViewFrameworkExamples */;
+			targetProxy = 5FC732F81BFFA0C100AA134C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5FC732DF1BFFA0C000AA134C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC732E01BFFA0C000AA134C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC732E51BFFA0C000AA134C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5FC732FE1BFFA0C100AA134C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5FC732FF1BFFA0C100AA134C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FC733011BFFA0C100AA134C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ALTableViewFrameworkExamples",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ALTableViewFrameworkExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5FC733021BFFA0C100AA134C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ALTableViewFrameworkExamples",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ALTableViewFrameworkExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5FC733041BFFA0C100AA134C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ALTableViewFrameworkExamplesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamplesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALTableViewFrameworkExamples.app/ALTableViewFrameworkExamples";
+			};
+			name = Debug;
+		};
+		5FC733051BFFA0C100AA134C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ALTableViewFrameworkExamplesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamplesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALTableViewFrameworkExamples.app/ALTableViewFrameworkExamples";
+			};
+			name = Release;
+		};
+		5FC733071BFFA0C100AA134C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ALTableViewFrameworkExamplesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamplesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ALTableViewFrameworkExamples;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5FC733081BFFA0C100AA134C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ALTableViewFrameworkExamplesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamplesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ALTableViewFrameworkExamples;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5FC732CB1BFFA0C000AA134C /* Build configuration list for PBXProject "ALTableViewFrameworkExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FC732FE1BFFA0C100AA134C /* Debug */,
+				5FC732FF1BFFA0C100AA134C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FC733001BFFA0C100AA134C /* Build configuration list for PBXNativeTarget "ALTableViewFrameworkExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FC733011BFFA0C100AA134C /* Debug */,
+				5FC733021BFFA0C100AA134C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FC733031BFFA0C100AA134C /* Build configuration list for PBXNativeTarget "ALTableViewFrameworkExamplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FC733041BFFA0C100AA134C /* Debug */,
+				5FC733051BFFA0C100AA134C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FC733061BFFA0C100AA134C /* Build configuration list for PBXNativeTarget "ALTableViewFrameworkExamplesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FC733071BFFA0C100AA134C /* Debug */,
+				5FC733081BFFA0C100AA134C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FC732C81BFFA0C000AA134C /* Project object */;
+}

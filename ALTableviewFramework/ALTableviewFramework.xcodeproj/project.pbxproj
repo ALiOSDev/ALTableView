@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F5ECB931BFF980700FDB721 /* ALTableviewFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5ECB921BFF980700FDB721 /* ALTableviewFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5ECB9A1BFF980700FDB721 /* ALTableviewFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5ECB8F1BFF980700FDB721 /* ALTableviewFramework.framework */; };
+		5F5ECB9F1BFF980700FDB721 /* ALTableviewFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5ECB9E1BFF980700FDB721 /* ALTableviewFrameworkTests.m */; };
+		5F5ECBB61BFF988E00FDB721 /* ALTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5ECBAB1BFF988E00FDB721 /* ALTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5ECBB71BFF988E00FDB721 /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5ECBAC1BFF988E00FDB721 /* ALTableViewController.m */; };
+		5F5ECBB81BFF988E00FDB721 /* ALTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5ECBAD1BFF988E00FDB721 /* ALTableViewController.xib */; };
+		5F5ECBB91BFF988E00FDB721 /* RowElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5ECBAF1BFF988E00FDB721 /* RowElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5ECBBA1BFF988E00FDB721 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5ECBB01BFF988E00FDB721 /* RowElement.m */; };
+		5F5ECBBB1BFF988E00FDB721 /* SectionElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5ECBB11BFF988E00FDB721 /* SectionElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5ECBBC1BFF988E00FDB721 /* SectionElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5ECBB21BFF988E00FDB721 /* SectionElement.m */; };
+		5F5ECBBD1BFF988E00FDB721 /* SectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5ECBB31BFF988E00FDB721 /* SectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5ECBBE1BFF988E00FDB721 /* SectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5ECBB41BFF988E00FDB721 /* SectionManager.m */; };
+		5F5ECBC51BFF9A6A00FDB721 /* ALTableViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5ECBC21BFF9A6A00FDB721 /* ALTableViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC7334E1BFFAFCA00AA134C /* ExtendNSLogFunctionality.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC7334C1BFFAFCA00AA134C /* ExtendNSLogFunctionality.h */; };
+		5FC7334F1BFFAFCA00AA134C /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC7334D1BFFAFCA00AA134C /* ExtendNSLogFunctionality.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F5ECB9B1BFF980700FDB721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F5ECB861BFF980700FDB721 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F5ECB8E1BFF980700FDB721;
+			remoteInfo = ALTableviewFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F5ECB8F1BFF980700FDB721 /* ALTableviewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALTableviewFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5ECB921BFF980700FDB721 /* ALTableviewFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTableviewFramework.h; sourceTree = "<group>"; };
+		5F5ECB941BFF980700FDB721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5ECB991BFF980700FDB721 /* ALTableviewFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableviewFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5ECB9E1BFF980700FDB721 /* ALTableviewFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTableviewFrameworkTests.m; sourceTree = "<group>"; };
+		5F5ECBA01BFF980700FDB721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5ECBAB1BFF988E00FDB721 /* ALTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
+		5F5ECBAC1BFF988E00FDB721 /* ALTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
+		5F5ECBAD1BFF988E00FDB721 /* ALTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
+		5F5ECBAF1BFF988E00FDB721 /* RowElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowElement.h; sourceTree = "<group>"; };
+		5F5ECBB01BFF988E00FDB721 /* RowElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowElement.m; sourceTree = "<group>"; };
+		5F5ECBB11BFF988E00FDB721 /* SectionElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionElement.h; sourceTree = "<group>"; };
+		5F5ECBB21BFF988E00FDB721 /* SectionElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionElement.m; sourceTree = "<group>"; };
+		5F5ECBB31BFF988E00FDB721 /* SectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionManager.h; sourceTree = "<group>"; };
+		5F5ECBB41BFF988E00FDB721 /* SectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionManager.m; sourceTree = "<group>"; };
+		5F5ECBC21BFF9A6A00FDB721 /* ALTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewConstants.h; sourceTree = "<group>"; };
+		5F5ECBC81BFF9AD800FDB721 /* ALTableviewPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTableviewPrefixHeader.pch; sourceTree = "<group>"; };
+		5FC7334C1BFFAFCA00AA134C /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
+		5FC7334D1BFFAFCA00AA134C /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F5ECB8B1BFF980700FDB721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5ECB961BFF980700FDB721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5ECB9A1BFF980700FDB721 /* ALTableviewFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F5ECB851BFF980700FDB721 = {
+			isa = PBXGroup;
+			children = (
+				5F5ECB911BFF980700FDB721 /* ALTableviewFramework */,
+				5F5ECB9D1BFF980700FDB721 /* ALTableviewFrameworkTests */,
+				5F5ECB901BFF980700FDB721 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F5ECB901BFF980700FDB721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F5ECB8F1BFF980700FDB721 /* ALTableviewFramework.framework */,
+				5F5ECB991BFF980700FDB721 /* ALTableviewFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F5ECB911BFF980700FDB721 /* ALTableviewFramework */ = {
+			isa = PBXGroup;
+			children = (
+				5F5ECB921BFF980700FDB721 /* ALTableviewFramework.h */,
+				5F5ECBA91BFF988E00FDB721 /* Core */,
+				5F5ECB941BFF980700FDB721 /* Info.plist */,
+				5F5ECBC81BFF9AD800FDB721 /* ALTableviewPrefixHeader.pch */,
+			);
+			path = ALTableviewFramework;
+			sourceTree = "<group>";
+		};
+		5F5ECB9D1BFF980700FDB721 /* ALTableviewFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F5ECB9E1BFF980700FDB721 /* ALTableviewFrameworkTests.m */,
+				5F5ECBA01BFF980700FDB721 /* Info.plist */,
+			);
+			path = ALTableviewFrameworkTests;
+			sourceTree = "<group>";
+		};
+		5F5ECBA91BFF988E00FDB721 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5F5ECBAB1BFF988E00FDB721 /* ALTableViewController.h */,
+				5F5ECBAC1BFF988E00FDB721 /* ALTableViewController.m */,
+				5F5ECBAD1BFF988E00FDB721 /* ALTableViewController.xib */,
+				5F5ECBAE1BFF988E00FDB721 /* SectionManager */,
+				5F5ECBC11BFF9A6A00FDB721 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5F5ECBAE1BFF988E00FDB721 /* SectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				5F5ECBAF1BFF988E00FDB721 /* RowElement.h */,
+				5F5ECBB01BFF988E00FDB721 /* RowElement.m */,
+				5F5ECBB11BFF988E00FDB721 /* SectionElement.h */,
+				5F5ECBB21BFF988E00FDB721 /* SectionElement.m */,
+				5F5ECBB31BFF988E00FDB721 /* SectionManager.h */,
+				5F5ECBB41BFF988E00FDB721 /* SectionManager.m */,
+			);
+			path = SectionManager;
+			sourceTree = "<group>";
+		};
+		5F5ECBC11BFF9A6A00FDB721 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5FC7334C1BFFAFCA00AA134C /* ExtendNSLogFunctionality.h */,
+				5FC7334D1BFFAFCA00AA134C /* ExtendNSLogFunctionality.m */,
+				5F5ECBC21BFF9A6A00FDB721 /* ALTableViewConstants.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5F5ECB8C1BFF980700FDB721 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5ECBBB1BFF988E00FDB721 /* SectionElement.h in Headers */,
+				5FC7334E1BFFAFCA00AA134C /* ExtendNSLogFunctionality.h in Headers */,
+				5F5ECBB91BFF988E00FDB721 /* RowElement.h in Headers */,
+				5F5ECBB61BFF988E00FDB721 /* ALTableViewController.h in Headers */,
+				5F5ECB931BFF980700FDB721 /* ALTableviewFramework.h in Headers */,
+				5F5ECBBD1BFF988E00FDB721 /* SectionManager.h in Headers */,
+				5F5ECBC51BFF9A6A00FDB721 /* ALTableViewConstants.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5F5ECB8E1BFF980700FDB721 /* ALTableviewFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5ECBA31BFF980700FDB721 /* Build configuration list for PBXNativeTarget "ALTableviewFramework" */;
+			buildPhases = (
+				5F5ECB8A1BFF980700FDB721 /* Sources */,
+				5F5ECB8B1BFF980700FDB721 /* Frameworks */,
+				5F5ECB8C1BFF980700FDB721 /* Headers */,
+				5F5ECB8D1BFF980700FDB721 /* Resources */,
+				5FC733221BFFA58500AA134C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALTableviewFramework;
+			productName = ALTableviewFramework;
+			productReference = 5F5ECB8F1BFF980700FDB721 /* ALTableviewFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5F5ECB981BFF980700FDB721 /* ALTableviewFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5ECBA61BFF980700FDB721 /* Build configuration list for PBXNativeTarget "ALTableviewFrameworkTests" */;
+			buildPhases = (
+				5F5ECB951BFF980700FDB721 /* Sources */,
+				5F5ECB961BFF980700FDB721 /* Frameworks */,
+				5F5ECB971BFF980700FDB721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5ECB9C1BFF980700FDB721 /* PBXTargetDependency */,
+			);
+			name = ALTableviewFrameworkTests;
+			productName = ALTableviewFrameworkTests;
+			productReference = 5F5ECB991BFF980700FDB721 /* ALTableviewFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F5ECB861BFF980700FDB721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Abimael Barea Puyana";
+				TargetAttributes = {
+					5F5ECB8E1BFF980700FDB721 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = UJTEW5KUXC;
+					};
+					5F5ECB981BFF980700FDB721 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 5F5ECB891BFF980700FDB721 /* Build configuration list for PBXProject "ALTableviewFramework" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5F5ECB851BFF980700FDB721;
+			productRefGroup = 5F5ECB901BFF980700FDB721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F5ECB8E1BFF980700FDB721 /* ALTableviewFramework */,
+				5F5ECB981BFF980700FDB721 /* ALTableviewFrameworkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F5ECB8D1BFF980700FDB721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5ECBB81BFF988E00FDB721 /* ALTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5ECB971BFF980700FDB721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FC733221BFFA58500AA134C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F5ECB8A1BFF980700FDB721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC7334F1BFFAFCA00AA134C /* ExtendNSLogFunctionality.m in Sources */,
+				5F5ECBB71BFF988E00FDB721 /* ALTableViewController.m in Sources */,
+				5F5ECBBC1BFF988E00FDB721 /* SectionElement.m in Sources */,
+				5F5ECBBA1BFF988E00FDB721 /* RowElement.m in Sources */,
+				5F5ECBBE1BFF988E00FDB721 /* SectionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5ECB951BFF980700FDB721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5ECB9F1BFF980700FDB721 /* ALTableviewFrameworkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F5ECB9C1BFF980700FDB721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F5ECB8E1BFF980700FDB721 /* ALTableviewFramework */;
+			targetProxy = 5F5ECB9B1BFF980700FDB721 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5F5ECBA11BFF980700FDB721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5F5ECBA21BFF980700FDB721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5F5ECBA41BFF980700FDB721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ALTableViewFramework/ALTableViewPrefixHeader.pch";
+				INFOPLIST_FILE = ALTableviewFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableviewFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5F5ECBA51BFF980700FDB721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ALTableViewFramework/ALTableViewPrefixHeader.pch";
+				INFOPLIST_FILE = ALTableviewFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableviewFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5F5ECBA71BFF980700FDB721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ALTableviewFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableviewFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5F5ECBA81BFF980700FDB721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ALTableviewFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableviewFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F5ECB891BFF980700FDB721 /* Build configuration list for PBXProject "ALTableviewFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5ECBA11BFF980700FDB721 /* Debug */,
+				5F5ECBA21BFF980700FDB721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5ECBA31BFF980700FDB721 /* Build configuration list for PBXNativeTarget "ALTableviewFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5ECBA41BFF980700FDB721 /* Debug */,
+				5F5ECBA51BFF980700FDB721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5ECBA61BFF980700FDB721 /* Build configuration list for PBXNativeTarget "ALTableviewFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5ECBA71BFF980700FDB721 /* Debug */,
+				5F5ECBA81BFF980700FDB721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F5ECB861BFF980700FDB721 /* Project object */;
+}

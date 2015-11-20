@@ -1,0 +1,2 @@
+
+#define warningString @"Warning: "
