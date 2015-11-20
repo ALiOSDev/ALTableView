@@ -44,13 +44,20 @@
     // Creamos las secciones
     NSMutableArray * sections = [NSMutableArray array];
     NSMutableArray * rows = [NSMutableArray array];
-    RowElement * row1 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@44 heightCell:@44 cellIdentifier:nil];
     
-    
+    RowElement * row1 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@40 heightCell:@40 cellIdentifier:nil];
     RowElement * row2 = [[RowElement alloc] initWithClassName:[Example1Cell2 class] object:@60 heightCell:@60 cellIdentifier:nil];
-    
+    RowElement * row3 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@80 heightCell:@80 cellIdentifier:nil];
+    RowElement * row4 = [[RowElement alloc] initWithClassName:[Example1Cell2 class] object:@100 heightCell:@100 cellIdentifier:nil];
+    RowElement * row5 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@120 heightCell:@120 cellIdentifier:nil];
+    RowElement * row6 = [[RowElement alloc] initWithClassName:[Example1Cell2 class] object:@140 heightCell:@140 cellIdentifier:nil];
+
     [rows addObject:row1];
     [rows addObject:row2];
+    [rows addObject:row3];
+    [rows addObject:row4];
+    [rows addObject:row5];
+    [rows addObject:row6];
     
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows];
     

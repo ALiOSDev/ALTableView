@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -48,6 +49,8 @@
     self.controller = (UIViewController *) controller;
     [self addChildViewController:self.controller];
     [self.view addSubview:self.controller.view];
+    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+    self.controller.view.frame = frame;
     self.title = self.controller.title;
 }
 
