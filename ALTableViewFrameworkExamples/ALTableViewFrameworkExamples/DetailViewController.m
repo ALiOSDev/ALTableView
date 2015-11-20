@@ -41,11 +41,7 @@
     self.controller = nil;
     
     self.view.autoresizesSubviews = YES;
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.view.frame =  UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? CGRectMake(0, 63, 703, 704) : CGRectMake(0, 63, 768, 961);
-    }
-    
+        
     self.controller = (UIViewController *) controller;
     [self addChildViewController:self.controller];
     [self.view addSubview:self.controller.view];
