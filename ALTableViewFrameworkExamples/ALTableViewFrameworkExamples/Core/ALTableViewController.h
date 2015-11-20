@@ -20,7 +20,6 @@
 @protocol ALTableViewProtocol <NSObject>
 
 @optional
--(void) executeAction: (UIViewController *) viewController;
 -(void) tableViewDidReachEnd;
 
 @end

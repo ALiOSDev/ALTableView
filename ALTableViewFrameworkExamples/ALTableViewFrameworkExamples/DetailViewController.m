@@ -41,7 +41,7 @@
     self.controller = nil;
     
     self.view.autoresizesSubviews = YES;
-        
+    
     self.controller = (UIViewController *) controller;
     [self addChildViewController:self.controller];
     [self.view addSubview:self.controller.view];

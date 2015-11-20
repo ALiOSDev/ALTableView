@@ -17,4 +17,9 @@
 -(void) configureCell: (NSNumber *) object {
     self.label.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
 }
+
+-(void) cellDeselected {
+    self.label.text = [NSString stringWithFormat:@"deselected"];
+}
+
 @end

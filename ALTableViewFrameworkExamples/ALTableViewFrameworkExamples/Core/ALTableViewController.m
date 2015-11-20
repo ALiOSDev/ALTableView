@@ -460,6 +460,10 @@
     return indexPath;
 }
 
+-(void) executeAction: (UIViewController *) viewController {
+    
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     id cell = [tableView cellForRowAtIndexPath:indexPath];
     if ([cell respondsToSelector:@selector(executeAction:)]) {
@@ -467,7 +471,15 @@
     }
 }
 
+-(void) cellDeselected {
+    
+}
+
 - (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell respondsToSelector:@selector(cellDeselected)]) {
+        [cell cellDeselected];
+    }
     return indexPath;
 }
 
