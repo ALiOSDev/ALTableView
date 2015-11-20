@@ -24,9 +24,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
-    self.modeSectionsIndexTitles = YES;
-    self.modeSectionsExpandable = YES;
-    self.modeMoveCells = YES;
+//    self.modeSectionsIndexTitles = YES;
+//    self.modeSectionsExpandable = YES;
+//    self.modeMoveCells = YES;
     [self registerCells];
     [self reloadAllSections:[self createElements]];
     [self.tableView setTableFooterView:[[UIView alloc] init]];

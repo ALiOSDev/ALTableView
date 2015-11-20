@@ -1,5 +1,5 @@
 //
-//  Example1ViewController.h
+//  Example1Cell1.h
 //  ALTableViewFrameworkExamples
 //
 //  Created by lorenzo villarroel perez on 20/11/15.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ALTableViewController.h"
 
-@interface Example1ViewController : ALTableViewController
+@interface Example1Cell1 : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end

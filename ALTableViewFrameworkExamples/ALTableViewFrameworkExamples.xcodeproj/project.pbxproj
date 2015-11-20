@@ -28,6 +28,10 @@
 		ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */; };
 		ED375AA61BFFCD3D0080D158 /* Example1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375AA41BFFCD3D0080D158 /* Example1ViewController.m */; };
 		ED375AA71BFFCD3D0080D158 /* Example1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375AA51BFFCD3D0080D158 /* Example1ViewController.xib */; };
+		ED375AAB1BFFCDF40080D158 /* Example1Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375AA91BFFCDF40080D158 /* Example1Cell1.m */; };
+		ED375AAC1BFFCDF40080D158 /* Example1Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375AAA1BFFCDF40080D158 /* Example1Cell1.xib */; };
+		ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375AAE1BFFCE030080D158 /* Example1Cell2.m */; };
+		ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375AAF1BFFCE030080D158 /* Example1Cell2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,12 @@
 		ED375AA31BFFCD3D0080D158 /* Example1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1ViewController.h; sourceTree = "<group>"; };
 		ED375AA41BFFCD3D0080D158 /* Example1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1ViewController.m; sourceTree = "<group>"; };
 		ED375AA51BFFCD3D0080D158 /* Example1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1ViewController.xib; sourceTree = "<group>"; };
+		ED375AA81BFFCDF40080D158 /* Example1Cell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1Cell1.h; sourceTree = "<group>"; };
+		ED375AA91BFFCDF40080D158 /* Example1Cell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1Cell1.m; sourceTree = "<group>"; };
+		ED375AAA1BFFCDF40080D158 /* Example1Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1Cell1.xib; sourceTree = "<group>"; };
+		ED375AAD1BFFCE030080D158 /* Example1Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1Cell2.h; sourceTree = "<group>"; };
+		ED375AAE1BFFCE030080D158 /* Example1Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1Cell2.m; sourceTree = "<group>"; };
+		ED375AAF1BFFCE030080D158 /* Example1Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1Cell2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +248,12 @@
 				ED375AA31BFFCD3D0080D158 /* Example1ViewController.h */,
 				ED375AA41BFFCD3D0080D158 /* Example1ViewController.m */,
 				ED375AA51BFFCD3D0080D158 /* Example1ViewController.xib */,
+				ED375AA81BFFCDF40080D158 /* Example1Cell1.h */,
+				ED375AA91BFFCDF40080D158 /* Example1Cell1.m */,
+				ED375AAA1BFFCDF40080D158 /* Example1Cell1.xib */,
+				ED375AAD1BFFCE030080D158 /* Example1Cell2.h */,
+				ED375AAE1BFFCE030080D158 /* Example1Cell2.m */,
+				ED375AAF1BFFCE030080D158 /* Example1Cell2.xib */,
 			);
 			path = "Example 1";
 			sourceTree = "<group>";
@@ -364,9 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED375A881BFFC1720080D158 /* ALTableViewController.xib in Resources */,
+				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
 				ED375AA71BFFCD3D0080D158 /* Example1ViewController.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
+				ED375AAC1BFFCDF40080D158 /* Example1Cell1.xib in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
 				ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */,
 			);
@@ -403,8 +421,10 @@
 				ED375A8C1BFFC1720080D158 /* ExtendNSLogFunctionality.m in Sources */,
 				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
 				ED375AA61BFFCD3D0080D158 /* Example1ViewController.m in Sources */,
+				ED375AAB1BFFCDF40080D158 /* Example1Cell1.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
 				ED375A891BFFC1720080D158 /* RowElement.m in Sources */,
+				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
 				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
