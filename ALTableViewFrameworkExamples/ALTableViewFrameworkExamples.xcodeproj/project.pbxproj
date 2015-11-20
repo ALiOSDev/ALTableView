@@ -16,10 +16,18 @@
 		5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */; };
 		5FC732F11BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732F01BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m */; };
 		5FC732FC1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */; };
-		5FC733431BFFAAE700AA134C /* ALTableviewFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */; };
-		5FC733441BFFAAE700AA134C /* ALTableviewFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5FC7334A1BFFAB5A00AA134C /* ButtonLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC733481BFFAB5A00AA134C /* ButtonLabelTableViewCell.m */; };
-		5FC7334B1BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC733491BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib */; };
+		ED375A871BFFC1720080D158 /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A7A1BFFC1720080D158 /* ALTableViewController.m */; };
+		ED375A881BFFC1720080D158 /* ALTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A7B1BFFC1720080D158 /* ALTableViewController.xib */; };
+		ED375A891BFFC1720080D158 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A7E1BFFC1720080D158 /* RowElement.m */; };
+		ED375A8A1BFFC1720080D158 /* SectionElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A801BFFC1720080D158 /* SectionElement.m */; };
+		ED375A8B1BFFC1720080D158 /* SectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A821BFFC1720080D158 /* SectionManager.m */; };
+		ED375A8C1BFFC1720080D158 /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A861BFFC1720080D158 /* ExtendNSLogFunctionality.m */; };
+		ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */; };
+		ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */; };
+		ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */; };
+		ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */; };
+		ED375A9E1BFFC9E00080D158 /* Example1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A9C1BFFC9E00080D158 /* Example1ViewController.m */; };
+		ED375A9F1BFFC9E00080D158 /* Example1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A9D1BFFC9E00080D158 /* Example1ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +54,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FC733441BFFAAE700AA134C /* ALTableviewFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,10 +79,29 @@
 		5FC732F71BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableViewFrameworkExamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTableViewFrameworkExamplesUITests.m; sourceTree = "<group>"; };
 		5FC732FD1BFFA0C100AA134C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALTableviewFramework.framework; sourceTree = "<group>"; };
-		5FC733471BFFAB5A00AA134C /* ButtonLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonLabelTableViewCell.h; sourceTree = "<group>"; };
-		5FC733481BFFAB5A00AA134C /* ButtonLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelTableViewCell.m; sourceTree = "<group>"; };
-		5FC733491BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonLabelTableViewCell.xib; sourceTree = "<group>"; };
+		ED375A791BFFC1720080D158 /* ALTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
+		ED375A7A1BFFC1720080D158 /* ALTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
+		ED375A7B1BFFC1720080D158 /* ALTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
+		ED375A7D1BFFC1720080D158 /* RowElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowElement.h; sourceTree = "<group>"; };
+		ED375A7E1BFFC1720080D158 /* RowElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowElement.m; sourceTree = "<group>"; };
+		ED375A7F1BFFC1720080D158 /* SectionElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionElement.h; sourceTree = "<group>"; };
+		ED375A801BFFC1720080D158 /* SectionElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionElement.m; sourceTree = "<group>"; };
+		ED375A811BFFC1720080D158 /* SectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionManager.h; sourceTree = "<group>"; };
+		ED375A821BFFC1720080D158 /* SectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionManager.m; sourceTree = "<group>"; };
+		ED375A841BFFC1720080D158 /* ALTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewConstants.h; sourceTree = "<group>"; };
+		ED375A851BFFC1720080D158 /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
+		ED375A861BFFC1720080D158 /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
+		ED375A8D1BFFC2170080D158 /* ExamplePrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplePrefixHeader.pch; sourceTree = "<group>"; };
+		ED375A901BFFC3B30080D158 /* MasterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewCell.h; sourceTree = "<group>"; };
+		ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewCell.m; sourceTree = "<group>"; };
+		ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
+		ED375A951BFFC5050080D158 /* MasterExample1TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample1TableViewCell.h; sourceTree = "<group>"; };
+		ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample1TableViewCell.m; sourceTree = "<group>"; };
+		ED375A981BFFC5130080D158 /* MasterExample2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample2TableViewCell.h; sourceTree = "<group>"; };
+		ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample2TableViewCell.m; sourceTree = "<group>"; };
+		ED375A9B1BFFC9E00080D158 /* Example1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1ViewController.h; sourceTree = "<group>"; };
+		ED375A9C1BFFC9E00080D158 /* Example1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1ViewController.m; sourceTree = "<group>"; };
+		ED375A9D1BFFC9E00080D158 /* Example1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FC733431BFFAAE700AA134C /* ALTableviewFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,18 +152,17 @@
 		5FC732D21BFFA0C000AA134C /* ALTableViewFrameworkExamples */ = {
 			isa = PBXGroup;
 			children = (
-				5FC733411BFFAAE300AA134C /* ALTableviewFramework.framework */,
 				5FC732D61BFFA0C000AA134C /* AppDelegate.h */,
 				5FC732D71BFFA0C000AA134C /* AppDelegate.m */,
 				5FC732E21BFFA0C000AA134C /* Assets.xcassets */,
-				5FC733471BFFAB5A00AA134C /* ButtonLabelTableViewCell.h */,
-				5FC733481BFFAB5A00AA134C /* ButtonLabelTableViewCell.m */,
-				5FC733491BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib */,
+				ED375A781BFFC1720080D158 /* Core */,
 				5FC732DC1BFFA0C000AA134C /* DetailViewController.h */,
 				5FC732DD1BFFA0C000AA134C /* DetailViewController.m */,
+				ED375A8E1BFFC3800080D158 /* Example 1 */,
 				5FC732E71BFFA0C000AA134C /* Info.plist */,
 				5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */,
 				5FC732DF1BFFA0C000AA134C /* Main.storyboard */,
+				ED375A8F1BFFC3910080D158 /* Master */,
 				5FC732D91BFFA0C000AA134C /* MasterViewController.h */,
 				5FC732DA1BFFA0C000AA134C /* MasterViewController.m */,
 				5FC732D31BFFA0C000AA134C /* Supporting Files */,
@@ -150,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC732D41BFFA0C000AA134C /* main.m */,
+				ED375A8D1BFFC2170080D158 /* ExamplePrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,6 +195,65 @@
 				5FC732FD1BFFA0C100AA134C /* Info.plist */,
 			);
 			path = ALTableViewFrameworkExamplesUITests;
+			sourceTree = "<group>";
+		};
+		ED375A781BFFC1720080D158 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED375A791BFFC1720080D158 /* ALTableViewController.h */,
+				ED375A7A1BFFC1720080D158 /* ALTableViewController.m */,
+				ED375A7B1BFFC1720080D158 /* ALTableViewController.xib */,
+				ED375A7C1BFFC1720080D158 /* SectionManager */,
+				ED375A831BFFC1720080D158 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ED375A7C1BFFC1720080D158 /* SectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				ED375A7D1BFFC1720080D158 /* RowElement.h */,
+				ED375A7E1BFFC1720080D158 /* RowElement.m */,
+				ED375A7F1BFFC1720080D158 /* SectionElement.h */,
+				ED375A801BFFC1720080D158 /* SectionElement.m */,
+				ED375A811BFFC1720080D158 /* SectionManager.h */,
+				ED375A821BFFC1720080D158 /* SectionManager.m */,
+			);
+			path = SectionManager;
+			sourceTree = "<group>";
+		};
+		ED375A831BFFC1720080D158 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED375A841BFFC1720080D158 /* ALTableViewConstants.h */,
+				ED375A851BFFC1720080D158 /* ExtendNSLogFunctionality.h */,
+				ED375A861BFFC1720080D158 /* ExtendNSLogFunctionality.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		ED375A8E1BFFC3800080D158 /* Example 1 */ = {
+			isa = PBXGroup;
+			children = (
+				ED375A9B1BFFC9E00080D158 /* Example1ViewController.h */,
+				ED375A9C1BFFC9E00080D158 /* Example1ViewController.m */,
+				ED375A9D1BFFC9E00080D158 /* Example1ViewController.xib */,
+			);
+			path = "Example 1";
+			sourceTree = "<group>";
+		};
+		ED375A8F1BFFC3910080D158 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				ED375A901BFFC3B30080D158 /* MasterTableViewCell.h */,
+				ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */,
+				ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */,
+				ED375A951BFFC5050080D158 /* MasterExample1TableViewCell.h */,
+				ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */,
+				ED375A981BFFC5130080D158 /* MasterExample2TableViewCell.h */,
+				ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */,
+			);
+			path = Master;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +324,7 @@
 				TargetAttributes = {
 					5FC732CF1BFFA0C000AA134C = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = UJTEW5KUXC;
+						DevelopmentTeam = SC48V388MQ;
 					};
 					5FC732EB1BFFA0C000AA134C = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -279,10 +363,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FC7334B1BFFAB5A00AA134C /* ButtonLabelTableViewCell.xib in Resources */,
+				ED375A881BFFC1720080D158 /* ALTableViewController.xib in Resources */,
+				ED375A9F1BFFC9E00080D158 /* Example1ViewController.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
+				ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +395,16 @@
 			files = (
 				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
 				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
+				ED375A8B1BFFC1720080D158 /* SectionManager.m in Sources */,
+				ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */,
+				ED375A8A1BFFC1720080D158 /* SectionElement.m in Sources */,
+				ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */,
+				ED375A871BFFC1720080D158 /* ALTableViewController.m in Sources */,
+				ED375A8C1BFFC1720080D158 /* ExtendNSLogFunctionality.m in Sources */,
+				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
+				ED375A9E1BFFC9E00080D158 /* Example1ViewController.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
-				5FC7334A1BFFAB5A00AA134C /* ButtonLabelTableViewCell.m in Sources */,
+				ED375A891BFFC1720080D158 /* RowElement.m in Sources */,
 				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,15 +546,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ALTableViewFrameworkExamples",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ALTableViewFrameworkExamples/ExamplePrefixHeader.pch";
 				INFOPLIST_FILE = ALTableViewFrameworkExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -468,15 +567,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ALTableViewFrameworkExamples",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ALTableViewFrameworkExamples/ExamplePrefixHeader.pch";
 				INFOPLIST_FILE = ALTableViewFrameworkExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

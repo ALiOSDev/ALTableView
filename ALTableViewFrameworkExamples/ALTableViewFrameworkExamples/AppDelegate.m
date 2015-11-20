@@ -22,6 +22,7 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
+    [self customizeAppearanceUI];
     return YES;
 }
 
@@ -56,6 +57,13 @@
     } else {
         return NO;
     }
+}
+
+- (void) customizeAppearanceUI {
+    
+    // Customize UINavigationBar
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-1000, -1000) forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 @end

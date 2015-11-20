@@ -19,11 +19,11 @@
 + (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
 - (instancetype)initWithParams:(NSMutableDictionary *) dic;
 
-+ (instancetype)rowElementWithClassName:(Class) className object:(NSObject *) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
-- (instancetype)initWithClassName:(Class) className object:(NSObject *) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
++ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
+- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
 
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView;
--(NSObject *) getObject;
+-(id) getObject;
 -(CGFloat) getHeightCell;
 
 @end

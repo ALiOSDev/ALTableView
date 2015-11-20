@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ALTableviewFramework/ALTableviewFramework.h>
+#import "ALTableViewController.h"
 
 @class DetailViewController;
 
