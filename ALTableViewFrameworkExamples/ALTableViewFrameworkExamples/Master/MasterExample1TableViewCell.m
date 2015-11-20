@@ -7,15 +7,17 @@
 //
 
 #import "MasterExample1TableViewCell.h"
+#import "MasterViewController.h"
+#import "DetailViewController.h"
 #import "Example1ViewController.h"
 
 @implementation MasterExample1TableViewCell
 
 -(void) executeAction: (UIViewController *) viewController {
+    Example1ViewController * example1 = [[Example1ViewController alloc] init];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        
+        [[((MasterViewController *) viewController) detailViewController] setupViewController:example1];
     } else {
-        Example1ViewController * example1 = [[Example1ViewController alloc] init];
         [viewController.navigationController pushViewController:example1 animated:YES];
     }
 }

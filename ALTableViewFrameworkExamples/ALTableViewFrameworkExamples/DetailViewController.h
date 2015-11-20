@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) UIViewController *controller;
+
+- (void) setupViewController:(UIViewController *) controller;
 
 @end
 
