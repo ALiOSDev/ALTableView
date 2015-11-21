@@ -4,6 +4,8 @@ ALTableView
 Download
 --------
 
+This framework is still on development. We cannot guarantee yet that all their funcionalities work.
+
 Authors
 --------
 	@lorencr7 Lorenzo Villarroel 
