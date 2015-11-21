@@ -14,6 +14,10 @@
 #define PARAM_ROWELEMENT_OBJECT @"object"
 #define PARAM_ROWELEMENT_HEIGHTCELL @"heightCell"
 
+typedef void (^CellPressedHandler)(UIViewController * viewController, id cell);
+typedef void (^CellCreatedHandler)(id object, id cell);
+typedef void (^CellDeselectedHandler)(id cell);
+
 @interface RowElement : NSObject
 
 + (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
@@ -22,8 +26,15 @@
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
 
+
++ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
+- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
+
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView;
 -(id) getObject;
 -(CGFloat) getHeightCell;
+
+-(void) rowElementPressed: (UIViewController *) viewController Cell: (id) cell;
+-(void) rowElementDeselected: (id) cell;
 
 @end

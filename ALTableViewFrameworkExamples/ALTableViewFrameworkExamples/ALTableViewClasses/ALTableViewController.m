@@ -469,6 +469,8 @@
     if ([cell respondsToSelector:@selector(executeAction:)]) {
         [cell executeAction:self];
     }
+    RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
+    [rowElement rowElementPressed:self Cell:cell];
 }
 
 -(void) cellDeselected {
@@ -480,6 +482,8 @@
     if ([cell respondsToSelector:@selector(cellDeselected)]) {
         [cell cellDeselected];
     }
+    RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
+    [rowElement rowElementDeselected:cell];
     return indexPath;
 }
 
