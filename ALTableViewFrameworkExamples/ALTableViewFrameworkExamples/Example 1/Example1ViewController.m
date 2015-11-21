@@ -76,7 +76,6 @@
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows];
     
     [sections addObject:sectionElement];
-    
     return sections;
 }
 
