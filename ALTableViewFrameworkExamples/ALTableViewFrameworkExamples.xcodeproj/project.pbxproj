@@ -16,12 +16,12 @@
 		5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */; };
 		5FC732F11BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732F01BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m */; };
 		5FC732FC1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */; };
-		ED375A871BFFC1720080D158 /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A7A1BFFC1720080D158 /* ALTableViewController.m */; };
-		ED375A881BFFC1720080D158 /* ALTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A7B1BFFC1720080D158 /* ALTableViewController.xib */; };
-		ED375A891BFFC1720080D158 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A7E1BFFC1720080D158 /* RowElement.m */; };
-		ED375A8A1BFFC1720080D158 /* SectionElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A801BFFC1720080D158 /* SectionElement.m */; };
-		ED375A8B1BFFC1720080D158 /* SectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A821BFFC1720080D158 /* SectionManager.m */; };
-		ED375A8C1BFFC1720080D158 /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A861BFFC1720080D158 /* ExtendNSLogFunctionality.m */; };
+		5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE152F1C007F730097AE97 /* ALTableViewController.m */; };
+		5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFE15301C007F730097AE97 /* ALTableViewController.xib */; };
+		5FFE153E1C007F730097AE97 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15331C007F730097AE97 /* RowElement.m */; };
+		5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15351C007F730097AE97 /* SectionElement.m */; };
+		5FFE15401C007F730097AE97 /* SectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15371C007F730097AE97 /* SectionManager.m */; };
+		5FFE15411C007F730097AE97 /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE153B1C007F730097AE97 /* ExtendNSLogFunctionality.m */; };
 		ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */; };
 		ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */; };
 		ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */; };
@@ -83,18 +83,18 @@
 		5FC732F71BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableViewFrameworkExamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTableViewFrameworkExamplesUITests.m; sourceTree = "<group>"; };
 		5FC732FD1BFFA0C100AA134C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED375A791BFFC1720080D158 /* ALTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
-		ED375A7A1BFFC1720080D158 /* ALTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
-		ED375A7B1BFFC1720080D158 /* ALTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
-		ED375A7D1BFFC1720080D158 /* RowElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowElement.h; sourceTree = "<group>"; };
-		ED375A7E1BFFC1720080D158 /* RowElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowElement.m; sourceTree = "<group>"; };
-		ED375A7F1BFFC1720080D158 /* SectionElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionElement.h; sourceTree = "<group>"; };
-		ED375A801BFFC1720080D158 /* SectionElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionElement.m; sourceTree = "<group>"; };
-		ED375A811BFFC1720080D158 /* SectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionManager.h; sourceTree = "<group>"; };
-		ED375A821BFFC1720080D158 /* SectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionManager.m; sourceTree = "<group>"; };
-		ED375A841BFFC1720080D158 /* ALTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewConstants.h; sourceTree = "<group>"; };
-		ED375A851BFFC1720080D158 /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
-		ED375A861BFFC1720080D158 /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
+		5FFE152E1C007F730097AE97 /* ALTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
+		5FFE152F1C007F730097AE97 /* ALTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
+		5FFE15301C007F730097AE97 /* ALTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
+		5FFE15321C007F730097AE97 /* RowElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowElement.h; sourceTree = "<group>"; };
+		5FFE15331C007F730097AE97 /* RowElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowElement.m; sourceTree = "<group>"; };
+		5FFE15341C007F730097AE97 /* SectionElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionElement.h; sourceTree = "<group>"; };
+		5FFE15351C007F730097AE97 /* SectionElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionElement.m; sourceTree = "<group>"; };
+		5FFE15361C007F730097AE97 /* SectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionManager.h; sourceTree = "<group>"; };
+		5FFE15371C007F730097AE97 /* SectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionManager.m; sourceTree = "<group>"; };
+		5FFE15391C007F730097AE97 /* ALTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewConstants.h; sourceTree = "<group>"; };
+		5FFE153A1C007F730097AE97 /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
+		5FFE153B1C007F730097AE97 /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
 		ED375A8D1BFFC2170080D158 /* ExamplePrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplePrefixHeader.pch; sourceTree = "<group>"; };
 		ED375A901BFFC3B30080D158 /* MasterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewCell.h; sourceTree = "<group>"; };
 		ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewCell.m; sourceTree = "<group>"; };
@@ -162,10 +162,10 @@
 		5FC732D21BFFA0C000AA134C /* ALTableViewFrameworkExamples */ = {
 			isa = PBXGroup;
 			children = (
+				5FFE152D1C007F730097AE97 /* ALTableViewClasses */,
 				5FC732D61BFFA0C000AA134C /* AppDelegate.h */,
 				5FC732D71BFFA0C000AA134C /* AppDelegate.m */,
 				5FC732E21BFFA0C000AA134C /* Assets.xcassets */,
-				ED375A781BFFC1720080D158 /* Core */,
 				5FC732DC1BFFA0C000AA134C /* DetailViewController.h */,
 				5FC732DD1BFFA0C000AA134C /* DetailViewController.m */,
 				ED375A8E1BFFC3800080D158 /* Example 1 */,
@@ -207,37 +207,37 @@
 			path = ALTableViewFrameworkExamplesUITests;
 			sourceTree = "<group>";
 		};
-		ED375A781BFFC1720080D158 /* Core */ = {
+		5FFE152D1C007F730097AE97 /* ALTableViewClasses */ = {
 			isa = PBXGroup;
 			children = (
-				ED375A791BFFC1720080D158 /* ALTableViewController.h */,
-				ED375A7A1BFFC1720080D158 /* ALTableViewController.m */,
-				ED375A7B1BFFC1720080D158 /* ALTableViewController.xib */,
-				ED375A7C1BFFC1720080D158 /* SectionManager */,
-				ED375A831BFFC1720080D158 /* Utils */,
+				5FFE152E1C007F730097AE97 /* ALTableViewController.h */,
+				5FFE152F1C007F730097AE97 /* ALTableViewController.m */,
+				5FFE15301C007F730097AE97 /* ALTableViewController.xib */,
+				5FFE15311C007F730097AE97 /* SectionManager */,
+				5FFE15381C007F730097AE97 /* Utils */,
 			);
-			path = Core;
+			path = ALTableViewClasses;
 			sourceTree = "<group>";
 		};
-		ED375A7C1BFFC1720080D158 /* SectionManager */ = {
+		5FFE15311C007F730097AE97 /* SectionManager */ = {
 			isa = PBXGroup;
 			children = (
-				ED375A7D1BFFC1720080D158 /* RowElement.h */,
-				ED375A7E1BFFC1720080D158 /* RowElement.m */,
-				ED375A7F1BFFC1720080D158 /* SectionElement.h */,
-				ED375A801BFFC1720080D158 /* SectionElement.m */,
-				ED375A811BFFC1720080D158 /* SectionManager.h */,
-				ED375A821BFFC1720080D158 /* SectionManager.m */,
+				5FFE15321C007F730097AE97 /* RowElement.h */,
+				5FFE15331C007F730097AE97 /* RowElement.m */,
+				5FFE15341C007F730097AE97 /* SectionElement.h */,
+				5FFE15351C007F730097AE97 /* SectionElement.m */,
+				5FFE15361C007F730097AE97 /* SectionManager.h */,
+				5FFE15371C007F730097AE97 /* SectionManager.m */,
 			);
 			path = SectionManager;
 			sourceTree = "<group>";
 		};
-		ED375A831BFFC1720080D158 /* Utils */ = {
+		5FFE15381C007F730097AE97 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				ED375A841BFFC1720080D158 /* ALTableViewConstants.h */,
-				ED375A851BFFC1720080D158 /* ExtendNSLogFunctionality.h */,
-				ED375A861BFFC1720080D158 /* ExtendNSLogFunctionality.m */,
+				5FFE15391C007F730097AE97 /* ALTableViewConstants.h */,
+				5FFE153A1C007F730097AE97 /* ExtendNSLogFunctionality.h */,
+				5FFE153B1C007F730097AE97 /* ExtendNSLogFunctionality.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -379,13 +379,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED375A881BFFC1720080D158 /* ALTableViewController.xib in Resources */,
 				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
 				ED375AA71BFFCD3D0080D158 /* Example1ViewController.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
 				ED375AAC1BFFCDF40080D158 /* Example1Cell1.xib in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
+				5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */,
 				ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,19 +412,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
+				5FFE153E1C007F730097AE97 /* RowElement.m in Sources */,
 				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
-				ED375A8B1BFFC1720080D158 /* SectionManager.m in Sources */,
 				ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */,
-				ED375A8A1BFFC1720080D158 /* SectionElement.m in Sources */,
 				ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */,
-				ED375A871BFFC1720080D158 /* ALTableViewController.m in Sources */,
-				ED375A8C1BFFC1720080D158 /* ExtendNSLogFunctionality.m in Sources */,
+				5FFE15411C007F730097AE97 /* ExtendNSLogFunctionality.m in Sources */,
 				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
 				ED375AA61BFFCD3D0080D158 /* Example1ViewController.m in Sources */,
+				5FFE15401C007F730097AE97 /* SectionManager.m in Sources */,
 				ED375AAB1BFFCDF40080D158 /* Example1Cell1.m in Sources */,
+				5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
-				ED375A891BFFC1720080D158 /* RowElement.m in Sources */,
 				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
+				5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */,
 				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
