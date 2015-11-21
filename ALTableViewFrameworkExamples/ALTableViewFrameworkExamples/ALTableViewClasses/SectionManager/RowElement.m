@@ -21,6 +21,8 @@
 @property (strong, nonatomic) CellCreatedHandler cellCreatedHandler;
 @property (strong, nonatomic) CellDeselectedHandler cellDeselectedHandler;
 
+@property(assign, nonatomic) UITableViewCellStyle cellStyle;
+
 @end
 
 @implementation RowElement
@@ -39,6 +41,7 @@
         self.object = dic[PARAM_ROWELEMENT_OBJECT];
         self.heightCell = dic[PARAM_ROWELEMENT_HEIGHTCELL];
         self.cellIdentifier = dic[PARAM_ROWELEMENT_CELLIDENTIFIER];
+        self.cellStyle = UITableViewCellStyleDefault;
         
         [self checkClassAttributes];
     }
@@ -56,21 +59,23 @@
         self.object = object;
         self.heightCell = heightCell;
         self.cellIdentifier = cellIdentifier;
+        self.cellStyle = UITableViewCellStyleDefault;
         
         [self checkClassAttributes];
     }
     return self;
 }
 
-+ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler {
-    return [[self alloc] initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier CellPressedHandler:cellPressedHandler CellCreatedHandler:cellCreatedHandler CellDeselectedHandler:cellDeselectedHandler];
++ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler {
+    return [[self alloc] initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier CellStyle:cellStyle CellPressedHandler:cellPressedHandler CellCreatedHandler:cellCreatedHandler CellDeselectedHandler:cellDeselectedHandler ];
 }
-- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler {
+- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler{
     self = [self initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier];
     if (self) {
         self.cellPressedHandler = cellPressedHandler;
         self.cellCreatedHandler = cellCreatedHandler;
         self.cellDeselectedHandler = cellDeselectedHandler;
+        self.cellStyle = cellStyle;
     }
     return self;
 }
@@ -112,7 +117,7 @@
     
     id cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[self.className alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[self.className alloc] initWithStyle:self.cellStyle reuseIdentifier:cellIdentifier];
     }
     object_setClass(cell, self.className);
     if ([cell respondsToSelector:@selector(configureCell:)]) {

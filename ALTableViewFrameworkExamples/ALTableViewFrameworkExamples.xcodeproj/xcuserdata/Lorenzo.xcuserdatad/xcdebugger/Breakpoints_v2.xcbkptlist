@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ALTableViewFrameworkExamples/ALTableViewClasses/SectionManager/RowElement.m"
-            timestampString = "469817059.379148"
+            timestampString = "469829279.310701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-getCellFromTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ALTableViewFrameworkExamples/Example 1/Example1ViewController.m"
-            timestampString = "469817089.052106"
+            timestampString = "469818294.141344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-createElements"
             landmarkType = "5">
             <Locations>
