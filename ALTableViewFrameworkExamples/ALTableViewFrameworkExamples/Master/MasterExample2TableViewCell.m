@@ -7,15 +7,19 @@
 //
 
 #import "MasterExample2TableViewCell.h"
+#import "MasterViewController.h"
+#import "DetailViewController.h"
+#import "Example2ViewController.h"
 
 @implementation MasterExample2TableViewCell
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void) executeAction: (UIViewController *) viewController {
+    Example2ViewController * example1 = [[Example2ViewController alloc] init];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [[((MasterViewController *) viewController) detailViewController] setupViewController:example1];
+    } else {
+        [viewController.navigationController pushViewController:example1 animated:YES];
+    }
 }
-*/
 
 @end

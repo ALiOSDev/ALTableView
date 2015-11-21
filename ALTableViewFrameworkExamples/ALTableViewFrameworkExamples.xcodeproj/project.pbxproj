@@ -22,6 +22,10 @@
 		5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15351C007F730097AE97 /* SectionElement.m */; };
 		5FFE15401C007F730097AE97 /* SectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15371C007F730097AE97 /* SectionManager.m */; };
 		5FFE15411C007F730097AE97 /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE153B1C007F730097AE97 /* ExtendNSLogFunctionality.m */; };
+		5FFE15461C0081030097AE97 /* Example2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15441C0081030097AE97 /* Example2ViewController.m */; };
+		5FFE15471C0081030097AE97 /* Example2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFE15451C0081030097AE97 /* Example2ViewController.xib */; };
+		5FFE154B1C0081ED0097AE97 /* Example2Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15491C0081ED0097AE97 /* Example2Cell1.m */; };
+		5FFE154C1C0081ED0097AE97 /* Example2Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFE154A1C0081ED0097AE97 /* Example2Cell1.xib */; };
 		ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */; };
 		ED375A941BFFC3B30080D158 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */; };
 		ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */; };
@@ -95,6 +99,12 @@
 		5FFE15391C007F730097AE97 /* ALTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewConstants.h; sourceTree = "<group>"; };
 		5FFE153A1C007F730097AE97 /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
 		5FFE153B1C007F730097AE97 /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
+		5FFE15431C0081030097AE97 /* Example2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2ViewController.h; sourceTree = "<group>"; };
+		5FFE15441C0081030097AE97 /* Example2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2ViewController.m; sourceTree = "<group>"; };
+		5FFE15451C0081030097AE97 /* Example2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example2ViewController.xib; sourceTree = "<group>"; };
+		5FFE15481C0081ED0097AE97 /* Example2Cell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2Cell1.h; sourceTree = "<group>"; };
+		5FFE15491C0081ED0097AE97 /* Example2Cell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2Cell1.m; sourceTree = "<group>"; };
+		5FFE154A1C0081ED0097AE97 /* Example2Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example2Cell1.xib; sourceTree = "<group>"; };
 		ED375A8D1BFFC2170080D158 /* ExamplePrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplePrefixHeader.pch; sourceTree = "<group>"; };
 		ED375A901BFFC3B30080D158 /* MasterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewCell.h; sourceTree = "<group>"; };
 		ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewCell.m; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 				5FC732DC1BFFA0C000AA134C /* DetailViewController.h */,
 				5FC732DD1BFFA0C000AA134C /* DetailViewController.m */,
 				ED375A8E1BFFC3800080D158 /* Example 1 */,
+				5FFE15421C007FDA0097AE97 /* Example2 */,
 				5FC732E71BFFA0C000AA134C /* Info.plist */,
 				5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */,
 				5FC732DF1BFFA0C000AA134C /* Main.storyboard */,
@@ -240,6 +251,19 @@
 				5FFE153B1C007F730097AE97 /* ExtendNSLogFunctionality.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5FFE15421C007FDA0097AE97 /* Example2 */ = {
+			isa = PBXGroup;
+			children = (
+				5FFE15431C0081030097AE97 /* Example2ViewController.h */,
+				5FFE15441C0081030097AE97 /* Example2ViewController.m */,
+				5FFE15451C0081030097AE97 /* Example2ViewController.xib */,
+				5FFE15481C0081ED0097AE97 /* Example2Cell1.h */,
+				5FFE15491C0081ED0097AE97 /* Example2Cell1.m */,
+				5FFE154A1C0081ED0097AE97 /* Example2Cell1.xib */,
+			);
+			path = Example2;
 			sourceTree = "<group>";
 		};
 		ED375A8E1BFFC3800080D158 /* Example 1 */ = {
@@ -381,8 +405,10 @@
 			files = (
 				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
 				ED375AA71BFFCD3D0080D158 /* Example1ViewController.xib in Resources */,
+				5FFE15471C0081030097AE97 /* Example2ViewController.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
+				5FFE154C1C0081ED0097AE97 /* Example2Cell1.xib in Resources */,
 				ED375AAC1BFFCDF40080D158 /* Example1Cell1.xib in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
 				5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */,
@@ -414,6 +440,7 @@
 				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
 				5FFE153E1C007F730097AE97 /* RowElement.m in Sources */,
 				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
+				5FFE15461C0081030097AE97 /* Example2ViewController.m in Sources */,
 				ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */,
 				ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */,
 				5FFE15411C007F730097AE97 /* ExtendNSLogFunctionality.m in Sources */,
@@ -426,6 +453,7 @@
 				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
 				5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */,
 				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
+				5FFE154B1C0081ED0097AE97 /* Example2Cell1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

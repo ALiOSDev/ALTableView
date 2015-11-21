@@ -16,6 +16,9 @@
 
 @implementation Example1ViewController
 
+
+#pragma mark - View LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Example 1";
@@ -31,16 +34,17 @@
 }
 
 
+#pragma mark - Register Cells
+
 -(void) registerCells {
     [self registerClass:[Example1Cell1 class] CellIdentifier:@"Example1Cell1"];
     [self registerClass:[Example1Cell2 class] CellIdentifier:@"Example1Cell2"];
 }
 
 
-// Professional Example
+#pragma mark - Create Cells
 
 - (NSMutableArray *) createElements {
-    
     // Creamos las secciones
     NSMutableArray * sections = [NSMutableArray array];
     NSMutableArray * rows = [NSMutableArray array];
