@@ -4,7 +4,7 @@ ALTableView
 Download
 --------
 
-This framework is still on development. We cannot guarantee yet that all their funcionalities work.
+This framework is still on development. We cannot guarantee yet that all the features work.
 
 Authors
 --------
