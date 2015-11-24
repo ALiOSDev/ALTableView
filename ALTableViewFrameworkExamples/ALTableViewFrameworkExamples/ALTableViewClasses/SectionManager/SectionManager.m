@@ -244,4 +244,36 @@
     return sectionIndex;
 }
 
+#pragma mark - getNextIndexPath
+
+-(NSIndexPath *) getNextIndexPathToIndexPath: (NSIndexPath *) indexPath {
+    SectionElement * sectionElement = self.sections[indexPath.section];
+    NSIndexPath * nextIndexPath;
+    if (indexPath.row == sectionElement.getNumberOfRows - 1) {//End of section
+        if (indexPath.section == self.sections.count - 1) {//End of tableView
+            return indexPath;
+        }
+        nextIndexPath = [NSIndexPath indexPathForRow:0 inSection:(indexPath.section + 1)];
+        
+    } else {
+        nextIndexPath = [NSIndexPath indexPathForRow:(indexPath.row + 1) inSection:indexPath.section];
+    }
+    return nextIndexPath;
+}
+
+-(NSIndexPath *) getPreviousIndexPathToIndexPath: (NSIndexPath *) indexPath {
+    NSIndexPath * previousIndexPath;
+    if (indexPath.row == 0) {//Begining of section
+        if (indexPath.section == 0) {//Begining of tableView
+            return indexPath;
+        }
+        SectionElement * previousSectionElement = self.sections[indexPath.section - 1];
+        previousIndexPath = [NSIndexPath indexPathForRow:([previousSectionElement getNumberOfRows] - 1) inSection:(indexPath.section - 1)];
+        
+    } else {
+        previousIndexPath = [NSIndexPath indexPathForRow:(indexPath.row - 1) inSection:indexPath.section];
+    }
+    return previousIndexPath;
+}
+
 @end

@@ -53,6 +53,8 @@
 //Open and close section methods
 -(void) setUpHeaderRecognizer;
 
+
+
 @end
 
 @protocol SectionHeaderViewDelegate <NSObject>

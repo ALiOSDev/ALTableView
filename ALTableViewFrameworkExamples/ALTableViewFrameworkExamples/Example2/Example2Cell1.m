@@ -11,7 +11,7 @@
 @implementation Example2Cell1
 
 -(void) executeAction: (UIViewController *) viewController {
-
+    NSLog(@"%@",self.titleLabel.text);
 }
 
 -(void) configureCell: (NSString *) object {

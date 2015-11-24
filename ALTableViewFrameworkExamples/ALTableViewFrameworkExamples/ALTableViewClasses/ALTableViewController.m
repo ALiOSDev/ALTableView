@@ -192,7 +192,12 @@
     [self.sectionManager replaceRowElementAtSection:indexPathFirst.section Row:indexPathSecond.row WithRowElement:rowElementFirst];
     [self.sectionManager replaceRowElementAtSection:indexPathSecond.section Row:indexPathFirst.row WithRowElement:rowElementSecond];
     
+//    NSMutableArray * indexPaths = [NSMutableArray array];
+//    [indexPaths addObject:indexPathFirst];
+//    [indexPaths addObject:indexPathSecond];
+    
     [self.tableView beginUpdates];
+//    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView moveRowAtIndexPath:indexPathFirst toIndexPath:indexPathSecond];
     [self.tableView endUpdates];
     
@@ -203,7 +208,6 @@
 #pragma mark Managing the insertion of new cells
 
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section {
-    NSLog(@"%ld",[self.sectionManager getNumberOfRows:section]);
     return [self insertRowElement:rowElement AtSection:section Row:[self.sectionManager getNumberOfRows:section]];
 }
 
@@ -582,9 +586,48 @@
             break;
         }
         case UIGestureRecognizerStateChanged: { // Movement
+//            CGFloat difference = location.y - snapshot.center.y;
             CGPoint center = snapshot.center;
             center.y = location.y;
             snapshot.center = center;
+            
+            CGRect visibleFrame = snapshot.frame;
+            CGFloat factor = 5;
+            CGFloat frameHeight = visibleFrame.size.height * factor;
+            CGFloat frameOriginY = visibleFrame.origin.y - frameHeight/2;
+            if (frameOriginY < 0) {//Control that never scrolls to negative positions
+                frameOriginY = 0;
+                frameHeight = visibleFrame.size.height;
+            }
+            visibleFrame.origin.y = frameOriginY;
+            visibleFrame.size.height = frameHeight;
+            //Basicamente es lo mismo que lo de arriba, pero escrito de otra forma que se lee peor, aunque con menos lineas
+//            CGFloat factor = 2;
+//            CGFloat newOriginY = visibleFrame.origin.y - visibleFrame.size.height*factor;
+//            visibleFrame.origin.y = MAX(0, newOriginY);//Control that never scrolls to negative positions
+//            visibleFrame.size.height *= (factor*2 + 1);
+
+            [self.tableView scrollRectToVisible:visibleFrame animated:NO];
+            
+            //TODO controlar bien el auto scroll del tableview cuando vas moviendo el snapshot
+            //Con el setContentOffset se vuelve loquisimo
+//            CGPoint newContentOffset = CGPointMake(0, location.y);
+//            [self.tableView setContentOffset:newContentOffset animated:YES];
+
+            //Con el scroll toRowAtIndexPath se vuelve un poco loco pero es "manejable"
+            
+            //Todo este codigo para que haga scroll segun va bajando o subiendo en el tableview
+//            NSIndexPath * nextIndexPath;
+//            if (difference > 0) {//We are moving down
+//                nextIndexPath = [self.sectionManager getNextIndexPathToIndexPath:indexPath];
+//            } else {//We are moving up
+//                nextIndexPath = [self.sectionManager getPreviousIndexPathToIndexPath:indexPath];
+//            }
+//            [self.tableView scrollToRowAtIndexPath:nextIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+            
+            //Solo con la linea de abajo para que se quedase centrado
+//            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+
             
             // Is destination valid and is it different from source?
             if (indexPath && ![indexPath isEqual:sourceIndexPath]) {
@@ -593,13 +636,6 @@
                 
                 // ... and update source so it is in sync with UI changes.
                 sourceIndexPath = indexPath;
-//                self.tableView.contentOffset = location;
-                
-//                CGPoint newContentOffset = CGPointMake(0, location.y);
-//                NSLog(@"%.2f,%.2f",newContentOffset.x, newContentOffset.y);
-//                [self.tableView setContentOffset:newContentOffset animated:YES];
-                //TODO controlar bien el auto scroll del tableview cuando vas moviendo el snapshot
-                [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
             }
             break;
         }

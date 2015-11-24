@@ -73,5 +73,8 @@
 
 -(NSMutableArray *) getSectionIndexTitles;
 
+-(NSIndexPath *) getNextIndexPathToIndexPath: (NSIndexPath *) indexPath;
+-(NSIndexPath *) getPreviousIndexPathToIndexPath: (NSIndexPath *) indexPath;
+
 @end
 

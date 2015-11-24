@@ -160,6 +160,8 @@
     return self.sectionTitleIndex;
 }
 
+
+
 #pragma mark - Managing the insertion of new cells
 
 -(void) insertRowElement: (RowElement *) rowElement AtIndex: (NSInteger)index {
