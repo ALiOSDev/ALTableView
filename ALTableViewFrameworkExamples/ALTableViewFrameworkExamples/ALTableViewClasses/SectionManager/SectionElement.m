@@ -192,7 +192,7 @@
 #pragma mark - Managing the opening and close of section
 
 -(void) setUpHeaderRecognizer {
-    NSLog(@"setUpHeaderRecognizer");
+//    NSLog(@"setUpHeaderRecognizer");
     [self.viewHeader setUserInteractionEnabled:YES];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(toggleOpen:)];

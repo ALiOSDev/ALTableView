@@ -171,17 +171,15 @@
     
     // Exchange betwenn sections
     if (indexPathFirst.section != indexPathSecond.section) {
-        
         NSInteger difference = indexPathSecond.section - indexPathFirst.section;
         if (difference < 0) {//Moving to next section, we insert the first row at the begining
             [self deleteRowElementAtIndexPath:indexPathSecond];
             [self insertRowElement:rowElementSecond AtTheBeginingOfSection:indexPathFirst.section];
         } else {//Moving to previous section, we insert the first row at the end
             [self deleteRowElementAtIndexPath:indexPathSecond];
-            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
+//            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
+            [self insertRowElement:rowElementSecond AtIndexPath:indexPathFirst];
         }
-
-        
 //        [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
 //        [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
         return YES;
@@ -202,6 +200,7 @@
 #pragma mark Managing the insertion of new cells
 
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section {
+    NSLog(@"%ld",[self.sectionManager getNumberOfRows:section]);
     return [self insertRowElement:rowElement AtSection:section Row:[self.sectionManager getNumberOfRows:section]];
 }
 
@@ -591,6 +590,13 @@
                 
                 // ... and update source so it is in sync with UI changes.
                 sourceIndexPath = indexPath;
+//                self.tableView.contentOffset = location;
+                
+//                CGPoint newContentOffset = CGPointMake(0, location.y);
+//                NSLog(@"%.2f,%.2f",newContentOffset.x, newContentOffset.y);
+//                [self.tableView setContentOffset:newContentOffset animated:YES];
+                //TODO controlar bien el auto scroll del tableview cuando vas moviendo el snapshot
+                [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
             }
             break;
         }
