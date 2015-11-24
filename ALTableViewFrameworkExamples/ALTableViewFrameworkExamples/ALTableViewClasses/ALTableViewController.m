@@ -170,14 +170,16 @@
     
     // Exchange betwenn sections
     if (indexPathFirst.section != indexPathSecond.section) {
+//        [self deleteRowElementAtIndexPath:indexPathFirst];
+//        [self insertRowElement:rowElementFirst AtIndexPath:indexPathSecond];
         [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
         [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
         return YES;
     }
     
     // Exchange in current section
-    [self.sectionManager replaceRowElementAtSection:indexPathFirst.section Row:indexPathFirst.row WithRowElement:rowElementFirst];
-    [self.sectionManager replaceRowElementAtSection:indexPathSecond.section Row:indexPathSecond.row WithRowElement:rowElementSecond];
+    [self.sectionManager replaceRowElementAtSection:indexPathFirst.section Row:indexPathSecond.row WithRowElement:rowElementFirst];
+    [self.sectionManager replaceRowElementAtSection:indexPathSecond.section Row:indexPathFirst.row WithRowElement:rowElementSecond];
     
     [self.tableView beginUpdates];
     [self.tableView moveRowAtIndexPath:indexPathFirst toIndexPath:indexPathSecond];
@@ -491,8 +493,8 @@
 #pragma mark Modifying Header and Footer of Sections
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    SectionElement * sectionElement = [self getAllSections][section];
-    NSLog(@"%d, %d",section, [sectionElement getTotalNumberOfRows]);
+//    SectionElement * sectionElement = [self getAllSections][section];
+//    NSLog(@"%d, %d",section, [sectionElement getTotalNumberOfRows]);
     if (self.modeSectionsExpandable) {
         [self.sectionManager setUpHandlerForSectionAtIndex:section];
     }
