@@ -176,10 +176,13 @@
             [self deleteRowElementAtIndexPath:indexPathSecond];
             [self insertRowElement:rowElementSecond AtTheBeginingOfSection:indexPathFirst.section];
         } else {//Moving to previous section, we insert the first row at the end
+            //TODO mirar porque no se puede insertar al final
             [self deleteRowElementAtIndexPath:indexPathSecond];
 //            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
             [self insertRowElement:rowElementSecond AtIndexPath:indexPathFirst];
         }
+        
+        //Old code
 //        [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
 //        [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
         return YES;
