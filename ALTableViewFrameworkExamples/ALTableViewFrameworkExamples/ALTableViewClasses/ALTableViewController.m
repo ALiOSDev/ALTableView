@@ -157,6 +157,7 @@
 #pragma mark Managing the exchange of new cells
 
 -(BOOL) exchangeRowElementAtIndexPath:(NSIndexPath *) indexPathFirst WithRowElementAtIndexPath:(NSIndexPath *) indexPathSecond {
+    //The element that is moving is the one located ad indexPathSecond
     if (![self checkParametersSection:indexPathFirst.section Row:indexPathFirst.row]) {
         return NO;
     }
@@ -170,10 +171,19 @@
     
     // Exchange betwenn sections
     if (indexPathFirst.section != indexPathSecond.section) {
-//        [self deleteRowElementAtIndexPath:indexPathFirst];
-//        [self insertRowElement:rowElementFirst AtIndexPath:indexPathSecond];
-        [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
-        [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
+        
+        NSInteger difference = indexPathSecond.section - indexPathFirst.section;
+        if (difference < 0) {//Moving to next section, we insert the first row at the begining
+            [self deleteRowElementAtIndexPath:indexPathSecond];
+            [self insertRowElement:rowElementSecond AtTheBeginingOfSection:indexPathFirst.section];
+        } else {//Moving to previous section, we insert the first row at the end
+            [self deleteRowElementAtIndexPath:indexPathSecond];
+            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
+        }
+
+        
+//        [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
+//        [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
         return YES;
     }
     
@@ -411,7 +421,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"numberOfRows %d InSection %d", [self.sectionManager getNumberOfRows:section], section);
     return [self.sectionManager getNumberOfRows:section];
 }
 
