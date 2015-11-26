@@ -15,6 +15,7 @@
 #define PARAM_SECTIONELEMENT_HEIGHT_HEADER @"heightHeader"
 #define PARAM_SECTIONELEMENT_HEIGHT_FOOTER @"heightFooter"
 #define PARAM_SECTIONELEMENT_CELL_OBJECTS @"cellObjects"
+#define PARAM_SECTIONELEMENT_IS_EXPANDABLE @"isExpandable"
 
 @protocol SectionHeaderViewDelegate;
 
@@ -26,8 +27,8 @@
 + (instancetype)sectionElementWithParams:(NSMutableDictionary *) dic;
 - (instancetype)initWithParams:(NSMutableDictionary *) dic;
 
-+ (instancetype)sectionElementWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects;
-- (instancetype)initWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects;
++ (instancetype)sectionElementWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects isExpandable: (BOOL) isExpandable;
+- (instancetype)initWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects isExpandable: (BOOL) isExpandable;
 
 -(UIView *) getHeader;
 -(UIView *) getFooter;

@@ -69,7 +69,7 @@
         UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
         labelTitle.text = sectionTitleIndex;
         labelTitle.backgroundColor = [UIColor greenColor];
-        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil cellObjects:rowElements]];
+        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil cellObjects:rowElements isExpandable:YES]];
     }
     
     return sections;

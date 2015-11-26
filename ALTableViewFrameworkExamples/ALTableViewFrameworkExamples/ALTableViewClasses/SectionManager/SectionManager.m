@@ -211,6 +211,14 @@
 
 #pragma mark - Managing opening and closing of sections
 
+-(void) activateExpandable {
+    
+}
+
+-(void) unactivateExpandable {
+    
+}
+
 -(void) setUpHandlerForSectionAtIndex: (NSInteger) index {
 //    NSLog(@"setUpHandlerForSectionAtIndex %d",index);
     [self.sections[index] setUpHeaderRecognizer];

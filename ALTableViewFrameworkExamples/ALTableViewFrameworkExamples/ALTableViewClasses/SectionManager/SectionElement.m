@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSNumber *heightFooter;
 
 @property (assign, nonatomic) BOOL isOpened;
+@property (assign, nonatomic) BOOL isExpandable;
+@property (strong, nonatomic) UITapGestureRecognizer *headerTapGesture;
 
 @property (strong, nonatomic) NSMutableArray<__kindof RowElement *> * cellObjects;
 
@@ -43,18 +45,17 @@
         self.heightHeader = dic[PARAM_SECTIONELEMENT_HEIGHT_HEADER];
         self.heightFooter = dic[PARAM_SECTIONELEMENT_HEIGHT_FOOTER];
         self.cellObjects = dic[PARAM_SECTIONELEMENT_CELL_OBJECTS];
-        self.isOpened = YES;
-        
-        [self checkClassAttributes];
+        self.isExpandable = [dic[PARAM_SECTIONELEMENT_IS_EXPANDABLE] boolValue];
+        [self commonInit];
     }
     return self;
 }
 
-+ (instancetype)sectionElementWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects {
-    return [[self alloc] initWithSectionTitleIndex:titleIndex viewHeader:viewHeader viewFooter:viewFooter heightHeader:heightHeader heightFooter:heightFooter cellObjects:cellObjects];
++ (instancetype)sectionElementWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects isExpandable: (BOOL) isExpandable {
+    return [[self alloc] initWithSectionTitleIndex:titleIndex viewHeader:viewHeader viewFooter:viewFooter heightHeader:heightHeader heightFooter:heightFooter cellObjects:cellObjects isExpandable:isExpandable];
 }
 
-- (instancetype)initWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects {
+- (instancetype)initWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects isExpandable: (BOOL) isExpandable {
     self = [super init];
     if (self) {
         self.sectionTitleIndex = titleIndex;
@@ -63,11 +64,17 @@
         self.heightHeader = heightHeader;
         self.heightFooter = heightFooter;
         self.cellObjects = cellObjects;
-        self.isOpened = YES;
+        self.isExpandable = isExpandable;
+        [self commonInit];
         
-        [self checkClassAttributes];
+        
     }
     return self;
+}
+
+-(void) commonInit {
+    self.isOpened = YES;
+    [self checkClassAttributes];
 }
 
 
@@ -196,14 +203,15 @@
 -(void) setUpHeaderRecognizer {
 //    NSLog(@"setUpHeaderRecognizer");
     [self.viewHeader setUserInteractionEnabled:YES];
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                 action:@selector(toggleOpen:)];
-    [self.viewHeader addGestureRecognizer:tapGesture];
+    self.headerTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleOpen:)];
+    [self.viewHeader addGestureRecognizer:self.headerTapGesture];
 }
 
 - (IBAction)toggleOpen:(id)sender {
     NSLog(@"toggleOpen");
-    [self toggleOpenWithUserAction:YES];
+    if (self.isExpandable) {
+        [self toggleOpenWithUserAction:YES];
+    }
 }
 
 - (void)toggleOpenWithUserAction:(BOOL)userAction {

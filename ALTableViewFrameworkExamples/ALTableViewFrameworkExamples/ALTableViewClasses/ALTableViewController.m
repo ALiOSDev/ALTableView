@@ -64,8 +64,8 @@
         self.tableView.backgroundView = dic[PARAM_ALTABLEVIEWCONTROLLER_BACKGROUND_VIEW];
         self.tableView.backgroundColor = dic[PARAM_ALTABLEVIEWCONTROLLER_BACKGROUND_COLOR];
         
-        self.modeSectionsExpandable = dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_EXPANABLE];
-        self.modeSectionsIndexTitles = dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_INDEX_TITLE];
+        self.modeSectionsExpandable = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_EXPANABLE] boolValue];
+        self.modeSectionsIndexTitles = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_INDEX_TITLE] boolValue];
         
         [self checkClassAttributes];
     }
