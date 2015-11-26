@@ -634,8 +634,13 @@
             
             // Is destination valid and is it different from source?
             if (indexPath && ![indexPath isEqual:sourceIndexPath]) {
+                
                 // move rows & update datasource
                 [self exchangeRowElementAtIndexPath:indexPath WithRowElementAtIndexPath:sourceIndexPath];
+                
+                // we keep the cell hidden
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                cell.hidden = YES;
                 
                 // ... and update source so it is in sync with UI changes.
                 sourceIndexPath = indexPath;
