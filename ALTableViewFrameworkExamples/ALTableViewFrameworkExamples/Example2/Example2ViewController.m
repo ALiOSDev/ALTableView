@@ -27,7 +27,7 @@
     self.modeMoveCells = YES;
 
     [self registerCells];
-    [self replaceAllSections:[self createElements]];
+    [self replaceAllSectionElements:[self createElements]];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
 

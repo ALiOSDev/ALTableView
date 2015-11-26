@@ -51,35 +51,35 @@
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheEndOfSection: (NSInteger) section;
 
 //Remove row methods
--(BOOL) deleteRowElementAtIndexPath: (NSIndexPath *) indexPath;
--(BOOL) deleteRowElementAtSection: (NSInteger) section Row: (NSInteger) row;
--(BOOL) deleteRowElements: (NSInteger) numberOfElements AtIndexPath: (NSIndexPath *) indexPath;
--(BOOL) deleteRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row;
--(BOOL) deleteRowElementAtTheBeginingOfSection: (NSInteger) section;
--(BOOL) deleteRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section;
--(BOOL) deleteRowElementAtTheEndOfSection: (NSInteger) section;
--(BOOL) deleteRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section;
+-(BOOL) removeRowElementAtIndexPath: (NSIndexPath *) indexPath;
+-(BOOL) removeRowElementAtSection: (NSInteger) section Row: (NSInteger) row;
+-(BOOL) removeRowElements: (NSInteger) numberOfElements AtIndexPath: (NSIndexPath *) indexPath;
+-(BOOL) removeRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row;
+-(BOOL) removeRowElementAtTheBeginingOfSection: (NSInteger) section;
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section;
+-(BOOL) removeRowElementAtTheEndOfSection: (NSInteger) section;
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section;
 
 //Replace row methods
 -(BOOL) replaceRowElementAtIndexPath: (NSIndexPath *) indexPath WithRowElement: (RowElement *) rowElement;
 -(BOOL) replaceRowElementAtSection: (NSInteger) section Row: (NSInteger) row WithRowElement: (RowElement *) rowElement;
 
 //Add section methods
--(BOOL) insertSectionAtBegining:(SectionElement *) section;
--(BOOL) insertSectionAtEnd:(SectionElement *) section;
--(BOOL) insertSection:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath;
--(BOOL) insertSection:(SectionElement *) section AtPosition:(NSInteger) position;
+-(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section;
+-(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section;
+-(BOOL) insertSectionElement:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath;
+-(BOOL) insertSectionElement:(SectionElement *) section AtSection:(NSInteger) position;
 
 //Replace section methods
--(BOOL) reloadSection:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath;
--(BOOL) reloadSection:(SectionElement *) section AtPosition:(NSInteger) position;
--(void) replaceAllSections:(NSMutableArray *) sections;
+-(void) replaceAllSectionElements:(NSMutableArray *) sections;
+-(BOOL) replaceSectionElementAtIndexPath: (NSIndexPath *) indexPath WithSectionElement: (SectionElement *) sectionElement;
+-(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement;
 
 //Remove section methods
--(BOOL) removeSectionAtIndexPath: (NSIndexPath *) indexPath;
--(BOOL) removeSectionAtPosition:(NSInteger) position;
+-(BOOL) removeSectionElementAtIndexPath: (NSIndexPath *) indexPath;
+-(BOOL) removeSectionElementAtSection:(NSInteger) section;
 
 //Get section methods
--(NSMutableArray *) getAllSections;
+-(NSMutableArray *) getAllSectionElements;
 
 @end

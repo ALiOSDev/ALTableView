@@ -68,9 +68,6 @@
 -(void) replaceAllSections:(NSMutableArray *) sections;
 -(NSMutableArray *) getAllSections;
 
-//Managing opening and closing of sections
--(void) setUpHandlerForSectionAtIndex: (NSInteger) index;
-
 -(NSMutableArray *) getSectionIndexTitles;
 
 -(NSIndexPath *) getNextIndexPathToIndexPath: (NSIndexPath *) indexPath;

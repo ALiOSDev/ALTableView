@@ -173,11 +173,11 @@
     if (indexPathFirst.section != indexPathSecond.section) {
         NSInteger difference = indexPathSecond.section - indexPathFirst.section;
         if (difference < 0) {//Moving to next section, we insert the first row at the begining
-            [self deleteRowElementAtIndexPath:indexPathSecond];
+            [self removeRowElementAtIndexPath:indexPathSecond];
             [self insertRowElement:rowElementSecond AtTheBeginingOfSection:indexPathFirst.section];
         } else {//Moving to previous section, we insert the first row at the end
             //TODO mirar porque no se puede insertar al final
-            [self deleteRowElementAtIndexPath:indexPathSecond];
+            [self removeRowElementAtIndexPath:indexPathSecond];
 //            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
             [self insertRowElement:rowElementSecond AtIndexPath:indexPathFirst];
         }
@@ -265,27 +265,27 @@
 
 #pragma mark Managing the deletion of cells
 
--(BOOL) deleteRowElementAtTheBeginingOfSection: (NSInteger) section {
-    return [self deleteRowElementAtSection:section Row:0];
+-(BOOL) removeRowElementAtTheBeginingOfSection: (NSInteger) section {
+    return [self removeRowElementAtSection:section Row:0];
 }
 
--(BOOL) deleteRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section {
-    return [self deleteRowElements:numberOfElements AtSection:section Row:0];
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section {
+    return [self removeRowElements:numberOfElements AtSection:section Row:0];
 }
 
--(BOOL) deleteRowElementAtTheEndOfSection: (NSInteger) section {
-    return [self deleteRowElementAtSection:section Row:([self.sectionManager getNumberOfRows:section] - 1)];
+-(BOOL) removeRowElementAtTheEndOfSection: (NSInteger) section {
+    return [self removeRowElementAtSection:section Row:([self.sectionManager getNumberOfRows:section] - 1)];
 }
 
--(BOOL) deleteRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section {
-    return [self deleteRowElements:numberOfElements AtSection:section Row:([self.sectionManager getNumberOfRows:section] - numberOfElements)];
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section {
+    return [self removeRowElements:numberOfElements AtSection:section Row:([self.sectionManager getNumberOfRows:section] - numberOfElements)];
 }
 
--(BOOL) deleteRowElementAtIndexPath: (NSIndexPath *) indexPath {
-    return [self deleteRowElementAtSection:indexPath.section Row:indexPath.row];
+-(BOOL) removeRowElementAtIndexPath: (NSIndexPath *) indexPath {
+    return [self removeRowElementAtSection:indexPath.section Row:indexPath.row];
 }
 
--(BOOL) deleteRowElementAtSection: (NSInteger) section Row: (NSInteger) row {
+-(BOOL) removeRowElementAtSection: (NSInteger) section Row: (NSInteger) row {
     if (![self checkParametersSection:section Row:row]) {
         return NO;
     }
@@ -300,11 +300,11 @@
     return YES;
 }
 
--(BOOL) deleteRowElements: (NSInteger) numberOfElements AtIndexPath: (NSIndexPath *) indexPath {
-    return  [self deleteRowElements:numberOfElements AtSection:indexPath.section Row:indexPath.row];
+-(BOOL) removeRowElements: (NSInteger) numberOfElements AtIndexPath: (NSIndexPath *) indexPath {
+    return  [self removeRowElements:numberOfElements AtSection:indexPath.section Row:indexPath.row];
 }
 
--(BOOL) deleteRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row {
+-(BOOL) removeRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row {
     if (![self checkParametersSection:section Row:row]) {
         return NO;
     }
@@ -329,19 +329,19 @@
 
 #pragma mark Manage Sections
 
--(BOOL) insertSectionAtBegining:(SectionElement *) section {
-    return [self insertSection:section AtPosition:0];
+-(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section {
+    return [self insertSectionElement:section AtSection:0];
 }
 
--(BOOL) insertSectionAtEnd:(SectionElement *) section {
-    return [self insertSection:section AtPosition:[self.sectionManager getNumberOfSections]];
+-(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section {
+    return [self insertSectionElement:section AtSection:[self.sectionManager getNumberOfSections]];
 }
 
--(BOOL) insertSection:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath {
-    return [self insertSection:section AtPosition:indexPath.section];
+-(BOOL) insertSectionElement:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath {
+    return [self insertSectionElement:section AtSection:indexPath.section];
 }
 
--(BOOL) insertSection:(SectionElement *) section AtPosition:(NSInteger) position {
+-(BOOL) insertSectionElement:(SectionElement *) section AtSection:(NSInteger) position {
     if (![self checkParametersSection:position]) {
         return NO;
     }
@@ -353,42 +353,45 @@
     return YES;
 }
 
--(BOOL) reloadSection:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath {
-    return [self reloadSection:section AtPosition:indexPath.section];
+-(BOOL) replaceSectionElementAtIndexPath: (NSIndexPath *) indexPath WithSectionElement: (SectionElement *) sectionElement {
+    return [self replaceSectionElementAtSection:indexPath.section WithSectionElement:sectionElement];
 }
 
--(BOOL) reloadSection:(SectionElement *) section AtPosition:(NSInteger) position {
-    if (![self checkParametersSection:position]) {
+
+
+
+-(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement {
+    if (![self checkParametersSection:section]) {
         return NO;
     }
-    [self.sectionManager replaceSection:section AtPosition:position];
+    [self.sectionManager replaceSection:sectionElement AtPosition:section];
     [self.tableView beginUpdates];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:position] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationTop];
     [self.tableView endUpdates];
     return YES;
 }
 
--(BOOL) removeSectionAtIndexPath: (NSIndexPath *) indexPath {
-    return [self removeSectionAtPosition:indexPath.section];
+-(BOOL) removeSectionElementAtIndexPath: (NSIndexPath *) indexPath {
+    return [self removeSectionElementAtSection:indexPath.section];
 }
 
--(BOOL) removeSectionAtPosition:(NSInteger) position {
-    if (![self checkParametersSection:position]) {
+-(BOOL) removeSectionElementAtSection:(NSInteger) section {
+    if (![self checkParametersSection:section]) {
         return NO;
     }
-    [self.sectionManager removeSectionAtPosition:position];
+    [self.sectionManager removeSectionAtPosition:section];
     [self.tableView beginUpdates];
-    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:position] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationTop];
     [self.tableView endUpdates];
     return YES;
 }
 
--(void) replaceAllSections:(NSMutableArray *) sections {
+-(void) replaceAllSectionElements:(NSMutableArray *) sections {
     [self.sectionManager replaceAllSections:sections];
     [self.tableView reloadData];
 }
 
--(NSMutableArray *) getAllSections {
+-(NSMutableArray *) getAllSectionElements {
     return [self.sectionManager getAllSections];
 }
 
