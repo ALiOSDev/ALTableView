@@ -28,7 +28,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     [self registerCells];
-    [self reloadAllSections:[self createElements]];
+    [self replaceAllSections:[self createElements]];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
 

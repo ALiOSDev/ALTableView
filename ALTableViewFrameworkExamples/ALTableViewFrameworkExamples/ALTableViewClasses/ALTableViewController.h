@@ -73,7 +73,7 @@
 -(BOOL) reloadSection:(SectionElement *) section AtPosition:(NSInteger) position;
 -(BOOL) removeSectionAtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) removeSectionAtPosition:(NSInteger) position;
--(void) reloadAllSections:(NSMutableArray *) sections;
+-(void) replaceAllSections:(NSMutableArray *) sections;
 -(NSMutableArray *) getAllSections;
 
 @end

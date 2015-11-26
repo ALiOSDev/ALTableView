@@ -383,7 +383,7 @@
     return YES;
 }
 
--(void) reloadAllSections:(NSMutableArray *) sections {
+-(void) replaceAllSections:(NSMutableArray *) sections {
     [self.sectionManager replaceAllSections:sections];
     [self.tableView reloadData];
 }

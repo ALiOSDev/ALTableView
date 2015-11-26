@@ -24,7 +24,7 @@
     self.title = @"Example 1";
     
     [self registerCells];
-    [self reloadAllSections:[self createElements]];
+    [self replaceAllSections:[self createElements]];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
 
