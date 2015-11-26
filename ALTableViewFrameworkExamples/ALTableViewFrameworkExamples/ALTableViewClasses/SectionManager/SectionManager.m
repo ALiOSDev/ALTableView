@@ -44,7 +44,7 @@
 
 -(NSInteger) getNumberOfRows:(NSInteger) section {
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return 0;
     }
     return [self.sections[section] getNumberOfRows];
@@ -59,7 +59,7 @@
 
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView Section:(NSInteger) section Row: (NSInteger) row {
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return nil;
     }
     
@@ -76,7 +76,7 @@
 
 -(UIView *) getSectionHeaderFromSection:(NSInteger) section {
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return nil;
     }
     return [self.sections[section] getHeader];
@@ -88,7 +88,7 @@
 
 -(UIView *) getSectionFooterFromSection:(NSInteger) section {
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return nil;
     }
     return [self.sections[section] getFooter];
@@ -103,7 +103,7 @@
 
 -(CGFloat) getCellHeightFromSection:(NSInteger) section Row: (NSInteger) row {
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return 0;
     }
     return [self.sections[section] getRowHeightAtPosition:row];
@@ -118,7 +118,7 @@
 
 -(CGFloat) getSectionHeaderHeightFromSection:(NSInteger) section{
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return 0;
     }
     return [self.sections[section] getHeaderHeight];
@@ -130,7 +130,7 @@
 
 -(CGFloat) getSectionFooterHeightFromSection:(NSInteger) section {
     if (section > self.sections.count || section < 0) {
-        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
+//        NSLog(@"%@Attempting to get a section from a position that exceeds the limit of the elements array", warningString);
         return 0;
     }
     return [self.sections[section] getFooterHeight];

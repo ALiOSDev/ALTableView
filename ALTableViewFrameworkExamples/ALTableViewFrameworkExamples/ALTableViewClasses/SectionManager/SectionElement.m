@@ -82,11 +82,11 @@
 
 -(void) checkClassAttributes {
     if (!self.sectionTitleIndex) {
-        NSLog(@"%@Section title param index is null", warningString);
+//        NSLog(@"%@Section title param index is null", warningString);
         self.sectionTitleIndex = @"";
     }
     if (!self.heightHeader) {
-        NSLog(@"%@Height header param is null", warningString);
+//        NSLog(@"%@Height header param is null", warningString);
         if (self.viewHeader) {
             self.heightHeader = [NSNumber numberWithDouble:self.viewHeader.frame.size.height];
         } else {
@@ -94,7 +94,7 @@
         }
     }
     if (!self.heightFooter) {
-        NSLog(@"%@Height footer param is null", warningString);
+//        NSLog(@"%@Height footer param is null", warningString);
         if (self.viewFooter) {
             self.heightFooter = [NSNumber numberWithDouble:self.viewFooter.frame.size.height];
         } else {
@@ -102,16 +102,16 @@
         }
     }
     if (!self.viewHeader) {
-        NSLog(@"%@View header param is null", warningString);
+//        NSLog(@"%@View header param is null", warningString);
         self.viewHeader = [UIView new];
     }
     if (!self.viewFooter) {
-        NSLog(@"%@View footer param is null", warningString);
+//        NSLog(@"%@View footer param is null", warningString);
         self.viewFooter = [UIView new];
     }
     
     if (!self.cellObjects) {
-        NSLog(@"%@cell objects param is null", warningString);
+//        NSLog(@"%@cell objects param is null", warningString);
         self.cellObjects = [NSMutableArray array];
     }
 }

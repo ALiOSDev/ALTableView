@@ -85,19 +85,19 @@
 
 -(void) checkClassAttributes {
     if (!self.className) {
-        NSLog(@"%@ClassName param index is null", warningString);
+//        NSLog(@"%@ClassName param index is null", warningString);
         self.className = nil;
     }
     if (!self.object) {
-        NSLog(@"%@Object param is null", warningString);
+//        NSLog(@"%@Object param is null", warningString);
         self.object = nil;
     }
     if (!self.heightCell) {
-        NSLog(@"%@HeightCell param is null", warningString);
+//        NSLog(@"%@HeightCell param is null", warningString);
         self.heightCell = [NSNumber numberWithInt:44];
     }
     if (!self.cellIdentifier) {
-        NSLog(@"%@CellIdentifier param is null", warningString);
+//        NSLog(@"%@CellIdentifier param is null", warningString);
         self.cellIdentifier = nil;
     }
 }
