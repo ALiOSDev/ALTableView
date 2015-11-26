@@ -399,7 +399,7 @@
 #pragma mark - SectionManager protocol
 
 -(void) sectionOpenedAtIndex: (NSInteger) index NumberOfElements:(NSInteger)numberOfElements {
-    NSLog(@"section %d opened, numberOfElements: %d", index, numberOfElements);
+//    NSLog(@"section %d opened, numberOfElements: %d", index, numberOfElements);
     NSInteger countOfRowsToInsert = numberOfElements;
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
@@ -411,7 +411,7 @@
 }
 
 -(void) sectionClosedAtIndex: (NSInteger) index NumberOfElements:(NSInteger)numberOfElements {
-    NSLog(@"section %d closed, numberOfElements: %d", index, numberOfElements);
+//    NSLog(@"section %d closed, numberOfElements: %d", index, numberOfElements);
     NSInteger countOfRowsToInsert = numberOfElements;
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
