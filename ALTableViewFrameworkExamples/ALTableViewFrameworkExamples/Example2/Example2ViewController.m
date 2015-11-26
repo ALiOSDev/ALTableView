@@ -23,7 +23,7 @@
     
     // Cofigure settings of tableView
     self.modeSectionsIndexTitles = YES;
-    self.modeSectionsExpandable = YES;
+//    self.modeSectionsExpandable = YES;
     self.modeMoveCells = YES;
 
     [self registerCells];

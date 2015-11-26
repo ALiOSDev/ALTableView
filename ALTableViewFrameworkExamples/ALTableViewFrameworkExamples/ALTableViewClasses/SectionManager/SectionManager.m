@@ -219,10 +219,10 @@
     
 }
 
--(void) setUpHandlerForSectionAtIndex: (NSInteger) index {
-//    NSLog(@"setUpHandlerForSectionAtIndex %d",index);
-    [self.sections[index] setUpHeaderRecognizer];
-}
+//-(void) setUpHandlerForSectionAtIndex: (NSInteger) index {
+////    NSLog(@"setUpHandlerForSectionAtIndex %d",index);
+//    [self.sections[index] setUpHeaderRecognizer];
+//}
 
 - (void)sectionHeaderView:(SectionElement *)sectionElement sectionOpened:(NSInteger)section {
     NSInteger index = [self.sections indexOfObject:sectionElement];

@@ -64,7 +64,7 @@
         self.tableView.backgroundView = dic[PARAM_ALTABLEVIEWCONTROLLER_BACKGROUND_VIEW];
         self.tableView.backgroundColor = dic[PARAM_ALTABLEVIEWCONTROLLER_BACKGROUND_COLOR];
         
-        self.modeSectionsExpandable = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_EXPANABLE] boolValue];
+//        self.modeSectionsExpandable = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_EXPANABLE] boolValue];
         self.modeSectionsIndexTitles = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_INDEX_TITLE] boolValue];
         
         [self checkClassAttributes];
@@ -510,9 +510,9 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 //    SectionElement * sectionElement = [self getAllSections][section];
 //    NSLog(@"%d, %d",section, [sectionElement getTotalNumberOfRows]);
-    if (self.modeSectionsExpandable) {
-        [self.sectionManager setUpHandlerForSectionAtIndex:section];
-    }
+//    if (self.modeSectionsExpandable) {
+//        [self.sectionManager setUpHandlerForSectionAtIndex:section];
+//    }
     return [self.sectionManager getSectionHeaderFromSection:section];
 }
 

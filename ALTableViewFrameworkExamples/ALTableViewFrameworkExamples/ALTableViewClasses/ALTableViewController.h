@@ -27,7 +27,7 @@
 @class RowElement, SectionElement;
 @interface ALTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, SectionManagerProtocol>
 
-@property (assign, nonatomic) BOOL modeSectionsExpandable;
+//@property (assign, nonatomic) BOOL modeSectionsExpandable;
 @property (assign, nonatomic) BOOL modeSectionsIndexTitles;
 @property (assign, nonatomic) BOOL modeMoveCells;
 
@@ -40,7 +40,7 @@
 //Register Cells
 -(void) registerClass: (Class) classToRegister CellIdentifier: (NSString *) cellIdentifier;
 
-//Add methods
+//Add row methods
 -(BOOL) insertRowElement:(RowElement *) rowElement AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) insertRowElement:(RowElement *) rowElement AtSection: (NSInteger) section Row: (NSInteger) row;
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtIndexPath: (NSIndexPath *) indexPath;
@@ -50,7 +50,7 @@
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section;
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheEndOfSection: (NSInteger) section;
 
-//Delete methods
+//Remove row methods
 -(BOOL) deleteRowElementAtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) deleteRowElementAtSection: (NSInteger) section Row: (NSInteger) row;
 -(BOOL) deleteRowElements: (NSInteger) numberOfElements AtIndexPath: (NSIndexPath *) indexPath;
@@ -60,20 +60,26 @@
 -(BOOL) deleteRowElementAtTheEndOfSection: (NSInteger) section;
 -(BOOL) deleteRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section;
 
-//Replace methods
+//Replace row methods
 -(BOOL) replaceRowElementAtIndexPath: (NSIndexPath *) indexPath WithRowElement: (RowElement *) rowElement;
 -(BOOL) replaceRowElementAtSection: (NSInteger) section Row: (NSInteger) row WithRowElement: (RowElement *) rowElement;
 
-//Manage sections
+//Add section methods
 -(BOOL) insertSectionAtBegining:(SectionElement *) section;
 -(BOOL) insertSectionAtEnd:(SectionElement *) section;
 -(BOOL) insertSection:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) insertSection:(SectionElement *) section AtPosition:(NSInteger) position;
+
+//Replace section methods
 -(BOOL) reloadSection:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) reloadSection:(SectionElement *) section AtPosition:(NSInteger) position;
+-(void) replaceAllSections:(NSMutableArray *) sections;
+
+//Remove section methods
 -(BOOL) removeSectionAtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) removeSectionAtPosition:(NSInteger) position;
--(void) replaceAllSections:(NSMutableArray *) sections;
+
+//Get section methods
 -(NSMutableArray *) getAllSections;
 
 @end

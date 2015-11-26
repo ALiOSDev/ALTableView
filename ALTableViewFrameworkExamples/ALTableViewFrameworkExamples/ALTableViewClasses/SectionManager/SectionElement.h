@@ -52,7 +52,7 @@
 //Replacement methods
 -(void) replaceRowElementAtIndex: (NSInteger) index WithRowElement: (RowElement *) rowElement;
 //Open and close section methods
--(void) setUpHeaderRecognizer;
+//-(void) setUpHeaderRecognizer;
 
 
 

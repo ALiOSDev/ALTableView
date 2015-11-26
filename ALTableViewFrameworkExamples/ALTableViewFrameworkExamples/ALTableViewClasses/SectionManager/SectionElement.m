@@ -32,6 +32,14 @@
 
 #pragma mark - Constructor
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
 + (instancetype)sectionElementWithParams:(NSMutableDictionary *) dic {
     return [[self alloc] initWithParams:dic];
 }
@@ -66,8 +74,6 @@
         self.cellObjects = cellObjects;
         self.isExpandable = isExpandable;
         [self commonInit];
-        
-        
     }
     return self;
 }
@@ -75,6 +81,7 @@
 -(void) commonInit {
     self.isOpened = YES;
     [self checkClassAttributes];
+    [self setUpHeaderRecognizer];
 }
 
 
@@ -208,7 +215,7 @@
 }
 
 - (IBAction)toggleOpen:(id)sender {
-    NSLog(@"toggleOpen");
+//    NSLog(@"toggleOpen");
     if (self.isExpandable) {
         [self toggleOpenWithUserAction:YES];
     }
