@@ -11,6 +11,7 @@
 #import "MasterTableViewCell.h"
 #import "MasterExample1TableViewCell.h"
 #import "MasterExample2TableViewCell.h"
+#import "MasterExample3TableViewCell.h"
 
 @interface MasterViewController ()
 
@@ -62,6 +63,9 @@
 
     RowElement * example2 = [[RowElement alloc] initWithClassName:[MasterExample2TableViewCell class] object:@"Index Table View" heightCell:@44 cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example2];
+    
+    RowElement * example3 = [[RowElement alloc] initWithClassName:[MasterExample3TableViewCell class] object:@"Example 3" heightCell:@44 cellIdentifier:@"MasterTableViewCell"];
+    [rows addObject:example3];
     
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
     

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ALTableViewFrameworkExamples/Example 1/Example1ViewController.m"
-            timestampString = "469818294.141344"
+            timestampString = "470487232.815342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-createElements"
             landmarkType = "5">
             <Locations>
