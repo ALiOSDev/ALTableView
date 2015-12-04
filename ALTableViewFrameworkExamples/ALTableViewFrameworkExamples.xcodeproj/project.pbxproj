@@ -39,6 +39,9 @@
 		ED8627F61C0B0F26000D4535 /* Example2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8627F11C0B0F26000D4535 /* Example2ViewController.xib */; };
 		ED8627FA1C0B1178000D4535 /* Example3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8627F91C0B1178000D4535 /* Example3ViewController.m */; };
 		ED8627FD1C0B11C3000D4535 /* MasterExample3TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8627FC1C0B11C3000D4535 /* MasterExample3TableViewCell.m */; };
+		ED8628481C125247000D4535 /* MetaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8628471C125247000D4535 /* MetaModel.m */; };
+		ED86284B1C125253000D4535 /* TwitterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = ED86284A1C125253000D4535 /* TwitterStatus.m */; };
+		ED86284E1C12525E000D4535 /* TwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED86284D1C12525E000D4535 /* TwitterUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,12 @@
 		ED8627F91C0B1178000D4535 /* Example3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example3ViewController.m; sourceTree = "<group>"; };
 		ED8627FB1C0B11C3000D4535 /* MasterExample3TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample3TableViewCell.h; sourceTree = "<group>"; };
 		ED8627FC1C0B11C3000D4535 /* MasterExample3TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample3TableViewCell.m; sourceTree = "<group>"; };
+		ED8628461C125247000D4535 /* MetaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaModel.h; sourceTree = "<group>"; };
+		ED8628471C125247000D4535 /* MetaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaModel.m; sourceTree = "<group>"; };
+		ED8628491C125253000D4535 /* TwitterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatus.h; sourceTree = "<group>"; };
+		ED86284A1C125253000D4535 /* TwitterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatus.m; sourceTree = "<group>"; };
+		ED86284C1C12525E000D4535 /* TwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUser.h; sourceTree = "<group>"; };
+		ED86284D1C12525E000D4535 /* TwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUser.m; sourceTree = "<group>"; };
 		F4B1390C9AD15321FB288E51 /* libPods-ALTableViewFrameworkExamples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ALTableViewFrameworkExamples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F940DAC9316A9FE3C5BFA3C7 /* Pods-ALTableViewFrameworkExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableViewFrameworkExamples.release.xcconfig"; path = "Pods/Target Support Files/Pods-ALTableViewFrameworkExamples/Pods-ALTableViewFrameworkExamples.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +342,7 @@
 		ED8627F21C0B0F26000D4535 /* Example 3 */ = {
 			isa = PBXGroup;
 			children = (
+				ED8628451C125221000D4535 /* Model */,
 				ED8627F81C0B1178000D4535 /* Example3ViewController.h */,
 				ED8627F91C0B1178000D4535 /* Example3ViewController.m */,
 			);
@@ -344,6 +354,19 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		ED8628451C125221000D4535 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED8628461C125247000D4535 /* MetaModel.h */,
+				ED8628471C125247000D4535 /* MetaModel.m */,
+				ED8628491C125253000D4535 /* TwitterStatus.h */,
+				ED86284A1C125253000D4535 /* TwitterStatus.m */,
+				ED86284C1C12525E000D4535 /* TwitterUser.h */,
+				ED86284D1C12525E000D4535 /* TwitterUser.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +567,7 @@
 				ED8627FA1C0B1178000D4535 /* Example3ViewController.m in Sources */,
 				ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */,
 				ED375A9A1BFFC5130080D158 /* MasterExample2TableViewCell.m in Sources */,
+				ED86284B1C125253000D4535 /* TwitterStatus.m in Sources */,
 				ED8627F51C0B0F26000D4535 /* Example2ViewController.m in Sources */,
 				5FFE15411C007F730097AE97 /* ExtendNSLogFunctionality.m in Sources */,
 				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
@@ -553,9 +577,11 @@
 				ED8627F31C0B0F26000D4535 /* Example2Cell1.m in Sources */,
 				ED375AAB1BFFCDF40080D158 /* Example1Cell1.m in Sources */,
 				5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */,
+				ED86284E1C12525E000D4535 /* TwitterUser.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
 				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
 				5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */,
+				ED8628481C125247000D4535 /* MetaModel.m in Sources */,
 				5FC732DE1BFFA0C000AA134C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -4,7 +4,7 @@
 # use_frameworks!
 
 target 'ALTableViewFrameworkExamples' do
-  pod 'AFNetworking', '~> 2.0'
+    pod 'STTwitter'
 end
 
 target 'ALTableViewFrameworkExamplesTests' do
