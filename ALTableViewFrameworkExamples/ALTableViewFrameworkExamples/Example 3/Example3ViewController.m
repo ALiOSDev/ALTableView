@@ -59,12 +59,31 @@
             [weakSelf replaceAllSectionElements:sections];
             [weakSelf.tableView setTableFooterView:[[UIView alloc] init]];
         } errorBlock:^(NSError *error) {
-            NSLog(@"-- error: %@", error);
+            NSString * errorMessage = @"";
+            errorMessage = error.localizedDescription;
+            [self showAlertViewWithMessage:errorMessage];
         }];
         
     } errorBlock:^(NSError *error) {
         NSLog(@"-- error %@", error);
     }];
+}
+
+-(void) showAlertViewWithMessage: (NSString *) message {
+    UIAlertController * alert =   [UIAlertController
+                                   alertControllerWithTitle:@"Error"
+                                   message:message
+                                   preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
