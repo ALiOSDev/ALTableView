@@ -23,6 +23,7 @@
     [super viewDidLoad];
     self.title = @"Twitter Example";
     [self registerCells];
+    self.modeMoveCells = YES;
     [self getTwitterTimelineFromUser:@"barackobama"];
 
 }

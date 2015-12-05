@@ -600,13 +600,17 @@
             snapshot.center = center;
             
             CGRect visibleFrame = snapshot.frame;
-            CGFloat factor = 5;
-            CGFloat frameHeight = visibleFrame.size.height * factor;
-            CGFloat frameOriginY = visibleFrame.origin.y - frameHeight/2;
+//            CGFloat factor = 5;
+            CGFloat bound = 50;
+//            CGFloat frameHeight = visibleFrame.size.height * factor;
+            CGFloat frameHeight = visibleFrame.size.height + 2*bound;
+//            CGFloat frameOriginY = visibleFrame.origin.y - frameHeight/2;
+            CGFloat frameOriginY = visibleFrame.origin.y - bound;
             if (frameOriginY < 0) {//Control that never scrolls to negative positions
                 frameOriginY = 0;
                 frameHeight = visibleFrame.size.height;
             }
+            
             visibleFrame.origin.y = frameOriginY;
             visibleFrame.size.height = frameHeight;
             //Basicamente es lo mismo que lo de arriba, pero escrito de otra forma que se lee peor, aunque con menos lineas
