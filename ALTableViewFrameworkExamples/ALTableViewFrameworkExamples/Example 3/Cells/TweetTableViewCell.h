@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *screenName;
 //@property (weak, nonatomic) IBOutlet UITextView *text;
-@property (weak, nonatomic) IBOutlet UILabel *text;
+//@property (weak, nonatomic) IBOutlet UILabel *text;
+@property (weak, nonatomic) IBOutlet UITextView *text;
 
 @end

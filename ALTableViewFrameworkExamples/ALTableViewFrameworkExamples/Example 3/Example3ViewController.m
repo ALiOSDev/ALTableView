@@ -24,7 +24,6 @@
     self.title = @"Twitter Example";
     [self registerCells];
     [self getTwitterTimelineFromUser:@"barackobama"];
-//    NSLog(@"%.2f",UITableViewAutomaticDimension);
 
 }
 
