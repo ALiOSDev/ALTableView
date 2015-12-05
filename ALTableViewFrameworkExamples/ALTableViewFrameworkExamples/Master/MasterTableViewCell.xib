@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HG-Dc-42F">
@@ -24,10 +24,10 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="5HG-Dc-42F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Oo5-l1-Sln"/>
-                    <constraint firstItem="5HG-Dc-42F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mfW-g1-AAY"/>
-                    <constraint firstItem="5HG-Dc-42F" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pBm-nH-bQp"/>
-                    <constraint firstAttribute="trailing" secondItem="5HG-Dc-42F" secondAttribute="trailing" id="qE9-3x-THW"/>
+                    <constraint firstItem="5HG-Dc-42F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4G3-JD-akI"/>
+                    <constraint firstItem="5HG-Dc-42F" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5kP-0d-07m"/>
+                    <constraint firstItem="5HG-Dc-42F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KF7-IG-OAO"/>
+                    <constraint firstAttribute="trailing" secondItem="5HG-Dc-42F" secondAttribute="trailing" id="h4X-Lm-tct"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>

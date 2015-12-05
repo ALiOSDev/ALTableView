@@ -24,6 +24,7 @@
     self.title = @"Twitter Example";
     [self registerCells];
     [self getTwitterTimelineFromUser:@"barackobama"];
+//    NSLog(@"%.2f",UITableViewAutomaticDimension);
 
 }
 
@@ -49,7 +50,9 @@
             NSMutableArray * rowElements = [NSMutableArray array];
             for (NSDictionary * status in statuses) {
                 TwitterStatus * twitterStatus = [[TwitterStatus alloc] initWithDictionary:status];
-                [rowElements addObject:[RowElement rowElementWithClassName:[TweetTableViewCell class] object:twitterStatus heightCell:@120 cellIdentifier:nil]];
+                RowElement * rowElement = [RowElement rowElementWithClassName:[TweetTableViewCell class] object:twitterStatus heightCell:@130 cellIdentifier:nil];
+                rowElement.automaticDimension = YES;
+                [rowElements addObject:rowElement];
                 
             }
             [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:nil heightFooter:nil cellObjects:rowElements isExpandable:NO]];

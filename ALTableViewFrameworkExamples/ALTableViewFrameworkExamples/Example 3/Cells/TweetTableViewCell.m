@@ -22,9 +22,10 @@
         self.screenName.text = [NSString stringWithFormat:@"@%@",twitterStatus.user.screenName];
         self.name.text = twitterStatus.user.name;
         
-        self.text.textContainer.lineFragmentPadding = 0;
-        self.text.textContainerInset = UIEdgeInsetsZero;
+//        self.text.textContainer.lineFragmentPadding = 0;
+//        self.text.textContainerInset = UIEdgeInsetsZero;
         self.text.text = twitterStatus.text;
+        [self.text sizeToFit];
         
         [self performSelectorInBackground:@selector(downloadUserImageWithURL:) withObject:twitterStatus.user.imageURL];
     }
