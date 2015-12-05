@@ -135,11 +135,7 @@
 }
 
 -(CGFloat) getHeightCell {
-    if (self.automaticDimension) {
-        return UITableViewAutomaticDimension;
-    } else {
-        return [self.heightCell floatValue];
-    }
+    return [self.heightCell floatValue];
 }
 
 #pragma mark - Handlers

@@ -49,8 +49,8 @@
             NSMutableArray * rowElements = [NSMutableArray array];
             for (NSDictionary * status in statuses) {
                 TwitterStatus * twitterStatus = [[TwitterStatus alloc] initWithDictionary:status];
-                RowElement * rowElement = [RowElement rowElementWithClassName:[TweetTableViewCell class] object:twitterStatus heightCell:@130 cellIdentifier:nil];
-                rowElement.automaticDimension = YES;
+                NSNumber * height = [NSNumber numberWithFloat:UITableViewAutomaticDimension];
+                RowElement * rowElement = [RowElement rowElementWithClassName:[TweetTableViewCell class] object:twitterStatus heightCell:height cellIdentifier:nil];
                 [rowElements addObject:rowElement];
                 
             }

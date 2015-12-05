@@ -20,8 +20,6 @@ typedef void (^CellDeselectedHandler)(id cell);
 
 @interface RowElement : NSObject
 
-@property(assign, nonatomic) BOOL automaticDimension;
-
 + (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
 - (instancetype)initWithParams:(NSMutableDictionary *) dic;
 
