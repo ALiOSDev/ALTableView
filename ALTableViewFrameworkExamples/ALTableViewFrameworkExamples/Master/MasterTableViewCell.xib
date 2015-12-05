@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +12,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HG-Dc-42F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HG-Dc-42F">
+                        <rect key="frame" x="8" y="11" width="304" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -24,16 +25,17 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="5HG-Dc-42F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4G3-JD-akI"/>
-                    <constraint firstItem="5HG-Dc-42F" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5kP-0d-07m"/>
-                    <constraint firstItem="5HG-Dc-42F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KF7-IG-OAO"/>
-                    <constraint firstAttribute="trailing" secondItem="5HG-Dc-42F" secondAttribute="trailing" id="h4X-Lm-tct"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5HG-Dc-42F" secondAttribute="bottom" constant="3.5" id="80r-fw-THe"/>
+                    <constraint firstItem="5HG-Dc-42F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="ZNh-Vg-vHf"/>
+                    <constraint firstItem="5HG-Dc-42F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ZkZ-cz-dw9"/>
+                    <constraint firstItem="5HG-Dc-42F" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="nnJ-Ze-bPL"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
                 <outlet property="label" destination="5HG-Dc-42F" id="wCF-LP-gt3"/>
             </connections>
+            <point key="canvasLocation" x="203" y="326"/>
         </tableViewCell>
     </objects>
 </document>

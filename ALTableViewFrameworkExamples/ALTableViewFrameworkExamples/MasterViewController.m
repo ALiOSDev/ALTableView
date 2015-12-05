@@ -58,13 +58,15 @@
     NSMutableArray * sections = [NSMutableArray array];
     
     NSMutableArray * rows = [NSMutableArray array];
-    RowElement * example1 = [[RowElement alloc] initWithClassName:[MasterExample1TableViewCell class] object:@"Example 1" heightCell:@44 cellIdentifier:@"MasterTableViewCell"];
+    NSNumber * height = [NSNumber numberWithFloat:UITableViewAutomaticDimension];
+    
+    RowElement * example1 = [[RowElement alloc] initWithClassName:[MasterExample1TableViewCell class] object:@"Example 1" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example1];
 
-    RowElement * example2 = [[RowElement alloc] initWithClassName:[MasterExample2TableViewCell class] object:@"Example 2 Index Table View" heightCell:@44 cellIdentifier:@"MasterTableViewCell"];
+    RowElement * example2 = [[RowElement alloc] initWithClassName:[MasterExample2TableViewCell class] object:@"Example 2 Index Table View" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example2];
     
-    RowElement * example3 = [[RowElement alloc] initWithClassName:[MasterExample3TableViewCell class] object:@"Example 3 Twitter Timeline" heightCell:@44 cellIdentifier:@"MasterTableViewCell"];
+    RowElement * example3 = [[RowElement alloc] initWithClassName:[MasterExample3TableViewCell class] object:@"Example 3 Twitter Timeline with automatic dimension cells" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example3];
     
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];

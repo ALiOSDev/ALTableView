@@ -459,7 +459,6 @@
 }
 //
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
     return [self.sectionManager getCellHeightFromIndexPath:indexPath];
 }
 
