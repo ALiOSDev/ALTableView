@@ -11,7 +11,7 @@
 #import "TwitterStatus.h"
 #import "TwitterUser.h"
 
-#import "Example2Cell1.h"
+#import "TweetTableViewCell.h"
 
 @interface Example3ViewController ()
 
@@ -33,14 +33,14 @@
 }
 
 -(void) registerCells {
-    [self registerClass:[Example2Cell1 class] CellIdentifier:@"Example2Cell1"];
+    [self registerClass:[TweetTableViewCell class] CellIdentifier:@"TweetTableViewCell"];
 }
 
 -(void) getTwitterTimelineFromUser: (NSString *) user {
     NSString * apiKey = @"RBM2ooCpTzBU9Sc6hV96oH9aK";
     NSString * apiSecret = @"bC5raWX4BF4szbxl3yuW3FR7gUSPfTuqlDOmviMLNbFxQQLQAs";
-    __block STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:apiKey consumerSecret:apiSecret];
     
+    __block STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:apiKey consumerSecret:apiSecret];
     __block typeof(self) weakSelf = self;
     
     [twitter verifyCredentialsWithUserSuccessBlock:^(NSString *username, NSString *userID) {        
@@ -49,7 +49,7 @@
             NSMutableArray * rowElements = [NSMutableArray array];
             for (NSDictionary * status in statuses) {
                 TwitterStatus * twitterStatus = [[TwitterStatus alloc] initWithDictionary:status];
-                [rowElements addObject:[RowElement rowElementWithClassName:[Example2Cell1 class] object:twitterStatus.text heightCell:@44 cellIdentifier:nil]];
+                [rowElements addObject:[RowElement rowElementWithClassName:[TweetTableViewCell class] object:twitterStatus heightCell:@120 cellIdentifier:nil]];
                 
             }
             [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:nil heightFooter:nil cellObjects:rowElements isExpandable:NO]];

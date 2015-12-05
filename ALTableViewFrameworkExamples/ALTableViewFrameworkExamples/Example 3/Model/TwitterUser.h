@@ -11,5 +11,7 @@
 @interface TwitterUser : MetaModel
 
 @property(strong, nonatomic) NSString * screenName;
+@property(strong, nonatomic) NSString * name;
+@property(strong, nonatomic) NSString * imageURL;
 
 @end

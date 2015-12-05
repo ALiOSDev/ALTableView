@@ -12,7 +12,7 @@
 @implementation TwitterStatus
 
 - (instancetype)initWithDictionary: (NSDictionary *) dictionary {
-    self = [super init];
+    self = [super initWithDictionary:dictionary];
     if (self) {
         self.text = dictionary[@"text"];
         self.user = [[TwitterUser alloc] initWithDictionary:dictionary[@"user"]];

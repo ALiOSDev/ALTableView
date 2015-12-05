@@ -11,9 +11,12 @@
 @implementation TwitterUser
 
 - (instancetype)initWithDictionary: (NSDictionary *) dictionary {
-    self = [super init];
+    self = [super initWithDictionary:dictionary];
     if (self) {
+//        NSLog(@"%@",dictionary);
         self.screenName = dictionary[@"screen_name"];
+        self.name = dictionary[@"name"];
+        self.imageURL = dictionary[@"profile_image_url_https"];
     }
     return self;
 }
