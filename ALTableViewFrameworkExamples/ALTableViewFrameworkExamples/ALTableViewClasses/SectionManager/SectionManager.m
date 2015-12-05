@@ -109,6 +109,14 @@
     return [self.sections[section] getRowHeightAtPosition:row];
 }
 
+-(void) setRowElementHeight:(NSNumber *) height AtIndexPath: (NSIndexPath *) indexPath {
+    [self setRowElementHeight:height AtSection:indexPath.section Row:indexPath.row];
+}
+
+-(void) setRowElementHeight:(NSNumber *) height AtSection:(NSInteger) section Row: (NSInteger) row {
+    RowElement * rowElement = [self getRowElementAtSection:section Row:row];
+    rowElement.heightCell = height;
+}
 
 #pragma mark - Sections Header & Footer height
 

@@ -20,6 +20,8 @@ typedef void (^CellDeselectedHandler)(id cell);
 
 @interface RowElement : NSObject
 
+@property (strong, nonatomic) NSNumber * heightCell;
+
 + (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
 - (instancetype)initWithParams:(NSMutableDictionary *) dic;
 

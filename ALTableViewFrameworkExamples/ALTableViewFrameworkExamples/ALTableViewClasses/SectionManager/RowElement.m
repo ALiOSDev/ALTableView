@@ -15,7 +15,7 @@
 @property (strong, nonatomic) Class className;
 @property (strong, nonatomic) NSString * cellIdentifier;
 @property (strong, nonatomic) id object;
-@property (strong, nonatomic) NSNumber * heightCell;
+
 
 @property (strong, nonatomic) CellPressedHandler cellPressedHandler;
 @property (strong, nonatomic) CellCreatedHandler cellCreatedHandler;

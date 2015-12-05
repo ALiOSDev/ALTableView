@@ -434,7 +434,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.sectionManager getCellFromTableView:tableView IndexPath:indexPath];
+    UITableViewCell * cell = [self.sectionManager getCellFromTableView:tableView IndexPath:indexPath];
+    return cell;
 }
 
 - (NSArray *) sectionIndexTitlesForTableView:(UITableView *)tableView {
@@ -457,7 +458,7 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.sectionManager getCellHeightFromIndexPath:indexPath];
 }
-//
+
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.sectionManager getCellHeightFromIndexPath:indexPath];
 }
@@ -467,6 +468,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //We set up the cellHeight again to avoid stuttering scroll when using automatic dimension with cells
+    NSNumber *cellHeight = @(cell.frame.size.height);
+    [self.sectionManager setRowElementHeight:cellHeight AtIndexPath:indexPath];
+
     if (indexPath.section == ([self.sectionManager getNumberOfSections] - 1) && indexPath.row == ([self.sectionManager getNumberOfRows:indexPath.section] - 1)) {
         //We reached the end of the tableView
         if ([self.additionalDelegate respondsToSelector:@selector(tableViewDidReachEnd)]) {

@@ -39,12 +39,16 @@
 
 -(CGFloat) getCellHeightFromIndexPath:(NSIndexPath *) indexPath;
 -(CGFloat) getCellHeightFromSection:(NSInteger) section Row: (NSInteger) row;
+-(void) setRowElementHeight:(NSNumber *) height AtIndexPath: (NSIndexPath *) indexPath;
+-(void) setRowElementHeight:(NSNumber *) height AtSection:(NSInteger) section Row: (NSInteger) row;
 
 -(CGFloat) getSectionHeaderHeightFromIndexPath:(NSIndexPath *) indexPath;
 -(CGFloat) getSectionHeaderHeightFromSection:(NSInteger) section;
 
 -(CGFloat) getSectionFooterHeightFromIndexPath:(NSIndexPath *) indexPath;
 -(CGFloat) getSectionFooterHeightFromSection:(NSInteger) section;
+
+
 
 //Get row element
 -(RowElement *) getRowElementAtIndexPath:(NSIndexPath *) indexPath;

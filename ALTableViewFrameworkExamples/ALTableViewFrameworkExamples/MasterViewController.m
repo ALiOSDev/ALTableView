@@ -27,7 +27,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
     [self registerCells];
     [self replaceAllSectionElements:[self createElements]];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
