@@ -21,7 +21,7 @@
 @class RowElement, SectionElement;
 @interface SectionManager : NSObject <SectionHeaderViewDelegate>
 
-@property (strong, nonatomic) id<SectionManagerProtocol> delegate;
+@property (weak, nonatomic) id<SectionManagerProtocol> delegate;
 
 + (instancetype) sectionManagerWithSections:(NSArray *) sectionsElements;
 - (instancetype)initWithSections:(NSArray *) sectionsElements;

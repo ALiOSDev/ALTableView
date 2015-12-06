@@ -9,6 +9,7 @@
 #import "ALTableViewController.h"
 #import "ALTableViewConstants.h"
 #import "SectionManager.h"
+#import "RowElement.h"
 
 @interface ALTableViewController ()
 

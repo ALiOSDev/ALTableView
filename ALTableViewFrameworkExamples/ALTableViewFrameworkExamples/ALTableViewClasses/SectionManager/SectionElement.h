@@ -22,7 +22,7 @@
 @class RowElement;
 @interface SectionElement : NSObject
 
-@property (strong, nonatomic) id<SectionHeaderViewDelegate> delegate;
+@property (weak, nonatomic) id<SectionHeaderViewDelegate> delegate;
 
 + (instancetype)sectionElementWithParams:(NSMutableDictionary *) dic;
 - (instancetype)initWithParams:(NSMutableDictionary *) dic;
