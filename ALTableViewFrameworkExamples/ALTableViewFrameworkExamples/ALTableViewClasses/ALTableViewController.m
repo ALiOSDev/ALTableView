@@ -456,7 +456,17 @@
 #pragma mark Configuring Rows
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.sectionManager getCellHeightFromIndexPath:indexPath];
+//    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+//    CGFloat cellHeight = cell.frame.size.height;
+//    NSLog(@"%.2f",cellHeight);
+
+    RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
+    if (rowElement.estimateHeightMode) {
+        return UITableViewAutomaticDimension;
+    } else {
+        return [self.sectionManager getCellHeightFromIndexPath:indexPath];
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {

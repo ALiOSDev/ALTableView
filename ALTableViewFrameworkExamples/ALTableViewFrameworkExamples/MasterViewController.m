@@ -61,12 +61,15 @@
     
     RowElement * example1 = [[RowElement alloc] initWithClassName:[MasterExample1TableViewCell class] object:@"Example 1" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example1];
+    example1.estimateHeightMode = YES;
 
     RowElement * example2 = [[RowElement alloc] initWithClassName:[MasterExample2TableViewCell class] object:@"Example 2 Index Table View" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example2];
+    example2.estimateHeightMode = YES;
     
     RowElement * example3 = [[RowElement alloc] initWithClassName:[MasterExample3TableViewCell class] object:@"Example 3 Twitter Timeline with automatic dimension cells" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example3];
+    example3.estimateHeightMode = YES;
     
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
     

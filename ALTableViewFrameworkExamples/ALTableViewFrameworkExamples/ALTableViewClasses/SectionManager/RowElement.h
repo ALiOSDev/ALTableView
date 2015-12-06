@@ -20,6 +20,7 @@ typedef void (^CellDeselectedHandler)(id cell);
 
 @interface RowElement : NSObject
 
+@property (assign, nonatomic) BOOL estimateHeightMode;
 @property (strong, nonatomic) NSNumber * heightCell;
 
 + (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
