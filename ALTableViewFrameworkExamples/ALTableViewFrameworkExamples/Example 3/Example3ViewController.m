@@ -54,7 +54,6 @@
                 RowElement * rowElement = [RowElement rowElementWithClassName:[TweetTableViewCell class] object:twitterStatus heightCell:height cellIdentifier:nil];
                 rowElement.estimateHeightMode = YES;
                 [rowElements addObject:rowElement];
-                
             }
             [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:nil heightFooter:nil cellObjects:rowElements isExpandable:NO]];
             

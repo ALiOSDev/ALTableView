@@ -23,9 +23,9 @@
     
     // Cofigure settings of tableView
     self.modeSectionsIndexTitles = YES;
-//    self.modeSectionsExpandable = YES;
     self.modeMoveCells = YES;
 
+    [self addPullToRefreshWithBackgroundColor:[UIColor yellowColor] refreshColor:[UIColor whiteColor] title:@"Refresh" titleColor:[UIColor redColor]];
     [self registerCells];
     [self replaceAllSectionElements:[self createElements]];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
@@ -48,7 +48,6 @@
 
 - (NSMutableArray *) createElements {
     NSMutableArray *sourceData = [NSMutableArray arrayWithObjects:@"Aadi", @"Abimael", @"Bruno", @"Bárcenas", @"Lorenzo", @"Lidia", @"Lucas", @"Lola", @"Maria", @"Mario", @"Marcos", @"Matías", nil];
-//    NSMutableArray *sourceData = [NSMutableArray arrayWithObjects:@"Aadi", @"Abimael", @"Antonio", @"Alberto", @"Antón", @"Ainhoa", @"Alejandro", @"Alvaro", @"Bruno", @"Bárcenas", @"Lorenzo", @"Lidia", @"Lucas", @"Lola", @"Maria", @"Mario", @"Marcos", @"Matías", nil];
     
     sourceData = [self replaceFirstCharAccent:sourceData];
     NSMutableArray * firstLetters = [self getFirstLettersInArray:sourceData];

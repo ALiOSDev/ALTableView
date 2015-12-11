@@ -219,19 +219,6 @@
 
 #pragma mark - Managing opening and closing of sections
 
--(void) activateExpandable {
-    
-}
-
--(void) unactivateExpandable {
-    
-}
-
-//-(void) setUpHandlerForSectionAtIndex: (NSInteger) index {
-////    NSLog(@"setUpHandlerForSectionAtIndex %d",index);
-//    [self.sections[index] setUpHeaderRecognizer];
-//}
-
 - (void)sectionHeaderView:(SectionElement *)sectionElement sectionOpened:(NSInteger)section {
     NSInteger index = [self.sections indexOfObject:sectionElement];
     if ([self.delegate respondsToSelector:@selector(sectionOpenedAtIndex:NumberOfElements:)]) {

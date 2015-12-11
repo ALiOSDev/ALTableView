@@ -55,15 +55,14 @@
     RowElement * row5 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@120 heightCell:@120 cellIdentifier:nil];
     RowElement * row6 = [[RowElement alloc] initWithClassName:[Example1Cell2 class] object:@140 heightCell:@140 cellIdentifier:nil];
     RowElement * row7 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
-        
-        cell.textLabel.text = @"Cell selected";        
+        cell.textLabel.text = @"Cell selected";
     } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell)  {
         cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
         cell.detailTextLabel.text = @"hola";
     } CellDeselectedHandler:^(UITableViewCell * cell) {
         cell.textLabel.text = @"Cell deselected";
     }];
-
+    
     [rows addObject:row1];
     [rows addObject:row2];
     [rows addObject:row3];

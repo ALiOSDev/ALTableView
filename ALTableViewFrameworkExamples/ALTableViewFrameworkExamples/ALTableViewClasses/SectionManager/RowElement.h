@@ -14,6 +14,7 @@
 #define PARAM_ROWELEMENT_OBJECT @"object"
 #define PARAM_ROWELEMENT_HEIGHTCELL @"heightCell"
 
+//Definition of possible blocks
 typedef void (^CellPressedHandler)(UIViewController * viewController, id cell);
 typedef void (^CellCreatedHandler)(id object, id cell);
 typedef void (^CellDeselectedHandler)(id cell);
@@ -23,16 +24,17 @@ typedef void (^CellDeselectedHandler)(id cell);
 @property (assign, nonatomic) BOOL estimateHeightMode;
 @property (strong, nonatomic) NSNumber * heightCell;
 
+//Constructors
 + (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
 - (instancetype)initWithParams:(NSMutableDictionary *) dic;
 
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
 
-
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
 
+//Methods
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView;
 -(id) getObject;
 -(CGFloat) getHeightCell;

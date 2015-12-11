@@ -16,7 +16,6 @@
 @property (strong, nonatomic) NSString * cellIdentifier;
 @property (strong, nonatomic) id object;
 
-
 @property (strong, nonatomic) CellPressedHandler cellPressedHandler;
 @property (strong, nonatomic) CellCreatedHandler cellCreatedHandler;
 @property (strong, nonatomic) CellDeselectedHandler cellDeselectedHandler;
@@ -69,6 +68,7 @@
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler {
     return [[self alloc] initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier CellStyle:cellStyle CellPressedHandler:cellPressedHandler CellCreatedHandler:cellCreatedHandler CellDeselectedHandler:cellDeselectedHandler ];
 }
+
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler{
     self = [self initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier];
     if (self) {
@@ -102,11 +102,9 @@
     }
 }
 
--(void) configureCell: (id) object {
-    
-}
-
 #pragma mark - Getters
+
+-(void) configureCell: (id) object {}
 
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView {
     NSString *cellIdentifier = self.cellIdentifier;
@@ -119,10 +117,14 @@
     if (cell == nil) {
         cell = [[self.className alloc] initWithStyle:self.cellStyle reuseIdentifier:cellIdentifier];
     }
+    
     object_setClass(cell, self.className);
+    
+    // Call method or block for config
     if ([cell respondsToSelector:@selector(configureCell:)]) {
         [cell configureCell:self.object];
     }
+    
     if (self.cellCreatedHandler) {
        self.cellCreatedHandler(self.object, cell);
     }
@@ -140,17 +142,30 @@
 
 #pragma mark - Handlers
 
+-(void) executeAction: (UIViewController *) viewController {}
+
 -(void) rowElementPressed: (UIViewController *) viewController Cell: (id) cell {
+    // Call method or block for action
+    if ([cell respondsToSelector:@selector(executeAction:)]) {
+        [cell executeAction:viewController];
+    }
+
     if (self.cellPressedHandler) {
         self.cellPressedHandler(viewController, cell);
     }
 }
 
+-(void) cellDeselected {}
+
 -(void) rowElementDeselected: (id) cell {
+    // Call method or block for deselection
+    if ([cell respondsToSelector:@selector(cellDeselected)]) {
+        [cell cellDeselected];
+    }
+    
     if (self.cellDeselectedHandler) {
         self.cellDeselectedHandler(cell);
     }
 }
-
 
 @end

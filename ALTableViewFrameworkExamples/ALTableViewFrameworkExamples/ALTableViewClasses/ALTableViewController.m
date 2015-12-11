@@ -61,11 +61,9 @@
     if (self) {
         self.frame = CGRectFromString(dic[PARAM_ALTABLEVIEWCONTROLLER_FRAME]);
         [self commonInitWithSections:dic[PARAM_ALTABLEVIEWCONTROLLER_SECTIONS]];
-
+        
         self.tableView.backgroundView = dic[PARAM_ALTABLEVIEWCONTROLLER_BACKGROUND_VIEW];
         self.tableView.backgroundColor = dic[PARAM_ALTABLEVIEWCONTROLLER_BACKGROUND_COLOR];
-        
-//        self.modeSectionsExpandable = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_EXPANABLE] boolValue];
         self.modeSectionsIndexTitles = [dic[PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_INDEX_TITLE] boolValue];
         
         [self checkClassAttributes];
@@ -73,9 +71,10 @@
     return self;
 }
 
--(void) awakeFromNib {
+- (void) awakeFromNib {
     [self commonInitWithSections:nil];
 }
+
 
 #pragma mark - Lifecycle
 
@@ -124,6 +123,24 @@
 
 
 #pragma mark - Public methods
+
+#pragma mark add Pull to Refresh
+
+- (void) addPullToRefreshWithBackgroundColor:(UIColor *) backgroundColor refreshColor:(UIColor *) refreshColor title:(NSString *) title titleColor:(UIColor *) titleColor {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = backgroundColor ? backgroundColor : [UIColor clearColor];
+    self.refreshControl.tintColor = refreshColor ? refreshColor : [UIColor blackColor];
+    /*if (title && titleColor) {
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:titleColor
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        self.refreshControl.attributedTitle = attributedTitle;
+    }*/
+    [self.refreshControl addTarget:self
+                            action:@selector(handlerPullToRefresh)
+                  forControlEvents:UIControlEventValueChanged];
+}
+
 
 #pragma mark class register
 
@@ -179,13 +196,13 @@
         } else {//Moving to previous section, we insert the first row at the end
             //TODO mirar porque no se puede insertar al final
             [self removeRowElementAtIndexPath:indexPathSecond];
-//            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
+            //            [self insertRowElement:rowElementSecond AtTheEndOfSection:indexPathFirst.section];
             [self insertRowElement:rowElementSecond AtIndexPath:indexPathFirst];
         }
         
         //Old code
-//        [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
-//        [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
+        //        [self replaceRowElementAtIndexPath:indexPathSecond WithRowElement:rowElementFirst];
+        //        [self replaceRowElementAtIndexPath:indexPathFirst  WithRowElement:rowElementSecond];
         return YES;
     }
     
@@ -193,12 +210,12 @@
     [self.sectionManager replaceRowElementAtSection:indexPathFirst.section Row:indexPathSecond.row WithRowElement:rowElementFirst];
     [self.sectionManager replaceRowElementAtSection:indexPathSecond.section Row:indexPathFirst.row WithRowElement:rowElementSecond];
     
-//    NSMutableArray * indexPaths = [NSMutableArray array];
-//    [indexPaths addObject:indexPathFirst];
-//    [indexPaths addObject:indexPathSecond];
+    //    NSMutableArray * indexPaths = [NSMutableArray array];
+    //    [indexPaths addObject:indexPathFirst];
+    //    [indexPaths addObject:indexPathSecond];
     
     [self.tableView beginUpdates];
-//    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    //    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView moveRowAtIndexPath:indexPathFirst toIndexPath:indexPathSecond];
     [self.tableView endUpdates];
     
@@ -358,9 +375,6 @@
     return [self replaceSectionElementAtSection:indexPath.section WithSectionElement:sectionElement];
 }
 
-
-
-
 -(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement {
     if (![self checkParametersSection:section]) {
         return NO;
@@ -400,7 +414,7 @@
 #pragma mark - SectionManager protocol
 
 -(void) sectionOpenedAtIndex: (NSInteger) index NumberOfElements:(NSInteger)numberOfElements {
-//    NSLog(@"section %d opened, numberOfElements: %d", index, numberOfElements);
+    //    NSLog(@"section %d opened, numberOfElements: %d", index, numberOfElements);
     NSInteger countOfRowsToInsert = numberOfElements;
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
@@ -412,7 +426,7 @@
 }
 
 -(void) sectionClosedAtIndex: (NSInteger) index NumberOfElements:(NSInteger)numberOfElements {
-//    NSLog(@"section %d closed, numberOfElements: %d", index, numberOfElements);
+    //    NSLog(@"section %d closed, numberOfElements: %d", index, numberOfElements);
     NSInteger countOfRowsToInsert = numberOfElements;
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
@@ -427,7 +441,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.sectionManager getNumberOfSections];
+    float numberOfSections = [self.sectionManager getNumberOfSections];
+    
+    if (numberOfSections == 0) { // Display a message when the table is empty
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        // TODO: Customizable label
+        messageLabel.text = @"No data is currently available";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont systemFontOfSize:20];
+        [messageLabel sizeToFit];
+        
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
+    return numberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -457,17 +488,12 @@
 #pragma mark Configuring Rows
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-//    CGFloat cellHeight = cell.frame.size.height;
-//    NSLog(@"%.2f",cellHeight);
-
     RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
     if (rowElement.estimateHeightMode) {
         return UITableViewAutomaticDimension;
     } else {
         return [self.sectionManager getCellHeightFromIndexPath:indexPath];
     }
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -482,13 +508,13 @@
     //We set up the cellHeight again to avoid stuttering scroll when using automatic dimension with cells
     NSNumber *cellHeight = @(cell.frame.size.height);
     [self.sectionManager setRowElementHeight:cellHeight AtIndexPath:indexPath];
-
+    
     if (indexPath.section == ([self.sectionManager getNumberOfSections] - 1) && indexPath.row == ([self.sectionManager getNumberOfRows:indexPath.section] - 1)) {
         //We reached the end of the tableView
         if ([self.additionalDelegate respondsToSelector:@selector(tableViewDidReachEnd)]) {
             [self.additionalDelegate performSelector:@selector(tableViewDidReachEnd)];
         } else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"TableViewReachedEnd" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_KEY_DID_REACH_END object:nil];
         }
     }
 }
@@ -500,28 +526,14 @@
     return indexPath;
 }
 
--(void) executeAction: (UIViewController *) viewController {
-    
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     id cell = [tableView cellForRowAtIndexPath:indexPath];
-    if ([cell respondsToSelector:@selector(executeAction:)]) {
-        [cell executeAction:self];
-    }
     RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
     [rowElement rowElementPressed:self Cell:cell];
 }
 
--(void) cellDeselected {
-    
-}
-
 - (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     id cell = [tableView cellForRowAtIndexPath:indexPath];
-    if ([cell respondsToSelector:@selector(cellDeselected)]) {
-        [cell cellDeselected];
-    }
     RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
     [rowElement rowElementDeselected:cell];
     return indexPath;
@@ -531,11 +543,6 @@
 #pragma mark Modifying Header and Footer of Sections
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    SectionElement * sectionElement = [self getAllSections][section];
-//    NSLog(@"%d, %d",section, [sectionElement getTotalNumberOfRows]);
-//    if (self.modeSectionsExpandable) {
-//        [self.sectionManager setUpHandlerForSectionAtIndex:section];
-//    }
     return [self.sectionManager getSectionHeaderFromSection:section];
 }
 
@@ -564,6 +571,37 @@
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingFooterView:(UIView *)view forSection:(NSInteger)section {
     ////NSLog(@"hiding footerView");
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if ([self.additionalDelegate respondsToSelector:@selector(tableViewWillBeginDragging)]) {
+        [self.additionalDelegate performSelector:@selector(tableViewWillBeginDragging)];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_KEY_WILL_BEGIN_DRAGGING object:nil];
+    }
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    if ([self.additionalDelegate respondsToSelector:@selector(tableViewWillEndDragging)]) {
+        [self.additionalDelegate performSelector:@selector(tableViewWillEndDragging)];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_KEY_WILL_END_DRAGGING object:nil];
+    }
+}
+
+
+#pragma mark - PullToRefresh
+
+- (void) handlerPullToRefresh {
+    [self.refreshControl endRefreshing];
+    
+    if ([self.additionalDelegate respondsToSelector:@selector(tableViewPullToRefresh)]) {
+        [self.additionalDelegate performSelector:@selector(tableViewPullToRefresh)];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_KEY_PULL_TO_REFRESH object:nil];
+    }
 }
 
 
@@ -609,17 +647,17 @@
             break;
         }
         case UIGestureRecognizerStateChanged: { // Movement
-//            CGFloat difference = location.y - snapshot.center.y;
+            //            CGFloat difference = location.y - snapshot.center.y;
             CGPoint center = snapshot.center;
             center.y = location.y;
             snapshot.center = center;
             
             CGRect visibleFrame = snapshot.frame;
-//            CGFloat factor = 5;
+            //            CGFloat factor = 5;
             CGFloat bound = 50;
-//            CGFloat frameHeight = visibleFrame.size.height * factor;
+            //            CGFloat frameHeight = visibleFrame.size.height * factor;
             CGFloat frameHeight = visibleFrame.size.height + 2*bound;
-//            CGFloat frameOriginY = visibleFrame.origin.y - frameHeight/2;
+            //            CGFloat frameOriginY = visibleFrame.origin.y - frameHeight/2;
             CGFloat frameOriginY = visibleFrame.origin.y - bound;
             if (frameOriginY < 0) {//Control that never scrolls to negative positions
                 frameOriginY = 0;
@@ -629,32 +667,32 @@
             visibleFrame.origin.y = frameOriginY;
             visibleFrame.size.height = frameHeight;
             //Basicamente es lo mismo que lo de arriba, pero escrito de otra forma que se lee peor, aunque con menos lineas
-//            CGFloat factor = 2;
-//            CGFloat newOriginY = visibleFrame.origin.y - visibleFrame.size.height*factor;
-//            visibleFrame.origin.y = MAX(0, newOriginY);//Control that never scrolls to negative positions
-//            visibleFrame.size.height *= (factor*2 + 1);
-
+            //            CGFloat factor = 2;
+            //            CGFloat newOriginY = visibleFrame.origin.y - visibleFrame.size.height*factor;
+            //            visibleFrame.origin.y = MAX(0, newOriginY);//Control that never scrolls to negative positions
+            //            visibleFrame.size.height *= (factor*2 + 1);
+            
             [self.tableView scrollRectToVisible:visibleFrame animated:NO];
             
             //TODO controlar bien el auto scroll del tableview cuando vas moviendo el snapshot
             //Con el setContentOffset se vuelve loquisimo
-//            CGPoint newContentOffset = CGPointMake(0, location.y);
-//            [self.tableView setContentOffset:newContentOffset animated:YES];
-
+            //            CGPoint newContentOffset = CGPointMake(0, location.y);
+            //            [self.tableView setContentOffset:newContentOffset animated:YES];
+            
             //Con el scroll toRowAtIndexPath se vuelve un poco loco pero es "manejable"
             
             //Todo este codigo para que haga scroll segun va bajando o subiendo en el tableview
-//            NSIndexPath * nextIndexPath;
-//            if (difference > 0) {//We are moving down
-//                nextIndexPath = [self.sectionManager getNextIndexPathToIndexPath:indexPath];
-//            } else {//We are moving up
-//                nextIndexPath = [self.sectionManager getPreviousIndexPathToIndexPath:indexPath];
-//            }
-//            [self.tableView scrollToRowAtIndexPath:nextIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+            //            NSIndexPath * nextIndexPath;
+            //            if (difference > 0) {//We are moving down
+            //                nextIndexPath = [self.sectionManager getNextIndexPathToIndexPath:indexPath];
+            //            } else {//We are moving up
+            //                nextIndexPath = [self.sectionManager getPreviousIndexPathToIndexPath:indexPath];
+            //            }
+            //            [self.tableView scrollToRowAtIndexPath:nextIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
             
             //Solo con la linea de abajo para que se quedase centrado
-//            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
-
+            //            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+            
             
             // Is destination valid and is it different from source?
             if (indexPath && ![indexPath isEqual:sourceIndexPath]) {

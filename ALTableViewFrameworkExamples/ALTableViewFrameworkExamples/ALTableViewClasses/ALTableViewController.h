@@ -17,17 +17,24 @@
 #define PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_EXPANABLE @"modeSectionsExpandable"
 #define PARAM_ALTABLEVIEWCONTROLLER_MODE_SECTIONS_INDEX_TITLE @"modeSectionsIndexTitles"
 
+#define NOTIFICATION_KEY_PULL_TO_REFRESH @"tableViewPullToRefresh"
+#define NOTIFICATION_KEY_DID_REACH_END @"tableViewDidReachEnd"
+#define NOTIFICATION_KEY_WILL_BEGIN_DRAGGING @"tableViewWillBeginDragging"
+#define NOTIFICATION_KEY_WILL_END_DRAGGING @"tableViewWillEndDragging"
+
 @protocol ALTableViewProtocol <NSObject>
 
 @optional
--(void) tableViewDidReachEnd;
+- (void) tableViewPullToRefresh;
+- (void) tableViewDidReachEnd;
+- (void) tableViewWillBeginDragging;
+- (void) tableViewWillEndDragging;
 
 @end
 
 @class RowElement, SectionElement;
 @interface ALTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, SectionManagerProtocol>
 
-//@property (assign, nonatomic) BOOL modeSectionsExpandable;
 @property (assign, nonatomic) BOOL modeSectionsIndexTitles;
 @property (assign, nonatomic) BOOL modeMoveCells;
 
@@ -36,6 +43,9 @@
 //Constructors
 + (instancetype)tableViewControllerWithFrame:(CGRect)frame style:(UITableViewStyle)style backgroundView: (UIView*) backgroundView backgroundColor: (UIColor*) backgroundColor sections:(NSArray*)sections;
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style backgroundView: (UIView*) backgroundView backgroundColor: (UIColor*) backgroundColor sections:(NSArray*)sections;
+
+//Add Pull to Refresh
+- (void) addPullToRefreshWithBackgroundColor:(UIColor *) backgroundColor refreshColor:(UIColor *) refreshColor title:(NSString *) title titleColor:(UIColor *) titleColor;
 
 //Register Cells
 -(void) registerClass: (Class) classToRegister CellIdentifier: (NSString *) cellIdentifier;
