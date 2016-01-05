@@ -37,6 +37,7 @@
 
 @property (assign, nonatomic) BOOL modeSectionsIndexTitles;
 @property (assign, nonatomic) BOOL modeMoveCells;
+@property (assign, nonatomic) UITableViewRowAnimation rowAnimation;
 
 @property (weak, nonatomic) id<ALTableViewProtocol> additionalDelegate;
 
@@ -53,22 +54,34 @@
 //Add row methods
 -(BOOL) insertRowElement:(RowElement *) rowElement AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) insertRowElement:(RowElement *) rowElement AtSection: (NSInteger) section Row: (NSInteger) row;
+-(BOOL) insertRowElement:(RowElement *) rowElement AtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtSection: (NSInteger) section Row: (NSInteger) row;
+-(BOOL) insertRowElements:(NSMutableArray *) rowElements AtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheBeginingOfSection: (NSInteger) section;
+-(BOOL) insertRowElement:(RowElement *) rowElement AtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheBeginingOfSection: (NSInteger) section;
+-(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section;
+-(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheEndOfSection: (NSInteger) section;
+-(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 
 //Remove row methods
 -(BOOL) removeRowElementAtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) removeRowElementAtSection: (NSInteger) section Row: (NSInteger) row;
+-(BOOL) removeRowElementAtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) removeRowElements: (NSInteger) numberOfElements AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) removeRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row;
+-(BOOL) removeRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) removeRowElementAtTheBeginingOfSection: (NSInteger) section;
+-(BOOL) removeRowElementAtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section;
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) removeRowElementAtTheEndOfSection: (NSInteger) section;
+-(BOOL) removeRowElementAtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 -(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section;
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 
 //Replace row methods
 -(BOOL) replaceRowElementAtIndexPath: (NSIndexPath *) indexPath WithRowElement: (RowElement *) rowElement;

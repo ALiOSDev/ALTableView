@@ -26,6 +26,7 @@
 -(void) commonInitWithSections:(NSArray<__kindof SectionElement *> *) sections {
     self.sectionManager = [SectionManager sectionManagerWithSections:sections];
     self.sectionManager.delegate = self;
+    self.rowAnimation = UITableViewRowAnimationFade;
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
@@ -227,19 +228,35 @@
 #pragma mark Managing the insertion of new cells
 
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section {
-    return [self insertRowElement:rowElement AtSection:section Row:[self.sectionManager getNumberOfRows:section]];
+    return [self insertRowElement:rowElement AtTheEndOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertRowElement:(RowElement *) rowElement AtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self insertRowElement:rowElement AtSection:section Row:[self.sectionManager getNumberOfRows:section] RowAnimation:rowAnimation];
 }
 
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheEndOfSection: (NSInteger) section {
-    return [self insertRowElements:rowElements AtSection:section Row:[self.sectionManager getNumberOfRows:section]];
+    return [self insertRowElements:rowElements AtTheEndOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self insertRowElements:rowElements AtSection:section Row:[self.sectionManager getNumberOfRows:section] RowAnimation:rowAnimation];
 }
 
 -(BOOL) insertRowElement:(RowElement *) rowElement AtTheBeginingOfSection: (NSInteger) section {
-    return [self insertRowElement:rowElement AtSection:section Row:0];
+    return [self insertRowElement:rowElement AtTheBeginingOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertRowElement:(RowElement *) rowElement AtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self insertRowElement:rowElement AtSection:section Row:0 RowAnimation:rowAnimation];
 }
 
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheBeginingOfSection: (NSInteger) section {
-    return [self insertRowElements:rowElements AtSection:section Row:0];
+    return [self insertRowElements:rowElements AtTheBeginingOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertRowElements:(NSMutableArray *) rowElements AtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self insertRowElements:rowElements AtSection:section Row:0 RowAnimation:rowAnimation];
 }
 
 -(BOOL) insertRowElement:(RowElement *) rowElement AtIndexPath: (NSIndexPath *) indexPath {
@@ -247,6 +264,10 @@
 }
 
 -(BOOL) insertRowElement:(RowElement *) rowElement AtSection: (NSInteger) section Row: (NSInteger) row {
+    return [self insertRowElement:rowElement AtSection:section Row:row RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertRowElement:(RowElement *) rowElement AtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section Row:row-1]) {
         return NO;
     }
@@ -254,7 +275,7 @@
     NSMutableArray *indexPathArray = [NSMutableArray arrayWithObject:indexPath];
     [self.sectionManager insertRowElement:rowElement AtSection:section Row:row];
     [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     
     return YES;
@@ -265,6 +286,10 @@
 }
 
 -(BOOL) insertRowElements:(NSMutableArray *) rowElements AtSection: (NSInteger) section Row: (NSInteger) row {
+    return [self insertRowElements:rowElements AtSection:section Row:row RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertRowElements:(NSMutableArray *) rowElements AtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section Row:row-1]) {
         return NO;
     }
@@ -275,7 +300,7 @@
     }
     [self.sectionManager insertRowElements:rowElements AtSection:section Row:row];
     [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     
     return YES;
@@ -285,19 +310,34 @@
 #pragma mark Managing the deletion of cells
 
 -(BOOL) removeRowElementAtTheBeginingOfSection: (NSInteger) section {
-    return [self removeRowElementAtSection:section Row:0];
+    return [self removeRowElementAtTheBeginingOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) removeRowElementAtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self removeRowElementAtSection:section Row:0 RowAnimation:rowAnimation];
 }
 
 -(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section {
-    return [self removeRowElements:numberOfElements AtSection:section Row:0];
+    return [self removeRowElements:numberOfElements AtTheBeginingOfSection:section RowAnimation:self.rowAnimation];
+}
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheBeginingOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self removeRowElements:numberOfElements AtSection:section Row:0 RowAnimation:rowAnimation];
 }
 
 -(BOOL) removeRowElementAtTheEndOfSection: (NSInteger) section {
-    return [self removeRowElementAtSection:section Row:([self.sectionManager getNumberOfRows:section] - 1)];
+    return [self removeRowElementAtTheEndOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) removeRowElementAtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+   return [self removeRowElementAtSection:section Row:([self.sectionManager getNumberOfRows:section] - 1) RowAnimation:rowAnimation];
 }
 
 -(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section {
-    return [self removeRowElements:numberOfElements AtSection:section Row:([self.sectionManager getNumberOfRows:section] - numberOfElements)];
+    return [self removeRowElements:numberOfElements AtTheEndOfSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) removeRowElements:(NSInteger) numberOfElements AtTheEndOfSection: (NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self removeRowElements:numberOfElements AtSection:section Row:([self.sectionManager getNumberOfRows:section] - numberOfElements) RowAnimation:rowAnimation];
 }
 
 -(BOOL) removeRowElementAtIndexPath: (NSIndexPath *) indexPath {
@@ -305,6 +345,10 @@
 }
 
 -(BOOL) removeRowElementAtSection: (NSInteger) section Row: (NSInteger) row {
+    return [self removeRowElementAtSection:section Row:row RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) removeRowElementAtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section Row:row]) {
         return NO;
     }
@@ -313,7 +357,7 @@
     [self.sectionManager deleteRowElementAtSection:section Row:row];
     //    [self.sectionManager insertRowElement:rowElement AtSection:section Row:row];
     [self.tableView beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView deleteRowsAtIndexPaths:indexPathArray withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     
     return YES;
@@ -324,6 +368,10 @@
 }
 
 -(BOOL) removeRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row {
+    return [self removeRowElements:numberOfElements AtSection:section Row:row RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) removeRowElements: (NSInteger) numberOfElements AtSection: (NSInteger) section Row: (NSInteger) row RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section Row:row]) {
         return NO;
     }
@@ -339,12 +387,11 @@
     }
     [self.sectionManager deleteRowElements:numberOfElements AtSection:section Row:row];
     [self.tableView beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView deleteRowsAtIndexPaths:indexPathArray withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     
     return YES;
 }
-
 
 #pragma mark Manage Sections
 
