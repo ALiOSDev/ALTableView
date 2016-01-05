@@ -86,21 +86,28 @@
 //Replace row methods
 -(BOOL) replaceRowElementAtIndexPath: (NSIndexPath *) indexPath WithRowElement: (RowElement *) rowElement;
 -(BOOL) replaceRowElementAtSection: (NSInteger) section Row: (NSInteger) row WithRowElement: (RowElement *) rowElement;
+-(BOOL) replaceRowElementAtSection: (NSInteger) section Row: (NSInteger) row WithRowElement: (RowElement *) rowElement RowAnimation: (UITableViewRowAnimation) rowAnimation;
 
 //Add section methods
--(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section;
--(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section;
 -(BOOL) insertSectionElement:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) insertSectionElement:(SectionElement *) section AtSection:(NSInteger) position;
+-(BOOL) insertSectionElement:(SectionElement *) section AtSection:(NSInteger) position RowAnimation: (UITableViewRowAnimation) rowAnimation;
+-(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section;
+-(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
+-(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section;
+-(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
+
 
 //Replace section methods
 -(void) replaceAllSectionElements:(NSMutableArray *) sections;
 -(BOOL) replaceSectionElementAtIndexPath: (NSIndexPath *) indexPath WithSectionElement: (SectionElement *) sectionElement;
 -(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement;
+-(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement RowAnimation: (UITableViewRowAnimation) rowAnimation;
 
 //Remove section methods
 -(BOOL) removeSectionElementAtIndexPath: (NSIndexPath *) indexPath;
 -(BOOL) removeSectionElementAtSection:(NSInteger) section;
+-(BOOL) removeSectionElementAtSection:(NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation;
 
 //Get section methods
 -(NSMutableArray *) getAllSectionElements;

@@ -160,6 +160,10 @@
 }
 
 -(BOOL) replaceRowElementAtSection: (NSInteger) section Row: (NSInteger) row WithRowElement: (RowElement *) rowElement{
+    return [self replaceRowElementAtSection:section Row:row WithRowElement:rowElement RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) replaceRowElementAtSection: (NSInteger) section Row: (NSInteger) row WithRowElement: (RowElement *) rowElement RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section Row:row]) {
         return NO;
     }
@@ -167,7 +171,7 @@
     NSMutableArray *indexPathArray = [NSMutableArray arrayWithObject:indexPath];
     [self.sectionManager replaceRowElementAtSection:section Row:row WithRowElement:rowElement];
     [self.tableView beginUpdates];
-    [self.tableView reloadRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadRowsAtIndexPaths:indexPathArray withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     
     return YES;
@@ -396,11 +400,19 @@
 #pragma mark Manage Sections
 
 -(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section {
-    return [self insertSectionElement:section AtSection:0];
+    return [self insertSectionElementAtTheBeginingOfTableView:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertSectionElementAtTheBeginingOfTableView:(SectionElement *) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self insertSectionElement:section AtSection:0 RowAnimation:rowAnimation];
 }
 
 -(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section {
-    return [self insertSectionElement:section AtSection:[self.sectionManager getNumberOfSections]];
+    return [self insertSectionElementAtTheEndOfTableView:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertSectionElementAtTheEndOfTableView:(SectionElement *) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
+    return [self insertSectionElement:section AtSection:[self.sectionManager getNumberOfSections] RowAnimation:rowAnimation];
 }
 
 -(BOOL) insertSectionElement:(SectionElement *) section AtIndexPath: (NSIndexPath *) indexPath {
@@ -408,13 +420,17 @@
 }
 
 -(BOOL) insertSectionElement:(SectionElement *) section AtSection:(NSInteger) position {
+    return [self insertSectionElement:section AtSection:position RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) insertSectionElement:(SectionElement *) section AtSection:(NSInteger) position RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:position]) {
         return NO;
     }
     
     [self.sectionManager insertSection:section AtPosition:position];
     [self.tableView beginUpdates];
-    [self.tableView insertSections:[NSIndexSet indexSetWithIndex:position] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView insertSections:[NSIndexSet indexSetWithIndex:position] withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     return YES;
 }
@@ -424,12 +440,16 @@
 }
 
 -(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement {
+    return [self replaceSectionElementAtSection:section WithSectionElement:sectionElement RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) replaceSectionElementAtSection: (NSInteger) section WithSectionElement: (SectionElement *) sectionElement RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section]) {
         return NO;
     }
     [self.sectionManager replaceSection:sectionElement AtPosition:section];
     [self.tableView beginUpdates];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     return YES;
 }
@@ -439,12 +459,16 @@
 }
 
 -(BOOL) removeSectionElementAtSection:(NSInteger) section {
+    return [self removeSectionElementAtSection:section RowAnimation:self.rowAnimation];
+}
+
+-(BOOL) removeSectionElementAtSection:(NSInteger) section RowAnimation: (UITableViewRowAnimation) rowAnimation {
     if (![self checkParametersSection:section]) {
         return NO;
     }
     [self.sectionManager removeSectionAtPosition:section];
     [self.tableView beginUpdates];
-    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:rowAnimation];
     [self.tableView endUpdates];
     return YES;
 }
