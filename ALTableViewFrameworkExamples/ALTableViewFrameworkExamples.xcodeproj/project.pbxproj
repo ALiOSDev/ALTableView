@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F9654201C415049004CD088 /* TableViewExample4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F96541F1C415049004CD088 /* TableViewExample4.swift */; };
+		5F9654251C41513C004CD088 /* MasterExample4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */; };
+		5F9654291C4156D6004CD088 /* Example4Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654281C4156D6004CD088 /* Example4Cell1.swift */; };
+		5F96542B1C4156E9004CD088 /* Example4Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96542A1C4156E9004CD088 /* Example4Cell1.xib */; };
 		5FC732D51BFFA0C000AA134C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732D41BFFA0C000AA134C /* main.m */; };
 		5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732D71BFFA0C000AA134C /* AppDelegate.m */; };
 		5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732DA1BFFA0C000AA134C /* MasterViewController.m */; };
@@ -77,6 +81,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F96541F1C415049004CD088 /* TableViewExample4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample4.swift; sourceTree = "<group>"; };
+		5F9654231C41513C004CD088 /* MasterExample4TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample4TableViewCell.h; sourceTree = "<group>"; };
+		5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample4TableViewCell.m; sourceTree = "<group>"; };
+		5F9654271C41551A004CD088 /* ALTableViewFramework-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALTableViewFramework-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F9654281C4156D6004CD088 /* Example4Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4Cell1.swift; sourceTree = "<group>"; };
+		5F96542A1C4156E9004CD088 /* Example4Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example4Cell1.xib; sourceTree = "<group>"; };
 		5FC732D01BFFA0C000AA134C /* ALTableViewFrameworkExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALTableViewFrameworkExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC732D41BFFA0C000AA134C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FC732D61BFFA0C000AA134C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -174,6 +184,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F96541D1C415021004CD088 /* Example 4 */ = {
+			isa = PBXGroup;
+			children = (
+				5F96541F1C415049004CD088 /* TableViewExample4.swift */,
+				5F9654281C4156D6004CD088 /* Example4Cell1.swift */,
+				5F96542A1C4156E9004CD088 /* Example4Cell1.xib */,
+			);
+			path = "Example 4";
+			sourceTree = "<group>";
+		};
 		5FC732C71BFFA0C000AA134C = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +228,7 @@
 				ED375A8E1BFFC3800080D158 /* Example 1 */,
 				ED8627EB1C0B0F26000D4535 /* Example 2 */,
 				ED8627F21C0B0F26000D4535 /* Example 3 */,
+				5F96541D1C415021004CD088 /* Example 4 */,
 				5FC732E71BFFA0C000AA134C /* Info.plist */,
 				5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */,
 				5FC732DF1BFFA0C000AA134C /* Main.storyboard */,
@@ -250,6 +271,7 @@
 		5FFE152D1C007F730097AE97 /* ALTableViewClasses */ = {
 			isa = PBXGroup;
 			children = (
+				5F9654271C41551A004CD088 /* ALTableViewFramework-Bridging-Header.h */,
 				5FFE152E1C007F730097AE97 /* ALTableViewController.h */,
 				5FFE152F1C007F730097AE97 /* ALTableViewController.m */,
 				5FFE15301C007F730097AE97 /* ALTableViewController.xib */,
@@ -302,15 +324,15 @@
 		ED375A8E1BFFC3800080D158 /* Example 1 */ = {
 			isa = PBXGroup;
 			children = (
-				ED375AA31BFFCD3D0080D158 /* Example1ViewController.h */,
-				ED375AA41BFFCD3D0080D158 /* Example1ViewController.m */,
-				ED375AA51BFFCD3D0080D158 /* Example1ViewController.xib */,
 				ED375AA81BFFCDF40080D158 /* Example1Cell1.h */,
 				ED375AA91BFFCDF40080D158 /* Example1Cell1.m */,
 				ED375AAA1BFFCDF40080D158 /* Example1Cell1.xib */,
 				ED375AAD1BFFCE030080D158 /* Example1Cell2.h */,
 				ED375AAE1BFFCE030080D158 /* Example1Cell2.m */,
 				ED375AAF1BFFCE030080D158 /* Example1Cell2.xib */,
+				ED375AA31BFFCD3D0080D158 /* Example1ViewController.h */,
+				ED375AA41BFFCD3D0080D158 /* Example1ViewController.m */,
+				ED375AA51BFFCD3D0080D158 /* Example1ViewController.xib */,
 			);
 			path = "Example 1";
 			sourceTree = "<group>";
@@ -318,15 +340,17 @@
 		ED375A8F1BFFC3910080D158 /* Master */ = {
 			isa = PBXGroup;
 			children = (
-				ED375A901BFFC3B30080D158 /* MasterTableViewCell.h */,
-				ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */,
-				ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */,
 				ED375A951BFFC5050080D158 /* MasterExample1TableViewCell.h */,
 				ED375A961BFFC5050080D158 /* MasterExample1TableViewCell.m */,
 				ED375A981BFFC5130080D158 /* MasterExample2TableViewCell.h */,
 				ED375A991BFFC5130080D158 /* MasterExample2TableViewCell.m */,
 				ED8627FB1C0B11C3000D4535 /* MasterExample3TableViewCell.h */,
 				ED8627FC1C0B11C3000D4535 /* MasterExample3TableViewCell.m */,
+				5F9654231C41513C004CD088 /* MasterExample4TableViewCell.h */,
+				5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */,
+				ED375A901BFFC3B30080D158 /* MasterTableViewCell.h */,
+				ED375A911BFFC3B30080D158 /* MasterTableViewCell.m */,
+				ED375A921BFFC3B30080D158 /* MasterTableViewCell.xib */,
 			);
 			path = Master;
 			sourceTree = "<group>";
@@ -498,6 +522,7 @@
 				ED8627F61C0B0F26000D4535 /* Example2ViewController.xib in Resources */,
 				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
 				ED8627F41C0B0F26000D4535 /* Example2Cell1.xib in Resources */,
+				5F96542B1C4156E9004CD088 /* Example4Cell1.xib in Resources */,
 				ED375AA71BFFCD3D0080D158 /* Example1ViewController.xib in Resources */,
 				EDD273A51C12ED2B0051929C /* TweetTableViewCell.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
@@ -578,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9654201C415049004CD088 /* TableViewExample4.swift in Sources */,
 				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
 				5FFE153E1C007F730097AE97 /* RowElement.m in Sources */,
 				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
@@ -590,9 +616,11 @@
 				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
 				ED375AA61BFFCD3D0080D158 /* Example1ViewController.m in Sources */,
 				ED8627FD1C0B11C3000D4535 /* MasterExample3TableViewCell.m in Sources */,
+				5F9654251C41513C004CD088 /* MasterExample4TableViewCell.m in Sources */,
 				5FFE15401C007F730097AE97 /* SectionManager.m in Sources */,
 				ED8627F31C0B0F26000D4535 /* Example2Cell1.m in Sources */,
 				ED375AAB1BFFCDF40080D158 /* Example1Cell1.m in Sources */,
+				5F9654291C4156D6004CD088 /* Example4Cell1.swift in Sources */,
 				EDD273A41C12ED2B0051929C /* TweetTableViewCell.m in Sources */,
 				5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */,
 				ED86284E1C12525E000D4535 /* TwitterUser.m in Sources */,
@@ -742,6 +770,7 @@
 			baseConfigurationReference = E25F0A4E639D10B6D12D471E /* Pods-ALTableViewFrameworkExamples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -756,6 +785,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ALTableViewFrameworkExamples/ALTableViewClasses/ALTableViewFramework-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -764,6 +795,7 @@
 			baseConfigurationReference = F940DAC9316A9FE3C5BFA3C7 /* Pods-ALTableViewFrameworkExamples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -778,6 +810,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.AL.ALTableViewFrameworkExamples2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ALTableViewFrameworkExamples/ALTableViewClasses/ALTableViewFramework-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -12,6 +12,7 @@
 #import "MasterExample1TableViewCell.h"
 #import "MasterExample2TableViewCell.h"
 #import "MasterExample3TableViewCell.h"
+#import "MasterExample4TableViewCell.h"
 
 @interface MasterViewController ()
 
@@ -70,6 +71,10 @@
     RowElement * example3 = [[RowElement alloc] initWithClassName:[MasterExample3TableViewCell class] object:@"Example 3 Twitter Timeline with automatic dimension cells" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example3];
     example3.estimateHeightMode = YES;
+    
+    RowElement * example4 = [[RowElement alloc] initWithClassName:[MasterExample4TableViewCell class] object:@"Example 4 Swift" heightCell:height cellIdentifier:@"MasterTableViewCell"];
+    [rows addObject:example4];
+    example4.estimateHeightMode = YES;
     
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
     
