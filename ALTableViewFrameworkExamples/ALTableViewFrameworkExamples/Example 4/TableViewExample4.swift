@@ -14,7 +14,8 @@ class TableViewExample4 : ALTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Example 4";
+
         registerCells()
         replaceAllSectionElements(createElements())
         
