@@ -19,7 +19,6 @@ class TableViewExample4 : ALTableViewController {
         replaceAllSectionElements(createElements())
         
         tableView.tableFooterView = UIView.init()
-        tableView.backgroundColor = UIColor.redColor()
     }
     
     
@@ -27,7 +26,6 @@ class TableViewExample4 : ALTableViewController {
     
     func registerCells() {
         self.registerClass(Example4Cell1.classForCoder(), cellIdentifier: "Example4Cell1")
-        //self.registerClass(Example1Cell2.classForCoder(), cellIdentifier: "Example1Cell2")
     }
     
     
