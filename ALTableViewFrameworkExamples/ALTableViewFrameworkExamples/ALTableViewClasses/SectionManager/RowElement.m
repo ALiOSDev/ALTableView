@@ -111,8 +111,9 @@
     
     if (!self.cellIdentifier) {
         cellIdentifier = NSStringFromClass(self.className);
-        if ([cellIdentifier componentsSeparatedByString:@"."].count == 2) {
-            cellIdentifier = [[cellIdentifier componentsSeparatedByString:@"."] objectAtIndex:1];
+        if ([cellIdentifier componentsSeparatedByString:@"."].count > 1) {
+            NSArray * tempArray = [cellIdentifier componentsSeparatedByString:@"."];
+            cellIdentifier = [tempArray objectAtIndex:[tempArray count] - 1];
         }
     }
     
