@@ -111,6 +111,9 @@
     
     if (!self.cellIdentifier) {
         cellIdentifier = NSStringFromClass(self.className);
+        if ([cellIdentifier componentsSeparatedByString:@"."].count == 2) {
+            cellIdentifier = [[cellIdentifier componentsSeparatedByString:@"."] objectAtIndex:1];
+        }
     }
     
     id cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
