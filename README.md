@@ -9,10 +9,61 @@ This framework is still on development. We cannot guarantee yet that all the fea
 Authors
 --------
 
-[@lorencr7](https://github.com/lorencr7) Lorenzo Villarroel 
-[@elabi3](https://github.com/elabi3) Abimael Barea
+Lorenzo Villarroel [@lorencr7](https://github.com/lorencr7) 
+Abimael Barea [@elabi3](https://github.com/elabi3) 
 
-Example
+Create your cells and we manage them
+--------
+
+Inherit from UITableViewCell
+
+```objective-c
+
+#import "Example1Cell1.h"
+
+@implementation Example1Cell1
+
+-(void) executeAction: (UIViewController *) viewController {
+    self.label.text = @"Tapping cells is funny, huh?";
+}
+
+-(void) configureCell: (NSNumber *) object {
+    self.label.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
+}
+
+-(void) cellDeselected {
+    self.label.text = [NSString stringWithFormat:@"deselected"];
+}
+
+@end
+
+```
+
+and use it:
+
+```objective-c
+
+RowElement * row1 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@40 heightCell:@40 cellIdentifier:nil];
+
+```
+
+or just use blocks:
+
+```objective-c
+
+RowElement * row2 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle 
+    CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
+        cell.textLabel.text = @"Cell selected";
+    } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell)  {
+        cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
+        cell.detailTextLabel.text = @"hola";
+    } CellDeselectedHandler:^(UITableViewCell * cell) {
+        cell.textLabel.text = @"Cell deselected";
+    }];
+    
+```
+
+Example of Custom TableView
 --------
 
 You can inherit from ALTableView just like if you inherit from a UITableViewController.
