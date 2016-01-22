@@ -9,8 +9,8 @@ This framework is still on development. We cannot guarantee yet that all the fea
 Authors
 --------
 
-	[@lorencr7](https://github.com/lorencr7) Lorenzo Villarroel 
-	[@elabi3](https://github.com/elabi3) Abimael Barea
+[@lorencr7](https://github.com/lorencr7) Lorenzo Villarroel 
+[@elabi3](https://github.com/elabi3) Abimael Barea
 
 Example
 --------
