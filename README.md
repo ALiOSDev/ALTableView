@@ -8,8 +8,9 @@ This framework is still on development. We cannot guarantee yet that all the fea
 
 Authors
 --------
-	@lorencr7 Lorenzo Villarroel 
-	@elabi3 Abimael Barea
+
+	[@lorencr7](https://github.com/lorencr7) Lorenzo Villarroel 
+	[@elabi3](https://github.com/elabi3) Abimael Barea
 
 Example
 --------
@@ -35,7 +36,8 @@ You can inherit from ALTableView just like if you inherit from a UITableViewCont
     
     // Declare your cells and actions
     RowElement * row1 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@40 heightCell:@40 cellIdentifier:nil];
-    RowElement * row2 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
+    RowElement * row2 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle 
+    CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
         cell.textLabel.text = @"Cell selected";
     } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell)  {
         cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
