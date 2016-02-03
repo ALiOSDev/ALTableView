@@ -9,8 +9,13 @@ This framework is still on development. We cannot guarantee yet that all the fea
 Authors
 --------
 
+Abimael Barea [@elabi3](https://github.com/elabi3) - 
 Lorenzo Villarroel [@lorencr7](https://github.com/lorencr7) 
-Abimael Barea [@elabi3](https://github.com/elabi3) 
+
+How it works
+--------
+
+<img src="https://raw.github.com/roomorama/Caldroid/master/screenshot/dark.png" width="270">
 
 Create your cells and we manage them
 --------
