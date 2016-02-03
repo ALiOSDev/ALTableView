@@ -15,7 +15,7 @@ Lorenzo Villarroel [@lorencr7](https://github.com/lorencr7)
 How it works
 --------
 
-<img src="https://raw.github.com/roomorama/Caldroid/master/screenshot/dark.png" width="270">
+<img src="https://github.com/ALiOSDev/ALTableView/blob/master/screenshots/ALTableViewDiagram.png">
 
 Create your cells and we manage them
 --------
