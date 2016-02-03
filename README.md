@@ -11,15 +11,15 @@ How it works
 
 This framework inherit from UITableViewController and manage the delegate and datasource of UITableView for you. For doing that you only need to create  SectionElement array and for each one a RowElement array.
 
-SectionElement (Represents a section of UITableView)
+<img src="https://github.com/ALiOSDev/ALTableView/blob/master/screenshots/ALTableViewDiagram.png">
+
+**SectionElement** (Represents a section of UITableView)
 - Provide your customs header and footer views
 - Do your section COLLAPSABLE with just a boolean value 
 
-RowElement (Contains a UITableView cell and the data for that cell)
+**RowElement** (Contains a UITableView cell and the data for that cell)
 - We create your cells and bind the data that you provide us 
 - Each cell could have a different layout and do diferrent actions 
-
-<img src="https://github.com/ALiOSDev/ALTableView/blob/master/screenshots/ALTableViewDiagram.png">
 
 Create your cells and we manage them
 --------
