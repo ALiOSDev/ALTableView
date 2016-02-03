@@ -15,6 +15,8 @@ Lorenzo Villarroel [@lorencr7](https://github.com/lorencr7)
 How it works
 --------
 
+This framework inherit from UITableViewController and manage the delegate and datasource of UITableView for you. For doing that you only need to create  SectionElement array and for each one a RowElement array.
+
 <img src="https://github.com/ALiOSDev/ALTableView/blob/master/screenshots/ALTableViewDiagram.png">
 
 Create your cells and we manage them
