@@ -26,7 +26,7 @@ Create your cells and we manage them
 
 Easy to use, just inherit from UITableViewCell, and implement those 3 methods. 
 - **executeAction** receive the current viewController and represents the actions when cell is pressed
-- **configureCell** receive like parameter the data that you want to show in the cell and its your work bind the data with de ui
+- **configureCell** receive like parameter the data that you want to show in the cell
 - **cellDeselected** it is call when your cell is deselected
 
 ```objective-c
