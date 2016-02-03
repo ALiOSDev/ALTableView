@@ -17,14 +17,17 @@ This framework inherit from UITableViewController and manage the delegate and da
 - Provide your customs header and footer views
 - Do your section COLLAPSABLE with just a boolean value 
 
-**RowElement** (Contains a UITableView cell and the data for that cell)
+**RowElement** (Contains a UITableViewCell and the data for it)
 - We create your cells and bind the data that you provide us 
 - Each cell could have a different layout and do diferrent actions 
 
 Create your cells and we manage them
 --------
 
-Inherit from UITableViewCell
+Easy to use, just inherit from UITableViewCell, and implement those 3 methods. 
+- **executeAction** receive the current viewController and represents the actions when cell is pressed
+- **configureCell** receive like parameter the data that you want to show in the cell and its your work bind the data with de ui
+- **cellDeselected** it is call when your cell is deselected
 
 ```objective-c
 
@@ -48,7 +51,7 @@ Inherit from UITableViewCell
 
 ```
 
-and use it:
+Create a RowElement that encapsules your cell and data
 
 ```objective-c
 
@@ -56,7 +59,7 @@ RowElement * row1 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] 
 
 ```
 
-or just use blocks:
+If you don't want to implement the 3 methods you can use blocks instead
 
 ```objective-c
 
