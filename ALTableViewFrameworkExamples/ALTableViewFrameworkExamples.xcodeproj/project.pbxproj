@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F636AD31C67CC020026D98F /* Example1Cell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F636AD21C67CC020026D98F /* Example1Cell3.m */; };
+		5F636AD51C67CC410026D98F /* Example1Cell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F636AD41C67CC410026D98F /* Example1Cell3.xib */; };
 		5F9654201C415049004CD088 /* TableViewExample4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F96541F1C415049004CD088 /* TableViewExample4.swift */; };
 		5F9654251C41513C004CD088 /* MasterExample4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */; };
 		5F9654291C4156D6004CD088 /* Example4Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654281C4156D6004CD088 /* Example4Cell1.swift */; };
@@ -81,6 +83,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F636AD11C67CC020026D98F /* Example1Cell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1Cell3.h; sourceTree = "<group>"; };
+		5F636AD21C67CC020026D98F /* Example1Cell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1Cell3.m; sourceTree = "<group>"; };
+		5F636AD41C67CC410026D98F /* Example1Cell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1Cell3.xib; sourceTree = "<group>"; };
 		5F96541F1C415049004CD088 /* TableViewExample4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample4.swift; sourceTree = "<group>"; };
 		5F9654231C41513C004CD088 /* MasterExample4TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample4TableViewCell.h; sourceTree = "<group>"; };
 		5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample4TableViewCell.m; sourceTree = "<group>"; };
@@ -330,6 +335,9 @@
 				ED375AAD1BFFCE030080D158 /* Example1Cell2.h */,
 				ED375AAE1BFFCE030080D158 /* Example1Cell2.m */,
 				ED375AAF1BFFCE030080D158 /* Example1Cell2.xib */,
+				5F636AD11C67CC020026D98F /* Example1Cell3.h */,
+				5F636AD21C67CC020026D98F /* Example1Cell3.m */,
+				5F636AD41C67CC410026D98F /* Example1Cell3.xib */,
 				ED375AA31BFFCD3D0080D158 /* Example1ViewController.h */,
 				ED375AA41BFFCD3D0080D158 /* Example1ViewController.m */,
 				ED375AA51BFFCD3D0080D158 /* Example1ViewController.xib */,
@@ -519,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F636AD51C67CC410026D98F /* Example1Cell3.xib in Resources */,
 				ED8627F61C0B0F26000D4535 /* Example2ViewController.xib in Resources */,
 				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
 				ED8627F41C0B0F26000D4535 /* Example2Cell1.xib in Resources */,
@@ -625,6 +634,7 @@
 				5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */,
 				ED86284E1C12525E000D4535 /* TwitterUser.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
+				5F636AD31C67CC020026D98F /* Example1Cell3.m in Sources */,
 				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
 				5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */,
 				ED8628481C125247000D4535 /* MetaModel.m in Sources */,

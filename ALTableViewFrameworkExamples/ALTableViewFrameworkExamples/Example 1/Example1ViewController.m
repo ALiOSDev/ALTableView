@@ -9,6 +9,7 @@
 #import "Example1ViewController.h"
 #import "Example1Cell1.h"
 #import "Example1Cell2.h"
+#import "Example1Cell3.h"
 
 @interface Example1ViewController ()
 
@@ -38,6 +39,7 @@
 -(void) registerCells {
     [self registerClass:[Example1Cell1 class] CellIdentifier:@"Example1Cell1"];
     [self registerClass:[Example1Cell2 class] CellIdentifier:@"Example1Cell2"];
+    [self registerClass:[Example1Cell2 class] CellIdentifier:@"Example1Cell3"];
 }
 
 
@@ -54,15 +56,30 @@
     RowElement * row4 = [[RowElement alloc] initWithClassName:[Example1Cell2 class] object:@100 heightCell:@100 cellIdentifier:nil];
     RowElement * row5 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@120 heightCell:@120 cellIdentifier:nil];
     RowElement * row6 = [[RowElement alloc] initWithClassName:[Example1Cell2 class] object:@140 heightCell:@140 cellIdentifier:nil];
-    RowElement * row7 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
+    RowElement * row7 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle
+      CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
         cell.textLabel.text = @"Cell selected";
-    } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell)  {
+        
+        for (NSDictionary *dic in [[self retrieveAllElements] allValues]) {
+            NSLog(@"%@", dic);
+        }
+    } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell) {
         cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
         cell.detailTextLabel.text = @"hola";
     } CellDeselectedHandler:^(UITableViewCell * cell) {
         cell.textLabel.text = @"Cell deselected";
+    } CellRetrieveElementsHandler:^(id cell) {
+        UITableViewCell * myCell = (UITableViewCell *) cell;
+        NSMutableDictionary *myDic = [NSMutableDictionary dictionary];
+        
+        [myDic setObject:myCell.textLabel.text forKey:@"myTextLabel"];
+        [myDic setObject:myCell.detailTextLabel.text forKey:@"myDetailTextLabel"];
+
+        return myDic;
     }];
     
+    RowElement * row8 = [[RowElement alloc] initWithClassName:[Example1Cell3 class] object:@140 heightCell:@200 cellIdentifier:nil];
+
     [rows addObject:row1];
     [rows addObject:row2];
     [rows addObject:row3];
@@ -70,7 +87,8 @@
     [rows addObject:row5];
     [rows addObject:row6];
     [rows addObject:row7];
-    
+    [rows addObject:row8];
+
     SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
     
     [sections addObject:sectionElement];

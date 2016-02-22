@@ -19,6 +19,7 @@
 @property (strong, nonatomic) CellPressedHandler cellPressedHandler;
 @property (strong, nonatomic) CellCreatedHandler cellCreatedHandler;
 @property (strong, nonatomic) CellDeselectedHandler cellDeselectedHandler;
+@property (strong, nonatomic) CellRetrieveElementsHandler cellRetrieveElementsHandler;
 
 @property(assign, nonatomic) UITableViewCellStyle cellStyle;
 
@@ -80,6 +81,22 @@
     return self;
 }
 
++ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler CellRetrieveElementsHandler:(CellRetrieveElementsHandler) cellRetrieveElementsHandler{
+    return [[self alloc] initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier CellStyle:cellStyle CellPressedHandler:cellPressedHandler CellCreatedHandler:cellCreatedHandler CellDeselectedHandler:cellDeselectedHandler ];
+}
+
+- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler CellRetrieveElementsHandler:(CellRetrieveElementsHandler) cellRetrieveElementsHandler{
+    self = [self initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier];
+    if (self) {
+        self.cellPressedHandler = cellPressedHandler;
+        self.cellCreatedHandler = cellCreatedHandler;
+        self.cellDeselectedHandler = cellDeselectedHandler;
+        self.cellRetrieveElementsHandler = cellRetrieveElementsHandler;
+        self.cellStyle = cellStyle;
+    }
+    return self;
+}
+
 
 #pragma mark - Private Methods
 
@@ -101,6 +118,7 @@
         self.cellIdentifier = nil;
     }
 }
+
 
 #pragma mark - Getters
 
@@ -145,6 +163,7 @@
     return [self.heightCell floatValue];
 }
 
+
 #pragma mark - Handlers
 
 -(void) executeAction: (UIViewController *) viewController {}
@@ -171,6 +190,73 @@
     if (self.cellDeselectedHandler) {
         self.cellDeselectedHandler(cell);
     }
+}
+
+-(NSDictionary *) retreiveElementsFromCell: (id) cell {
+    return [NSDictionary dictionary];
+}
+
+-(NSDictionary *) retreiveElements: (id) cell {
+    if ([cell respondsToSelector:@selector(retreiveElementsFromCell:)]) {
+        return [[NSDictionary alloc] initWithDictionary:[cell retreiveElementsFromCell: cell]];
+    }
+    
+    if (self.cellRetrieveElementsHandler) {
+        return self.cellRetrieveElementsHandler(cell);
+    }
+    
+    return [self getFieldsValues:cell];
+}
+
+
+#pragma mark - Auxiliar: retrieve values for elements in cell
+
+- (NSDictionary *) getFieldsValues:(NSObject *) object  {
+    NSDictionary * properties = [self getPropertiesDictionaryRepresentation:object];
+    
+    NSMutableDictionary * results = [NSMutableDictionary dictionary];
+    for (NSString *aKey in [properties allKeys]) {
+        NSDictionary *aValue = [properties valueForKey:aKey];
+        [results setValue:[self processUIElement:(UIView *) aValue] forKey:aKey];
+        //NSLog(@"Key : %@", aKey);
+        //NSLog(@"Value : %@", aValue);
+    }
+    
+    return results;
+}
+
+- (NSObject *) processUIElement:(UIView *) view {
+    if ([view isKindOfClass:UILabel.class]) {
+        return ((UILabel *) view).text;
+    } else if ([view isKindOfClass:UITextField.class]) {
+        return ((UITextField *) view).text;
+    } else if ([view isKindOfClass:UISwitch.class]) {
+        return ((UISwitch *) view).isOn ? @1 : @0;
+    }
+    
+    return nil;
+}
+
+- (NSDictionary *) getPropertiesDictionaryRepresentation: (NSObject *) object {
+    unsigned int count = 0;
+    // Get a list of all properties in the class.
+    objc_property_t *properties = class_copyPropertyList([object class], &count);
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        @try {
+            NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
+            NSString *value = [object valueForKey:key];
+            
+            // Only add to the NSDictionary if it's not nil.
+            if (value) [dictionary setObject:value forKey:key];
+        }@catch (NSException *exception) {
+            continue;
+        }
+    }
+    
+    free(properties);
+    return dictionary;
 }
 
 @end
