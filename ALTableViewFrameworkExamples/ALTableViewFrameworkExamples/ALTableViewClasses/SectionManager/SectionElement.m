@@ -78,6 +78,34 @@
     return self;
 }
 
++ (instancetype)sectionElementWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter sourceData:(NSMutableArray *) sourceData classForRow:(Class) className isExpandable: (BOOL) isExpandable {
+    return [[self alloc] initWithSectionTitleIndex:titleIndex viewHeader:viewHeader viewFooter:viewFooter heightHeader:heightHeader heightFooter:heightFooter sourceData:sourceData classForRow:className isExpandable:isExpandable];
+}
+
+- (instancetype)initWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter sourceData:(NSMutableArray *) sourceData classForRow:(Class) className isExpandable: (BOOL) isExpandable {
+    self = [super init];
+    if (self) {
+        self.sectionTitleIndex = titleIndex;
+        self.viewHeader = viewHeader;
+        self.viewFooter = viewFooter;
+        self.heightHeader = heightHeader;
+        self.heightFooter = heightFooter;
+        
+        NSMutableArray * rows = [NSMutableArray array];
+        for (NSObject * object in sourceData) {
+            NSNumber * height = @40;
+            RowElement * rowElement = [RowElement rowElementWithClassName:className object:object heightCell:height cellIdentifier:nil];
+            rowElement.estimateHeightMode = YES;
+            [rows addObject:rowElement];
+        }
+        
+        self.cellObjects = rows;
+        self.isExpandable = isExpandable;
+        [self commonInit];
+    }
+    return self;
+}
+
 -(void) commonInit {
     self.isOpened = YES;
     [self checkClassAttributes];

@@ -131,6 +131,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = backgroundColor ? backgroundColor : [UIColor clearColor];
     self.refreshControl.tintColor = refreshColor ? refreshColor : [UIColor blackColor];
+    
     // TODO: Customize pullToRefresh
     /*if (title && titleColor) {
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:titleColor
@@ -138,6 +139,7 @@
         NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
         self.refreshControl.attributedTitle = attributedTitle;
     }*/
+    
     [self.refreshControl addTarget:self
                             action:@selector(handlerPullToRefresh)
                   forControlEvents:UIControlEventValueChanged];

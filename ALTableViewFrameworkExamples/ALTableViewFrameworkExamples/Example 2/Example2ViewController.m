@@ -57,18 +57,29 @@
     
     for (NSString *firsLetterTitle in firstLetters) {
         NSString * sectionTitleIndex = firsLetterTitle;
-        NSMutableArray * rowElements = [NSMutableArray array];
+        NSMutableArray * rowsSourceData = [NSMutableArray array];
         
-        for (NSString * element in sourceData) {
+        /*for (NSString * element in sourceData) {
             if ([firsLetterTitle isEqualToString:[element substringToIndex:1]]) {
-                [rowElements addObject:[RowElement rowElementWithClassName:[Example2Cell1 class] object:element heightCell:@44 cellIdentifier:nil]];
+                [rowsSourceData addObject:[RowElement rowElementWithClassName:[Example2Cell1 class] object:element heightCell:@44 cellIdentifier:nil]];
             }
         }
         
         UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
         labelTitle.text = sectionTitleIndex;
         labelTitle.backgroundColor = [UIColor greenColor];
-        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil cellObjects:rowElements isExpandable:YES]];
+        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil cellObjects:rowsSourceData isExpandable:YES]];*/
+        
+        for (NSString * element in sourceData) {
+            if ([firsLetterTitle isEqualToString:[element substringToIndex:1]]) {
+                [rowsSourceData addObject:element];
+            }
+        }
+        
+        UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
+        labelTitle.text = sectionTitleIndex;
+        labelTitle.backgroundColor = [UIColor greenColor];
+        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil sourceData:rowsSourceData classForRow:[Example2Cell1 class] isExpandable:YES]];
     }
     
     return sections;
