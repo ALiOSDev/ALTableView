@@ -18,9 +18,8 @@
 typedef void (^CellPressedHandler)(UIViewController * viewController, id cell);
 typedef void (^CellCreatedHandler)(id object, id cell);
 typedef void (^CellDeselectedHandler)(id cell);
-typedef NSDictionary * (^CellRetrieveElementsHandler)(id cell);
 
-@interface RowElement : NSObject
+@interface RowElement : NSObject <UITextViewDelegate>
 
 @property (assign, nonatomic) BOOL estimateHeightMode;
 @property (strong, nonatomic) NSNumber * heightCell;
@@ -35,8 +34,6 @@ typedef NSDictionary * (^CellRetrieveElementsHandler)(id cell);
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
 
-+ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler CellRetrieveElementsHandler:(CellRetrieveElementsHandler) cellRetrieveElementsHandler;
-- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler CellRetrieveElementsHandler:(CellRetrieveElementsHandler) cellRetrieveElementsHandler;
 
 //Methods
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView;

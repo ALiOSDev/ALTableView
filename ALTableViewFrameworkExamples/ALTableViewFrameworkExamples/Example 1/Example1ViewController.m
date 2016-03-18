@@ -68,14 +68,6 @@
         cell.detailTextLabel.text = @"hola";
     } CellDeselectedHandler:^(UITableViewCell * cell) {
         cell.textLabel.text = @"Cell deselected";
-    } CellRetrieveElementsHandler:^(id cell) {
-        UITableViewCell * myCell = (UITableViewCell *) cell;
-        NSMutableDictionary *myDic = [NSMutableDictionary dictionary];
-        
-        [myDic setObject:myCell.textLabel.text forKey:@"myTextLabel"];
-        [myDic setObject:myCell.detailTextLabel.text forKey:@"myDetailTextLabel"];
-
-        return myDic;
     }];
     
     RowElement * row8 = [[RowElement alloc] initWithClassName:[Example1Cell3 class] object:@140 heightCell:@200 cellIdentifier:nil];

@@ -19,9 +19,11 @@
 @property (strong, nonatomic) CellPressedHandler cellPressedHandler;
 @property (strong, nonatomic) CellCreatedHandler cellCreatedHandler;
 @property (strong, nonatomic) CellDeselectedHandler cellDeselectedHandler;
-@property (strong, nonatomic) CellRetrieveElementsHandler cellRetrieveElementsHandler;
 
-@property(assign, nonatomic) UITableViewCellStyle cellStyle;
+@property (assign, nonatomic) UITableViewCellStyle cellStyle;
+
+@property (strong, nonatomic) NSDictionary * properties;
+@property (strong, nonatomic) NSMutableDictionary * valuesPropertiesCell;
 
 @end
 
@@ -76,22 +78,6 @@
         self.cellPressedHandler = cellPressedHandler;
         self.cellCreatedHandler = cellCreatedHandler;
         self.cellDeselectedHandler = cellDeselectedHandler;
-        self.cellStyle = cellStyle;
-    }
-    return self;
-}
-
-+ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler CellRetrieveElementsHandler:(CellRetrieveElementsHandler) cellRetrieveElementsHandler{
-    return [[self alloc] initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier CellStyle:cellStyle CellPressedHandler:cellPressedHandler CellCreatedHandler:cellCreatedHandler CellDeselectedHandler:cellDeselectedHandler ];
-}
-
-- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier CellStyle: (UITableViewCellStyle) cellStyle CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler CellRetrieveElementsHandler:(CellRetrieveElementsHandler) cellRetrieveElementsHandler{
-    self = [self initWithClassName:className object:object heightCell:heightCell cellIdentifier:cellIdentifier];
-    if (self) {
-        self.cellPressedHandler = cellPressedHandler;
-        self.cellCreatedHandler = cellCreatedHandler;
-        self.cellDeselectedHandler = cellDeselectedHandler;
-        self.cellRetrieveElementsHandler = cellRetrieveElementsHandler;
         self.cellStyle = cellStyle;
     }
     return self;
@@ -152,6 +138,7 @@
        self.cellCreatedHandler(self.object, cell);
     }
     
+    [self analyzeCell:cell];
     return cell;
 }
 
@@ -192,49 +179,67 @@
     }
 }
 
--(NSDictionary *) retreiveElementsFromCell: (id) cell {
-    return [NSDictionary dictionary];
-}
-
 -(NSDictionary *) retreiveElements: (id) cell {
-    if ([cell respondsToSelector:@selector(retreiveElementsFromCell:)]) {
-        return [[NSDictionary alloc] initWithDictionary:[cell retreiveElementsFromCell: cell]];
-    }
-    
-    if (self.cellRetrieveElementsHandler) {
-        return self.cellRetrieveElementsHandler(cell);
-    }
-    
-    return [self getFieldsValues:cell];
+    return self.valuesPropertiesCell;
 }
 
 
 #pragma mark - Auxiliar: retrieve values for elements in cell
 
-- (NSDictionary *) getFieldsValues:(NSObject *) object  {
-    NSDictionary * properties = [self getPropertiesDictionaryRepresentation:object];
+-(void) analyzeCell:(UITableViewCell *) cell {
+    self.properties = [self getPropertiesDictionaryRepresentation:cell];
     
-    NSMutableDictionary * results = [NSMutableDictionary dictionary];
-    for (NSString *aKey in [properties allKeys]) {
-        NSDictionary *aValue = [properties valueForKey:aKey];
-        [results setValue:[self processUIElement:(UIView *) aValue] forKey:aKey];
-        //NSLog(@"Key : %@", aKey);
-        //NSLog(@"Value : %@", aValue);
+    self.valuesPropertiesCell = [NSMutableDictionary dictionary];
+    for (NSString *aKey in [self.properties allKeys]) {
+        NSObject *aValue = [self.properties valueForKey:aKey];
+        [self processUIElement:(UIView *) aValue key:aKey];
     }
-    
-    return results;
 }
 
-- (NSObject *) processUIElement:(UIView *) view {
+- (void) processUIElement:(UIView *) view key:(NSString *) aKey {
     if ([view isKindOfClass:UILabel.class]) {
-        return ((UILabel *) view).text;
+        [self.valuesPropertiesCell setValue:((UILabel *) view).text forKey:aKey];
     } else if ([view isKindOfClass:UITextField.class]) {
-        return ((UITextField *) view).text;
+        [((UITextField *) view) addTarget:self
+                                   action:@selector(textFieldDidChange:)
+                         forControlEvents:UIControlEventEditingChanged];
+    } else if ([view isKindOfClass:UITextView.class]) {
+        [((UITextView *) view) setDelegate:self];
     } else if ([view isKindOfClass:UISwitch.class]) {
-        return ((UISwitch *) view).isOn ? @1 : @0;
+        [((UISwitch *) view) addTarget:self
+                             action:@selector(switchStateChanges:)
+                   forControlEvents:UIControlEventValueChanged];
     }
-    
-    return nil;
+}
+
+-(void) textFieldDidChange:(UITextField *) textField {
+    for (NSString *aKey in [self.properties allKeys]) {
+        NSObject *aValue = [self.properties valueForKey:aKey];
+        if ([textField isEqual:aValue]) {
+            [self.valuesPropertiesCell setValue:textField.text forKey:aKey];
+            break;
+        }
+    }
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    for (NSString *aKey in [self.properties allKeys]) {
+        NSObject *aValue = [self.properties valueForKey:aKey];
+        if ([textView isEqual:aValue]) {
+            [self.valuesPropertiesCell setValue:textView.text forKey:aKey];
+            break;
+        }
+    }
+}
+
+-(void) switchStateChanges:(UISwitch *) switchElement {
+    for (NSString *aKey in [self.properties allKeys]) {
+        NSObject *aValue = [self.properties valueForKey:aKey];
+        if ([switchElement isEqual:aValue]) {
+            [self.valuesPropertiesCell setValue:switchElement.isOn ? @1 : @0 forKey:aKey];
+            break;
+        }
+    }
 }
 
 - (NSDictionary *) getPropertiesDictionaryRepresentation: (NSObject *) object {

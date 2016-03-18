@@ -46,9 +46,9 @@ class TableViewExample4 : ALTableViewController {
                 cell.textLabel!!.text = "My height is: " + object.stringValue
                 cell.detailTextLabel!!.text = "Hola"
             },
-            cellDeselectedHandler: { (cell) -> Void in
+            cellDeselectedHandler: { cell in
                 cell.textLabel!!.text = "Cell deselected"
-        })
+            })
         
         rows.addObject(row1)
         rows.addObject(row2)
