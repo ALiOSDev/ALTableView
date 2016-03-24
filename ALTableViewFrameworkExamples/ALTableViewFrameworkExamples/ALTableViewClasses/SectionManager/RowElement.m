@@ -32,17 +32,37 @@
 
 #pragma mark - Constructor
 
-+ (instancetype)rowElementWithParams:(NSMutableDictionary *) dic {
++ (instancetype)rowElementWithParams:(NSDictionary *) dic {
     return [[self alloc] initWithParams:dic];
 }
 
-- (instancetype)initWithParams:(NSMutableDictionary *) dic {
+- (instancetype)initWithParams:(NSDictionary *) dic {
     self = [super init];
     if (self) {
         self.className = dic[PARAM_ROWELEMENT_CLASS];
         self.object = dic[PARAM_ROWELEMENT_OBJECT];
         self.heightCell = dic[PARAM_ROWELEMENT_HEIGHTCELL];
         self.cellIdentifier = dic[PARAM_ROWELEMENT_CELLIDENTIFIER];
+        self.cellStyle = [dic[PARAM_ROWELEMENT_CELL_STYLE] longLongValue];
+        self.cellPressedHandler = dic[PARAM_ROWELEMENT_CELL_PRESSED];
+        self.cellCreatedHandler = dic[PARAM_ROWELEMENT_CELL_CREATED];
+        self.cellDeselectedHandler = dic[PARAM_ROWELEMENT_CELL_DESELECT];
+        
+        [self checkClassAttributes];
+    }
+    return self;
+}
+
++ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell {
+    return [[self alloc] initWithClassName:className object:object heightCell:heightCell];
+}
+
+- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell {
+    self = [super init];
+    if (self) {
+        self.className = className;
+        self.object = object;
+        self.heightCell = heightCell;
         self.cellStyle = UITableViewCellStyleDefault;
         
         [self checkClassAttributes];
@@ -88,20 +108,28 @@
 
 -(void) checkClassAttributes {
     if (!self.className) {
-//        NSLog(@"%@ClassName param index is null", warningString);
         self.className = nil;
     }
     if (!self.object) {
-//        NSLog(@"%@Object param is null", warningString);
         self.object = nil;
     }
     if (!self.heightCell) {
-//        NSLog(@"%@HeightCell param is null", warningString);
         self.heightCell = [NSNumber numberWithInt:44];
     }
     if (!self.cellIdentifier) {
-//        NSLog(@"%@CellIdentifier param is null", warningString);
         self.cellIdentifier = nil;
+    }
+    if (!self.cellStyle) {
+        self.cellStyle = UITableViewCellStyleDefault;
+    }
+    if (!self.cellPressedHandler) {
+        self.cellPressedHandler = nil;
+    }
+    if (!self.cellCreatedHandler) {
+        self.cellCreatedHandler = nil;
+    }
+    if (!self.cellDeselectedHandler) {
+        self.cellDeselectedHandler = nil;
     }
 }
 
@@ -200,12 +228,15 @@
     if ([view isKindOfClass:UILabel.class]) {
         [self.valuesPropertiesCell setValue:((UILabel *) view).text forKey:aKey];
     } else if ([view isKindOfClass:UITextField.class]) {
+        [self.valuesPropertiesCell setValue:((UITextField *) view).text forKey:aKey];
         [((UITextField *) view) addTarget:self
                                    action:@selector(textFieldDidChange:)
                          forControlEvents:UIControlEventEditingChanged];
     } else if ([view isKindOfClass:UITextView.class]) {
+        [self.valuesPropertiesCell setValue:((UITextView *) view).text forKey:aKey];
         [((UITextView *) view) setDelegate:self];
     } else if ([view isKindOfClass:UISwitch.class]) {
+        [self.valuesPropertiesCell setValue:((UISwitch *) view).isOn ? @1 : @0  forKey:aKey];
         [((UISwitch *) view) addTarget:self
                              action:@selector(switchStateChanges:)
                    forControlEvents:UIControlEventValueChanged];

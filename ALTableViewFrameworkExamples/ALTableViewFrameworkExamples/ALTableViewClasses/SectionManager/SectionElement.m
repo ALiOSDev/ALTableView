@@ -40,11 +40,11 @@
     return self;
 }
 
-+ (instancetype)sectionElementWithParams:(NSMutableDictionary *) dic {
++ (instancetype)sectionElementWithParams:(NSDictionary *) dic {
     return [[self alloc] initWithParams:dic];
 }
 
-- (instancetype)initWithParams:(NSMutableDictionary *) dic {
+- (instancetype)initWithParams:(NSDictionary *) dic {
     self = [super init];
     if (self) {
         self.sectionTitleIndex = dic[PARAM_SECTIONELEMENT_SECTION_TITLE_INDEX];
@@ -54,6 +54,13 @@
         self.heightFooter = dic[PARAM_SECTIONELEMENT_HEIGHT_FOOTER];
         self.cellObjects = dic[PARAM_SECTIONELEMENT_CELL_OBJECTS];
         self.isExpandable = [dic[PARAM_SECTIONELEMENT_IS_EXPANDABLE] boolValue];
+
+        NSMutableArray * sourceData = dic[PARAM_SECTIONELEMENT_SOUCE_DATA];
+        Class classForRow = dic[PARAM_SECTIONELEMENT_CLASS_FOR_ROW];
+        if (!self.cellObjects && sourceData && classForRow) {
+            [self commonSourceData:sourceData classForRow:classForRow];
+        }
+        
         [self commonInit];
     }
     return self;
@@ -91,19 +98,23 @@
         self.heightHeader = heightHeader;
         self.heightFooter = heightFooter;
         
-        NSMutableArray * rows = [NSMutableArray array];
-        for (NSObject * object in sourceData) {
-            NSNumber * height = @40;
-            RowElement * rowElement = [RowElement rowElementWithClassName:className object:object heightCell:height cellIdentifier:nil];
-            rowElement.estimateHeightMode = YES;
-            [rows addObject:rowElement];
-        }
-        
-        self.cellObjects = rows;
+        [self commonSourceData:sourceData classForRow:className];
         self.isExpandable = isExpandable;
         [self commonInit];
     }
     return self;
+}
+
+-(void) commonSourceData:(NSMutableArray *) sourceData classForRow:(Class) className  {
+    NSMutableArray * rows = [NSMutableArray array];
+    for (NSObject * object in sourceData) {
+        NSNumber * height = @40;
+        RowElement * rowElement = [RowElement rowElementWithClassName:className object:object heightCell:height cellIdentifier:nil];
+        rowElement.estimateHeightMode = YES;
+        [rows addObject:rowElement];
+    }
+    
+    self.cellObjects = [[NSMutableArray alloc] initWithArray:rows];
 }
 
 -(void) commonInit {
@@ -117,11 +128,9 @@
 
 -(void) checkClassAttributes {
     if (!self.sectionTitleIndex) {
-        //        NSLog(@"%@Section title param index is null", warningString);
         self.sectionTitleIndex = @"";
     }
     if (!self.heightHeader) {
-        //        NSLog(@"%@Height header param is null", warningString);
         if (self.viewHeader) {
             self.heightHeader = [NSNumber numberWithDouble:self.viewHeader.frame.size.height];
         } else {
@@ -129,7 +138,6 @@
         }
     }
     if (!self.heightFooter) {
-        //        NSLog(@"%@Height footer param is null", warningString);
         if (self.viewFooter) {
             self.heightFooter = [NSNumber numberWithDouble:self.viewFooter.frame.size.height];
         } else {
@@ -137,17 +145,18 @@
         }
     }
     if (!self.viewHeader) {
-        //        NSLog(@"%@View header param is null", warningString);
         self.viewHeader = [UIView new];
     }
     if (!self.viewFooter) {
-        //        NSLog(@"%@View footer param is null", warningString);
         self.viewFooter = [UIView new];
     }
     
     if (!self.cellObjects) {
-        //        NSLog(@"%@cell objects param is null", warningString);
         self.cellObjects = [NSMutableArray array];
+    }
+    
+    if (!self.isExpandable) {
+        self.isExpandable = NO;
     }
 }
 

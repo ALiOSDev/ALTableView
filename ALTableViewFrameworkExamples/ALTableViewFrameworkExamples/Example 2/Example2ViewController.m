@@ -59,17 +59,6 @@
         NSString * sectionTitleIndex = firsLetterTitle;
         NSMutableArray * rowsSourceData = [NSMutableArray array];
         
-        /*for (NSString * element in sourceData) {
-            if ([firsLetterTitle isEqualToString:[element substringToIndex:1]]) {
-                [rowsSourceData addObject:[RowElement rowElementWithClassName:[Example2Cell1 class] object:element heightCell:@44 cellIdentifier:nil]];
-            }
-        }
-        
-        UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
-        labelTitle.text = sectionTitleIndex;
-        labelTitle.backgroundColor = [UIColor greenColor];
-        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil cellObjects:rowsSourceData isExpandable:YES]];*/
-        
         for (NSString * element in sourceData) {
             if ([firsLetterTitle isEqualToString:[element substringToIndex:1]]) {
                 [rowsSourceData addObject:element];
@@ -79,7 +68,16 @@
         UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
         labelTitle.text = sectionTitleIndex;
         labelTitle.backgroundColor = [UIColor greenColor];
-        [sections addObject:[SectionElement sectionElementWithSectionTitleIndex:sectionTitleIndex viewHeader:labelTitle viewFooter:nil heightHeader:@40 heightFooter:nil sourceData:rowsSourceData classForRow:[Example2Cell1 class] isExpandable:YES]];
+        
+        NSDictionary *paramsSection = @{
+                                        PARAM_SECTIONELEMENT_SECTION_TITLE_INDEX:sectionTitleIndex,
+                                        PARAM_SECTIONELEMENT_VIEW_HEADER:labelTitle,
+                                        PARAM_SECTIONELEMENT_HEIGHT_HEADER:@40,
+                                        PARAM_SECTIONELEMENT_IS_EXPANDABLE:[NSNumber numberWithBool:YES],
+                                        PARAM_SECTIONELEMENT_SOUCE_DATA:rowsSourceData,
+                                        PARAM_SECTIONELEMENT_CLASS_FOR_ROW:[Example2Cell1 class]
+                                        };
+        [sections addObject:[SectionElement sectionElementWithParams:paramsSection]];
     }
     
     return sections;

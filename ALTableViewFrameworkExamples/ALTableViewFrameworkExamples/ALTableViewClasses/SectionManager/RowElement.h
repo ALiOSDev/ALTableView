@@ -13,6 +13,11 @@
 #define PARAM_ROWELEMENT_CELLIDENTIFIER @"cellIdentifier"
 #define PARAM_ROWELEMENT_OBJECT @"object"
 #define PARAM_ROWELEMENT_HEIGHTCELL @"heightCell"
+#define PARAM_ROWELEMENT_CELL_STYLE @"cellStyle"
+#define PARAM_ROWELEMENT_CELL_PRESSED @"cellPressedHandler"
+#define PARAM_ROWELEMENT_CELL_CREATED @"cellCreatedHandler"
+#define PARAM_ROWELEMENT_CELL_DESELECT @"cellDeselectedHandler"
+
 
 //Definition of possible blocks
 typedef void (^CellPressedHandler)(UIViewController * viewController, id cell);
@@ -25,8 +30,11 @@ typedef void (^CellDeselectedHandler)(id cell);
 @property (strong, nonatomic) NSNumber * heightCell;
 
 //Constructors
-+ (instancetype)rowElementWithParams:(NSMutableDictionary *) dic;
-- (instancetype)initWithParams:(NSMutableDictionary *) dic;
++ (instancetype)rowElementWithParams:(NSDictionary *) dic;
+- (instancetype)initWithParams:(NSDictionary *) dic;
+
++ (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell;
+- (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell;
 
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell cellIdentifier:(NSString *) cellIdentifier;

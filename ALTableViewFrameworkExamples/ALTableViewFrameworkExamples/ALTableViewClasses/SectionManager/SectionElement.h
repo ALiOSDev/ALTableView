@@ -16,6 +16,8 @@
 #define PARAM_SECTIONELEMENT_HEIGHT_FOOTER @"heightFooter"
 #define PARAM_SECTIONELEMENT_CELL_OBJECTS @"cellObjects"
 #define PARAM_SECTIONELEMENT_IS_EXPANDABLE @"isExpandable"
+#define PARAM_SECTIONELEMENT_SOUCE_DATA @"sourceData"
+#define PARAM_SECTIONELEMENT_CLASS_FOR_ROW @"classForRow"
 
 @protocol SectionHeaderViewDelegate;
 
@@ -24,8 +26,8 @@
 
 @property (weak, nonatomic) id<SectionHeaderViewDelegate> delegate;
 
-+ (instancetype)sectionElementWithParams:(NSMutableDictionary *) dic;
-- (instancetype)initWithParams:(NSMutableDictionary *) dic;
++ (instancetype)sectionElementWithParams:(NSDictionary *) dic;
+- (instancetype)initWithParams:(NSDictionary *) dic;
 
 + (instancetype)sectionElementWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects isExpandable: (BOOL) isExpandable;
 - (instancetype)initWithSectionTitleIndex:(NSString *) titleIndex viewHeader:(UIView *) viewHeader viewFooter:(UIView *) viewFooter heightHeader:(NSNumber *) heightHeader heightFooter:(NSNumber *) heightFooter cellObjects:(NSMutableArray *) cellObjects isExpandable: (BOOL) isExpandable;
@@ -55,10 +57,6 @@
 -(void) deleteRowElements: (NSInteger) numberOfRowElements AtIndex: (NSInteger)index;
 //Replacement methods
 -(void) replaceRowElementAtIndex: (NSInteger) index WithRowElement: (RowElement *) rowElement;
-//Open and close section methods
-//-(void) setUpHeaderRecognizer;
-
-
 
 @end
 
