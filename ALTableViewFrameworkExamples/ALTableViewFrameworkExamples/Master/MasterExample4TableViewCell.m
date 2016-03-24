@@ -14,7 +14,7 @@
 
 @implementation MasterExample4TableViewCell
 
--(void) executeAction: (UIViewController *) viewController {
+-(void) cellPressed: (UIViewController *) viewController {
     TableViewExample4 * example4 = [[TableViewExample4 alloc] init];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         [[((MasterViewController *) viewController) detailViewController] setupViewController:example4];

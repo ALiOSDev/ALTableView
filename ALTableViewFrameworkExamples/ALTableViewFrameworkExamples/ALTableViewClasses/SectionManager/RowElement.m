@@ -136,7 +136,7 @@
 
 #pragma mark - Getters
 
--(void) configureCell: (id) object {}
+-(void) cellCreated: (id) object {}
 
 -(UITableViewCell *) getCellFromTableView:(UITableView *) tableView {
     NSString *cellIdentifier = self.cellIdentifier;
@@ -158,8 +158,8 @@
     object_setClass(cell, self.className);
     
     // Call method or block for config
-    if ([cell respondsToSelector:@selector(configureCell:)]) {
-        [cell configureCell:self.object];
+    if ([cell respondsToSelector:@selector(cellCreated:)]) {
+        [cell cellCreated:self.object];
     }
     
     if (self.cellCreatedHandler) {
@@ -181,12 +181,12 @@
 
 #pragma mark - Handlers
 
--(void) executeAction: (UIViewController *) viewController {}
+-(void) cellPressed: (UIViewController *) viewController {}
 
 -(void) rowElementPressed: (UIViewController *) viewController Cell: (id) cell {
     // Call method or block for action
-    if ([cell respondsToSelector:@selector(executeAction:)]) {
-        [cell executeAction:viewController];
+    if ([cell respondsToSelector:@selector(cellPressed:)]) {
+        [cell cellPressed:viewController];
     }
 
     if (self.cellPressedHandler) {

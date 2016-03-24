@@ -13,7 +13,7 @@
 
 @implementation MasterExample1TableViewCell
 
--(void) executeAction: (UIViewController *) viewController {
+-(void) cellPressed: (UIViewController *) viewController {
     Example1ViewController * example1 = [[Example1ViewController alloc] init];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         [[((MasterViewController *) viewController) detailViewController] setupViewController:example1];

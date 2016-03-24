@@ -18,7 +18,7 @@
     [super setSelected:selected animated:animated];
 }
 
--(void) configureCell: (NSString *) object {
+-(void) cellCreated: (NSString *) object {
     self.label.text = object;
 }
 

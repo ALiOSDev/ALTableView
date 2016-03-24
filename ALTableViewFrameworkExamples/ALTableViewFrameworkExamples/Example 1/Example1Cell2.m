@@ -10,11 +10,11 @@
 
 @implementation Example1Cell2
 
--(void) executeAction: (UIViewController *) viewController {
+-(void) cellPressed: (UIViewController *) viewController {
     self.label.text = @"Stop tapping me!!";
 }
 
--(void) configureCell: (NSNumber *) object {
+-(void) cellCreated: (NSNumber *) object {
     self.label.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
 }
 

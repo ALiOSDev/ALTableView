@@ -11,11 +11,11 @@ import UIKit
 class Example4Cell1: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     
-    func executeAction (viewController : UIViewController) {
+    func cellPressed (viewController : UIViewController) {
         label.text = "Tapping cells is funny, huh?"
     }
     
-    func configureCell (object : NSNumber) {
+    func cellCreated (object : NSNumber) {
         //label.text = "My height is: "
     }
     

@@ -12,11 +12,11 @@
 
 @implementation TweetTableViewCell
 
--(void) executeAction: (UIViewController *) viewController {
+-(void) cellPressed: (UIViewController *) viewController {
 
 }
 
--(void) configureCell: (id) object {
+-(void) cellCreated: (id) object {
     if ([object isKindOfClass:[TwitterStatus class]]) {
         TwitterStatus * twitterStatus = (TwitterStatus *) object;
         self.screenName.text = [NSString stringWithFormat:@"@%@",twitterStatus.user.screenName];

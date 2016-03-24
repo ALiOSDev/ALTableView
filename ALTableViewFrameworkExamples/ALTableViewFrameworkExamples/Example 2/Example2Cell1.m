@@ -10,11 +10,11 @@
 
 @implementation Example2Cell1
 
--(void) executeAction: (UIViewController *) viewController {
+-(void) cellPressed: (UIViewController *) viewController {
     NSLog(@"%@",self.titleLabel.text);
 }
 
--(void) configureCell: (NSString *) object {
+-(void) cellCreated: (NSString *) object {
     self.titleLabel.text = [NSString stringWithString:object];
 }
 
