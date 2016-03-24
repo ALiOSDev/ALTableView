@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ALTableViewFrameworkExamples/ALTableViewClasses/SectionManager/RowElement.m"
-            timestampString = "480470071.517709"
+            timestampString = "480525587.827723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "-switchStateChanges:"
             landmarkType = "5">
          </BreakpointContent>

@@ -90,7 +90,27 @@ class TableViewExample4 : ALTableViewController {
             PARAM_ROWELEMENT_CELL_PRESSED:unsafeBitCast(blockPressed, AnyObject.self)
         ]
         rows.addObject(RowElement.init(params: params2))
-
+        
+        
+        let params3 : [String : AnyObject] = [
+            PARAM_ROWELEMENT_CLASS:UITableViewCell.classForCoder(),
+            PARAM_ROWELEMENT_OBJECT:40 as NSNumber,
+            PARAM_ROWELEMENT_HEIGHTCELL:40 as NSNumber,
+            PARAM_ROWELEMENT_CELL_STYLE:UITableViewCellStyle.Subtitle.rawValue as NSNumber
+        ]
+        rows.addObject(RowElement.init(params: params3,
+            cellPressedHandler: { viewController, cell in
+                cell.textLabel!!.text = "Cell selected"
+                cell.detailTextLabel!!.text = "adios"
+            },
+            cellCreatedHandler: { (object, cell) -> Void in
+                cell.textLabel!!.text = "My height is: " + object.stringValue
+                cell.detailTextLabel!!.text = "Hola"
+            },
+            cellDeselectedHandler: { cell in
+                cell.textLabel!!.text = "Cell deselected"
+        }))
+        
         
         let labelTitle = UILabel.init(frame: CGRectMake(0, 0, view.frame.size.width, 40))
         labelTitle.text = "Section 2 Header"
@@ -103,7 +123,7 @@ class TableViewExample4 : ALTableViewController {
             PARAM_SECTIONELEMENT_IS_EXPANDABLE:true as NSNumber
         ]
         sections.addObject(SectionElement.init(params: paramsSection))
-    
+        
         return sections;
     }
     

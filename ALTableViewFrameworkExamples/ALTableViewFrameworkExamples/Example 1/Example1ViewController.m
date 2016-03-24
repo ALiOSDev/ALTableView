@@ -57,7 +57,7 @@
     
     RowElement * row2 = [RowElement rowElementWithClassName:[Example1Cell1 class] object:@80 heightCell:@80 cellIdentifier:@"Example1Cell1"];
     [rows addObject:row2];
-
+    
     RowElement * row3 = [RowElement rowElementWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle
                                          CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
                                              cell.textLabel.text = @"Cell selected";
@@ -82,19 +82,40 @@
     rows = [NSMutableArray array];
     
     NSDictionary *params2 = @{
-                             PARAM_ROWELEMENT_CLASS:[UITableViewCell class],
-                             PARAM_ROWELEMENT_OBJECT:@40,
-                             PARAM_ROWELEMENT_HEIGHTCELL:@40,
-                             PARAM_ROWELEMENT_CELL_STYLE:[NSNumber numberWithLong:UITableViewCellStyleSubtitle],
-                             PARAM_ROWELEMENT_CELL_PRESSED:^(UIViewController * viewController, UITableViewCell * cell) {
-                                 cell.textLabel.text = @"Cell selected";
-                             },
-                             PARAM_ROWELEMENT_CELL_CREATED:^(NSNumber * object, UITableViewCell * cell) {
-                                 cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
-                                 cell.detailTextLabel.text = @"hola";
-                             }};
+                              PARAM_ROWELEMENT_CLASS:[UITableViewCell class],
+                              PARAM_ROWELEMENT_OBJECT:@40,
+                              PARAM_ROWELEMENT_HEIGHTCELL:@40,
+                              PARAM_ROWELEMENT_CELL_STYLE:[NSNumber numberWithLong:UITableViewCellStyleSubtitle],
+                              PARAM_ROWELEMENT_CELL_PRESSED:^(UIViewController * viewController, UITableViewCell * cell) {
+                                  cell.textLabel.text = @"Cell selected";
+                              },
+                              PARAM_ROWELEMENT_CELL_CREATED:^(NSNumber * object, UITableViewCell * cell) {
+                                  cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
+                                  cell.detailTextLabel.text = @"hola";
+                              }};
     [rows addObject:[RowElement rowElementWithParams:params2]];
 
+    
+    NSDictionary *params3 = @{
+                              PARAM_ROWELEMENT_CLASS:[UITableViewCell class],
+                              PARAM_ROWELEMENT_OBJECT:@40,
+                              PARAM_ROWELEMENT_HEIGHTCELL:@40,
+                              PARAM_ROWELEMENT_CELL_STYLE:[NSNumber numberWithLong:UITableViewCellStyleSubtitle]};
+    [rows addObject:[RowElement rowElementWithParams:params3
+                                  CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
+                                      cell.textLabel.text = @"Cell selected";
+                                      
+                                      for (NSDictionary *dic in [[self retrieveAllElements] allValues]) {
+                                          NSLog(@"%@", dic);
+                                      }
+                                  } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell) {
+                                      cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
+                                      cell.detailTextLabel.text = @"hola";
+                                  } CellDeselectedHandler:^(UITableViewCell * cell) {
+                                      cell.textLabel.text = @"Cell deselected";
+                                  }]];
+    
+    
     [rows addObject:[RowElement rowElementWithParams:@{
                                                        PARAM_ROWELEMENT_CLASS:[Example1Cell3 class],
                                                        PARAM_ROWELEMENT_OBJECT:@140,
@@ -106,11 +127,11 @@
     labelTitle.backgroundColor = [UIColor greenColor];
     
     NSDictionary *paramsSection = @{
-                              PARAM_SECTIONELEMENT_VIEW_HEADER:labelTitle,
-                              PARAM_SECTIONELEMENT_HEIGHT_HEADER:@40,
-                              PARAM_SECTIONELEMENT_CELL_OBJECTS:rows,
-                              PARAM_SECTIONELEMENT_IS_EXPANDABLE:[NSNumber numberWithBool:YES]
-                              };    
+                                    PARAM_SECTIONELEMENT_VIEW_HEADER:labelTitle,
+                                    PARAM_SECTIONELEMENT_HEIGHT_HEADER:@40,
+                                    PARAM_SECTIONELEMENT_CELL_OBJECTS:rows,
+                                    PARAM_SECTIONELEMENT_IS_EXPANDABLE:[NSNumber numberWithBool:YES]
+                                    };    
     [sections addObject:[SectionElement sectionElementWithParams:paramsSection]];
     
     return sections;

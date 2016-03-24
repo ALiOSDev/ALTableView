@@ -53,6 +53,20 @@
     return self;
 }
 
++ (instancetype)rowElementWithParams:(NSDictionary *) dic CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler {
+    return [[self alloc] initWithParams:dic CellPressedHandler:cellPressedHandler CellCreatedHandler:cellCreatedHandler CellDeselectedHandler:cellDeselectedHandler];
+}
+
+- (instancetype)initWithParams:(NSDictionary *) dic CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler {
+    self = [self initWithParams:dic];
+    if (self) {
+        self.cellPressedHandler = cellPressedHandler;
+        self.cellCreatedHandler = cellCreatedHandler;
+        self.cellDeselectedHandler = cellDeselectedHandler;
+    }
+    return self;
+}
+
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell {
     return [[self alloc] initWithClassName:className object:object heightCell:heightCell];
 }

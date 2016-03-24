@@ -33,6 +33,9 @@ typedef void (^CellDeselectedHandler)(id cell);
 + (instancetype)rowElementWithParams:(NSDictionary *) dic;
 - (instancetype)initWithParams:(NSDictionary *) dic;
 
++ (instancetype)rowElementWithParams:(NSDictionary *) dic CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
+- (instancetype)initWithParams:(NSDictionary *) dic CellPressedHandler: (CellPressedHandler) cellPressedHandler CellCreatedHandler: (CellCreatedHandler) cellCreatedHandler CellDeselectedHandler: (CellDeselectedHandler) cellDeselectedHandler;
+
 + (instancetype)rowElementWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell;
 - (instancetype)initWithClassName:(Class) className object:(id) object heightCell:(NSNumber *) heightCell;
 
