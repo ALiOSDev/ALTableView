@@ -15,7 +15,7 @@ class TableViewExample4 : ALTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Example 4";
-
+        
         registerCells()
         replaceAllSectionElements(createElements())
         
@@ -34,9 +34,13 @@ class TableViewExample4 : ALTableViewController {
     
     func createElements() -> NSMutableArray {
         let sections = NSMutableArray()
-        let rows = NSMutableArray()
+        var rows = NSMutableArray()
         
-        let row1 = RowElement.init(className: Example4Cell1.classForCoder(), object: 40, heightCell: 60, cellIdentifier: nil)
+        
+        // First section ************
+        
+        rows.addObject(RowElement.init(className: Example4Cell1.classForCoder(), object: 40, heightCell: 60, cellIdentifier: nil))
+        
         let row2 = RowElement.init(className: UITableViewCell.classForCoder(), object: 40, heightCell: 60, cellIdentifier: nil, cellStyle: UITableViewCellStyle.Subtitle,
             cellPressedHandler: { viewController, cell in
                 cell.textLabel!!.text = "Cell selected"
@@ -48,14 +52,52 @@ class TableViewExample4 : ALTableViewController {
             },
             cellDeselectedHandler: { cell in
                 cell.textLabel!!.text = "Cell deselected"
-            })
-        
-        rows.addObject(row1)
+        })
         rows.addObject(row2)
         
         let sectionElement = SectionElement.init(sectionTitleIndex: nil, viewHeader: nil, viewFooter: nil, heightHeader: 0, heightFooter: 0, cellObjects: rows, isExpandable: false)
         sections.addObject(sectionElement)
         
+        
+        // Second section ************
+        
+        rows = NSMutableArray()
+        
+        let params : [String : AnyObject] = [
+            PARAM_ROWELEMENT_CLASS:Example4Cell1.classForCoder(),
+            PARAM_ROWELEMENT_OBJECT:40 as NSNumber,
+            PARAM_ROWELEMENT_HEIGHTCELL:60 as NSNumber,
+        ]
+        rows.addObject(RowElement.init(params: params))
+        
+        
+        let block : @convention(block) (object: AnyObject, cell: UITableViewCell) -> Void = { object, cell in
+            cell.textLabel!.text = "My height is: " + object.stringValue
+            cell.detailTextLabel!.text = "Hola"
+        }
+        
+        let params2 : [String : AnyObject] = [
+            PARAM_ROWELEMENT_CLASS:UITableViewCell.classForCoder(),
+            PARAM_ROWELEMENT_OBJECT:40 as NSNumber,
+            PARAM_ROWELEMENT_HEIGHTCELL:40 as NSNumber,
+            PARAM_ROWELEMENT_CELL_STYLE:UITableViewCellStyle.Subtitle.rawValue as NSNumber,
+            PARAM_ROWELEMENT_CELL_CREATED:unsafeBitCast(block, AnyObject.self)
+        ]
+        rows.addObject(RowElement.init(params: params2))
+        
+        
+        let labelTitle = UILabel.init(frame: CGRectMake(0, 0, view.frame.size.width, 40))
+        labelTitle.text = "Section 2 Header"
+        labelTitle.backgroundColor = UIColor.blueColor()
+        
+        let paramsSection : [String : AnyObject] = [
+            PARAM_SECTIONELEMENT_VIEW_HEADER:labelTitle,
+            PARAM_SECTIONELEMENT_HEIGHT_HEADER:40 as NSNumber,
+            PARAM_SECTIONELEMENT_CELL_OBJECTS:rows,
+            PARAM_SECTIONELEMENT_IS_EXPANDABLE:true as NSNumber
+        ]
+        sections.addObject(SectionElement.init(params: paramsSection))
+    
         return sections;
     }
     
