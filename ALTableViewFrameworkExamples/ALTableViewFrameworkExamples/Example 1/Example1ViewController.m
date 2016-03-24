@@ -95,12 +95,11 @@
                              }};
     [rows addObject:[RowElement rowElementWithParams:params2]];
 
-    NSDictionary *params3 = @{
-                             PARAM_ROWELEMENT_CLASS:[Example1Cell3 class],
-                             PARAM_ROWELEMENT_OBJECT:@140,
-                             PARAM_ROWELEMENT_HEIGHTCELL:@200
-                             };
-    [rows addObject:[RowElement rowElementWithParams:params3]];
+    [rows addObject:[RowElement rowElementWithParams:@{
+                                                       PARAM_ROWELEMENT_CLASS:[Example1Cell3 class],
+                                                       PARAM_ROWELEMENT_OBJECT:@140,
+                                                       PARAM_ROWELEMENT_HEIGHTCELL:@200
+                                                       }]];
     
     UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
     labelTitle.text = @"Section 2 Header";
