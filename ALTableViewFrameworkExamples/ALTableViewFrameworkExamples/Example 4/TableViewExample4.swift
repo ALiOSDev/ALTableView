@@ -71,9 +71,14 @@ class TableViewExample4 : ALTableViewController {
         rows.addObject(RowElement.init(params: params))
         
         
-        let block : @convention(block) (object: AnyObject, cell: UITableViewCell) -> Void = { object, cell in
+        let blockCreated : @convention(block) (object: AnyObject, cell: UITableViewCell) -> Void = { object, cell in
             cell.textLabel!.text = "My height is: " + object.stringValue
             cell.detailTextLabel!.text = "Hola"
+        }
+        
+        let blockPressed : @convention(block) (viewController: UIViewController, cell: UITableViewCell) -> Void = { viewController, cell in
+            cell.textLabel!.text = "Cell selected"
+            cell.detailTextLabel!.text = "adios"
         }
         
         let params2 : [String : AnyObject] = [
@@ -81,10 +86,11 @@ class TableViewExample4 : ALTableViewController {
             PARAM_ROWELEMENT_OBJECT:40 as NSNumber,
             PARAM_ROWELEMENT_HEIGHTCELL:40 as NSNumber,
             PARAM_ROWELEMENT_CELL_STYLE:UITableViewCellStyle.Subtitle.rawValue as NSNumber,
-            PARAM_ROWELEMENT_CELL_CREATED:unsafeBitCast(block, AnyObject.self)
+            PARAM_ROWELEMENT_CELL_CREATED:unsafeBitCast(blockCreated, AnyObject.self),
+            PARAM_ROWELEMENT_CELL_PRESSED:unsafeBitCast(blockPressed, AnyObject.self)
         ]
         rows.addObject(RowElement.init(params: params2))
-        
+
         
         let labelTitle = UILabel.init(frame: CGRectMake(0, 0, view.frame.size.width, 40))
         labelTitle.text = "Section 2 Header"
