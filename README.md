@@ -94,32 +94,6 @@ You can inherit from ALTableView just like if you inherit from a UITableViewCont
 }
 
 - (NSMutableArray *) createElements {
-    NSMutableArray * sections = [NSMutableArray array];
-    NSMutableArray * rows = [NSMutableArray array];
-    
-    // Declare your cells and actions
-    RowElement * row1 = [[RowElement alloc] initWithClassName:[Example1Cell1 class] object:@40 heightCell:@40 cellIdentifier:nil];
-    RowElement * row2 = [[RowElement alloc] initWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle 
-    CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
-        cell.textLabel.text = @"Cell selected";
-    } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell)  {
-        cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
-        cell.detailTextLabel.text = @"hola";
-    } CellDeselectedHandler:^(UITableViewCell * cell) {
-        cell.textLabel.text = @"Cell deselected";
-    }];
-    
-    [rows addObject:row1];
-    [rows addObject:row2];
-    
-    // Create a section
-    SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
-    
-    [sections addObject:sectionElement];
-    return sections;
-}
-
-- (NSMutableArray *) createElements {
     // Build Sections
     NSMutableArray * sections = [NSMutableArray array];
     NSMutableArray * rows = [NSMutableArray array];
