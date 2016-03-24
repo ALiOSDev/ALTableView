@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F636AD31C67CC020026D98F /* Example1Cell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F636AD21C67CC020026D98F /* Example1Cell3.m */; };
 		5F636AD51C67CC410026D98F /* Example1Cell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F636AD41C67CC410026D98F /* Example1Cell3.xib */; };
-		5F9654201C415049004CD088 /* TableViewExample4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F96541F1C415049004CD088 /* TableViewExample4.swift */; };
 		5F9654251C41513C004CD088 /* MasterExample4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */; };
-		5F9654291C4156D6004CD088 /* Example4Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654281C4156D6004CD088 /* Example4Cell1.swift */; };
-		5F96542B1C4156E9004CD088 /* Example4Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96542A1C4156E9004CD088 /* Example4Cell1.xib */; };
 		5FC732D51BFFA0C000AA134C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732D41BFFA0C000AA134C /* main.m */; };
 		5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732D71BFFA0C000AA134C /* AppDelegate.m */; };
 		5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732DA1BFFA0C000AA134C /* MasterViewController.m */; };
@@ -22,6 +19,9 @@
 		5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */; };
 		5FC732F11BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732F01BFFA0C000AA134C /* ALTableViewFrameworkExamplesTests.m */; };
 		5FC732FC1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */; };
+		5FE7FD121CA43FC8001589FE /* Example4Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7FD0F1CA43FC8001589FE /* Example4Cell1.swift */; };
+		5FE7FD131CA43FC8001589FE /* Example4Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE7FD101CA43FC8001589FE /* Example4Cell1.xib */; };
+		5FE7FD141CA43FC8001589FE /* TableViewExample4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7FD111CA43FC8001589FE /* TableViewExample4.swift */; };
 		5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE152F1C007F730097AE97 /* ALTableViewController.m */; };
 		5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFE15301C007F730097AE97 /* ALTableViewController.xib */; };
 		5FFE153E1C007F730097AE97 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15331C007F730097AE97 /* RowElement.m */; };
@@ -86,12 +86,9 @@
 		5F636AD11C67CC020026D98F /* Example1Cell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1Cell3.h; sourceTree = "<group>"; };
 		5F636AD21C67CC020026D98F /* Example1Cell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1Cell3.m; sourceTree = "<group>"; };
 		5F636AD41C67CC410026D98F /* Example1Cell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1Cell3.xib; sourceTree = "<group>"; };
-		5F96541F1C415049004CD088 /* TableViewExample4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample4.swift; sourceTree = "<group>"; };
 		5F9654231C41513C004CD088 /* MasterExample4TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterExample4TableViewCell.h; sourceTree = "<group>"; };
 		5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterExample4TableViewCell.m; sourceTree = "<group>"; };
 		5F9654271C41551A004CD088 /* ALTableViewFramework-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALTableViewFramework-Bridging-Header.h"; sourceTree = "<group>"; };
-		5F9654281C4156D6004CD088 /* Example4Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4Cell1.swift; sourceTree = "<group>"; };
-		5F96542A1C4156E9004CD088 /* Example4Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example4Cell1.xib; sourceTree = "<group>"; };
 		5FC732D01BFFA0C000AA134C /* ALTableViewFrameworkExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALTableViewFrameworkExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC732D41BFFA0C000AA134C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FC732D61BFFA0C000AA134C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +107,9 @@
 		5FC732F71BFFA0C000AA134C /* ALTableViewFrameworkExamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableViewFrameworkExamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC732FB1BFFA0C100AA134C /* ALTableViewFrameworkExamplesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTableViewFrameworkExamplesUITests.m; sourceTree = "<group>"; };
 		5FC732FD1BFFA0C100AA134C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FE7FD0F1CA43FC8001589FE /* Example4Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4Cell1.swift; sourceTree = "<group>"; };
+		5FE7FD101CA43FC8001589FE /* Example4Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example4Cell1.xib; sourceTree = "<group>"; };
+		5FE7FD111CA43FC8001589FE /* TableViewExample4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample4.swift; sourceTree = "<group>"; };
 		5FFE152E1C007F730097AE97 /* ALTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
 		5FFE152F1C007F730097AE97 /* ALTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
 		5FFE15301C007F730097AE97 /* ALTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
@@ -189,16 +189,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F96541D1C415021004CD088 /* Example 4 */ = {
-			isa = PBXGroup;
-			children = (
-				5F96541F1C415049004CD088 /* TableViewExample4.swift */,
-				5F9654281C4156D6004CD088 /* Example4Cell1.swift */,
-				5F96542A1C4156E9004CD088 /* Example4Cell1.xib */,
-			);
-			path = "Example 4";
-			sourceTree = "<group>";
-		};
 		5FC732C71BFFA0C000AA134C = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +223,7 @@
 				ED375A8E1BFFC3800080D158 /* Example 1 */,
 				ED8627EB1C0B0F26000D4535 /* Example 2 */,
 				ED8627F21C0B0F26000D4535 /* Example 3 */,
-				5F96541D1C415021004CD088 /* Example 4 */,
+				5FE7FD0E1CA43FC8001589FE /* Example 4 Swift */,
 				5FC732E71BFFA0C000AA134C /* Info.plist */,
 				5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */,
 				5FC732DF1BFFA0C000AA134C /* Main.storyboard */,
@@ -271,6 +261,16 @@
 				5FC732FD1BFFA0C100AA134C /* Info.plist */,
 			);
 			path = ALTableViewFrameworkExamplesUITests;
+			sourceTree = "<group>";
+		};
+		5FE7FD0E1CA43FC8001589FE /* Example 4 Swift */ = {
+			isa = PBXGroup;
+			children = (
+				5FE7FD0F1CA43FC8001589FE /* Example4Cell1.swift */,
+				5FE7FD101CA43FC8001589FE /* Example4Cell1.xib */,
+				5FE7FD111CA43FC8001589FE /* TableViewExample4.swift */,
+			);
+			path = "Example 4 Swift";
 			sourceTree = "<group>";
 		};
 		5FFE152D1C007F730097AE97 /* ALTableViewClasses */ = {
@@ -531,11 +531,11 @@
 				ED8627F61C0B0F26000D4535 /* Example2ViewController.xib in Resources */,
 				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
 				ED8627F41C0B0F26000D4535 /* Example2Cell1.xib in Resources */,
-				5F96542B1C4156E9004CD088 /* Example4Cell1.xib in Resources */,
 				ED375AA71BFFCD3D0080D158 /* Example1ViewController.xib in Resources */,
 				EDD273A51C12ED2B0051929C /* TweetTableViewCell.xib in Resources */,
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
+				5FE7FD131CA43FC8001589FE /* Example4Cell1.xib in Resources */,
 				ED375AAC1BFFCDF40080D158 /* Example1Cell1.xib in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
 				5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */,
@@ -612,7 +612,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9654201C415049004CD088 /* TableViewExample4.swift in Sources */,
 				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
 				5FFE153E1C007F730097AE97 /* RowElement.m in Sources */,
 				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
@@ -629,11 +628,12 @@
 				5FFE15401C007F730097AE97 /* SectionManager.m in Sources */,
 				ED8627F31C0B0F26000D4535 /* Example2Cell1.m in Sources */,
 				ED375AAB1BFFCDF40080D158 /* Example1Cell1.m in Sources */,
-				5F9654291C4156D6004CD088 /* Example4Cell1.swift in Sources */,
 				EDD273A41C12ED2B0051929C /* TweetTableViewCell.m in Sources */,
+				5FE7FD121CA43FC8001589FE /* Example4Cell1.swift in Sources */,
 				5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */,
 				ED86284E1C12525E000D4535 /* TwitterUser.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
+				5FE7FD141CA43FC8001589FE /* TableViewExample4.swift in Sources */,
 				5F636AD31C67CC020026D98F /* Example1Cell3.m in Sources */,
 				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
 				5FFE153F1C007F730097AE97 /* SectionElement.m in Sources */,
