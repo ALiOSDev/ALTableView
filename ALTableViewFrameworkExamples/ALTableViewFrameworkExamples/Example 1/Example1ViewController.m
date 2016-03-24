@@ -81,20 +81,22 @@
     
     rows = [NSMutableArray array];
     
+    
+    CellPressedHandler cellPressedHandler = ^(UIViewController * viewController, UITableViewCell * cell) {
+        cell.textLabel.text = @"Cell selected";
+    };
     NSDictionary *params2 = @{
                               PARAM_ROWELEMENT_CLASS:[UITableViewCell class],
                               PARAM_ROWELEMENT_OBJECT:@40,
                               PARAM_ROWELEMENT_HEIGHTCELL:@40,
                               PARAM_ROWELEMENT_CELL_STYLE:[NSNumber numberWithLong:UITableViewCellStyleSubtitle],
-                              PARAM_ROWELEMENT_CELL_PRESSED:^(UIViewController * viewController, UITableViewCell * cell) {
-                                  cell.textLabel.text = @"Cell selected";
-                              },
+                              PARAM_ROWELEMENT_CELL_PRESSED:cellPressedHandler,
                               PARAM_ROWELEMENT_CELL_CREATED:^(NSNumber * object, UITableViewCell * cell) {
                                   cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
                                   cell.detailTextLabel.text = @"hola";
                               }};
     [rows addObject:[RowElement rowElementWithParams:params2]];
-
+    
     
     NSDictionary *params3 = @{
                               PARAM_ROWELEMENT_CLASS:[UITableViewCell class],
@@ -116,8 +118,7 @@
                                   }]];
     
     
-    [rows addObject:[RowElement rowElementWithParams:@{
-                                                       PARAM_ROWELEMENT_CLASS:[Example1Cell3 class],
+    [rows addObject:[RowElement rowElementWithParams:@{PARAM_ROWELEMENT_CLASS:[Example1Cell3 class],
                                                        PARAM_ROWELEMENT_OBJECT:@140,
                                                        PARAM_ROWELEMENT_HEIGHTCELL:@200
                                                        }]];
@@ -131,7 +132,7 @@
                                     PARAM_SECTIONELEMENT_HEIGHT_HEADER:@40,
                                     PARAM_SECTIONELEMENT_CELL_OBJECTS:rows,
                                     PARAM_SECTIONELEMENT_IS_EXPANDABLE:[NSNumber numberWithBool:YES]
-                                    };    
+                                    };
     [sections addObject:[SectionElement sectionElementWithParams:paramsSection]];
     
     return sections;
