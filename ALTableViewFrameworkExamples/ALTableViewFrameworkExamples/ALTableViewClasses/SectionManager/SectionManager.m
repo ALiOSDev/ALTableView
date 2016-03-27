@@ -279,4 +279,24 @@
     return previousIndexPath;
 }
 
+
+#pragma mark - Retrieve cells values
+
+-(NSDictionary *) retrieveElementsAtSection:(NSInteger) section Row:(NSInteger) row{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    RowElement * rowElement = [self getRowElementAtIndexPath:indexPath];
+    return [rowElement retreiveElements];
+}
+
+-(NSDictionary *) getCellsValuesForSection:(NSInteger) section {
+    NSMutableDictionary * results = [NSMutableDictionary dictionary];
+    
+    for (int i = 0; i < [self.sections[section] getNumberOfRealRows]; i++) {
+        [results setObject:[self retrieveElementsAtSection:section Row:i] forKey:[NSNumber numberWithInt:i]];
+    }
+    
+    return results;
+}
+
+
 @end

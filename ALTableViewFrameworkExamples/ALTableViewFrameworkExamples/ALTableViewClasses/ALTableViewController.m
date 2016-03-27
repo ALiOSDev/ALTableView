@@ -484,36 +484,21 @@
     return [self.sectionManager getAllSections];
 }
 
--(NSDictionary *) retrieveElementsAtIndexPath:(NSIndexPath *) indexPath {
-    return [self retrieveElementsAtSection:indexPath.section Row:indexPath.row];
-}
 
--(NSDictionary *) retrieveElementsAtSection:(NSInteger) section Row:(NSInteger) row{
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-    id cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    RowElement * rowElement = [self.sectionManager getRowElementAtIndexPath:indexPath];
-    return [rowElement retreiveElements:cell];
-}
+#pragma mark - Retrieve cells values
 
 -(NSDictionary *) retrieveElementsAtSection:(NSInteger) section {
-    NSMutableDictionary * results = [NSMutableDictionary dictionary];
-    
-    for (int i = 0; i < [self.tableView numberOfRowsInSection:section]; i++) {
-        [results setObject:[self retrieveElementsAtSection:section Row:i] forKey:[NSNumber numberWithInt:i]];
-    }
-    
-    return results;
+    return [self.sectionManager getCellsValuesForSection:section];
 }
 
 -(NSDictionary *) retrieveAllElements {
     NSMutableDictionary * results = [NSMutableDictionary dictionary];
     
-    for (int i = 0; i < self.tableView.numberOfSections; i++) {
-        [results setObject:[self retrieveElementsAtSection:i] forKey:[NSNumber numberWithInt:i]];
+    for (int i = 0; i < [self.sectionManager getNumberOfSections]; i++) {
+        [results setObject:[self.sectionManager getCellsValuesForSection:i] forKey:[NSNumber numberWithInt:i]];
     }
     
     return results;
-
 }
 
 

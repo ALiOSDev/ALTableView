@@ -49,7 +49,6 @@
 -(CGFloat) getSectionFooterHeightFromSection:(NSInteger) section;
 
 
-
 //Get row element
 -(RowElement *) getRowElementAtIndexPath:(NSIndexPath *) indexPath;
 -(RowElement *) getRowElementAtSection: (NSInteger) section Row: (NSInteger) row;
@@ -76,6 +75,9 @@
 
 -(NSIndexPath *) getNextIndexPathToIndexPath: (NSIndexPath *) indexPath;
 -(NSIndexPath *) getPreviousIndexPathToIndexPath: (NSIndexPath *) indexPath;
+
+//Get cells values for section
+-(NSDictionary *) getCellsValuesForSection:(NSInteger) section;
 
 @end
 

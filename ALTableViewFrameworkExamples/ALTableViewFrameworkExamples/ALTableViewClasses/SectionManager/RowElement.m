@@ -221,7 +221,7 @@
     }
 }
 
--(NSDictionary *) retreiveElements: (id) cell {
+-(NSDictionary *) retreiveElements {
     return self.valuesPropertiesCell;
 }
 

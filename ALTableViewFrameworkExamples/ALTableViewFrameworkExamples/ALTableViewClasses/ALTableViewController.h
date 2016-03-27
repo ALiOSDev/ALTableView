@@ -113,8 +113,6 @@
 -(NSMutableArray *) getAllSectionElements;
 
 //Get content cells
--(NSDictionary *) retrieveElementsAtIndexPath:(NSIndexPath *) indexPath;
--(NSDictionary *) retrieveElementsAtSection:(NSInteger) section Row:(NSInteger) row;
 -(NSDictionary *) retrieveElementsAtSection:(NSInteger) section;
 -(NSDictionary *) retrieveAllElements;
 

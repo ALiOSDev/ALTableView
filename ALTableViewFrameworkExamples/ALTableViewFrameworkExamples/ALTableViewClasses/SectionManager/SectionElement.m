@@ -187,6 +187,10 @@
     }
 }
 
+-(NSInteger) getNumberOfRealRows {
+    return [self.cellObjects count];
+}
+
 -(NSInteger) getTotalNumberOfRows {
     return [self.cellObjects count];
 }

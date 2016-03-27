@@ -54,6 +54,6 @@ typedef void (^CellDeselectedHandler)(id cell);
 -(void) rowElementPressed: (UIViewController *) viewController Cell: (id) cell;
 -(void) rowElementDeselected: (id) cell;
 
--(NSDictionary *) retreiveElements: (id) cell;
+-(NSDictionary *) retreiveElements;
 
 @end

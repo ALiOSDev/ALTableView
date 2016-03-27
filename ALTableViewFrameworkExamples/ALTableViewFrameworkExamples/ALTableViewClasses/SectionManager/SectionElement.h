@@ -43,6 +43,7 @@
 -(CGFloat) getFooterHeight;
 
 -(NSInteger) getNumberOfRows;
+-(NSInteger) getNumberOfRealRows;
 -(NSInteger) getTotalNumberOfRows;
 -(RowElement *) getRowAtPosition:(NSInteger) position;
 -(CGFloat) getRowHeightAtPosition:(NSInteger) position;
