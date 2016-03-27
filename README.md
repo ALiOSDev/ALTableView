@@ -6,6 +6,9 @@ Download
 
 This framework is still on development. We cannot guarantee yet that all the features work.
 
+You can try it adding (these classes)[https://github.com/ALiOSDev/ALTableView/tree/master/ALTableViewFrameworkExamples/ALTableViewFrameworkExamples/ALTableViewClasses] to your project.
+
+
 How it works
 --------
 
