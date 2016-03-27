@@ -14,6 +14,8 @@
 #import "MasterExample3TableViewCell.h"
 #import "MasterExample4TableViewCell.h"
 
+#import "ALTableViewFrameworkExamples-Swift.h"
+
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
@@ -60,23 +62,39 @@
     NSMutableArray * rows = [NSMutableArray array];
     NSNumber * height = [NSNumber numberWithFloat:UITableViewAutomaticDimension];
     
-    RowElement * example1 = [[RowElement alloc] initWithClassName:[MasterExample1TableViewCell class] object:@"Example 1" heightCell:height cellIdentifier:@"MasterTableViewCell"];
+    RowElement * example1 = [RowElement rowElementWithClassName:[MasterExample1TableViewCell class] object:@"Example 1" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example1];
     example1.estimateHeightMode = YES;
-
-    RowElement * example2 = [[RowElement alloc] initWithClassName:[MasterExample2TableViewCell class] object:@"Example 2 Index Table View" heightCell:height cellIdentifier:@"MasterTableViewCell"];
+    
+    RowElement * example2 = [RowElement rowElementWithClassName:[MasterExample2TableViewCell class] object:@"Example 2 Index Table View" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example2];
     example2.estimateHeightMode = YES;
     
-    RowElement * example3 = [[RowElement alloc] initWithClassName:[MasterExample3TableViewCell class] object:@"Example 3 Twitter Timeline with automatic dimension cells" heightCell:height cellIdentifier:@"MasterTableViewCell"];
+    RowElement * example3 = [RowElement rowElementWithClassName:[MasterExample3TableViewCell class] object:@"Example 3 Twitter Timeline with automatic dimension cells" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example3];
     example3.estimateHeightMode = YES;
     
-    RowElement * example4 = [[RowElement alloc] initWithClassName:[MasterExample4TableViewCell class] object:@"Example 4 Swift" heightCell:height cellIdentifier:@"MasterTableViewCell"];
+    RowElement * example4 = [RowElement rowElementWithClassName:[MasterExample4TableViewCell class] object:@"Example 4 Swift" heightCell:height cellIdentifier:@"MasterTableViewCell"];
     [rows addObject:example4];
     example4.estimateHeightMode = YES;
     
-    SectionElement * sectionElement = [[SectionElement alloc] initWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
+    [rows addObject:[RowElement rowElementWithClassName:[UITableViewCell class] object:@"Example 5 Swift" heightCell:height cellIdentifier:nil CellStyle:UITableViewCellStyleDefault
+                                     CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
+                                         TableViewExample5 * example5 = [[TableViewExample5 alloc] init];
+                                         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                                             [[((MasterViewController *) viewController) detailViewController] setupViewController:example5];
+                                         } else {
+                                             [viewController.navigationController pushViewController:example5 animated:YES];
+                                         }
+                                     } CellCreatedHandler:^(NSString * object, UITableViewCell * cell) {
+                                         cell.textLabel.text = object;
+                                         cell.textLabel.textAlignment = NSTextAlignmentCenter;
+                                     } CellDeselectedHandler:^(UITableViewCell * cell) {
+                                         
+                                     }]
+     ];
+    
+    SectionElement * sectionElement = [SectionElement sectionElementWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
     
     [sections addObject:sectionElement];
     return sections;

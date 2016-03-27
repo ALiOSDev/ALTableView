@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F181D5F1CA822BA00D539D8 /* Example5Cell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F181D5D1CA822BA00D539D8 /* Example5Cell2.swift */; };
+		5F181D601CA822BA00D539D8 /* Example5Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F181D5E1CA822BA00D539D8 /* Example5Cell2.xib */; };
 		5F636AD31C67CC020026D98F /* Example1Cell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F636AD21C67CC020026D98F /* Example1Cell3.m */; };
 		5F636AD51C67CC410026D98F /* Example1Cell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F636AD41C67CC410026D98F /* Example1Cell3.xib */; };
 		5F9654251C41513C004CD088 /* MasterExample4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9654241C41513C004CD088 /* MasterExample4TableViewCell.m */; };
@@ -22,6 +24,9 @@
 		5FE7FD121CA43FC8001589FE /* Example4Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7FD0F1CA43FC8001589FE /* Example4Cell1.swift */; };
 		5FE7FD131CA43FC8001589FE /* Example4Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE7FD101CA43FC8001589FE /* Example4Cell1.xib */; };
 		5FE7FD141CA43FC8001589FE /* TableViewExample4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7FD111CA43FC8001589FE /* TableViewExample4.swift */; };
+		5FE7FD1C1CA55D6D001589FE /* Example5Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE7FD1A1CA55D6D001589FE /* Example5Cell1.xib */; };
+		5FE7FD1D1CA55D6D001589FE /* TableViewExample5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7FD1B1CA55D6D001589FE /* TableViewExample5.swift */; };
+		5FE7FD1F1CA55D90001589FE /* Example5Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7FD1E1CA55D90001589FE /* Example5Cell1.swift */; };
 		5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE152F1C007F730097AE97 /* ALTableViewController.m */; };
 		5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFE15301C007F730097AE97 /* ALTableViewController.xib */; };
 		5FFE153E1C007F730097AE97 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE15331C007F730097AE97 /* RowElement.m */; };
@@ -83,6 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F181D5D1CA822BA00D539D8 /* Example5Cell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5Cell2.swift; sourceTree = "<group>"; };
+		5F181D5E1CA822BA00D539D8 /* Example5Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example5Cell2.xib; sourceTree = "<group>"; };
 		5F636AD11C67CC020026D98F /* Example1Cell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1Cell3.h; sourceTree = "<group>"; };
 		5F636AD21C67CC020026D98F /* Example1Cell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1Cell3.m; sourceTree = "<group>"; };
 		5F636AD41C67CC410026D98F /* Example1Cell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1Cell3.xib; sourceTree = "<group>"; };
@@ -110,6 +117,9 @@
 		5FE7FD0F1CA43FC8001589FE /* Example4Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example4Cell1.swift; sourceTree = "<group>"; };
 		5FE7FD101CA43FC8001589FE /* Example4Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example4Cell1.xib; sourceTree = "<group>"; };
 		5FE7FD111CA43FC8001589FE /* TableViewExample4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample4.swift; sourceTree = "<group>"; };
+		5FE7FD1A1CA55D6D001589FE /* Example5Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example5Cell1.xib; sourceTree = "<group>"; };
+		5FE7FD1B1CA55D6D001589FE /* TableViewExample5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample5.swift; sourceTree = "<group>"; };
+		5FE7FD1E1CA55D90001589FE /* Example5Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example5Cell1.swift; sourceTree = "<group>"; };
 		5FFE152E1C007F730097AE97 /* ALTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
 		5FFE152F1C007F730097AE97 /* ALTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
 		5FFE15301C007F730097AE97 /* ALTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
@@ -224,6 +234,7 @@
 				ED8627EB1C0B0F26000D4535 /* Example 2 */,
 				ED8627F21C0B0F26000D4535 /* Example 3 */,
 				5FE7FD0E1CA43FC8001589FE /* Example 4 Swift */,
+				5FE7FD151CA55A21001589FE /* Example 5 Swift */,
 				5FC732E71BFFA0C000AA134C /* Info.plist */,
 				5FC732E41BFFA0C000AA134C /* LaunchScreen.storyboard */,
 				5FC732DF1BFFA0C000AA134C /* Main.storyboard */,
@@ -271,6 +282,18 @@
 				5FE7FD111CA43FC8001589FE /* TableViewExample4.swift */,
 			);
 			path = "Example 4 Swift";
+			sourceTree = "<group>";
+		};
+		5FE7FD151CA55A21001589FE /* Example 5 Swift */ = {
+			isa = PBXGroup;
+			children = (
+				5FE7FD1E1CA55D90001589FE /* Example5Cell1.swift */,
+				5FE7FD1A1CA55D6D001589FE /* Example5Cell1.xib */,
+				5F181D5D1CA822BA00D539D8 /* Example5Cell2.swift */,
+				5F181D5E1CA822BA00D539D8 /* Example5Cell2.xib */,
+				5FE7FD1B1CA55D6D001589FE /* TableViewExample5.swift */,
+			);
+			path = "Example 5 Swift";
 			sourceTree = "<group>";
 		};
 		5FFE152D1C007F730097AE97 /* ALTableViewClasses */ = {
@@ -527,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE7FD1C1CA55D6D001589FE /* Example5Cell1.xib in Resources */,
 				5F636AD51C67CC410026D98F /* Example1Cell3.xib in Resources */,
 				ED8627F61C0B0F26000D4535 /* Example2ViewController.xib in Resources */,
 				ED375AB11BFFCE030080D158 /* Example1Cell2.xib in Resources */,
@@ -536,6 +560,7 @@
 				5FC732E61BFFA0C000AA134C /* LaunchScreen.storyboard in Resources */,
 				5FC732E31BFFA0C000AA134C /* Assets.xcassets in Resources */,
 				5FE7FD131CA43FC8001589FE /* Example4Cell1.xib in Resources */,
+				5F181D601CA822BA00D539D8 /* Example5Cell2.xib in Resources */,
 				ED375AAC1BFFCDF40080D158 /* Example1Cell1.xib in Resources */,
 				5FC732E11BFFA0C000AA134C /* Main.storyboard in Resources */,
 				5FFE153D1C007F730097AE97 /* ALTableViewController.xib in Resources */,
@@ -614,6 +639,7 @@
 			files = (
 				5FC732D81BFFA0C000AA134C /* AppDelegate.m in Sources */,
 				5FFE153E1C007F730097AE97 /* RowElement.m in Sources */,
+				5FE7FD1D1CA55D6D001589FE /* TableViewExample5.swift in Sources */,
 				5FC732DB1BFFA0C000AA134C /* MasterViewController.m in Sources */,
 				ED8627FA1C0B1178000D4535 /* Example3ViewController.m in Sources */,
 				ED375A931BFFC3B30080D158 /* MasterTableViewCell.m in Sources */,
@@ -624,6 +650,7 @@
 				ED375A971BFFC5050080D158 /* MasterExample1TableViewCell.m in Sources */,
 				ED375AA61BFFCD3D0080D158 /* Example1ViewController.m in Sources */,
 				ED8627FD1C0B11C3000D4535 /* MasterExample3TableViewCell.m in Sources */,
+				5F181D5F1CA822BA00D539D8 /* Example5Cell2.swift in Sources */,
 				5F9654251C41513C004CD088 /* MasterExample4TableViewCell.m in Sources */,
 				5FFE15401C007F730097AE97 /* SectionManager.m in Sources */,
 				ED8627F31C0B0F26000D4535 /* Example2Cell1.m in Sources */,
@@ -633,6 +660,7 @@
 				5FFE153C1C007F730097AE97 /* ALTableViewController.m in Sources */,
 				ED86284E1C12525E000D4535 /* TwitterUser.m in Sources */,
 				5FC732D51BFFA0C000AA134C /* main.m in Sources */,
+				5FE7FD1F1CA55D90001589FE /* Example5Cell1.swift in Sources */,
 				5FE7FD141CA43FC8001589FE /* TableViewExample4.swift in Sources */,
 				5F636AD31C67CC020026D98F /* Example1Cell3.m in Sources */,
 				ED375AB01BFFCE030080D158 /* Example1Cell2.m in Sources */,
