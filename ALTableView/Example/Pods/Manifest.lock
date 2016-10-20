@@ -1,0 +1,16 @@
+PODS:
+  - ALTableView (0.1.0)
+
+DEPENDENCIES:
+  - ALTableView (from `../`)
+
+EXTERNAL SOURCES:
+  ALTableView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ALTableView: d85e1abc66ff674a747ec1dcac4dde6f3fd98388
+
+PODFILE CHECKSUM: db1771a6fae467e9aa5cb6aa421b34445e934fe1
+
+COCOAPODS: 1.1.1

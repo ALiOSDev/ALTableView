@@ -1,0 +1,765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1914634DDE4A9F2253385BA1A0EEE030 /* ALTableViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 61CEB877FE93ABC0B05CD871010BAAE9 /* ALTableViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		224B206215CFA2A848A06F3125F11841 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		29EAF8935DA4584028B57972AB2DAB18 /* Pods-ALTableView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCC5F2413ECE4F76719477694DB7AC /* Pods-ALTableView_Tests-dummy.m */; };
+		2A5E647ADBA1D3A484F8F7C690C46F5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		4C98BD4B4CEAFEE45D3DBD65CC295A0C /* SectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38631EB57F53D37DB355A216B91F6E62 /* SectionManager.m */; };
+		51A449918B5BAA21F5D0CD5A59F53491 /* Pods-ALTableView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D3FCA27DA7617DC3A28CD0BB54DCDE5 /* Pods-ALTableView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55BC93CD29C7DD2BBD7A3DE95FD4D779 /* Pods-ALTableView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B675FCE4ABAC902E268F9F289AD1572 /* Pods-ALTableView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70091463D6DE1903A371F080C5DD7297 /* ALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC20EEFE0A13552A1BB8EF9564D15E2 /* ALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		705484EC20D5939542933308C343E3CA /* SectionElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B3284F7DC146C7A0124EED71DAB4F /* SectionElement.m */; };
+		813D2D17115CC8A1007BF1A19D37529C /* ALTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD16E6F0CF7864B3C5DB12876579F1 /* ALTableViewController.m */; };
+		8AFA7D3C7F60BB4AD9039E5F2CB127A3 /* RowElement.h in Headers */ = {isa = PBXBuildFile; fileRef = F11BD9AD265558F3B912FBCC15DB022E /* RowElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B141204EB66A698023BA2B0F10C92EB /* ALTableViewFramework-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C12509C385C6E36664A7D1EADCA0B7 /* ALTableViewFramework-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91782BC176D29DC36F13BC9D625C4641 /* ExtendNSLogFunctionality.h in Headers */ = {isa = PBXBuildFile; fileRef = 133A03B98CFA59E555FAB2179B85670C /* ExtendNSLogFunctionality.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94C00C36546914C8E991143BEA10040F /* ALTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D93FF0DF00EA97E579C823C878ADB4 /* ALTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8360A6F540C9B98B6DCE3B520ED7A9D /* ALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF42919B08DE3896E5FE3EAC3D1FB9D /* ALTableView-dummy.m */; };
+		BC5D19FD73C31697A9D3DB0688D71B28 /* Pods-ALTableView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D6E88288E84AC4F0E1F5C003A2806 /* Pods-ALTableView_Example-dummy.m */; };
+		CC8F05D1858641846C3AB281A87DEC15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		CCE611EB08370E99951BC856B39A84E6 /* RowElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE8CD4E2E3CBFB3B099B2B1F6D55A39 /* RowElement.m */; };
+		DB0D7EF474485DC38A49014F58E98B44 /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ADAED9957E4222611165436897CB39 /* ExtendNSLogFunctionality.m */; };
+		E3EBD47BAAABC171714CE7C7DB848A62 /* ALTableViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = FB59C15DAE44FE464D9374927EDF68C6 /* ALTableViewController.xib */; };
+		EFC6AD6B6DCAB9AF9B833C327120BE6A /* SectionElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B562F2FA7D2B901D1277462CB93DAD45 /* SectionElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F39CB507223E80BC7302BD4FD4FC564B /* SectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EE6FCE976FE0C4CDD10C839718981B0 /* SectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92BFB7EB83A2830B1EDD272324C18096 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBFA3BA9C1A2D7471C8E4B1F16DD2F0E;
+			remoteInfo = ALTableView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01C12509C385C6E36664A7D1EADCA0B7 /* ALTableViewFramework-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALTableViewFramework-Bridging-Header.h"; sourceTree = "<group>"; };
+		09341C1FC8610666DD09A3CC674BC78B /* ALTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ALTableView.modulemap; sourceTree = "<group>"; };
+		12B2370553BD87F75C4275A63EA2AD70 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133A03B98CFA59E555FAB2179B85670C /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
+		15D93FF0DF00EA97E579C823C878ADB4 /* ALTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ALTableViewController.h; sourceTree = "<group>"; };
+		1C2B3284F7DC146C7A0124EED71DAB4F /* SectionElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SectionElement.m; sourceTree = "<group>"; };
+		245324429D782F5930BFF3252372DAF9 /* Pods_ALTableView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALTableView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B675FCE4ABAC902E268F9F289AD1572 /* Pods-ALTableView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableView_Example-umbrella.h"; sourceTree = "<group>"; };
+		30C996170E6455281395E5A0031E54AE /* Pods-ALTableView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		38631EB57F53D37DB355A216B91F6E62 /* SectionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SectionManager.m; sourceTree = "<group>"; };
+		4EDCC5F2413ECE4F76719477694DB7AC /* Pods-ALTableView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableView_Tests-dummy.m"; sourceTree = "<group>"; };
+		531FBCAC2917DF955D6531D7D20261C3 /* Pods-ALTableView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView_Example-resources.sh"; sourceTree = "<group>"; };
+		59B0B4D48B1654364D7F1760EF558398 /* ALTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALTableView-prefix.pch"; sourceTree = "<group>"; };
+		5D3FCA27DA7617DC3A28CD0BB54DCDE5 /* Pods-ALTableView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		61CEB877FE93ABC0B05CD871010BAAE9 /* ALTableViewConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ALTableViewConstants.h; sourceTree = "<group>"; };
+		65ADAED9957E4222611165436897CB39 /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
+		6F6E5F992886A352C7EFCCC5696BA73C /* Pods-ALTableView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7AF42919B08DE3896E5FE3EAC3D1FB9D /* ALTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ALTableView-dummy.m"; sourceTree = "<group>"; };
+		7C50CCF6E58F2081C85C09F0529A65D5 /* Pods-ALTableView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8EE6FCE976FE0C4CDD10C839718981B0 /* SectionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SectionManager.h; sourceTree = "<group>"; };
+		91B94C802002917A0F522F66A6A07239 /* Pods-ALTableView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		942F35D972B84872099CE2BA65765471 /* Pods-ALTableView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView_Tests-resources.sh"; sourceTree = "<group>"; };
+		980D4C17F6CB0EF53B5F9EDF9B04E250 /* Pods-ALTableView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ALTableView_Example.modulemap"; sourceTree = "<group>"; };
+		9FC20EEFE0A13552A1BB8EF9564D15E2 /* ALTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALTableView-umbrella.h"; sourceTree = "<group>"; };
+		A008760203443858D3854E2133C1E87F /* Pods-ALTableView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		AB8024C8CE841FABDF5532F2F54ABE46 /* Pods-ALTableView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B562F2FA7D2B901D1277462CB93DAD45 /* SectionElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SectionElement.h; sourceTree = "<group>"; };
+		BDE8CD4E2E3CBFB3B099B2B1F6D55A39 /* RowElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RowElement.m; sourceTree = "<group>"; };
+		C127C8A2D9A7A2FB771B6EC4ACF1A7A9 /* Pods-ALTableView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		C6DB95B4D26892C13A217AD53656495E /* Pods_ALTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALTableView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CC3E849D28982CE05CD5D22B7D027EDE /* ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD88C18D5FDE38A5FD4985B5F51F458D /* Pods-ALTableView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CD8B81BF99E72AFADC1E96C0FE7924AE /* ALTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ALTableView.xcconfig; sourceTree = "<group>"; };
+		CDC35F7FCC2B68B5C1C58F9CF41818FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAB5CEC85A6D8A6E1A3FB16F2E7646E7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5FD16E6F0CF7864B3C5DB12876579F1 /* ALTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ALTableViewController.m; sourceTree = "<group>"; };
+		F11BD9AD265558F3B912FBCC15DB022E /* RowElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RowElement.h; sourceTree = "<group>"; };
+		F5AC2412C380C8BF4C77BBB58CE802C7 /* Pods-ALTableView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F6806F3286D86C7E3B5865F1807237FB /* Pods-ALTableView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ALTableView_Tests.modulemap"; sourceTree = "<group>"; };
+		FA0D6E88288E84AC4F0E1F5C003A2806 /* Pods-ALTableView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableView_Example-dummy.m"; sourceTree = "<group>"; };
+		FAEAEE11F39C8B16CBE0E4BE25009C12 /* Pods-ALTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FB59C15DAE44FE464D9374927EDF68C6 /* ALTableViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ALTableViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90C83BC798CE2DF0BF8756419D472757 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5E647ADBA1D3A484F8F7C690C46F5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96D8AA40D2B1A2B40F658A2BD60BCA4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC8F05D1858641846C3AB281A87DEC15 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97E5C8E6ECED2712E73722650B391B0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224B206215CFA2A848A06F3125F11841 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26AB780977BF77286D03299930C07D40 /* SectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				F11BD9AD265558F3B912FBCC15DB022E /* RowElement.h */,
+				BDE8CD4E2E3CBFB3B099B2B1F6D55A39 /* RowElement.m */,
+				B562F2FA7D2B901D1277462CB93DAD45 /* SectionElement.h */,
+				1C2B3284F7DC146C7A0124EED71DAB4F /* SectionElement.m */,
+				8EE6FCE976FE0C4CDD10C839718981B0 /* SectionManager.h */,
+				38631EB57F53D37DB355A216B91F6E62 /* SectionManager.m */,
+			);
+			path = SectionManager;
+			sourceTree = "<group>";
+		};
+		284BB167DEA1066BA10B575282FB889A /* Pods-ALTableView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DAB5CEC85A6D8A6E1A3FB16F2E7646E7 /* Info.plist */,
+				F6806F3286D86C7E3B5865F1807237FB /* Pods-ALTableView_Tests.modulemap */,
+				CD88C18D5FDE38A5FD4985B5F51F458D /* Pods-ALTableView_Tests-acknowledgements.markdown */,
+				6F6E5F992886A352C7EFCCC5696BA73C /* Pods-ALTableView_Tests-acknowledgements.plist */,
+				4EDCC5F2413ECE4F76719477694DB7AC /* Pods-ALTableView_Tests-dummy.m */,
+				C127C8A2D9A7A2FB771B6EC4ACF1A7A9 /* Pods-ALTableView_Tests-frameworks.sh */,
+				942F35D972B84872099CE2BA65765471 /* Pods-ALTableView_Tests-resources.sh */,
+				5D3FCA27DA7617DC3A28CD0BB54DCDE5 /* Pods-ALTableView_Tests-umbrella.h */,
+				30C996170E6455281395E5A0031E54AE /* Pods-ALTableView_Tests.debug.xcconfig */,
+				F5AC2412C380C8BF4C77BBB58CE802C7 /* Pods-ALTableView_Tests.release.xcconfig */,
+			);
+			name = "Pods-ALTableView_Tests";
+			path = "Target Support Files/Pods-ALTableView_Tests";
+			sourceTree = "<group>";
+		};
+		4A2ECAF7503F864D229D05F7F80A329F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				836CB65BC6DB5C340F1686B1A028A48B /* ALTableView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		53F05C1432248C42C76E34147F7E8ADC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				15D93FF0DF00EA97E579C823C878ADB4 /* ALTableViewController.h */,
+				E5FD16E6F0CF7864B3C5DB12876579F1 /* ALTableViewController.m */,
+				FB59C15DAE44FE464D9374927EDF68C6 /* ALTableViewController.xib */,
+				01C12509C385C6E36664A7D1EADCA0B7 /* ALTableViewFramework-Bridging-Header.h */,
+				26AB780977BF77286D03299930C07D40 /* SectionManager */,
+				722FBB36C35500BAF2EADC618020F831 /* Utils */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		722FBB36C35500BAF2EADC618020F831 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				61CEB877FE93ABC0B05CD871010BAAE9 /* ALTableViewConstants.h */,
+				133A03B98CFA59E555FAB2179B85670C /* ExtendNSLogFunctionality.h */,
+				65ADAED9957E4222611165436897CB39 /* ExtendNSLogFunctionality.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		73C55797D5F3BD8EEDC94B801E62DD99 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				09341C1FC8610666DD09A3CC674BC78B /* ALTableView.modulemap */,
+				CD8B81BF99E72AFADC1E96C0FE7924AE /* ALTableView.xcconfig */,
+				7AF42919B08DE3896E5FE3EAC3D1FB9D /* ALTableView-dummy.m */,
+				59B0B4D48B1654364D7F1760EF558398 /* ALTableView-prefix.pch */,
+				9FC20EEFE0A13552A1BB8EF9564D15E2 /* ALTableView-umbrella.h */,
+				CDC35F7FCC2B68B5C1C58F9CF41818FF /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ALTableView";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				4A2ECAF7503F864D229D05F7F80A329F /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C69E94C6AABD985482B0EC9C013B5074 /* Products */,
+				9B5F8020383E382108D14454DB0EAE31 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		836CB65BC6DB5C340F1686B1A028A48B /* ALTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B585C487CA4CBFA1BE3BB8F9E1E0E /* ALTableView */,
+				73C55797D5F3BD8EEDC94B801E62DD99 /* Support Files */,
+			);
+			name = ALTableView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		890BA386DCA02FDE57F95055787F14E6 /* Pods-ALTableView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				12B2370553BD87F75C4275A63EA2AD70 /* Info.plist */,
+				980D4C17F6CB0EF53B5F9EDF9B04E250 /* Pods-ALTableView_Example.modulemap */,
+				AB8024C8CE841FABDF5532F2F54ABE46 /* Pods-ALTableView_Example-acknowledgements.markdown */,
+				A008760203443858D3854E2133C1E87F /* Pods-ALTableView_Example-acknowledgements.plist */,
+				FA0D6E88288E84AC4F0E1F5C003A2806 /* Pods-ALTableView_Example-dummy.m */,
+				91B94C802002917A0F522F66A6A07239 /* Pods-ALTableView_Example-frameworks.sh */,
+				531FBCAC2917DF955D6531D7D20261C3 /* Pods-ALTableView_Example-resources.sh */,
+				2B675FCE4ABAC902E268F9F289AD1572 /* Pods-ALTableView_Example-umbrella.h */,
+				FAEAEE11F39C8B16CBE0E4BE25009C12 /* Pods-ALTableView_Example.debug.xcconfig */,
+				7C50CCF6E58F2081C85C09F0529A65D5 /* Pods-ALTableView_Example.release.xcconfig */,
+			);
+			name = "Pods-ALTableView_Example";
+			path = "Target Support Files/Pods-ALTableView_Example";
+			sourceTree = "<group>";
+		};
+		9B5F8020383E382108D14454DB0EAE31 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				890BA386DCA02FDE57F95055787F14E6 /* Pods-ALTableView_Example */,
+				284BB167DEA1066BA10B575282FB889A /* Pods-ALTableView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C69E94C6AABD985482B0EC9C013B5074 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC3E849D28982CE05CD5D22B7D027EDE /* ALTableView.framework */,
+				C6DB95B4D26892C13A217AD53656495E /* Pods_ALTableView_Example.framework */,
+				245324429D782F5930BFF3252372DAF9 /* Pods_ALTableView_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD2B585C487CA4CBFA1BE3BB8F9E1E0E /* ALTableView */ = {
+			isa = PBXGroup;
+			children = (
+				53F05C1432248C42C76E34147F7E8ADC /* Classes */,
+			);
+			path = ALTableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0F0748407135D1C66705E575CE0EBA80 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51A449918B5BAA21F5D0CD5A59F53491 /* Pods-ALTableView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4DBFCECD5B6D3C8A2E0437B6A7E0B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BC93CD29C7DD2BBD7A3DE95FD4D779 /* Pods-ALTableView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BA10E864D9CB809CBCF6CF6B7DEE5BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70091463D6DE1903A371F080C5DD7297 /* ALTableView-umbrella.h in Headers */,
+				1914634DDE4A9F2253385BA1A0EEE030 /* ALTableViewConstants.h in Headers */,
+				94C00C36546914C8E991143BEA10040F /* ALTableViewController.h in Headers */,
+				8B141204EB66A698023BA2B0F10C92EB /* ALTableViewFramework-Bridging-Header.h in Headers */,
+				91782BC176D29DC36F13BC9D625C4641 /* ExtendNSLogFunctionality.h in Headers */,
+				8AFA7D3C7F60BB4AD9039E5F2CB127A3 /* RowElement.h in Headers */,
+				EFC6AD6B6DCAB9AF9B833C327120BE6A /* SectionElement.h in Headers */,
+				F39CB507223E80BC7302BD4FD4FC564B /* SectionManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BD1D44783C6746C12F92C16BCD925637 /* Pods-ALTableView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EF2FB8CA9DE32AB85E74056077B2D2 /* Build configuration list for PBXNativeTarget "Pods-ALTableView_Example" */;
+			buildPhases = (
+				2F14A57EFF79ADFFEA59BD02A0C4D0CA /* Sources */,
+				96D8AA40D2B1A2B40F658A2BD60BCA4E /* Frameworks */,
+				1F4DBFCECD5B6D3C8A2E0437B6A7E0B6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FE853BC772CC1959C7493DF580E0B1F /* PBXTargetDependency */,
+			);
+			name = "Pods-ALTableView_Example";
+			productName = "Pods-ALTableView_Example";
+			productReference = C6DB95B4D26892C13A217AD53656495E /* Pods_ALTableView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EBCE82D00D452AAB8942733170DEBABA /* Pods-ALTableView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E477BF890B7C3C76E32C3B81A8550F84 /* Build configuration list for PBXNativeTarget "Pods-ALTableView_Tests" */;
+			buildPhases = (
+				481E2E8B866BCD34C89C45B334F266E9 /* Sources */,
+				97E5C8E6ECED2712E73722650B391B0C /* Frameworks */,
+				0F0748407135D1C66705E575CE0EBA80 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ALTableView_Tests";
+			productName = "Pods-ALTableView_Tests";
+			productReference = 245324429D782F5930BFF3252372DAF9 /* Pods_ALTableView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EBFA3BA9C1A2D7471C8E4B1F16DD2F0E /* ALTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9758D639E23C5F556FBAB442B6C9E8A /* Build configuration list for PBXNativeTarget "ALTableView" */;
+			buildPhases = (
+				F0F5202B485A8FBC40F7BACDF5B31B2A /* Sources */,
+				90C83BC798CE2DF0BF8756419D472757 /* Frameworks */,
+				8BA10E864D9CB809CBCF6CF6B7DEE5BB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALTableView;
+			productName = ALTableView;
+			productReference = CC3E849D28982CE05CD5D22B7D027EDE /* ALTableView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C69E94C6AABD985482B0EC9C013B5074 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBFA3BA9C1A2D7471C8E4B1F16DD2F0E /* ALTableView */,
+				BD1D44783C6746C12F92C16BCD925637 /* Pods-ALTableView_Example */,
+				EBCE82D00D452AAB8942733170DEBABA /* Pods-ALTableView_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F14A57EFF79ADFFEA59BD02A0C4D0CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC5D19FD73C31697A9D3DB0688D71B28 /* Pods-ALTableView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E2E8B866BCD34C89C45B334F266E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29EAF8935DA4584028B57972AB2DAB18 /* Pods-ALTableView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F5202B485A8FBC40F7BACDF5B31B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8360A6F540C9B98B6DCE3B520ED7A9D /* ALTableView-dummy.m in Sources */,
+				813D2D17115CC8A1007BF1A19D37529C /* ALTableViewController.m in Sources */,
+				E3EBD47BAAABC171714CE7C7DB848A62 /* ALTableViewController.xib in Sources */,
+				DB0D7EF474485DC38A49014F58E98B44 /* ExtendNSLogFunctionality.m in Sources */,
+				CCE611EB08370E99951BC856B39A84E6 /* RowElement.m in Sources */,
+				705484EC20D5939542933308C343E3CA /* SectionElement.m in Sources */,
+				4C98BD4B4CEAFEE45D3DBD65CC295A0C /* SectionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FE853BC772CC1959C7493DF580E0B1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ALTableView;
+			target = EBFA3BA9C1A2D7471C8E4B1F16DD2F0E /* ALTableView */;
+			targetProxy = 92BFB7EB83A2830B1EDD272324C18096 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C76D38EEFD907EB73F4EB6D05C012D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD8B81BF99E72AFADC1E96C0FE7924AE /* ALTableView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ALTableView/ALTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ALTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ALTableView/ALTableView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ALTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3B5EBF1F5FE64A405625B6C5D340876A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C50CCF6E58F2081C85C09F0529A65D5 /* Pods-ALTableView_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView_Example/Pods-ALTableView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ALTableView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		75A261F66BC07A022261F74C0501CCE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAEAEE11F39C8B16CBE0E4BE25009C12 /* Pods-ALTableView_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView_Example/Pods-ALTableView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ALTableView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		767CFEDF278684B4BFD02F3F4A704BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD8B81BF99E72AFADC1E96C0FE7924AE /* ALTableView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ALTableView/ALTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ALTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ALTableView/ALTableView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ALTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		839DB3E1D15E667EA76B77CA2F035A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C996170E6455281395E5A0031E54AE /* Pods-ALTableView_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView_Tests/Pods-ALTableView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ALTableView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8D6760EA5C73BCCC420AF196614625C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AC2412C380C8BF4C77BBB58CE802C7 /* Pods-ALTableView_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView_Tests/Pods-ALTableView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ALTableView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46EF2FB8CA9DE32AB85E74056077B2D2 /* Build configuration list for PBXNativeTarget "Pods-ALTableView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75A261F66BC07A022261F74C0501CCE8 /* Debug */,
+				3B5EBF1F5FE64A405625B6C5D340876A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9758D639E23C5F556FBAB442B6C9E8A /* Build configuration list for PBXNativeTarget "ALTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767CFEDF278684B4BFD02F3F4A704BE5 /* Debug */,
+				0C76D38EEFD907EB73F4EB6D05C012D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E477BF890B7C3C76E32C3B81A8550F84 /* Build configuration list for PBXNativeTarget "Pods-ALTableView_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839DB3E1D15E667EA76B77CA2F035A6D /* Debug */,
+				8D6760EA5C73BCCC420AF196614625C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

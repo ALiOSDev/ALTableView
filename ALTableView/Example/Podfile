@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ALTableView_Example' do
+  pod 'ALTableView', :path => '../'
+
+  target 'ALTableView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
