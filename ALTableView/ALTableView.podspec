@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ALTableView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'An easy way to manage UITableView and UITableViewController'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/ALiOSDev/ALTableView'
+  s.homepage         = 'https://github.com/ALiOSDev/ALTableView.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Lorenzo' => 'villarroel.lorenzo@hotmail.com' }
-  s.source           = { :git => 'https://github.com/ALiOSDev/ALTableView', :tag => s.version.to_s }
+  s.author           = { 'Abimael Barea' => 'elabi3@gmail.com', 'Lorenzo Villarroel' => 'villarroel.lorenzo@hotmail.com' }
+  s.source           = { :git => 'https://github.com/ALiOSDev/ALTableView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/ALTableView'
 
   s.ios.deployment_target = '8.0'
