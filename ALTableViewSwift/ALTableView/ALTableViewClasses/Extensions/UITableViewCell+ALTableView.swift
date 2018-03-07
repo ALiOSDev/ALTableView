@@ -17,4 +17,8 @@ extension UITableViewCell: ALCellProtocol {
     public func cellDeselected() {
         
     }
+    
+    public func cellCreated(dataObject: AnyObject) {
+        
+    }
 }
