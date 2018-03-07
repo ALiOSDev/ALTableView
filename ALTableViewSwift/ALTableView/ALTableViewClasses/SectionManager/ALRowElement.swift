@@ -9,7 +9,7 @@
 import UIKit
 
 public typealias ALCellPressedHandler = (UIViewController, ALCellProtocol) -> Void
-public typealias ALCellCreatedHandler = (AnyObject, ALCellProtocol) -> Void
+public typealias ALCellCreatedHandler = (Any, ALCellProtocol) -> Void
 public typealias ALCellDeselectedHandler = (ALCellProtocol) -> Void
 
 protocol ALRowElementProtocol {
@@ -17,13 +17,13 @@ protocol ALRowElementProtocol {
     func rowElementDeselected(cell: ALCellProtocol)
 }
 
-public protocol ALCellProtocol: class {
+public protocol ALCellProtocol {
     func cellPressed (viewController: UIViewController) -> Void
     func cellDeselected () -> Void
-    func cellCreated(dataObject: AnyObject) -> Void
+    func cellCreated(dataObject: Any) -> Void
 }
 
-class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRowElementProtocol  {
+class ALRowElement: ALRowElementProtocol  {
     
     //MARK: - Properties
     
@@ -31,7 +31,7 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
     private var cellHeight: Double
     private var className: AnyClass //TODO es posible que el className no sea necesario
     private let cellIdentifier: String
-    private let dataObject: DataObjectType
+    private let dataObject: Any
     private let cellStyle: UITableViewCellStyle
     
     private var pressedHandler: ALCellPressedHandler?
@@ -40,8 +40,9 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
     
     //MARK: - Initializers
     
-    init(className: AnyClass, cellIdentifier: String, dataObject: DataObjectType, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, cellHeight: Double = 0.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
-        
+        init(className: AnyClass, cellIdentifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, cellHeight: Double = 0.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+//     init(cellIdentifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, cellHeight: Double = 0.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+    
         self.className = className
         self.cellIdentifier = cellIdentifier
         self.dataObject = dataObject
@@ -55,7 +56,7 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
 
     //MARK: - Getters
     
-    public func getDataObject() -> DataObjectType {
+    public func getDataObject() -> Any {
         
         return self.dataObject
     }
@@ -70,7 +71,7 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
         if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) {
             return dequeuedCell
         } else {
-            let cell: UITableViewCell = CellClass(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
+            let cell: UITableViewCell = UITableViewCell(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
             object_setClass(cell, self.className)
             cell.cellCreated(dataObject: self.dataObject)
             if let handler:ALCellCreatedHandler = self.createdHandler {

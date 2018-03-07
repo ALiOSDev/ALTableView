@@ -26,7 +26,15 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-//        let rowElement: ALRowElement<Int, TestTableViewCell> = ALRowElement(className: <#T##UITableViewCell#>, cellIdentifier: <#T##String#>, dataObject: <#T##_#>)
+        var rowElements = Array<ALRowElement>()
+//        rowElements.append()
+        let rowElement = ALRowElement(className:TestTableViewCell.classForCoder(), cellIdentifier: "asdf", dataObject: 12)
+        let rowElement2 = ALRowElement(className:TestTableViewCell.classForCoder(), cellIdentifier: "asdf", dataObject: "12")
+        rowElements.append(rowElement)
+        rowElements.append(rowElement2)
+        print(rowElements)
+        let section = ALSectionElement(rowElements: rowElements )
+//        ALRowElement<String,TestTableViewCell>()
     }
 
     override func viewWillAppear(_ animated: Bool) {

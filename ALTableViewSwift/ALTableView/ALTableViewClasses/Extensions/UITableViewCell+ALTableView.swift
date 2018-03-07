@@ -18,7 +18,7 @@ extension UITableViewCell: ALCellProtocol {
         
     }
     
-    public func cellCreated(dataObject: AnyObject) {
+    public func cellCreated(dataObject: Any) {
         
     }
 }

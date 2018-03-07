@@ -8,6 +8,16 @@
 
 import UIKit
 
-class ALSectionManager {
+class ALSectionManager: ALSectionHeaderViewDelegate {
+    
+    //MARK: - ALSectionHeaderViewDelegate
+    func sectionOpened(sectionElement: ALSectionElement) {
+        
+    }
+    
+    func sectionClosed(section: ALSectionElement) {
+        
+    }
+    
 
 }
