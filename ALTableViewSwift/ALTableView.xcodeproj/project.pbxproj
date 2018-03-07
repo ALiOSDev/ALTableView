@@ -16,6 +16,8 @@
 		453235AA204FC8E5003BB2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453235A8204FC8E5003BB2C7 /* LaunchScreen.storyboard */; };
 		453235B5204FC8E5003BB2C7 /* ALTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453235B4204FC8E5003BB2C7 /* ALTableViewTests.swift */; };
 		453235C0204FC8E5003BB2C7 /* ALTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453235BF204FC8E5003BB2C7 /* ALTableViewUITests.swift */; };
+		45B49E82205029E400932E51 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B49E80205029E400932E51 /* TestTableViewCell.swift */; };
+		45B49E83205029E400932E51 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B49E81205029E400932E51 /* TestTableViewCell.xib */; };
 		45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F94204FC9D500CB6C0C /* ALRowElement.swift */; };
 		45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */; };
 		45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */; };
@@ -60,6 +62,8 @@
 		453235BB204FC8E5003BB2C7 /* ALTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		453235BF204FC8E5003BB2C7 /* ALTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewUITests.swift; sourceTree = "<group>"; };
 		453235C1204FC8E5003BB2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B49E80205029E400932E51 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		45B49E81205029E400932E51 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		45B87F94204FC9D500CB6C0C /* ALRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRowElement.swift; sourceTree = "<group>"; };
 		45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElement.swift; sourceTree = "<group>"; };
 		45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManager.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				453235A6204FC8E5003BB2C7 /* Assets.xcassets */,
 				453235A8204FC8E5003BB2C7 /* LaunchScreen.storyboard */,
 				453235AB204FC8E5003BB2C7 /* Info.plist */,
+				45B49E80205029E400932E51 /* TestTableViewCell.swift */,
+				45B49E81205029E400932E51 /* TestTableViewCell.xib */,
 			);
 			path = ALTableView;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				453235AA204FC8E5003BB2C7 /* LaunchScreen.storyboard in Resources */,
+				45B49E83205029E400932E51 /* TestTableViewCell.xib in Resources */,
 				453235A7204FC8E5003BB2C7 /* Assets.xcassets in Resources */,
 				453235A5204FC8E5003BB2C7 /* Main.storyboard in Resources */,
 			);
@@ -499,6 +506,7 @@
 			files = (
 				45B87F9E204FD90C00CB6C0C /* UITableViewCell+ALTableView.swift in Sources */,
 				453235A2204FC8E5003BB2C7 /* DetailViewController.swift in Sources */,
+				45B49E82205029E400932E51 /* TestTableViewCell.swift in Sources */,
 				45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */,
 				45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */,
 				45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */,

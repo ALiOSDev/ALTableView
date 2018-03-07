@@ -25,6 +25,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+//        let rowElement: ALRowElement<Int, TestTableViewCell> = ALRowElement(className: <#T##UITableViewCell#>, cellIdentifier: <#T##String#>, dataObject: <#T##_#>)
     }
 
     override func viewWillAppear(_ animated: Bool) {

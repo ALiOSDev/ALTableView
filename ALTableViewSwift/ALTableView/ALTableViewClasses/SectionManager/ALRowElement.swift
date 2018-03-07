@@ -23,7 +23,7 @@ public protocol ALCellProtocol: class {
     func cellCreated(dataObject: AnyObject) -> Void
 }
 
-class ALRowElement<DataObjectType: AnyObject>: ALRowElementProtocol  {
+class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRowElementProtocol  {
     
     //MARK: - Properties
     
@@ -66,14 +66,18 @@ class ALRowElement<DataObjectType: AnyObject>: ALRowElementProtocol  {
     }
     
     public func getCellFrom(tableView: UITableView) {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) {
-            
-        } else {
-//            let cellType = self.className.type
-//            UITableViewCell
-//            let cell = cellType(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
-//            let variable = self.className.initialize()
+        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)
+        if cell == nil {
+            cell = CellClass(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
+            object_setClass(cell, self.className)
         }
+        if let createdCell = cell {
+            createdCell.cellCreated(dataObject: self.dataObject)
+            if let handler:ALCellCreatedHandler = self.createdHandler {
+                handler(self.dataObject, createdCell)
+            }
+        }
+        
     }
     
     //MARK: - Handlers
