@@ -29,7 +29,7 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
     
     private var estimateHeightMode: Bool
     private var cellHeight: Double
-    private var className: AnyClass
+    private var className: AnyClass //TODO es posible que el className no sea necesario
     private let cellIdentifier: String
     private let dataObject: DataObjectType
     private let cellStyle: UITableViewCellStyle
@@ -65,24 +65,25 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
         return self.cellHeight
     }
     
-    public func getCellFrom(tableView: UITableView) {
-        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)
-        if cell == nil {
-            cell = CellClass(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
-            object_setClass(cell, self.className)
-        }
-        if let createdCell = cell {
-            createdCell.cellCreated(dataObject: self.dataObject)
-            if let handler:ALCellCreatedHandler = self.createdHandler {
-                handler(self.dataObject, createdCell)
-            }
-        }
+    public func getCellFrom(tableView: UITableView) -> UITableViewCell {
         
+        if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) {
+            return dequeuedCell
+        } else {
+            let cell: UITableViewCell = CellClass(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
+            object_setClass(cell, self.className)
+            cell.cellCreated(dataObject: self.dataObject)
+            if let handler:ALCellCreatedHandler = self.createdHandler {
+                handler(self.dataObject, cell)
+            }
+            return cell
+        }
     }
     
     //MARK: - Handlers
     
     func rowElementPressed(viewController: UIViewController, cell: ALCellProtocol) {
+        
         cell.cellPressed(viewController: viewController)
         if let handler:ALCellPressedHandler = self.pressedHandler {
             handler(viewController, cell)
@@ -90,6 +91,7 @@ class ALRowElement<DataObjectType: AnyObject, CellClass: UITableViewCell>: ALRow
     }
     
     func rowElementDeselected(cell: ALCellProtocol) {
+        
         cell.cellDeselected()
         if let handler: ALCellDeselectedHandler = self.deselectedHandler {
             handler(cell)
