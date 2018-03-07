@@ -1,5 +1,5 @@
 //
-//  SectionElement.swift
+//  SectionManager.swift
 //  ALTableView
 //
 //  Created by lorenzo villarroel perez on 7/3/18.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SectionElement {
+class ALSectionManager {
 
 }

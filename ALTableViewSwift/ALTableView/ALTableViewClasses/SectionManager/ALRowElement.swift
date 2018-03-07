@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RowElement {
+class ALRowElement {
     
     //MARK: - Properties
     
