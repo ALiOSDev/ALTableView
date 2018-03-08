@@ -81,7 +81,7 @@ class ALRowElement: ALRowElementProtocol  {
         }
     }
     
-    //MARK: - Handlers
+    //MARK: - ALRowElementProtocol
     
     func rowElementPressed(viewController: UIViewController, cell: ALCellProtocol) {
         
