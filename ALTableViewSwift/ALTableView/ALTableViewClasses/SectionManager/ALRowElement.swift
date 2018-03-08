@@ -56,17 +56,17 @@ class ALRowElement: ALRowElementProtocol  {
 
     //MARK: - Getters
     
-    public func getDataObject() -> Any {
+    internal func getDataObject() -> Any {
         
         return self.dataObject
     }
     
-    public func getCellHeight() -> Double {
+    internal func getCellHeight() -> Double {
         
         return self.cellHeight
     }
     
-    public func getCellFrom(tableView: UITableView) -> UITableViewCell {
+    internal func getCellFrom(tableView: UITableView) -> UITableViewCell {
         
         if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) {
             return dequeuedCell
