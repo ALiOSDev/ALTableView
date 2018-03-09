@@ -14,8 +14,8 @@ protocol ALSectionHeaderViewDelegate: class {
     func sectionClosed(sectionElement: ALSectionElement)
 }
 
-class ALSectionElement: NSObject {
-    
+class ALSectionElement {
+
     //MARK: - Properties
     
     private let viewHeader: UIView
@@ -41,7 +41,6 @@ class ALSectionElement: NSObject {
         self.footerHeight = footerHeight
         self.isExpandable = isExpandable
         self.rowElements = rowElements
-        super.init()
         self.setUpHeaderRecognizer()
     }
     
@@ -162,6 +161,16 @@ class ALSectionElement: NSObject {
                 }
             }
         }
+    }
+}
+
+//MARK: - Equatable
+
+extension ALSectionElement: Equatable {
+    
+    static func ==(lhs: ALSectionElement, rhs: ALSectionElement) -> Bool {
+        
+        return lhs === rhs
     }
 }
 
