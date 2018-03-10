@@ -23,14 +23,23 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     
     private let sectionManager: ALSectionManager
     public weak var delegate: ALTableViewProtocol?
+    public weak var viewController: UIViewController?
     
     //MARK: - Initializers
     
-    init(sectionElements: Array<ALSectionElement>) {
+    init(sectionElements: Array<ALSectionElement>, viewController: UIViewController) {
         
         self.sectionManager = ALSectionManager(sectionElements: sectionElements)
+        self.viewController = viewController
         super.init()
         self.sectionManager.delegate = self
+    }
+    
+    //MARK: - Public methods
+    
+    public func register(nibName: String, reuseIdentifier: String, into tableView: UITableView) {
+        let nib = UINib(nibName: nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
     }
     
     //MARK: - Private methods
@@ -60,17 +69,17 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Configuring Rows
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
-            if rowElement.isEstimateHeightMode() {
-                return UITableViewAutomaticDimension
-            } else {
-                let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
-                return estimatedHeight
-            }
-        } else {
-            return 0
-        }
+        return 50
+//        if let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
+//            if rowElement.isEstimateHeightMode() {
+//                return UITableViewAutomaticDimension
+//            } else {
+//                let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
+//                return estimatedHeight
+//            }
+//        } else {
+//            return 0
+//        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,6 +104,32 @@ extension ALTableView: UITableViewDelegate {
             self.delegate?.tableViewDidReachEnd?()
         }
     }
+    
+    //MARK: - Managing selections
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell: ALCellProtocol = tableView.cellForRow(at: indexPath) as? ALCellProtocol,
+            let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
+            rowElement.rowElementPressed(viewController: self.viewController, cell: cell)
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell: ALCellProtocol = tableView.cellForRow(at: indexPath) as? ALCellProtocol,
+            let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
+            rowElement.rowElementDeselected(cell: cell)
+        }
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -114,7 +149,15 @@ extension ALTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell") as? MasterTableViewCell else {
+//            return UITableViewCell()
+//        }
+//
+//        cell.cellCreated(dataObject: "asdf")
+//        return cell
+        if let cell: UITableViewCell = self.sectionManager.getCellFrom(tableView: tableView, indexPath: indexPath) {
+            return cell
+        }
         return UITableViewCell()
     }
 }

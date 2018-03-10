@@ -8,17 +8,17 @@
 
 import UIKit
 
-extension UITableViewCell: ALCellProtocol {
+extension UITableViewCell {
 
-    public func cellPressed(viewController: UIViewController) {
-        
-    }
-    
-    public func cellDeselected() {
-        
-    }
-    
-    public func cellCreated(dataObject: Any) {
-        
-    }
+//    public func cellPressed(viewController: UIViewController?) {
+//        
+//    }
+//    
+//    public func cellDeselected() {
+//        
+//    }
+//    
+//    public func cellCreated(dataObject: Any) {
+//        
+//    }
 }

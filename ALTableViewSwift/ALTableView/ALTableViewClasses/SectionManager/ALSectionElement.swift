@@ -83,7 +83,7 @@ class ALSectionElement {
     
     internal func getRowElementAt(position: Int) -> ALRowElement? {
         
-        guard position > 0 && position < self.rowElements.count else {
+        guard position >= 0 && position < self.rowElements.count else {
             return nil
         }
         let rowElement: ALRowElement = self.rowElements[position]

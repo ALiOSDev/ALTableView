@@ -29,15 +29,32 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     //MARK: - Number of Sections & Cells
     
-    func getNumberOfSections() -> Int {
+    internal func getNumberOfSections() -> Int {
         return self.sectionElements.count
     }
     
-    func getNumberOfRows(in section: Int) -> Int {
+    internal func getNumberOfRows(in section: Int) -> Int {
         guard section < self.sectionElements.count && section >= 0 else {
             return 0
         }
         return self.sectionElements[section].getNumberOfRows()
+    }
+    
+    //MARK: - Getter Cell
+    
+    internal func getCellFrom(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell? {
+        return self.getCellFrom(tableView: tableView, section: indexPath.section, row: indexPath.row)
+    }
+    
+    internal func getCellFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewCell? {
+        guard section < self.sectionElements.count && section >= 0 else {
+            return nil
+        }
+        if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
+            let cell: UITableViewCell = rowElement.getCellFrom(tableView: tableView)
+            return cell
+        }
+        return nil
     }
     
     //MARK: - Cell height
@@ -56,11 +73,11 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return 0
     }
     
-    func setRowElementHeight(height: CGFloat, indexPath: IndexPath) {
+    internal func setRowElementHeight(height: CGFloat, indexPath: IndexPath) {
         self.setRowElementHeight(height: height, section: indexPath.section, row: indexPath.row)
     }
     
-    func setRowElementHeight(height: CGFloat, section: Int, row: Int) {
+    internal func setRowElementHeight(height: CGFloat, section: Int, row: Int) {
         if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
             rowElement.setCellHeight(height: height)
         }
