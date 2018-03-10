@@ -69,17 +69,17 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Configuring Rows
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-//        if let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
-//            if rowElement.isEstimateHeightMode() {
-//                return UITableViewAutomaticDimension
-//            } else {
-//                let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
-//                return estimatedHeight
-//            }
-//        } else {
-//            return 0
-//        }
+
+        if let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
+            if rowElement.isEstimateHeightMode() {
+                return UITableViewAutomaticDimension
+            } else {
+                let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
+                return estimatedHeight
+            }
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -149,12 +149,7 @@ extension ALTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell") as? MasterTableViewCell else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.cellCreated(dataObject: "asdf")
-//        return cell
+
         if let cell: UITableViewCell = self.sectionManager.getCellFrom(tableView: tableView, indexPath: indexPath) {
             return cell
         }

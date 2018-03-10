@@ -27,10 +27,11 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        self.registerCells()
+        
         let sectionElements = self.createElements()
 
         self.alTableView = ALTableView(sectionElements: sectionElements, viewController: self)
+        self.registerCells()
         self.tableView.delegate = self.alTableView
         self.tableView.dataSource = self.alTableView
         self.tableView.reloadData()
@@ -65,8 +66,8 @@ class MasterViewController: UITableViewController {
     func createElements() -> [ALSectionElement] {
         var rowElements = Array<ALRowElement>()
         //        rowElements.append()
-        let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 1")
-        let rowElement2 = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 2")
+        let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
+        let rowElement2 = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 2", estimateHeightMode: true)
         rowElements.append(rowElement)
         rowElements.append(rowElement2)
         print(rowElements)
@@ -78,9 +79,7 @@ class MasterViewController: UITableViewController {
     }
 
     func registerCells() {
-        let nib = UINib(nibName: masterTableViewCellString, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: masterTableViewCellString)
-//        self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString, into: self.tableView)
+        self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString, into: self.tableView)
     }
 
 

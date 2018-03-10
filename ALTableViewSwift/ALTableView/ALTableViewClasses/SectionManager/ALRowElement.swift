@@ -56,7 +56,7 @@ class ALRowElement: ALRowElementProtocol  {
     
     //MARK: - Initializers
     
-        init(className: AnyClass, cellIdentifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, cellHeight: CGFloat = 0.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+        init(className: AnyClass, cellIdentifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, cellHeight: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
     
         self.className = className
         self.cellIdentifier = cellIdentifier
@@ -95,51 +95,17 @@ class ALRowElement: ALRowElementProtocol  {
     
     internal func getCellFrom(tableView: UITableView) -> UITableViewCell {
         
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) else {
-//            return UITableViewCell()
-//        }
-//        if let alCell = cell as? ALCellProtocol {
-//            alCell.cellCreated(dataObject: self.dataObject)
-//        }
-//
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) as? MasterTableViewCell else {
-//            return UITableViewCell()
-//        }
-        
-        
-//        return cell
-        
-        
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)
-        if cell == nil {
-           cell = UITableViewCell(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
-            object_setClass(cell, self.className)
-        }
-        if let newCell = cell as? ALCellProtocol {
-            newCell.cellCreated(dataObject: self.dataObject)
-            if let handler:ALCellCreatedHandler = self.createdHandler {
-                handler(self.dataObject, newCell)
+        if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)  {
+            if let alCell = dequeuedCell as? ALCellProtocol {
+                object_setClass(alCell, self.className)
+                alCell.cellCreated(dataObject: self.dataObject)
+                if let handler:ALCellCreatedHandler = self.createdHandler {
+                    handler(self.dataObject, alCell)
+                }
             }
-
+            return dequeuedCell
         }
-        return cell!
-        
-        
-        
-        
-        
-//        if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) as? MasterTableViewCell {
-//            return dequeuedCell
-//        } else {
-//            let cell: UITableViewCell = UITableViewCell(style: self.cellStyle, reuseIdentifier: self.cellIdentifier)
-//            object_setClass(cell, self.className)
-//            cell.cellCreated(dataObject: self.dataObject)
-//            if let handler:ALCellCreatedHandler = self.createdHandler {
-//                handler(self.dataObject, cell)
-//            }
-//            return cell
-//        }
+        return UITableViewCell()
     }
     
     //MARK: - ALRowElementProtocol
