@@ -24,22 +24,24 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     private let sectionManager: ALSectionManager
     public weak var delegate: ALTableViewProtocol?
     public weak var viewController: UIViewController?
+    public weak var tableView: UITableView?
     
     //MARK: - Initializers
     
-    init(sectionElements: Array<ALSectionElement>, viewController: UIViewController) {
+    init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
         
         self.sectionManager = ALSectionManager(sectionElements: sectionElements)
         self.viewController = viewController
+        self.tableView = tableView
         super.init()
         self.sectionManager.delegate = self
     }
     
     //MARK: - Public methods
     
-    public func register(nibName: String, reuseIdentifier: String, into tableView: UITableView) {
+    public func register(nibName: String, reuseIdentifier: String) {
         let nib = UINib(nibName: nibName, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
+        self.tableView?.register(nib, forCellReuseIdentifier: reuseIdentifier)
     }
     
     //MARK: - Private methods
@@ -54,11 +56,25 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     //MARK: - ALSectionManagerProtocol
     
     func sectionOpened(at index: Int, numberOfElements: Int) {
-        
+        var indexPathes: Array<IndexPath> = Array<IndexPath>()
+        for i in 0..<numberOfElements {
+            let indexPath = IndexPath(row: i, section: index)
+            indexPathes.append(indexPath)
+        }
+        self.tableView?.beginUpdates()
+        self.tableView?.insertRows(at: indexPathes, with: .top)
+        self.tableView?.endUpdates()
     }
     
     func sectionClosed(at index: Int, numberOfElements: Int) {
-        
+        var indexPathes: Array<IndexPath> = Array<IndexPath>()
+        for i in 0..<numberOfElements {
+            let indexPath = IndexPath(row: i, section: index)
+            indexPathes.append(indexPath)
+        }
+        self.tableView?.beginUpdates()
+        self.tableView?.deleteRows(at: indexPathes, with: .top)
+        self.tableView?.endUpdates()
     }
 }
 
@@ -130,6 +146,25 @@ extension ALTableView: UITableViewDelegate {
             rowElement.rowElementDeselected(cell: cell)
         }
     }
+    
+    //MARK: - Modifying Header and Footer of Sections
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.sectionManager.getSectionHeaderAtSection(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return self.sectionManager.getSectionFooterAtSection(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.sectionManager.getSectionHeaderHeightAtSection(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return self.sectionManager.getSectionFooterHeightAtSection(section: section)
+    }
+    
 }
 
 //MARK: - UITableViewDataSource

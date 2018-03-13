@@ -34,7 +34,7 @@ class ALSectionElement {
     
     //MARK: - Initializers
     
-    init(viewHeader: UIView = UIView(), viewFooter: UIView = UIView(), headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false, rowElements: Array<ALRowElement>) {
+    init(rowElements: Array<ALRowElement>, viewHeader: UIView = UIView(), viewFooter: UIView = UIView(), headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false) {
         self.viewHeader = viewHeader
         self.viewFooter = viewFooter
         self.headerHeight = headerHeight

@@ -30,7 +30,7 @@ class MasterViewController: UITableViewController {
         
         let sectionElements = self.createElements()
 
-        self.alTableView = ALTableView(sectionElements: sectionElements, viewController: self)
+        self.alTableView = ALTableView(sectionElements: sectionElements, viewController: self, tableView: self.tableView)
         self.registerCells()
         self.tableView.delegate = self.alTableView
         self.tableView.dataSource = self.alTableView
@@ -64,22 +64,30 @@ class MasterViewController: UITableViewController {
     }
     
     func createElements() -> [ALSectionElement] {
-        var rowElements = Array<ALRowElement>()
-        //        rowElements.append()
-        let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
-        let rowElement2 = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 2", estimateHeightMode: true)
-        rowElements.append(rowElement)
-        rowElements.append(rowElement2)
-        print(rowElements)
-        let section = ALSectionElement(rowElements: rowElements )
         var sectionElements = [ALSectionElement]()
-        sectionElements.append(section)
+        for _ in 0...2 {
+            var rowElements = Array<ALRowElement>()
+            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
+            let rowElement2 = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 2", estimateHeightMode: true)
+            rowElements.append(rowElement)
+            rowElements.append(rowElement2)
+            
+            let labelTitle: UILabel = UILabel()
+            labelTitle.text = "Header Test"
+            labelTitle.backgroundColor = .green
+            
+            let section = ALSectionElement(rowElements: rowElements, viewHeader: labelTitle, headerHeight: 40, isExpandable: true)
+            
+            sectionElements.append(section)
+        }
+        
+        
         
         return sectionElements
     }
 
     func registerCells() {
-        self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString, into: self.tableView)
+        self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString)
     }
 
 

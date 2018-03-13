@@ -25,6 +25,9 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     init(sectionElements: Array<ALSectionElement>) {
         self.sectionElements = sectionElements
+        self.sectionElements.forEach { (sectionElement: ALSectionElement) in
+            sectionElement.delegate = self
+        }
     }
     
     //MARK: - Number of Sections & Cells
@@ -94,7 +97,49 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return rowElement
     }
     
+    //MARK: - Sections Header & Footer Views
+    
+    internal func getSectionHeaderAtIndexPath(indexPath: IndexPath) -> UIView? {
+        return self.getSectionHeaderAtSection(section: indexPath.section)
+    }
+    
+    internal func getSectionHeaderAtSection(section: Int) -> UIView? {
+        let sectionElement: ALSectionElement? = self.sectionElements[safe: section]
+        return sectionElement?.getHeader()
+    }
+    
+    internal func getSectionFooterAtIndexPath(indexPath: IndexPath) -> UIView? {
+        return self.getSectionFooterAtSection(section: indexPath.section)
+    }
+    
+    internal func getSectionFooterAtSection(section: Int) -> UIView? {
+        let sectionElement: ALSectionElement? = self.sectionElements[safe: section]
+        return sectionElement?.getFooter()
+    }
 
+    //MARK: - Sections Header & Footer height
+
+    internal func getSectionHeaderHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
+        return self.getSectionHeaderHeightAtSection(section: indexPath.section)
+    }
+    
+    internal func getSectionHeaderHeightAtSection(section: Int) -> CGFloat {
+        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
+            return sectionElement.getHeaderHeight()
+        }
+        return 0
+    }
+    
+    internal func getSectionFooterHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
+        return self.getSectionFooterHeightAtSection(section: indexPath.section)
+    }
+    
+    internal func getSectionFooterHeightAtSection(section: Int) -> CGFloat {
+        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
+            return sectionElement.getFooterHeight()
+        }
+        return 0
+    }
     
     //MARK: - ALSectionHeaderViewDelegate
     
@@ -114,4 +159,12 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     }
     
 
+}
+
+extension Collection {
+    
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
 }
