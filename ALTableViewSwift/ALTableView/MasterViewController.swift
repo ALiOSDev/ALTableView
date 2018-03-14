@@ -80,9 +80,7 @@ class MasterViewController: UITableViewController {
             
             sectionElements.append(section)
         }
-        
-        
-        
+
         return sectionElements
     }
 
