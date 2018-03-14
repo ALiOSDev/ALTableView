@@ -37,22 +37,21 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     }
     
     internal func getNumberOfRows(in section: Int) -> Int {
-        guard section < self.sectionElements.count && section >= 0 else {
-            return 0
+        if let numberOfRows = self.sectionElements[safe: section]?.getNumberOfRows() {
+            return numberOfRows
         }
-        return self.sectionElements[section].getNumberOfRows()
+        return 0
     }
     
     //MARK: - Getter Cell
     
     internal func getCellFrom(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell? {
+        
         return self.getCellFrom(tableView: tableView, section: indexPath.section, row: indexPath.row)
     }
     
     internal func getCellFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewCell? {
-        guard section < self.sectionElements.count && section >= 0 else {
-            return nil
-        }
+        
         if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
             let cell: UITableViewCell = rowElement.getCellFrom(tableView: tableView)
             return cell
@@ -63,24 +62,25 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - Cell height
     
     internal func getCellHeightFrom(indexPath: IndexPath) -> CGFloat {
+        
         return self.getCellHeightFrom(section: indexPath.section, row: indexPath.row)
     }
     
     internal func getCellHeightFrom(section: Int, row: Int) -> CGFloat {
-        guard section < self.sectionElements.count && section >= 0 else {
-            return 0
-        }
-        if let rowHeight = self.sectionElements[section].getRowHeight(at: row) {
+        
+        if let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row) {
             return rowHeight
         }
         return 0
     }
     
     internal func setRowElementHeight(height: CGFloat, indexPath: IndexPath) {
+        
         self.setRowElementHeight(height: height, section: indexPath.section, row: indexPath.row)
     }
     
     internal func setRowElementHeight(height: CGFloat, section: Int, row: Int) {
+        
         if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
             rowElement.setCellHeight(height: height)
         }
@@ -89,30 +89,36 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - Get Row Elements
     
     internal func getRowElementAtIndexPath(indexPath: IndexPath) -> ALRowElement? {
+        
         return self.getRowElementAtSection(section: indexPath.section, row: indexPath.row)
     }
     
     internal func getRowElementAtSection(section: Int, row: Int) -> ALRowElement? {
-        let rowElement: ALRowElement? = self.sectionElements[section].getRowElementAt(position: row)
+        
+        let rowElement: ALRowElement? = self.sectionElements[safe: section]?.getRowElementAt(position: row)
         return rowElement
     }
     
     //MARK: - Sections Header & Footer Views
     
     internal func getSectionHeaderAtIndexPath(indexPath: IndexPath) -> UIView? {
+        
         return self.getSectionHeaderAtSection(section: indexPath.section)
     }
     
     internal func getSectionHeaderAtSection(section: Int) -> UIView? {
+        
         let sectionElement: ALSectionElement? = self.sectionElements[safe: section]
         return sectionElement?.getHeader()
     }
     
     internal func getSectionFooterAtIndexPath(indexPath: IndexPath) -> UIView? {
+        
         return self.getSectionFooterAtSection(section: indexPath.section)
     }
     
     internal func getSectionFooterAtSection(section: Int) -> UIView? {
+        
         let sectionElement: ALSectionElement? = self.sectionElements[safe: section]
         return sectionElement?.getFooter()
     }
@@ -120,10 +126,12 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - Sections Header & Footer height
 
     internal func getSectionHeaderHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
+        
         return self.getSectionHeaderHeightAtSection(section: indexPath.section)
     }
     
     internal func getSectionHeaderHeightAtSection(section: Int) -> CGFloat {
+        
         if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
             return sectionElement.getHeaderHeight()
         }
@@ -131,6 +139,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     }
     
     internal func getSectionFooterHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
+        
         return self.getSectionFooterHeightAtSection(section: indexPath.section)
     }
     

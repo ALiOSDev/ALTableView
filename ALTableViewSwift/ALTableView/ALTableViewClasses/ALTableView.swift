@@ -124,11 +124,13 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Managing selections
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
         return indexPath
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let cell: ALCellProtocol = tableView.cellForRow(at: indexPath) as? ALCellProtocol,
             let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
             rowElement.rowElementPressed(viewController: self.viewController, cell: cell)
@@ -137,10 +139,12 @@ extension ALTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        
         return indexPath
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
         if let cell: ALCellProtocol = tableView.cellForRow(at: indexPath) as? ALCellProtocol,
             let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
             rowElement.rowElementDeselected(cell: cell)
@@ -150,18 +154,22 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Modifying Header and Footer of Sections
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         return self.sectionManager.getSectionHeaderAtSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
         return self.sectionManager.getSectionFooterAtSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         return self.sectionManager.getSectionHeaderHeightAtSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
         return self.sectionManager.getSectionFooterHeightAtSection(section: section)
     }
     
