@@ -11,13 +11,11 @@ import UIKit
 class MasterViewController: UITableViewController {
     
     let masterTableViewCellString = "MasterTableViewCell"
+    let master2TableViewCellString = "Master2TableViewCell"
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     var alTableView: ALTableView?
-    
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +67,7 @@ class MasterViewController: UITableViewController {
         for _ in 0...2 {
             var rowElements = Array<ALRowElement>()
             let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
-            let rowElement2 = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 2", estimateHeightMode: true)
+            let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), cellIdentifier: master2TableViewCellString, dataObject: 12, estimateHeightMode: true)
             rowElements.append(rowElement)
             rowElements.append(rowElement2)
             
@@ -87,6 +85,7 @@ class MasterViewController: UITableViewController {
 
     func registerCells() {
         self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString)
+        self.alTableView?.register(nibName: master2TableViewCellString, reuseIdentifier: master2TableViewCellString)
     }
 
 
