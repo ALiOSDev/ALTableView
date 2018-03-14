@@ -55,10 +55,10 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     
     //MARK: - ALSectionManagerProtocol
     
-    func sectionOpened(at index: Int, numberOfElements: Int) {
+    func sectionOpened(at section: Int, numberOfElements: Int) {
         var indexPathes: Array<IndexPath> = Array<IndexPath>()
         for i in 0..<numberOfElements {
-            let indexPath = IndexPath(row: i, section: index)
+            let indexPath = IndexPath(row: i, section: section)
             indexPathes.append(indexPath)
         }
         self.tableView?.beginUpdates()
@@ -66,10 +66,10 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
         self.tableView?.endUpdates()
     }
     
-    func sectionClosed(at index: Int, numberOfElements: Int) {
+    func sectionClosed(at section: Int, numberOfElements: Int) {
         var indexPathes: Array<IndexPath> = Array<IndexPath>()
         for i in 0..<numberOfElements {
-            let indexPath = IndexPath(row: i, section: index)
+            let indexPath = IndexPath(row: i, section: section)
             indexPathes.append(indexPath)
         }
         self.tableView?.beginUpdates()

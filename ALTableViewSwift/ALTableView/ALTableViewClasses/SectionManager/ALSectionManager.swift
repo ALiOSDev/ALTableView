@@ -10,8 +10,8 @@ import UIKit
 
 //Implemented by ALTableView
 protocol ALSectionManagerProtocol: class {
-    func sectionOpened(at index: Int, numberOfElements: Int)
-    func sectionClosed(at index: Int, numberOfElements: Int)
+    func sectionOpened(at section: Int, numberOfElements: Int)
+    func sectionClosed(at section: Int, numberOfElements: Int)
 }
 
 class ALSectionManager: ALSectionHeaderViewDelegate {
@@ -144,17 +144,17 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - ALSectionHeaderViewDelegate
     
     func sectionOpened(sectionElement: ALSectionElement) {
-        if let index: Int = sectionElements.index(of: sectionElement) {
+        if let section: Int = sectionElements.index(of: sectionElement) {
             let numberOfElements: Int = sectionElement.getNumberOfRealRows()
-            self.delegate?.sectionOpened(at: index, numberOfElements: numberOfElements)
+            self.delegate?.sectionOpened(at: section, numberOfElements: numberOfElements)
         }
 
     }
     
     func sectionClosed(sectionElement: ALSectionElement) {
-        if let index: Int = sectionElements.index(of: sectionElement) {
+        if let section: Int = sectionElements.index(of: sectionElement) {
             let numberOfElements: Int = sectionElement.getNumberOfRealRows()
-            self.delegate?.sectionClosed(at: index, numberOfElements: numberOfElements)
+            self.delegate?.sectionClosed(at: section, numberOfElements: numberOfElements)
         }
     }
     
