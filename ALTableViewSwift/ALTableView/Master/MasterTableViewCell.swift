@@ -30,7 +30,7 @@ class MasterTableViewCell: UITableViewCell, ALCellProtocol {
     }
     
     public func cellPressed(viewController: UIViewController?) {
-        print(self.labelText.text)
+//        print(self.labelText.text)
     }
     
 //    func cellCreated(dataObject: Any) {
