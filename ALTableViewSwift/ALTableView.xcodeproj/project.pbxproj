@@ -20,6 +20,7 @@
 		453235C0204FC8E5003BB2C7 /* ALTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453235BF204FC8E5003BB2C7 /* ALTableViewUITests.swift */; };
 		4568AF542059482100570B99 /* Master2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568AF522059482100570B99 /* Master2TableViewCell.swift */; };
 		4568AF552059482100570B99 /* Master2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4568AF532059482100570B99 /* Master2TableViewCell.xib */; };
+		456A319F20597516006F7578 /* ALRowElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A319E20597516006F7578 /* ALRowElementTests.swift */; };
 		45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F94204FC9D500CB6C0C /* ALRowElement.swift */; };
 		45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */; };
 		45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */; };
@@ -67,6 +68,7 @@
 		453235C1204FC8E5003BB2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4568AF522059482100570B99 /* Master2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master2TableViewCell.swift; sourceTree = "<group>"; };
 		4568AF532059482100570B99 /* Master2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Master2TableViewCell.xib; sourceTree = "<group>"; };
+		456A319E20597516006F7578 /* ALRowElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRowElementTests.swift; sourceTree = "<group>"; };
 		45B87F94204FC9D500CB6C0C /* ALRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRowElement.swift; sourceTree = "<group>"; };
 		45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElement.swift; sourceTree = "<group>"; };
 		45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManager.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				453235B4204FC8E5003BB2C7 /* ALTableViewTests.swift */,
 				453235B6204FC8E5003BB2C7 /* Info.plist */,
+				456A319E20597516006F7578 /* ALRowElementTests.swift */,
 			);
 			path = ALTableViewTests;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456A319F20597516006F7578 /* ALRowElementTests.swift in Sources */,
 				453235B5204FC8E5003BB2C7 /* ALTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

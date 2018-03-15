@@ -40,7 +40,8 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     //MARK: - Public methods
     
     public func register(nibName: String, reuseIdentifier: String) {
-        let nib = UINib(nibName: nibName, bundle: nil)
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
         self.tableView?.register(nib, forCellReuseIdentifier: reuseIdentifier)
     }
     
