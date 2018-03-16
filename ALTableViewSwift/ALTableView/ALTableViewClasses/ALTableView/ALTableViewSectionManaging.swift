@@ -145,4 +145,27 @@ extension ALTableView {
         self.sectionManager.replaceAllSections(sectionElements: sectionElements)
         self.tableView?.reloadData()
     }
+    
+    //MARK: - Private methods
+    
+    private func getIndexSections(section: Int, numberOfSectionElements: Int) -> IndexSet? {
+        
+        if !self.checkParameters(section: section, row: nil) {
+            return nil
+        }
+        
+        var mutableSection = section
+        switch mutableSection {
+        case ALPosition.begining.rawValue:
+            mutableSection = 0
+        case ALPosition.end.rawValue:
+            mutableSection = self.sectionManager.getNumberOfSections()
+        default:
+            break
+        }
+        let lowerIndex: Int = mutableSection
+        let higherIndex: Int = mutableSection + numberOfSectionElements
+        let indexSet: IndexSet = IndexSet(integersIn: lowerIndex..<higherIndex)
+        return indexSet
+    }
 }

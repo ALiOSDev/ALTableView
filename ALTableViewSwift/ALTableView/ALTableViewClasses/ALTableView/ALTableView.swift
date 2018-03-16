@@ -50,53 +50,6 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     
     //MARK: - Private methods
     
-    internal func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>?{
-        
-        //TODO check this -1
-        if !self.checkParameters(section: section, row: row - 1) {
-            return nil
-        }
-        
-        var mutableRow = row
-        switch mutableRow {
-        case ALPosition.begining.rawValue:
-            mutableRow = 0
-        case ALPosition.end.rawValue:
-            mutableRow = self.sectionManager.getNumberOfRows(in: section)
-        default:
-            break
-        }
-        
-        var indexPathes: Array<IndexPath> = [IndexPath]()
-        for i in 0..<row {
-            let indexPath: IndexPath = IndexPath(row: i + mutableRow, section: section)
-            indexPathes.append(indexPath)
-        }
-        
-        return indexPathes
-    }
-    
-    internal func getIndexSections(section: Int, numberOfSectionElements: Int) -> IndexSet? {
-        
-        if !self.checkParameters(section: section, row: nil) {
-            return nil
-        }
-        
-        var mutableSection = section
-        switch mutableSection {
-        case ALPosition.begining.rawValue:
-            mutableSection = 0
-        case ALPosition.end.rawValue:
-            mutableSection = self.sectionManager.getNumberOfSections()
-        default:
-            break
-        }
-        let lowerIndex: Int = mutableSection
-        let higherIndex: Int = mutableSection + numberOfSectionElements
-        let indexSet: IndexSet = IndexSet(integersIn: lowerIndex..<higherIndex)
-        return indexSet
-    }
-    
     internal func checkParameters(section: Int, row: Int?) -> Bool {
         
         //TODO Test section and row conditions
@@ -113,13 +66,6 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
         }
         
         return true
-    }
-        
-    internal func isLastIndexPath (indexPath: IndexPath, tableView: UITableView) -> Bool {
-        
-        let isLastSection: Bool = indexPath.section == tableView.numberOfSections
-        let isLastRow: Bool = indexPath.row == tableView.numberOfRows(inSection: indexPath.section)
-        return isLastSection && isLastRow
     }
     
     //MARK: - ALSectionManagerProtocol

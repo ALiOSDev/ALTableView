@@ -140,4 +140,33 @@ extension ALTableView {
         
         return self.replace(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
+    
+    //MARK: - Private methods
+    
+    private func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>?{
+        
+        //TODO check this -1
+        if !self.checkParameters(section: section, row: row - 1) {
+            return nil
+        }
+        
+        var mutableRow = row
+        switch mutableRow {
+        case ALPosition.begining.rawValue:
+            mutableRow = 0
+        case ALPosition.end.rawValue:
+            mutableRow = self.sectionManager.getNumberOfRows(in: section)
+        default:
+            break
+        }
+        
+        var indexPathes: Array<IndexPath> = [IndexPath]()
+        for i in 0..<row {
+            let indexPath: IndexPath = IndexPath(row: i + mutableRow, section: section)
+            indexPathes.append(indexPath)
+        }
+        
+        return indexPathes
+    }
+    
 }

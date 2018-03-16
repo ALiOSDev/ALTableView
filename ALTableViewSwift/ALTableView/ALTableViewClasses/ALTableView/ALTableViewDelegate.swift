@@ -103,4 +103,13 @@ extension ALTableView: UITableViewDelegate {
         return self.sectionManager.getSectionFooterHeightAtSection(section: section)
     }
     
+    //MARK: - Private methods
+    
+    private func isLastIndexPath (indexPath: IndexPath, tableView: UITableView) -> Bool {
+        
+        let isLastSection: Bool = indexPath.section == tableView.numberOfSections
+        let isLastRow: Bool = indexPath.row == tableView.numberOfRows(inSection: indexPath.section)
+        return isLastSection && isLastRow
+    }
+    
 }
