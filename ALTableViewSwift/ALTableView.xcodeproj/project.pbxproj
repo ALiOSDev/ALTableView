@@ -27,6 +27,10 @@
 		45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */; };
 		94F23D7F7B20C86954396599 /* Pods_ALTableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404A46833267F79B65BBFB13 /* Pods_ALTableViewTests.framework */; };
 		B0B4F2256521CF874D5A3264 /* Pods_ALTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF377A08D787F06C53A0BB93 /* Pods_ALTableView.framework */; };
+		ED7872A6205C45D000E335F0 /* ALTableViewRowManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7872A5205C45D000E335F0 /* ALTableViewRowManaging.swift */; };
+		ED7872A8205C475B00E335F0 /* ALTableViewSectionManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7872A7205C475B00E335F0 /* ALTableViewSectionManaging.swift */; };
+		ED7872AA205C480A00E335F0 /* ALTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7872A9205C480A00E335F0 /* ALTableViewDelegate.swift */; };
+		ED7872AC205C481500E335F0 /* ALTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7872AB205C481500E335F0 /* ALTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		AC850232D0B8BF08F300F05D /* Pods-ALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ALTableView/Pods-ALTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		AF1F44E5F973BAAEF57E3098 /* Pods-ALTableViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableViewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ALTableViewUITests/Pods-ALTableViewUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF377A08D787F06C53A0BB93 /* Pods_ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7872A5205C45D000E335F0 /* ALTableViewRowManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewRowManaging.swift; sourceTree = "<group>"; };
+		ED7872A7205C475B00E335F0 /* ALTableViewSectionManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewSectionManaging.swift; sourceTree = "<group>"; };
+		ED7872A9205C480A00E335F0 /* ALTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewDelegate.swift; sourceTree = "<group>"; };
+		ED7872AB205C481500E335F0 /* ALTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +188,7 @@
 		45B87F92204FC9A200CB6C0C /* ALTableViewClasses */ = {
 			isa = PBXGroup;
 			children = (
-				45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */,
+				ED7872A4205C458000E335F0 /* ALTableView */,
 				45B87F93204FC9BB00CB6C0C /* SectionManager */,
 			);
 			path = ALTableViewClasses;
@@ -217,6 +225,18 @@
 				481760E8A716D3C675CECE04 /* Pods_ALTableViewUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED7872A4205C458000E335F0 /* ALTableView */ = {
+			isa = PBXGroup;
+			children = (
+				45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */,
+				ED7872A5205C45D000E335F0 /* ALTableViewRowManaging.swift */,
+				ED7872A7205C475B00E335F0 /* ALTableViewSectionManaging.swift */,
+				ED7872A9205C480A00E335F0 /* ALTableViewDelegate.swift */,
+				ED7872AB205C481500E335F0 /* ALTableViewDataSource.swift */,
+			);
+			path = ALTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,12 +534,16 @@
 				453235A2204FC8E5003BB2C7 /* DetailViewController.swift in Sources */,
 				45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */,
 				45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */,
+				ED7872AA205C480A00E335F0 /* ALTableViewDelegate.swift in Sources */,
+				ED7872A6205C45D000E335F0 /* ALTableViewRowManaging.swift in Sources */,
+				ED7872A8205C475B00E335F0 /* ALTableViewSectionManaging.swift in Sources */,
 				450E56C62054409F00095E88 /* MasterTableViewCell.swift in Sources */,
 				45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */,
 				45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */,
 				4568AF542059482100570B99 /* Master2TableViewCell.swift in Sources */,
 				453235A0204FC8E5003BB2C7 /* MasterViewController.swift in Sources */,
 				4532359E204FC8E5003BB2C7 /* AppDelegate.swift in Sources */,
+				ED7872AC205C481500E335F0 /* ALTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
