@@ -15,6 +15,11 @@ import UIKit
     @objc optional func tableViewWillEndDragging()
 }
 
+enum SectionInsert: Int {
+    case begining = -1
+    case end = -2
+}
+
 class ALTableView: NSObject, ALSectionManagerProtocol {
 
     
@@ -45,7 +50,106 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
         self.tableView?.register(nib, forCellReuseIdentifier: reuseIdentifier)
     }
     
+    //MARK: - Managing the insertion of new cells
+    
+    public func insert(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElement: rowElement, section: indexPath.section, row: indexPath.row, animation: animation)
+    }
+    
+    public func insert(rowElement: ALRowElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        if let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: 1) {
+            self.tableView?.beginUpdates()
+            self.tableView?.insertRows(at: indexPathes, with: animation)
+            self.tableView?.endUpdates()
+            return true
+        }
+        
+        return false
+    }
+    
+    public func insert(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
+    }
+    
+    public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        if let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) {
+            self.tableView?.beginUpdates()
+            self.tableView?.insertRows(at: indexPathes, with: animation)
+            self.tableView?.endUpdates()
+            return true
+        }
+        
+        return false
+    }
+    
+    public func insert(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElement: rowElement, section: section, row: SectionInsert.begining.rawValue)
+    }
+    
+    public func insert(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElements: rowElements, section: section, row: SectionInsert.begining.rawValue)
+    }
+    
+    public func insert(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElement: rowElement, section: section, row: SectionInsert.end.rawValue)
+    }
+    
+    public func insert(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElements: rowElements, section: section, row: SectionInsert.end.rawValue)
+    }
+    
     //MARK: - Private methods
+    
+    private func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>?{
+        
+        //TODO check this -1
+        if !self.checkParameters(section: section, row: row - 1) {
+            return nil
+        }
+        var mutableRow = row
+        switch mutableRow {
+        case SectionInsert.begining.rawValue:
+            mutableRow = 0
+            
+        case SectionInsert.end.rawValue:
+            mutableRow = self.sectionManager.getNumberOfRows(in: section)
+        default:
+            break
+            
+        }
+        
+        var indexPathes: Array<IndexPath> = [IndexPath]()
+        for i in 0..<row {
+            let indexPath: IndexPath = IndexPath(row: i + row, section: section)
+            indexPathes.append(indexPath)
+        }
+        
+        return indexPathes
+    }
+    
+    private func checkParameters(section: Int, row: Int) -> Bool {
+        
+        //TODO Test section and row conditions
+        if section > self.sectionManager.getNumberOfSections() {
+            print("Attempting to insert in a non-existing section")
+            return false
+        }
+        
+        if row > self.sectionManager.getNumberOfRows(in: section) {
+            print("Attempting to insert in a non-existing row")
+            return false
+        }
+        
+        return true
+    }
     
     private func isLastIndexPath (indexPath: IndexPath, tableView: UITableView) -> Bool {
         
