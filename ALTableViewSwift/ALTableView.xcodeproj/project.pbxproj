@@ -169,6 +169,9 @@
 		453235B3204FC8E5003BB2C7 /* ALTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				ED7872B2205C584800E335F0 /* ALTableView */,
+				ED7872B1205C584000E335F0 /* ALSectionManager */,
+				ED7872B0205C583700E335F0 /* ALSectionElement */,
 				ED7872AD205C50E000E335F0 /* ALRowElement */,
 				453235B4204FC8E5003BB2C7 /* ALTableViewTests.swift */,
 				453235B6204FC8E5003BB2C7 /* Info.plist */,
@@ -245,6 +248,27 @@
 				ED7872AE205C511A00E335F0 /* ALRowElementInitialization.swift */,
 			);
 			path = ALRowElement;
+			sourceTree = "<group>";
+		};
+		ED7872B0205C583700E335F0 /* ALSectionElement */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ALSectionElement;
+			sourceTree = "<group>";
+		};
+		ED7872B1205C584000E335F0 /* ALSectionManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ALSectionManager;
+			sourceTree = "<group>";
+		};
+		ED7872B2205C584800E335F0 /* ALTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ALTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
