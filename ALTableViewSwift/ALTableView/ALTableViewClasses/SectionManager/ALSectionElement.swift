@@ -100,11 +100,6 @@ class ALSectionElement {
 //    }
     
     //MARK: - Managing the insertion of new cells
-
-    internal func insert(rowElement: ALRowElement, at index: Int) -> Void {
-        
-        self.rowElements.insert(rowElement, at: index)
-    }
     
     internal func insert(rowElements: Array<ALRowElement>, at index: Int) -> Void {
         
@@ -112,10 +107,6 @@ class ALSectionElement {
     }
     
     //MARK: - Managing the deletion of new cells
-    internal func deleteRowElement(at index: Int) -> Void {
-        
-        self.rowElements.remove(at: index)
-    }
 
     internal func deleteRowElements(numberOfRowElements: Int, at index: Int) -> Void {
         
@@ -124,10 +115,11 @@ class ALSectionElement {
     }
     
     //MARK: - Managing the replacement of new cells
-    internal func replaceRowElement(at index: Int, withRowElement rowElement: ALRowElement) {
+    
+    internal func replace(rowElements: Array<ALRowElement>, at index: Int) {
         
-        self.rowElements.remove(at: index)
-        self.rowElements.insert(rowElement, at: index)
+        self.deleteRowElements(numberOfRowElements: rowElements.count, at: index)
+        self.insert(rowElements: rowElements, at: index)
     }
     
     //MARK: - Managing the opening and close of section

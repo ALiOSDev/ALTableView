@@ -144,6 +144,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     }
     
     internal func getSectionFooterHeightAtSection(section: Int) -> CGFloat {
+        
         if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
             return sectionElement.getFooterHeight()
         }
@@ -153,6 +154,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - ALSectionHeaderViewDelegate
     
     func sectionOpened(sectionElement: ALSectionElement) {
+        
         if let section: Int = sectionElements.index(of: sectionElement) {
             let numberOfElements: Int = sectionElement.getNumberOfRealRows()
             self.delegate?.sectionOpened(at: section, numberOfElements: numberOfElements)
@@ -161,12 +163,63 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     }
     
     func sectionClosed(sectionElement: ALSectionElement) {
+        
         if let section: Int = sectionElements.index(of: sectionElement) {
             let numberOfElements: Int = sectionElement.getNumberOfRealRows()
             self.delegate?.sectionClosed(at: section, numberOfElements: numberOfElements)
         }
     }
     
+    //MARK: - Managing rows
+    
+    internal func insert(rowElements: Array<ALRowElement>, section: Int, row: Int) {
+        
+        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
+            sectionElement.insert(rowElements: rowElements, at: row)
+        }
+    }
+    
+    internal func delete(numberOfRowElements: Int, section: Int, row: Int) {
+        
+        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
+            sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: row)
+        }
+    }
+    
+    internal func replace(rowElements: Array<ALRowElement>, section: Int, row: Int) {
+        
+        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
+            sectionElement.replace(rowElements: rowElements, at: row)
+        }
+    }
+    
+    //MARK: - Managing sections
+    
+    internal func insert(sectionElements: Array<ALSectionElement>, section: Int) {
+        
+        self.sectionElements.insert(contentsOf: sectionElements, at: section)
+    }
+    
+    internal func delete(numberOfSectionElements: Int, section: Int) {
+        
+        let endIndex: Int = section + numberOfSectionElements
+        self.sectionElements.removeSubrange(section...endIndex)
+    }
+    
+    internal func replace(sectionElements: Array<ALSectionElement>, section: Int) {
+        
+        self.delete(numberOfSectionElements: sectionElements.count, section: section)
+        self.insert(sectionElements: sectionElements, section: section)
+    }
+    
+    
+    internal func replaceAllSections(sectionElements: Array<ALSectionElement>) {
+        
+        self.sectionElements = sectionElements
+        self.sectionElements.forEach { (sectionElement: ALSectionElement) in
+            sectionElement.delegate = self
+        }
+    }
 
 }
 
