@@ -15,7 +15,7 @@ import UIKit
     @objc optional func tableViewWillEndDragging()
 }
 
-enum SectionPosition: Int {
+enum ALPosition: Int {
     case begining = -1
     case end = -2
 }
@@ -88,22 +88,22 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     
     public func insert(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElement: rowElement, section: section, row: SectionPosition.begining.rawValue)
+        return self.insert(rowElement: rowElement, section: section, row: ALPosition.begining.rawValue)
     }
     
     public func insert(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElements: rowElements, section: section, row: SectionPosition.begining.rawValue)
+        return self.insert(rowElements: rowElements, section: section, row: ALPosition.begining.rawValue)
     }
     
     public func insert(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElement: rowElement, section: section, row: SectionPosition.end.rawValue)
+        return self.insert(rowElement: rowElement, section: section, row: ALPosition.end.rawValue)
     }
     
     public func insert(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElements: rowElements, section: section, row: SectionPosition.end.rawValue)
+        return self.insert(rowElements: rowElements, section: section, row: ALPosition.end.rawValue)
     }
     
     //MARK: - Managing the removal of new cells
@@ -144,25 +144,149 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
     
     public func remove(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: section, row: SectionPosition.begining.rawValue)
+        return self.remove(rowElement: rowElement, section: section, row: ALPosition.begining.rawValue)
     }
     
     public func remove(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElements: rowElements, section: section, row: SectionPosition.begining.rawValue)
+        return self.remove(rowElements: rowElements, section: section, row: ALPosition.begining.rawValue)
     }
     
     public func remove(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: section, row: SectionPosition.end.rawValue)
+        return self.remove(rowElement: rowElement, section: section, row: ALPosition.end.rawValue)
     }
     
     public func remove(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElements: rowElements, section: section, row: SectionPosition.end.rawValue)
+        return self.remove(rowElements: rowElements, section: section, row: ALPosition.end.rawValue)
     }
     
     //MARK: - Managing the replacement of new cells
+    
+    public func replace(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.replace(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
+    }
+    
+    public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        if let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) {
+            self.tableView?.beginUpdates()
+            self.tableView?.reloadRows(at: indexPathes, with: animation)
+            self.tableView?.endUpdates()
+            return true
+        }
+        
+        return false
+    }
+    
+    //MARK: - Managing the insertion of new sections
+    
+    public func insert(sectionElement: ALSectionElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElement: sectionElement, section: indexPath.section, animation: animation)
+    }
+    
+    public func insert(sectionElement: ALSectionElement, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElements: [sectionElement], section: section, animation: animation)
+    }
+    
+    public func insert(sectionElements: Array<ALSectionElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElements: sectionElements, section: indexPath.section, animation: animation)
+    }
+    
+    public func insert(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        if let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) {
+            self.tableView?.beginUpdates()
+            self.tableView?.insertSections(indexSection, with: animation)
+            self.tableView?.endUpdates()
+            return true
+        }
+        
+        return false
+    }
+    
+    public func insert(sectionElement: ALSectionElement, atTheBeginingOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElement: sectionElement, section: ALPosition.begining.rawValue)
+    }
+    
+    public func insert(sectionElements: Array<ALSectionElement>, atTheBeginingOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElements: sectionElements, section: ALPosition.begining.rawValue)
+    }
+    
+    public func insert(sectionElement: ALSectionElement, atTheEndOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElement: sectionElement, section: ALPosition.end.rawValue)
+    }
+    
+    public func insert(sectionElements: Array<ALSectionElement>, atTheEndOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(sectionElements: sectionElements, section: ALPosition.end.rawValue)
+    }
+    
+    //MARK: - Managing the removal of new sections
+    
+    public func remove(sectionElement: ALSectionElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(sectionElement: sectionElement, section: ALPosition.begining.rawValue)
+    }
+    
+    public func remove(sectionElement: ALSectionElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        if let indexSection = self.getIndexSections(section: section, numberOfSectionElements: 1) {
+            self.tableView?.beginUpdates()
+            self.tableView?.deleteSections(indexSection, with: animation)
+            self.tableView?.endUpdates()
+            return true
+        }
+        
+        return false
+    }
+    
+    public func remove(sectionElements: Array<ALSectionElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(sectionElements: sectionElements, section: indexPath.section, row: indexPath.row, animation: animation)
+    }
+    
+    public func remove(sectionElements: Array<ALSectionElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        if let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) {
+            self.tableView?.beginUpdates()
+            self.tableView?.deleteSections(indexSection, with: animation)
+            self.tableView?.endUpdates()
+            return true
+        }
+        
+        return false
+    }
+    
+    public func remove(sectionElement: ALSectionElement, atTheBeginingOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(sectionElement: sectionElement, section: section, row: ALPosition.begining.rawValue)
+    }
+    
+    public func remove(sectionElements: Array<ALSectionElement>, atTheBeginingOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(sectionElements: sectionElements, section: section, row: ALPosition.begining.rawValue)
+    }
+    
+    public func remove(sectionElement: ALSectionElement, atTheEndOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(sectionElement: sectionElement, section: section, row: ALPosition.end.rawValue)
+    }
+    
+    public func remove(sectionElements: Array<ALSectionElement>, atTheEndOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(sectionElements: sectionElements, section: section, row: ALPosition.end.rawValue)
+    }
+    
+    //MARK: - Managing the replacement of new sections
     
     public func replace(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -192,9 +316,9 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
         
         var mutableRow = row
         switch mutableRow {
-        case SectionPosition.begining.rawValue:
+        case ALPosition.begining.rawValue:
             mutableRow = 0
-        case SectionPosition.end.rawValue:
+        case ALPosition.end.rawValue:
             mutableRow = self.sectionManager.getNumberOfRows(in: section)
         default:
             break
@@ -202,14 +326,43 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
         
         var indexPathes: Array<IndexPath> = [IndexPath]()
         for i in 0..<row {
-            let indexPath: IndexPath = IndexPath(row: i + row, section: section)
+            let indexPath: IndexPath = IndexPath(row: i + mutableRow, section: section)
             indexPathes.append(indexPath)
         }
         
         return indexPathes
     }
     
-    private func checkParameters(section: Int, row: Int) -> Bool {
+    private func getIndexSections(section: Int, numberOfSectionElements: Int) -> IndexSet? {
+        
+        if !self.checkParameters(section: section, row: nil) {
+            return nil
+        }
+        
+        var mutableSection = section
+        switch mutableSection {
+        case ALPosition.begining.rawValue:
+            mutableSection = 0
+        case ALPosition.end.rawValue:
+            mutableSection = self.sectionManager.getNumberOfSections()
+        default:
+            break
+        }
+        let lowerIndex: Int = mutableSection
+        let higherIndex: Int = mutableSection + numberOfSectionElements
+        let indexSet: IndexSet = IndexSet(integersIn: lowerIndex..<higherIndex)
+        return indexSet
+        
+//        var indexSets: Array<IndexSet> = [IndexSet]()
+//        for i in 0..<section {
+//            let indexSet: IndexSet = IndexSet(integer: i + mutableSection)
+//            indexSets.append(indexSet)
+//        }
+//
+//        return indexSets
+    }
+    
+    private func checkParameters(section: Int, row: Int?) -> Bool {
         
         //TODO Test section and row conditions
         if section > self.sectionManager.getNumberOfSections() {
@@ -217,14 +370,16 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
             return false
         }
         
-        if row > self.sectionManager.getNumberOfRows(in: section) {
-            print("Attempting to insert in a non-existing row")
-            return false
+        if let row = row {
+            if row > self.sectionManager.getNumberOfRows(in: section) {
+                print("Attempting to insert in a non-existing row")
+                return false
+            }
         }
         
         return true
     }
-    
+        
     private func isLastIndexPath (indexPath: IndexPath, tableView: UITableView) -> Bool {
         
         let isLastSection: Bool = indexPath.section == tableView.numberOfSections
