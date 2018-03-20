@@ -8,14 +8,14 @@
 
 import UIKit
 
-public typealias ALCellPressedHandler = (UIViewController?, ALCellProtocol) -> Void
-public typealias ALCellCreatedHandler = (Any, ALCellProtocol) -> Void
-public typealias ALCellDeselectedHandler = (ALCellProtocol) -> Void
+public typealias ALCellPressedHandler = (UIViewController?, UITableViewCell) -> Void
+public typealias ALCellCreatedHandler = (Any, UITableViewCell) -> Void
+public typealias ALCellDeselectedHandler = (UITableViewCell) -> Void
 
 //Implemented by ALRowElement
 protocol ALRowElementProtocol {
-    func rowElementPressed(viewController: UIViewController?, cell: ALCellProtocol)
-    func rowElementDeselected(cell: ALCellProtocol)
+    func rowElementPressed(viewController: UIViewController?, cell: UITableViewCell)
+    func rowElementDeselected(cell: UITableViewCell)
 }
 
 //Implemented by UITableViewCell
@@ -72,9 +72,9 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
             if let alCell = dequeuedElement as? ALCellProtocol {
                 object_setClass(alCell, self.className)
                 alCell.cellCreated(dataObject: self.dataObject)
-                if let handler:ALCellCreatedHandler = self.createdHandler {
-                    handler(self.dataObject, alCell)
-                }
+            }
+            if let handler:ALCellCreatedHandler = self.createdHandler {
+                handler(self.dataObject, dequeuedElement)
             }
             return dequeuedElement
         }
@@ -91,17 +91,23 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
 
     //MARK: - ALRowElementProtocol
     
-    func rowElementPressed(viewController: UIViewController?, cell: ALCellProtocol) {
+    func rowElementPressed(viewController: UIViewController?, cell: UITableViewCell) {
         
-        cell.cellPressed(viewController: viewController)
+        if let cell: ALCellProtocol = cell as? ALCellProtocol {
+            cell.cellPressed(viewController: viewController)
+        }
+        
+        
         if let handler:ALCellPressedHandler = self.pressedHandler {
             handler(viewController, cell)
         }
     }
     
-    func rowElementDeselected(cell: ALCellProtocol) {
+    func rowElementDeselected(cell: UITableViewCell) {
+        if let cell: ALCellProtocol = cell as? ALCellProtocol {
+            cell.cellDeselected()
+        }
         
-        cell.cellDeselected()
         if let handler: ALCellDeselectedHandler = self.deselectedHandler {
             handler(cell)
         }

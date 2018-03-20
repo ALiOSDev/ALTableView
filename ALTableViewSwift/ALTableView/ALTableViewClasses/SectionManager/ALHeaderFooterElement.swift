@@ -8,13 +8,13 @@
 
 import UIKit
 
-public typealias ALHeaderFooterPressedHandler = (ALHeaderFooterProtocol) -> Void
-public typealias ALHeaderFooterCreatedHandler = (Any, ALHeaderFooterProtocol) -> Void
-public typealias ALHeaderFooterDeselectedHandler = (ALHeaderFooterProtocol) -> Void
+public typealias ALHeaderFooterPressedHandler = (UITableViewHeaderFooterView) -> Void
+public typealias ALHeaderFooterCreatedHandler = (Any, UITableViewHeaderFooterView) -> Void
+public typealias ALHeaderFooterDeselectedHandler = (UITableViewHeaderFooterView) -> Void
 
 //Implemented by ALHeaderFooterElement
 protocol ALHeaderFooterElementProtocol {
-    func headerFooterElementPressed(view: ALHeaderFooterProtocol)
+    func headerFooterElementPressed(view: UITableViewHeaderFooterView)
 }
 
 //Implemented by UITableViewCell
@@ -43,9 +43,10 @@ class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
         if let dequeuedElement: UITableViewHeaderFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: self.identifier)  {
             if let alHeaderFooter = dequeuedElement as? ALHeaderFooterProtocol {
                 alHeaderFooter.viewCreated(dataObject: self.dataObject)
-                if let handler:ALHeaderFooterCreatedHandler = self.createdHandler {
-                    handler(self.dataObject, alHeaderFooter)
-                }
+                
+            }
+            if let handler:ALHeaderFooterCreatedHandler = self.createdHandler {
+                handler(self.dataObject, dequeuedElement)
             }
             return dequeuedElement
         }
@@ -54,8 +55,11 @@ class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
     
     //MARK: - ALHeaderFooterElementProtocol
     
-    func headerFooterElementPressed(view: ALHeaderFooterProtocol) {
-        view.viewPressed()
+    func headerFooterElementPressed(view: UITableViewHeaderFooterView) {
+        if let view: ALHeaderFooterProtocol = view as?  ALHeaderFooterProtocol {
+            view.viewPressed()
+        }
+        
         if let handler:ALHeaderFooterPressedHandler = self.pressedHandler {
             handler(view)
         }

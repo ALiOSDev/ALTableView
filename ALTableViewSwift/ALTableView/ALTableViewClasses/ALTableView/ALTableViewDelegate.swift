@@ -61,7 +61,7 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let cell: ALCellProtocol = tableView.cellForRow(at: indexPath) as? ALCellProtocol,
+        if let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
             let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
             rowElement.rowElementPressed(viewController: self.viewController, cell: cell)
         }
@@ -75,7 +75,7 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        if let cell: ALCellProtocol = tableView.cellForRow(at: indexPath) as? ALCellProtocol,
+        if let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
             let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
             rowElement.rowElementDeselected(cell: cell)
         }
