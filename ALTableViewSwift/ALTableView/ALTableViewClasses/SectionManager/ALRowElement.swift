@@ -39,15 +39,13 @@ extension ALCellProtocol {
     }
 }
 
-class ALRowElement: ALRowElementProtocol  {
+class ALRowElement: ALElement, ALRowElementProtocol  {
     
     //MARK: - Properties
     
-    private var estimateHeightMode: Bool
-    private var cellHeight: CGFloat
+
     private var className: AnyClass //TODO es posible que el className no sea necesario
-    private let cellIdentifier: String
-    private let dataObject: Any
+
     private let cellStyle: UITableViewCellStyle
     
     private var pressedHandler: ALCellPressedHandler?
@@ -56,17 +54,18 @@ class ALRowElement: ALRowElementProtocol  {
     
     //MARK: - Initializers
     
-        init(className: AnyClass, cellIdentifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, cellHeight: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
-    
+    init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+        
         self.className = className
-        self.cellIdentifier = cellIdentifier
-        self.dataObject = dataObject
+//        self.identifier = identifier
+//        self.dataObject = dataObject
         self.cellStyle = cellStyle
-        self.estimateHeightMode = estimateHeightMode
-        self.cellHeight = cellHeight
+//        self.estimateHeightMode = estimateHeightMode
+//        self.height = height
         self.pressedHandler = pressedHandler
         self.createdHandler = createdHandler
         self.deselectedHandler = deselectedHandler
+        super.init(identifier: identifier, dataObject: dataObject, estimateHeightMode: estimateHeightMode, height: height)
     }
 
     //MARK: - Getters
@@ -78,7 +77,7 @@ class ALRowElement: ALRowElementProtocol  {
     
     internal func getCellHeight() -> CGFloat {
         
-        return self.cellHeight
+        return self.height
     }
     
     internal func isEstimateHeightMode() -> Bool {
@@ -90,12 +89,12 @@ class ALRowElement: ALRowElementProtocol  {
     
     internal func setCellHeight(height: CGFloat) -> Void {
         
-        self.cellHeight = height
+        self.height = height
     }
     
     internal func getCellFrom(tableView: UITableView) -> UITableViewCell {
         
-        if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)  {
+        if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.identifier)  {
             if let alCell = dequeuedCell as? ALCellProtocol {
                 object_setClass(alCell, self.className)
                 alCell.cellCreated(dataObject: self.dataObject)

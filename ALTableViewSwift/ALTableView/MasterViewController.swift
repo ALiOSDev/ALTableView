@@ -64,8 +64,8 @@ class MasterViewController: UITableViewController {
         var sectionElements = [ALSectionElement]()
         for _ in 0...2 {
             var rowElements = Array<ALRowElement>()
-            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), cellIdentifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
-            let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), cellIdentifier: master2TableViewCellString, dataObject: 12, estimateHeightMode: true)
+            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
+            let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), identifier: master2TableViewCellString, dataObject: 12, estimateHeightMode: true)
             rowElements.append(rowElement)
             rowElements.append(rowElement2)
             
