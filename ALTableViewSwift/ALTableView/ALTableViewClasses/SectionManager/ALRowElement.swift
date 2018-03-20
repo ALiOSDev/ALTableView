@@ -57,11 +57,7 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
     init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
         
         self.className = className
-//        self.identifier = identifier
-//        self.dataObject = dataObject
         self.cellStyle = cellStyle
-//        self.estimateHeightMode = estimateHeightMode
-//        self.height = height
         self.pressedHandler = pressedHandler
         self.createdHandler = createdHandler
         self.deselectedHandler = deselectedHandler
@@ -70,20 +66,21 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
 
     //MARK: - Getters
     
-    internal func getDataObject() -> Any {
+    internal func getViewFrom(tableView: UITableView) -> UITableViewCell {
         
-        return self.dataObject
+        if let dequeuedElement: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.identifier)  {
+            if let alCell = dequeuedElement as? ALCellProtocol {
+                object_setClass(alCell, self.className)
+                alCell.cellCreated(dataObject: self.dataObject)
+                if let handler:ALCellCreatedHandler = self.createdHandler {
+                    handler(self.dataObject, alCell)
+                }
+            }
+            return dequeuedElement
+        }
+        return UITableViewCell()
     }
     
-    internal func getCellHeight() -> CGFloat {
-        
-        return self.height
-    }
-    
-    internal func isEstimateHeightMode() -> Bool {
-        
-        return self.estimateHeightMode
-    }
     
     //MARK: - Setters
     
@@ -91,22 +88,7 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
         
         self.height = height
     }
-    
-    internal func getCellFrom(tableView: UITableView) -> UITableViewCell {
-        
-        if let dequeuedCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.identifier)  {
-            if let alCell = dequeuedCell as? ALCellProtocol {
-                object_setClass(alCell, self.className)
-                alCell.cellCreated(dataObject: self.dataObject)
-                if let handler:ALCellCreatedHandler = self.createdHandler {
-                    handler(self.dataObject, alCell)
-                }
-            }
-            return dequeuedCell
-        }
-        return UITableViewCell()
-    }
-    
+
     //MARK: - ALRowElementProtocol
     
     func rowElementPressed(viewController: UIViewController?, cell: ALCellProtocol) {

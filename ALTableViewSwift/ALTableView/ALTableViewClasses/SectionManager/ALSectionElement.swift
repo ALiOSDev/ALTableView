@@ -90,7 +90,7 @@ class ALSectionElement {
     internal func getRowHeight(at position: Int) -> CGFloat? {
         
         if let rowElement = self.getRowElementAt(position: position) {
-            return rowElement.getCellHeight()
+            return rowElement.getHeight()
         }
         return nil
     }

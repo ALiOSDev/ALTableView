@@ -53,7 +53,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     internal func getCellFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewCell? {
         
         if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
-            let cell: UITableViewCell = rowElement.getCellFrom(tableView: tableView)
+            let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
             return cell
         }
         return nil

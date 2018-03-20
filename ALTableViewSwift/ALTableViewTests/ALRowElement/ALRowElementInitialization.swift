@@ -41,9 +41,9 @@ class ALRowElementInitialization: XCTestCase {
             XCTFail("Data Object class does not match the passed one")
         }
         
-        XCTAssert(rowElement.getCellHeight() == 44, "The height is not the default one")
+        XCTAssert(rowElement.getHeight() == 44, "The height is not the default one")
         
-        if let cell = rowElement.getCellFrom(tableView: tableView) as? MasterTableViewCell {
+        if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
             if let cellText = cell.labelText.text {
                 XCTAssert(cellText == dataObject, "Cell text does not match the passed one")
             }
@@ -92,10 +92,10 @@ class ALRowElementInitialization: XCTestCase {
             XCTFail("Data Object class does not match the passed one")
         }
         
-        XCTAssert(rowElement.getCellHeight() == cellHeight, "The height is not the default one")
+        XCTAssert(rowElement.getHeight() == cellHeight, "The height is not the default one")
         XCTAssert(rowElement.isEstimateHeightMode() == estimateHeightMode, "The estimate mode does not match the passed one")
         
-        if let cell = rowElement.getCellFrom(tableView: tableView) as? MasterTableViewCell {
+        if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
             if let cellText = cell.labelText.text {
                 XCTAssert(cellText == dataObject, "Cell text does not match the passed one")
             }

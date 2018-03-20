@@ -23,5 +23,23 @@ class ALElement {
         self.estimateHeightMode = estimateHeightMode
         self.height = height
     }
+    
+    
+    //MARK: - Getters
+    
+    internal func getDataObject() -> Any {
+        
+        return self.dataObject
+    }
+    
+    internal func getHeight() -> CGFloat {
+        
+        return self.height
+    }
+    
+    internal func isEstimateHeightMode() -> Bool {
+        
+        return self.estimateHeightMode
+    }
 
 }
