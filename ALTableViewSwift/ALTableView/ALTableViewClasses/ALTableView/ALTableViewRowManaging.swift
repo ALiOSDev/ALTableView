@@ -161,7 +161,7 @@ extension ALTableView {
         }
         
         var indexPathes: Array<IndexPath> = [IndexPath]()
-        for i in 0..<row {
+        for i in 0..<numberOfRowElements {
             let indexPath: IndexPath = IndexPath(row: i + mutableRow, section: section)
             indexPathes.append(indexPath)
         }
@@ -169,4 +169,27 @@ extension ALTableView {
         return indexPathes
     }
     
+}
+
+//MARK: - ALSectionManagerProtocol
+
+extension ALTableView: ALSectionManagerProtocol {
+    
+    func sectionOpened(at section: Int, numberOfElements: Int) {
+        
+        if let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) {
+            self.tableView?.beginUpdates()
+            self.tableView?.insertRows(at: indexPathes, with: .top)
+            self.tableView?.endUpdates()
+        }
+    }
+    
+    func sectionClosed(at section: Int, numberOfElements: Int) {
+        
+        if let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) {
+            self.tableView?.beginUpdates()
+            self.tableView?.deleteRows(at: indexPathes, with: .top)
+            self.tableView?.endUpdates()
+        }
+    }
 }

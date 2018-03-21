@@ -20,7 +20,7 @@ enum ALPosition: Int {
     case end = -2
 }
 
-class ALTableView: NSObject, ALSectionManagerProtocol {
+class ALTableView: NSObject {
 
     //MARK: - Properties
     
@@ -68,34 +68,9 @@ class ALTableView: NSObject, ALSectionManagerProtocol {
         return true
     }
     
-    //MARK: - ALSectionManagerProtocol
-    
-    func sectionOpened(at section: Int, numberOfElements: Int) {
-        
-        var indexPathes: Array<IndexPath> = Array<IndexPath>()
-        for i in 0..<numberOfElements {
-            let indexPath = IndexPath(row: i, section: section)
-            indexPathes.append(indexPath)
-        }
-        self.tableView?.beginUpdates()
-        self.tableView?.insertRows(at: indexPathes, with: .top)
-        self.tableView?.endUpdates()
-    }
-    
-    func sectionClosed(at section: Int, numberOfElements: Int) {
-        
-        var indexPathes: Array<IndexPath> = Array<IndexPath>()
-        for i in 0..<numberOfElements {
-            let indexPath = IndexPath(row: i, section: section)
-            indexPathes.append(indexPath)
-        }
-        self.tableView?.beginUpdates()
-        self.tableView?.deleteRows(at: indexPathes, with: .top)
-        self.tableView?.endUpdates()
-    }
+
+
 }
-
-
 
 
 
