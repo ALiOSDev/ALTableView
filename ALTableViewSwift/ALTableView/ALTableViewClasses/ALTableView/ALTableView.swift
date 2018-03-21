@@ -58,11 +58,11 @@ class ALTableView: NSObject {
             return false
         }
         
-        guard let row: Int = row, row < self.sectionManager.getNumberOfRows(in: section) else {
-            print("Attempting to insert in a non-existing row")
-            return false
+        guard let row: Int = row,
+            row < self.sectionManager.getNumberOfRows(in: section) else {
+                print("Attempting to insert in a non-existing row")
+                return false
         }
-        
         
         return true
     }
