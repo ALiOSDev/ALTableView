@@ -14,10 +14,10 @@ extension ALTableView {
     
     public func insert(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) else {
+        guard self.sectionManager.insert(sectionElements: sectionElements, section: section) else {
             return false
         }
-        self.sectionManager.insert(sectionElements: sectionElements, section: section)
+        let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.insertSections(indexSection, with: animation)
         self.tableView?.endUpdates()
@@ -66,10 +66,10 @@ extension ALTableView {
     
     public func remove(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) else {
+        guard self.sectionManager.delete(numberOfSectionElements: sectionElements.count, section: section) else {
             return false
         }
-        self.sectionManager.delete(numberOfSectionElements: sectionElements.count, section: section)
+        let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.deleteSections(indexSection, with: animation)
         self.tableView?.endUpdates()
@@ -118,10 +118,10 @@ extension ALTableView {
     
     public func replace(sectionElements: Array<ALSectionElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) else {
+        guard self.sectionManager.replace(sectionElements: sectionElements, section: section) else {
             return false
         }
-        self.sectionManager.replace(sectionElements: sectionElements, section: section)
+        let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.reloadSections(indexSection, with: animation)
         self.tableView?.endUpdates()
@@ -155,11 +155,7 @@ extension ALTableView {
 
 extension ALTableView {
     
-    private func getIndexSections(section: Int, numberOfSectionElements: Int) -> IndexSet? {
-        
-        if !self.checkParameters(section: section, row: nil) {
-            return nil
-        }
+    private func getIndexSections(section: Int, numberOfSectionElements: Int) -> IndexSet {
         
         var mutableSection = section
         switch mutableSection {

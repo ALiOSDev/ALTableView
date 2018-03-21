@@ -14,10 +14,10 @@ extension ALTableView {
     
     public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) else {
+        guard self.sectionManager.insert(rowElements: rowElements, section: section, row: row) else {
             return false
         }
-        self.sectionManager.insert(rowElements: rowElements, section: section, row: row)
+        let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.insertRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
@@ -66,10 +66,10 @@ extension ALTableView {
     
     public func remove(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) else {
+        guard self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, row: row) else {
             return false
         }
-        self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, row: row)
+        let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
@@ -118,10 +118,10 @@ extension ALTableView {
     
     public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) else {
+        guard self.sectionManager.replace(rowElements: rowElements, section: section, row: row) else {
             return false
         }
-        self.sectionManager.replace(rowElements: rowElements, section: section, row: row)
+        let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.reloadRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
@@ -149,12 +149,7 @@ extension ALTableView {
 
 extension ALTableView {
     
-    private func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>?{
-        
-        //TODO check this -1
-        if !self.checkParameters(section: section, row: row - 1) {
-            return nil
-        }
+    private func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>{
         
         var mutableRow = row
         switch mutableRow {
@@ -182,9 +177,7 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionOpened(at section: Int, numberOfElements: Int) {
         
-        guard let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) else {
-            return
-        }
+        let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements)
         self.tableView?.beginUpdates()
         self.tableView?.insertRows(at: indexPathes, with: .top)
         self.tableView?.endUpdates()
@@ -192,9 +185,7 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionClosed(at section: Int, numberOfElements: Int) {
         
-        guard let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) else {
-            return
-        }
+        let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: .top)
         self.tableView?.endUpdates()

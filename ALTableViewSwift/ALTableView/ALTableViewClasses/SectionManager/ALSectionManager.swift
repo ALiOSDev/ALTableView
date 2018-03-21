@@ -34,7 +34,6 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - Number of Sections & Cells
     
     internal func getNumberOfSections() -> Int {
-        
         return self.sectionElements.count
     }
     
@@ -58,7 +57,6 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
             return nil
         }
-        
         let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
         return cell
     }
@@ -178,47 +176,55 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     //MARK: - Managing rows
     
-    internal func insert(rowElements: Array<ALRowElement>, section: Int, row: Int) {
+    internal func insert(rowElements: Array<ALRowElement>, section: Int, row: Int) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return
+            return false
         }
-        sectionElement.insert(rowElements: rowElements, at: row)
+        return sectionElement.insert(rowElements: rowElements, at: row)
     }
     
-    internal func delete(numberOfRowElements: Int, section: Int, row: Int) {
+    internal func delete(numberOfRowElements: Int, section: Int, row: Int) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return
+            return false
         }
-        sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: row)
+        return sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: row)
     }
     
-    internal func replace(rowElements: Array<ALRowElement>, section: Int, row: Int) {
+    internal func replace(rowElements: Array<ALRowElement>, section: Int, row: Int) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return
+            return false
         }
-        sectionElement.replace(rowElements: rowElements, at: row)
+        return sectionElement.replace(rowElements: rowElements, at: row)
     }
     
     //MARK: - Managing sections
     
-    internal func insert(sectionElements: Array<ALSectionElement>, section: Int) {
+    internal func insert(sectionElements: Array<ALSectionElement>, section: Int) -> Bool {
         
         self.sectionElements.insert(contentsOf: sectionElements, at: section)
+        return true
     }
     
-    internal func delete(numberOfSectionElements: Int, section: Int) {
+    internal func delete(numberOfSectionElements: Int, section: Int) -> Bool {
         
         let endIndex: Int = section + numberOfSectionElements
+        guard self.sectionElements.indices.contains(endIndex) else {
+            return false
+        }
         self.sectionElements.removeSubrange(section...endIndex)
+        return true
     }
     
-    internal func replace(sectionElements: Array<ALSectionElement>, section: Int) {
+    internal func replace(sectionElements: Array<ALSectionElement>, section: Int) -> Bool {
         
-        self.delete(numberOfSectionElements: sectionElements.count, section: section)
-        self.insert(sectionElements: sectionElements, section: section)
+        guard self.delete(numberOfSectionElements: sectionElements.count, section: section),
+            self.insert(sectionElements: sectionElements, section: section) else {
+                return false
+        }
+        return true
     }
     
     
