@@ -16,15 +16,14 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
-            if rowElement.isEstimateHeightMode() {
-                return UITableViewAutomaticDimension
-            } else {
-                let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
-                return estimatedHeight
-            }
-        } else {
+        guard let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) else {
             return 0
+        }
+        if rowElement.isEstimateHeightMode() {
+            return UITableViewAutomaticDimension
+        } else {
+            let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
+            return estimatedHeight
         }
     }
     
@@ -61,10 +60,11 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
-            let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
-            rowElement.rowElementPressed(viewController: self.viewController, cell: cell)
+        guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
+            let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) else {
+            return
         }
+        rowElement.rowElementPressed(viewController: self.viewController, cell: cell)
         
     }
     
@@ -75,10 +75,11 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        if let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
-            let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) {
-            rowElement.rowElementDeselected(cell: cell)
+        guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
+            let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) else {
+            return
         }
+        rowElement.rowElementDeselected(cell: cell)
     }
     
     //MARK: - Modifying Header and Footer of Sections

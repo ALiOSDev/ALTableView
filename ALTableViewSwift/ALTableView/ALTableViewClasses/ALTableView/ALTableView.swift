@@ -53,17 +53,16 @@ class ALTableView: NSObject {
     internal func checkParameters(section: Int, row: Int?) -> Bool {
         
         //TODO Test section and row conditions
-        if section > self.sectionManager.getNumberOfSections() {
+        guard section < self.sectionManager.getNumberOfSections()  else {
             print("Attempting to insert in a non-existing section")
             return false
         }
         
-        if let row = row {
-            if row > self.sectionManager.getNumberOfRows(in: section) {
-                print("Attempting to insert in a non-existing row")
-                return false
-            }
+        guard let row: Int = row, row < self.sectionManager.getNumberOfRows(in: section) else {
+            print("Attempting to insert in a non-existing row")
+            return false
         }
+        
         
         return true
     }

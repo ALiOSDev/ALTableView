@@ -24,6 +24,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - Initializers
     
     init(sectionElements: Array<ALSectionElement>) {
+        
         self.sectionElements = sectionElements
         self.sectionElements.forEach { (sectionElement: ALSectionElement) in
             sectionElement.delegate = self
@@ -33,14 +34,16 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     //MARK: - Number of Sections & Cells
     
     internal func getNumberOfSections() -> Int {
+        
         return self.sectionElements.count
     }
     
     internal func getNumberOfRows(in section: Int) -> Int {
-        if let numberOfRows = self.sectionElements[safe: section]?.getNumberOfRows() {
-            return numberOfRows
+        
+        guard let numberOfRows = self.sectionElements[safe: section]?.getNumberOfRows() else {
+            return 0
         }
-        return 0
+        return numberOfRows
     }
     
     //MARK: - Getter Cell
@@ -52,11 +55,12 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewCell? {
         
-        if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
-            let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
-            return cell
+        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
+            return nil
         }
-        return nil
+        
+        let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
+        return cell
     }
     
     //MARK: - Cell height
@@ -68,10 +72,10 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellHeightFrom(section: Int, row: Int) -> CGFloat {
         
-        if let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row) {
-            return rowHeight
+        guard let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row) else {
+            return 0
         }
-        return 0
+        return rowHeight
     }
     
     internal func setRowElementHeight(height: CGFloat, indexPath: IndexPath) {
@@ -81,9 +85,10 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func setRowElementHeight(height: CGFloat, section: Int, row: Int) {
         
-        if let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) {
-            rowElement.setCellHeight(height: height)
+        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) else {
+            return
         }
+        rowElement.setCellHeight(height: height)
     }
     
     //MARK: - Get Row Elements
@@ -132,10 +137,10 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getSectionHeaderHeightAtSection(section: Int) -> CGFloat {
         
-        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
-            return sectionElement.getHeaderHeight()
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return 0
         }
-        return 0
+        return sectionElement.getHeaderHeight()
     }
     
     internal func getSectionFooterHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
@@ -145,52 +150,56 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getSectionFooterHeightAtSection(section: Int) -> CGFloat {
         
-        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
-            return sectionElement.getFooterHeight()
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return 0
         }
-        return 0
+        return sectionElement.getFooterHeight()
     }
     
     //MARK: - ALSectionHeaderViewDelegate
     
     func sectionOpened(sectionElement: ALSectionElement) {
         
-        if let section: Int = sectionElements.index(of: sectionElement) {
-            let numberOfElements: Int = sectionElement.getNumberOfRealRows()
-            self.delegate?.sectionOpened(at: section, numberOfElements: numberOfElements)
+        guard let section: Int = sectionElements.index(of: sectionElement) else {
+            return
         }
-
+        let numberOfElements: Int = sectionElement.getNumberOfRealRows()
+        self.delegate?.sectionOpened(at: section, numberOfElements: numberOfElements)
     }
     
     func sectionClosed(sectionElement: ALSectionElement) {
         
-        if let section: Int = sectionElements.index(of: sectionElement) {
-            let numberOfElements: Int = sectionElement.getNumberOfRealRows()
-            self.delegate?.sectionClosed(at: section, numberOfElements: numberOfElements)
+        guard let section: Int = sectionElements.index(of: sectionElement) else {
+            return
         }
+        let numberOfElements: Int = sectionElement.getNumberOfRealRows()
+        self.delegate?.sectionClosed(at: section, numberOfElements: numberOfElements)
     }
     
     //MARK: - Managing rows
     
     internal func insert(rowElements: Array<ALRowElement>, section: Int, row: Int) {
         
-        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
-            sectionElement.insert(rowElements: rowElements, at: row)
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return
         }
+        sectionElement.insert(rowElements: rowElements, at: row)
     }
     
     internal func delete(numberOfRowElements: Int, section: Int, row: Int) {
         
-        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
-            sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: row)
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return
         }
+        sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: row)
     }
     
     internal func replace(rowElements: Array<ALRowElement>, section: Int, row: Int) {
         
-        if let sectionElement: ALSectionElement = self.sectionElements[safe: section] {
-            sectionElement.replace(rowElements: rowElements, at: row)
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return
         }
+        sectionElement.replace(rowElements: rowElements, at: row)
     }
     
     //MARK: - Managing sections

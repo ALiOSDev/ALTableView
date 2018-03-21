@@ -89,10 +89,10 @@ class ALSectionElement {
     
     internal func getRowHeight(at position: Int) -> CGFloat? {
         
-        if let rowElement = self.getRowElementAt(position: position) {
-            return rowElement.getHeight()
+        guard let rowElement = self.getRowElementAt(position: position) else {
+            return nil
         }
-        return nil
+        return rowElement.getHeight()
     }
     
 //    internal func getSectionTitleIndex() -> String {
@@ -140,14 +140,15 @@ class ALSectionElement {
     
     private func toggleOpenWith(userAction: Bool) {
         
-        if let delegate = self.delegate {
-            self.isOpened = !self.isOpened
-            if userAction {
-                if self.isOpened {
-                    delegate.sectionOpened(sectionElement: self)
-                } else {
-                    delegate.sectionClosed(sectionElement: self)
-                }
+        guard let delegate = self.delegate else {
+            return
+        }
+        self.isOpened = !self.isOpened
+        if userAction {
+            if self.isOpened {
+                delegate.sectionOpened(sectionElement: self)
+            } else {
+                delegate.sectionClosed(sectionElement: self)
             }
         }
     }

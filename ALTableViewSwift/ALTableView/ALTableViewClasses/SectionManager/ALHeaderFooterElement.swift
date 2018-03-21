@@ -31,6 +31,7 @@ class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
     //MARK: - Initializers
     
     init(identifier: String, dataObject: Any, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALHeaderFooterPressedHandler? = nil, createdHandler: ALHeaderFooterCreatedHandler? = nil) {
+        
         self.pressedHandler = pressedHandler
         self.createdHandler = createdHandler
         super.init(identifier: identifier, dataObject: dataObject, estimateHeightMode: estimateHeightMode, height: height)
@@ -40,22 +41,22 @@ class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
     
     internal func getViewFrom(tableView: UITableView) -> UITableViewHeaderFooterView {
         
-        if let dequeuedElement: UITableViewHeaderFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: self.identifier)  {
-            if let alHeaderFooter = dequeuedElement as? ALHeaderFooterProtocol {
-                alHeaderFooter.viewCreated(dataObject: self.dataObject)
-                
-            }
-            if let handler:ALHeaderFooterCreatedHandler = self.createdHandler {
-                handler(self.dataObject, dequeuedElement)
-            }
-            return dequeuedElement
+        guard let dequeuedElement: UITableViewHeaderFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: self.identifier) else {
+            return UITableViewHeaderFooterView()
         }
-        return UITableViewHeaderFooterView()
+        if let alHeaderFooter = dequeuedElement as? ALHeaderFooterProtocol {
+            alHeaderFooter.viewCreated(dataObject: self.dataObject)
+        }
+        if let handler:ALHeaderFooterCreatedHandler = self.createdHandler {
+            handler(self.dataObject, dequeuedElement)
+        }
+        return dequeuedElement
     }
     
     //MARK: - ALHeaderFooterElementProtocol
     
     func headerFooterElementPressed(view: UITableViewHeaderFooterView) {
+        
         if let view: ALHeaderFooterProtocol = view as?  ALHeaderFooterProtocol {
             view.viewPressed()
         }

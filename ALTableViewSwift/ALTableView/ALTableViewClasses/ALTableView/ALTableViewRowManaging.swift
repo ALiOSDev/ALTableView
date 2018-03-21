@@ -14,15 +14,14 @@ extension ALTableView {
     
     public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        if let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) {
-            self.sectionManager.insert(rowElements: rowElements, section: section, row: row)
-            self.tableView?.beginUpdates()
-            self.tableView?.insertRows(at: indexPathes, with: animation)
-            self.tableView?.endUpdates()
-            return true
+        guard let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) else {
+            return false
         }
-        
-        return false
+        self.sectionManager.insert(rowElements: rowElements, section: section, row: row)
+        self.tableView?.beginUpdates()
+        self.tableView?.insertRows(at: indexPathes, with: animation)
+        self.tableView?.endUpdates()
+        return true
     }
     
     public func insert(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -67,15 +66,14 @@ extension ALTableView {
     
     public func remove(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        if let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) {
-            self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, row: row)
-            self.tableView?.beginUpdates()
-            self.tableView?.deleteRows(at: indexPathes, with: animation)
-            self.tableView?.endUpdates()
-            return true
+        guard let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) else {
+            return false
         }
-        
-        return false
+        self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, row: row)
+        self.tableView?.beginUpdates()
+        self.tableView?.deleteRows(at: indexPathes, with: animation)
+        self.tableView?.endUpdates()
+        return true
     }
     
     public func remove(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -120,15 +118,14 @@ extension ALTableView {
     
     public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        if let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) {
-            self.sectionManager.replace(rowElements: rowElements, section: section, row: row)
-            self.tableView?.beginUpdates()
-            self.tableView?.reloadRows(at: indexPathes, with: animation)
-            self.tableView?.endUpdates()
-            return true
+        guard let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count) else {
+            return false
         }
-        
-        return false
+        self.sectionManager.replace(rowElements: rowElements, section: section, row: row)
+        self.tableView?.beginUpdates()
+        self.tableView?.reloadRows(at: indexPathes, with: animation)
+        self.tableView?.endUpdates()
+        return true
     }
     
     public func replace(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -185,19 +182,21 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionOpened(at section: Int, numberOfElements: Int) {
         
-        if let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) {
-            self.tableView?.beginUpdates()
-            self.tableView?.insertRows(at: indexPathes, with: .top)
-            self.tableView?.endUpdates()
+        guard let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) else {
+            return
         }
+        self.tableView?.beginUpdates()
+        self.tableView?.insertRows(at: indexPathes, with: .top)
+        self.tableView?.endUpdates()
     }
     
     func sectionClosed(at section: Int, numberOfElements: Int) {
         
-        if let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) {
-            self.tableView?.beginUpdates()
-            self.tableView?.deleteRows(at: indexPathes, with: .top)
-            self.tableView?.endUpdates()
+        guard let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements) else {
+            return
         }
+        self.tableView?.beginUpdates()
+        self.tableView?.deleteRows(at: indexPathes, with: .top)
+        self.tableView?.endUpdates()
     }
 }

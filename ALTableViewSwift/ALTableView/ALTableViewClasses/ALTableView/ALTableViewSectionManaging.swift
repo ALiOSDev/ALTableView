@@ -14,15 +14,14 @@ extension ALTableView {
     
     public func insert(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        if let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) {
-            self.sectionManager.insert(sectionElements: sectionElements, section: section)
-            self.tableView?.beginUpdates()
-            self.tableView?.insertSections(indexSection, with: animation)
-            self.tableView?.endUpdates()
-            return true
+        guard let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) else {
+            return false
         }
-        
-        return false
+        self.sectionManager.insert(sectionElements: sectionElements, section: section)
+        self.tableView?.beginUpdates()
+        self.tableView?.insertSections(indexSection, with: animation)
+        self.tableView?.endUpdates()
+        return true
     }
     
     public func insert(sectionElement: ALSectionElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -67,15 +66,14 @@ extension ALTableView {
     
     public func remove(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        if let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) {
-            self.sectionManager.delete(numberOfSectionElements: sectionElements.count, section: section)
-            self.tableView?.beginUpdates()
-            self.tableView?.deleteSections(indexSection, with: animation)
-            self.tableView?.endUpdates()
-            return true
+        guard let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) else {
+            return false
         }
-        
-        return false
+        self.sectionManager.delete(numberOfSectionElements: sectionElements.count, section: section)
+        self.tableView?.beginUpdates()
+        self.tableView?.deleteSections(indexSection, with: animation)
+        self.tableView?.endUpdates()
+        return true
     }
     
     public func remove(sectionElement: ALSectionElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -120,15 +118,14 @@ extension ALTableView {
     
     public func replace(sectionElements: Array<ALSectionElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        if let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) {
-            self.sectionManager.replace(sectionElements: sectionElements, section: section)
-            self.tableView?.beginUpdates()
-            self.tableView?.reloadSections(indexSection, with: animation)
-            self.tableView?.endUpdates()
-            return true
+        guard let indexSection = self.getIndexSections(section: section, numberOfSectionElements: sectionElements.count) else {
+            return false
         }
-        
-        return false
+        self.sectionManager.replace(sectionElements: sectionElements, section: section)
+        self.tableView?.beginUpdates()
+        self.tableView?.reloadSections(indexSection, with: animation)
+        self.tableView?.endUpdates()
+        return true
     }
     
     public func replace(sectionElement: ALSectionElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {

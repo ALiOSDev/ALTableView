@@ -68,17 +68,17 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
     
     internal func getViewFrom(tableView: UITableView) -> UITableViewCell {
         
-        if let dequeuedElement: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.identifier)  {
-            if let alCell = dequeuedElement as? ALCellProtocol {
-                object_setClass(alCell, self.className)
-                alCell.cellCreated(dataObject: self.dataObject)
-            }
-            if let handler:ALCellCreatedHandler = self.createdHandler {
-                handler(self.dataObject, dequeuedElement)
-            }
-            return dequeuedElement
+        guard let dequeuedElement: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.identifier) else {
+            return UITableViewCell()
         }
-        return UITableViewCell()
+        if let alCell = dequeuedElement as? ALCellProtocol {
+            object_setClass(alCell, self.className)
+            alCell.cellCreated(dataObject: self.dataObject)
+        }
+        if let handler:ALCellCreatedHandler = self.createdHandler {
+            handler(self.dataObject, dequeuedElement)
+        }
+        return dequeuedElement
     }
     
     
@@ -97,13 +97,13 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
             cell.cellPressed(viewController: viewController)
         }
         
-        
         if let handler:ALCellPressedHandler = self.pressedHandler {
             handler(viewController, cell)
         }
     }
     
     func rowElementDeselected(cell: UITableViewCell) {
+        
         if let cell: ALCellProtocol = cell as? ALCellProtocol {
             cell.cellDeselected()
         }
