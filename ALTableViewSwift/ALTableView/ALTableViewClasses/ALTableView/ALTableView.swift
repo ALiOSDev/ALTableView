@@ -42,10 +42,16 @@ class ALTableView: NSObject {
     
     //MARK: - Public methods
     
-    public func register(nibName: String, reuseIdentifier: String) {
+    public func registerCell(nibName: String, reuseIdentifier: String) {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         self.tableView?.register(nib, forCellReuseIdentifier: reuseIdentifier)
+    }
+    
+    public func registerHeaderFooter(nibName: String, reuseIdentifier: String) {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        self.tableView?.register(nib, forHeaderFooterViewReuseIdentifier: reuseIdentifier)
     }
     
     //MARK: - Private methods

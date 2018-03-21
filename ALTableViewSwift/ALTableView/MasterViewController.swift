@@ -82,8 +82,8 @@ class MasterViewController: UITableViewController {
     }
 
     func registerCells() {
-        self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString)
-        self.alTableView?.register(nibName: master2TableViewCellString, reuseIdentifier: master2TableViewCellString)
+        self.alTableView?.registerCell(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString)
+        self.alTableView?.registerCell(nibName: master2TableViewCellString, reuseIdentifier: master2TableViewCellString)
     }
 
 
