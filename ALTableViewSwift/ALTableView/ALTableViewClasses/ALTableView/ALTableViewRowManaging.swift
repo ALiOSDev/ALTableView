@@ -8,9 +8,9 @@
 
 import UIKit
 
+//MARK: - Managing the insertion of new cells
+
 extension ALTableView {
-    
-    //MARK: - Managing the insertion of new cells
     
     public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -39,7 +39,7 @@ extension ALTableView {
         
         return self.insert(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
-
+    
     public func insert(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElement: rowElement, section: section, row: ALPosition.begining.rawValue)
@@ -59,8 +59,11 @@ extension ALTableView {
         
         return self.insert(rowElements: rowElements, section: section, row: ALPosition.end.rawValue)
     }
-    
-    //MARK: - Managing the removal of new cells
+}
+
+//MARK: - Managing the removal of new cells
+
+extension ALTableView {
     
     public func remove(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -89,7 +92,7 @@ extension ALTableView {
         
         return self.remove(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
-
+    
     public func remove(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(rowElement: rowElement, section: section, row: ALPosition.begining.rawValue)
@@ -109,8 +112,11 @@ extension ALTableView {
         
         return self.remove(rowElements: rowElements, section: section, row: ALPosition.end.rawValue)
     }
-    
-    //MARK: - Managing the replacement of new cells
+}
+
+//MARK: - Managing the replacement of new cells
+
+extension ALTableView {
     
     public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -140,8 +146,11 @@ extension ALTableView {
         
         return self.replace(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
-    
-    //MARK: - Private methods
+}
+
+//MARK: - Private methods
+
+extension ALTableView {
     
     private func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>?{
         
@@ -168,7 +177,6 @@ extension ALTableView {
         
         return indexPathes
     }
-    
 }
 
 //MARK: - ALSectionManagerProtocol

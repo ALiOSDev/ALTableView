@@ -8,9 +8,9 @@
 
 import UIKit
 
+//MARK: - Managing the insertion of new sections
+
 extension ALTableView {
-    
-    //MARK: - Managing the insertion of new sections
     
     public func insert(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -59,8 +59,11 @@ extension ALTableView {
         
         return self.insert(sectionElements: sectionElements, section: ALPosition.end.rawValue)
     }
-    
-    //MARK: - Managing the removal of new sections
+}
+
+//MARK: - Managing the removal of new sections
+
+extension ALTableView {
     
     public func remove(sectionElements: Array<ALSectionElement>, section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -89,7 +92,7 @@ extension ALTableView {
         
         return self.remove(sectionElements: sectionElements, section: indexPath.section, animation: animation)
     }
-
+    
     public func remove(sectionElement: ALSectionElement, atTheBeginingOfTableView section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(sectionElement: sectionElement, section: ALPosition.begining.rawValue)
@@ -109,8 +112,11 @@ extension ALTableView {
         
         return self.remove(sectionElements: sectionElements, section: ALPosition.end.rawValue)
     }
-    
-    //MARK: - Managing the replacement of new sections
+}
+
+//MARK: - Managing the replacement of new sections
+
+extension ALTableView {
     
     public func replace(sectionElements: Array<ALSectionElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
@@ -140,13 +146,17 @@ extension ALTableView {
         
         return self.replace(sectionElements: sectionElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
-
+    
     public func replaceAllSections(sectionElements: Array<ALSectionElement>) {
+        
         self.sectionManager.replaceAllSections(sectionElements: sectionElements)
         self.tableView?.reloadData()
     }
-    
-    //MARK: - Private methods
+}
+
+//MARK: - Private methods
+
+extension ALTableView {
     
     private func getIndexSections(section: Int, numberOfSectionElements: Int) -> IndexSet? {
         
