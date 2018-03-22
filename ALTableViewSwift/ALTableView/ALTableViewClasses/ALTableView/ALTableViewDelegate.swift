@@ -84,24 +84,48 @@ extension ALTableView: UITableViewDelegate {
     
     //MARK: - Modifying Header and Footer of Sections
     
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        let estimatedHeight: CGFloat = self.sectionManager.getHeaderHeightFrom(section: section)
+        return estimatedHeight
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        let estimatedHeight: CGFloat = self.sectionManager.getFooterHeightFrom(section: section)
+        return estimatedHeight
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        return self.sectionManager.getSectionHeaderAtSection(section: section)
+        return UIView()
+//        return self.sectionManager.getSectionHeaderAtSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-        return self.sectionManager.getSectionFooterAtSection(section: section)
+        return UIView()
+//        return self.sectionManager.getSectionFooterAtSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        return self.sectionManager.getSectionHeaderHeightAtSection(section: section)
+        guard let headerElement = self.sectionManager.getHeaderElementAtSection(section: section) else {
+            return 0
+        }
+        if headerElement.isEstimateHeightMode() {
+            return UITableViewAutomaticDimension
+        } else {
+            let estimatedHeight: CGFloat = self.sectionManager.getHeaderHeightFrom(section: section)
+            return estimatedHeight
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-        return self.sectionManager.getSectionFooterHeightAtSection(section: section)
+        guard let footerrElement = self.sectionManager.getFooterElementAtSection(section: section) else {
+            return 0
+        }
+        if footerrElement.isEstimateHeightMode() {
+            return UITableViewAutomaticDimension
+        } else {
+            let estimatedHeight: CGFloat = self.sectionManager.getFooterHeightFrom(section: section)
+            return estimatedHeight
+        }
     }
     
     //MARK: - Private methods

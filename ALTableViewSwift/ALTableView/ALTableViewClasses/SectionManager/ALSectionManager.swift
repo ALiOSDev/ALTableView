@@ -102,38 +102,74 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return rowElement
     }
     
+    //MARK: - Get Header Elements
+    
+    internal func getHeaderElementAtIndexPath(indexPath: IndexPath) -> ALHeaderFooterElement? {
+        
+        return self.getHeaderElementAtSection(section: indexPath.section)
+    }
+    
+    internal func getHeaderElementAtSection(section: Int) -> ALHeaderFooterElement? {
+        
+        let headerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getHeaderElementAt(position: section)
+        return headerElement
+    }
+    
+    //MARK: - Get Footer Elements
+    
+    internal func getFooterElementAtIndexPath(indexPath: IndexPath) -> ALHeaderFooterElement? {
+        
+        return self.getFooterElementAtSection(section: indexPath.section)
+    }
+    
+    internal func getFooterElementAtSection(section: Int) -> ALHeaderFooterElement? {
+        
+        let footerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getFooterElementAt(position: section)
+        return footerElement
+    }
+    
     //MARK: - Sections Header & Footer Views
     
-    internal func getSectionHeaderAtIndexPath(indexPath: IndexPath) -> UIView? {
-        
-        return self.getSectionHeaderAtSection(section: indexPath.section)
-    }
+    //MARK: - Getter Header
     
-    internal func getSectionHeaderAtSection(section: Int) -> UIView? {
-        
-        let sectionElement: ALSectionElement? = self.sectionElements[safe: section]
-        return sectionElement?.getHeader()
-    }
+//    internal func getHeaderFrom(tableView: UITableView, indexPath: IndexPath) -> UITableViewHeaderFooterView? {
+//
+//        return self.getHeaderFrom(tableView: tableView, section: indexPath.section, row: indexPath.row)
+//    }
+//
+//    internal func getHeaderFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewHeaderFooterView? {
+//
+//        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
+//            return nil
+//        }
+//        let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
+//        return cell
+//    }
+//
+    //MARK: - Getter Footer
     
-    internal func getSectionFooterAtIndexPath(indexPath: IndexPath) -> UIView? {
-        
-        return self.getSectionFooterAtSection(section: indexPath.section)
-    }
-    
-    internal func getSectionFooterAtSection(section: Int) -> UIView? {
-        
-        let sectionElement: ALSectionElement? = self.sectionElements[safe: section]
-        return sectionElement?.getFooter()
-    }
+//    internal func getFooterFrom(tableView: UITableView, indexPath: IndexPath) -> UITableViewHeaderFooterView? {
+//
+//        return self.getCellFrom(tableView: tableView, section: indexPath.section, row: indexPath.row)
+//    }
+//
+//    internal func getFooterFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewHeaderFooterView? {
+//
+//        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
+//            return nil
+//        }
+//        let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
+//        return cell
+//    }
 
     //MARK: - Sections Header & Footer height
 
-    internal func getSectionHeaderHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
+    internal func getHeaderHeightFrom(indexPath: IndexPath) -> CGFloat {
         
-        return self.getSectionHeaderHeightAtSection(section: indexPath.section)
+        return self.getHeaderHeightFrom(section: indexPath.section)
     }
     
-    internal func getSectionHeaderHeightAtSection(section: Int) -> CGFloat {
+    internal func getHeaderHeightFrom(section: Int) -> CGFloat {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
             return 0
@@ -141,12 +177,12 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return sectionElement.getHeaderHeight()
     }
     
-    internal func getSectionFooterHeightAtIndexPath(indexPath: IndexPath) -> CGFloat {
+    internal func getFooterHeightFrom(indexPath: IndexPath) -> CGFloat {
         
-        return self.getSectionFooterHeightAtSection(section: indexPath.section)
+        return self.getFooterHeightFrom(section: indexPath.section)
     }
     
-    internal func getSectionFooterHeightAtSection(section: Int) -> CGFloat {
+    internal func getFooterHeightFrom(section: Int) -> CGFloat {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
             return 0
