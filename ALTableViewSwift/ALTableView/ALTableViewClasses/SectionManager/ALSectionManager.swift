@@ -90,7 +90,9 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellHeightFrom(section: Int, row: Int) -> CGFloat {
         
-        let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row)
+        guard let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row) else {
+            return 0
+        }
         return rowHeight
     }
     
@@ -101,7 +103,9 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellEstimatedHeightFrom(section: Int, row: Int) -> CGFloat {
         
-        let rowHeight = self.sectionElements[safe: section]?.getRowEstimatedHeight(at: row)
+        guard let rowHeight = self.sectionElements[safe: section]?.getRowEstimatedHeight(at: row) else {
+            return 0
+        }
         return rowHeight
     }
     
@@ -172,12 +176,38 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return sectionElement.getHeaderHeight()
     }
     
+    internal func getHeaderEstimatedHeightFrom(indexPath: IndexPath) -> CGFloat {
+        
+        return self.getHeaderEstimatedHeightFrom(section: indexPath.section)
+    }
+    
+    internal func getHeaderEstimatedHeightFrom(section: Int) -> CGFloat {
+        
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return 0
+        }
+        return sectionElement.getHeaderHeight()
+    }
+    
     internal func getFooterHeightFrom(indexPath: IndexPath) -> CGFloat {
         
         return self.getFooterHeightFrom(section: indexPath.section)
     }
     
     internal func getFooterHeightFrom(section: Int) -> CGFloat {
+        
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return 0
+        }
+        return sectionElement.getFooterHeight()
+    }
+    
+    internal func getFooterEstimatedHeightFrom(indexPath: IndexPath) -> CGFloat {
+        
+        return self.getFooterEstimatedHeightFrom(section: indexPath.section)
+    }
+    
+    internal func getFooterEstimatedHeightFrom(section: Int) -> CGFloat {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
             return 0

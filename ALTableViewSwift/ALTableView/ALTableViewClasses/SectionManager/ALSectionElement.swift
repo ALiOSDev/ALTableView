@@ -100,6 +100,22 @@ class ALSectionElement {
         return rowElement.getEstimatedHeight()
     }
     
+    internal func getHeaderEstimatedHeight(at position: Int) -> CGFloat {
+        
+        guard let headerElement = self.headerElement else {
+            return 0
+        }
+        return headerElement.getEstimatedHeight()
+    }
+    
+    internal func getFooterEstimatedHeight(at position: Int) -> CGFloat {
+        
+        guard let footerElement = self.footerElement else {
+            return 0
+        }
+        return footerElement.getEstimatedHeight()
+    }
+    
     internal func getHeaderElementAt(position: Int) -> ALHeaderFooterElement? {
         
         return self.headerElement

@@ -15,16 +15,17 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Configuring Rows
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.sectionManager.getCellEstimatedHeightFrom(indexPath: indexPath)
+//        guard let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) else {
+//            return 0
+//        }
         
-        guard let rowElement: ALRowElement = self.sectionManager.getRowElementAtIndexPath(indexPath: indexPath) else {
-            return 0
-        }
-        if rowElement.isEstimateHeightMode() {
-            return UITableViewAutomaticDimension
-        } else {
-            let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
-            return estimatedHeight
-        }
+//        if rowElement.isEstimateHeightMode() {
+//            return UITableViewAutomaticDimension
+//        } else {
+//            let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
+//            return estimatedHeight
+//        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -107,29 +108,29 @@ extension ALTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        guard let headerElement = self.sectionManager.getHeaderElementAtSection(section: section) else {
-            return 0
-        }
-        if headerElement.isEstimateHeightMode() {
-            return UITableViewAutomaticDimension
-        } else {
-            let estimatedHeight: CGFloat = self.sectionManager.getHeaderHeightFrom(section: section)
-            return estimatedHeight
-        }
+        return self.sectionManager.getHeaderEstimatedHeightFrom(section: section)
+//        guard let headerElement = self.sectionManager.getHeaderElementAtSection(section: section) else {
+//            return 0
+//        }
+//        if headerElement.isEstimateHeightMode() {
+//            return UITableViewAutomaticDimension
+//        } else {
+//            let estimatedHeight: CGFloat = self.sectionManager.getHeaderHeightFrom(section: section)
+//            return estimatedHeight
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-        guard let footerElement = self.sectionManager.getFooterElementAtSection(section: section) else {
-            return 0
-        }
-        if footerElement.isEstimateHeightMode() {
-            return UITableViewAutomaticDimension
-        } else {
-            let estimatedHeight: CGFloat = self.sectionManager.getFooterHeightFrom(section: section)
-            return estimatedHeight
-        }
+        return self.sectionManager.getFooterEstimatedHeightFrom(section: section)
+//        guard let footerElement = self.sectionManager.getFooterElementAtSection(section: section) else {
+//            return 0
+//        }
+//        if footerElement.isEstimateHeightMode() {
+//            return UITableViewAutomaticDimension
+//        } else {
+//            let estimatedHeight: CGFloat = self.sectionManager.getFooterHeightFrom(section: section)
+//            return estimatedHeight
+//        }
     }
     
     //MARK: - Private methods
