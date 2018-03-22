@@ -18,65 +18,50 @@ class ALSectionElement {
 
     //MARK: - Properties
     
-//    private let viewHeader: UIView
-//    private let viewFooter: UIView
-    
-//    private let headerHeight: CGFloat
-//    private let footerHeight: CGFloat
-    
-    private let viewHeader: ALHeaderFooterElement?
-    private let viewFooter: ALHeaderFooterElement?
+    private let headerElement: ALHeaderFooterElement?
+    private let footerElement: ALHeaderFooterElement?
     
     private var isOpened: Bool = true
     private let isExpandable: Bool
     
-//    private var headerTapGesture: UITapGestureRecognizer?
+    private var headerTapGesture: UITapGestureRecognizer?
     private var rowElements: Array<ALRowElement>
     
     internal weak var delegate: ALSectionHeaderViewDelegate?
     
     //MARK: - Initializers
     
-//    init(rowElements: Array<ALRowElement>, viewHeader: UIView = UIView(), viewFooter: UIView = UIView(), headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false) {
-//        self.viewHeader = viewHeader
-//        self.viewFooter = viewFooter
-//        self.headerHeight = headerHeight
-//        self.footerHeight = footerHeight
-//        self.isExpandable = isExpandable
-//        self.rowElements = rowElements
-//        self.setUpHeaderRecognizer()
-//    }
-    
-    init(rowElements: Array<ALRowElement>, viewHeader: ALHeaderFooterElement?, viewFooter: ALHeaderFooterElement?, headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false) {
+    init(rowElements: Array<ALRowElement>, headerElement: ALHeaderFooterElement?, footerElement: ALHeaderFooterElement?, headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false) {
         
-        self.viewHeader = viewHeader
-        self.viewFooter = viewFooter
+        self.headerElement = headerElement
+        self.footerElement = footerElement
         self.isExpandable = isExpandable
         self.rowElements = rowElements
-//        self.setUpHeaderRecognizer()
     }
-    
     
     //MARK: - Getters
     
-    internal func getHeader() -> UIView {
-        return UIView()
-//        return self.viewHeader
+    internal func getHeaderFrom(tableView: UITableView) -> UIView? {
+        guard let viewHeader = self.headerElement?.getViewFrom(tableView: tableView) else {
+            return nil
+        }
+        self.setUpHeaderRecognizer(viewHeader: viewHeader)
+        return viewHeader
     }
     
-    internal func getFooter() -> UIView {
-        return UIView()
-//        return self.viewFooter
+    internal func getFooterFrom(tableView: UITableView) -> UIView? {
+        
+        return self.footerElement?.getViewFrom(tableView: tableView)
     }
     
     internal func getHeaderHeight() -> CGFloat {
 
-        return self.viewHeader?.getHeight() ?? 0.0
+        return self.headerElement?.getHeight() ?? 0.0
     }
 
     internal func getFooterHeight() -> CGFloat {
 
-        return self.viewFooter?.getHeight() ?? 0.0
+        return self.footerElement?.getHeight() ?? 0.0
     }
     
     internal func getNumberOfRows() -> Int {
@@ -99,22 +84,30 @@ class ALSectionElement {
         return rowElement
     }
     
-    internal func getRowHeight(at position: Int) -> CGFloat? {
+    internal func getRowHeight(at position: Int) -> CGFloat {
         
         guard let rowElement = self.getRowElementAt(position: position) else {
-            return nil
+            return 0
         }
         return rowElement.getHeight()
     }
     
+    internal func getRowEstimatedHeight(at position: Int) -> CGFloat {
+        
+        guard let rowElement = self.getRowElementAt(position: position) else {
+            return 0
+        }
+        return rowElement.getEstimatedHeight()
+    }
+    
     internal func getHeaderElementAt(position: Int) -> ALHeaderFooterElement? {
         
-        return self.viewHeader
+        return self.headerElement
     }
     
     internal func getFooterElementAt(position: Int) -> ALHeaderFooterElement? {
         
-        return self.viewFooter
+        return self.footerElement
     }
     
 //    internal func getSectionTitleIndex() -> String {
@@ -154,12 +147,16 @@ class ALSectionElement {
     
     //MARK: - Managing the opening and close of section
     
-//    private func setUpHeaderRecognizer () -> Void {
-//
-//        self.viewHeader.isUserInteractionEnabled = true
-//        let headerTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.toggleOpen(sender:)))
-//        self.viewHeader.addGestureRecognizer(headerTapGesture)
-//    }
+    private func setUpHeaderRecognizer (viewHeader: UIView) -> Void {
+        
+        if self.headerTapGesture == nil {
+            self.headerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.toggleOpen(sender:)))
+            if let headerTapGesture = self.headerTapGesture {
+                viewHeader.isUserInteractionEnabled = true
+                viewHeader.addGestureRecognizer(headerTapGesture)
+            }
+        }
+    }
     
     @objc private func toggleOpen(sender: Any) {
         

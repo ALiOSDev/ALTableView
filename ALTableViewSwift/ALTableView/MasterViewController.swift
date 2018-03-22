@@ -69,14 +69,9 @@ class MasterViewController: UITableViewController {
             rowElements.append(rowElement)
             rowElements.append(rowElement2)
             
-            let headerElement = ALHeaderFooterElement(identifier: masterTableViewHeaderFooterString, dataObject: "Header")
+            let headerElement = ALHeaderFooterElement(identifier: masterTableViewHeaderFooterString, dataObject: "Header Test", estimateHeightMode: true)
             
-//            let labelTitle: UILabel = UILabel()
-//            labelTitle.text = "Header Test"
-//            labelTitle.backgroundColor = .green
-            
-//            let section = ALSectionElement(rowElements: rowElements, viewHeader: labelTitle, headerHeight: 40, isExpandable: true)
-            let section = ALSectionElement(rowElements: rowElements, viewHeader: headerElement, viewFooter: nil, isExpandable: true)
+            let section = ALSectionElement(rowElements: rowElements, headerElement: headerElement, footerElement: nil, isExpandable: true)
             
             sectionElements.append(section)
         }

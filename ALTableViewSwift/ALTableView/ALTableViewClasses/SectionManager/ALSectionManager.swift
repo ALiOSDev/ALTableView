@@ -61,6 +61,26 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return cell
     }
     
+    //MARK: - Getter Header
+    
+    internal func getHeaderFrom(tableView: UITableView, section: Int) -> UIView? {
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return nil
+        }
+        let view = sectionElement.getHeaderFrom(tableView: tableView)
+        return view
+    }
+    
+    //MARK: - Getter Footer
+    
+    internal func getFooterFrom(tableView: UITableView, section: Int) -> UIView? {
+        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
+            return nil
+        }
+        let view = sectionElement.getFooterFrom(tableView: tableView)
+        return view
+    }
+    
     //MARK: - Cell height
     
     internal func getCellHeightFrom(indexPath: IndexPath) -> CGFloat {
@@ -70,9 +90,18 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellHeightFrom(section: Int, row: Int) -> CGFloat {
         
-        guard let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row) else {
-            return 0
-        }
+        let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row)
+        return rowHeight
+    }
+    
+    internal func getCellEstimatedHeightFrom(indexPath: IndexPath) -> CGFloat {
+        
+        return self.getCellEstimatedHeightFrom(section: indexPath.section, row: indexPath.row)
+    }
+    
+    internal func getCellEstimatedHeightFrom(section: Int, row: Int) -> CGFloat {
+        
+        let rowHeight = self.sectionElements[safe: section]?.getRowEstimatedHeight(at: row)
         return rowHeight
     }
     
@@ -127,40 +156,6 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         let footerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getFooterElementAt(position: section)
         return footerElement
     }
-    
-    //MARK: - Sections Header & Footer Views
-    
-    //MARK: - Getter Header
-    
-//    internal func getHeaderFrom(tableView: UITableView, indexPath: IndexPath) -> UITableViewHeaderFooterView? {
-//
-//        return self.getHeaderFrom(tableView: tableView, section: indexPath.section, row: indexPath.row)
-//    }
-//
-//    internal func getHeaderFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewHeaderFooterView? {
-//
-//        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
-//            return nil
-//        }
-//        let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
-//        return cell
-//    }
-//
-    //MARK: - Getter Footer
-    
-//    internal func getFooterFrom(tableView: UITableView, indexPath: IndexPath) -> UITableViewHeaderFooterView? {
-//
-//        return self.getCellFrom(tableView: tableView, section: indexPath.section, row: indexPath.row)
-//    }
-//
-//    internal func getFooterFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewHeaderFooterView? {
-//
-//        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
-//            return nil
-//        }
-//        let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
-//        return cell
-//    }
 
     //MARK: - Sections Header & Footer height
 

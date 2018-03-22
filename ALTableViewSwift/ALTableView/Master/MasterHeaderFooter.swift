@@ -23,6 +23,8 @@ class MasterHeaderFooter: UITableViewHeaderFooterView, ALHeaderFooterProtocol {
         if let title: String = dataObject as? String {
             self.labelText.text = title
         }
+        self.contentView.backgroundColor = .green
+//        self.labelText.backgroundColor = .red
     }
 
 }
