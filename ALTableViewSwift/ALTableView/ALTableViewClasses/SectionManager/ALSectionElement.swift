@@ -86,34 +86,22 @@ class ALSectionElement {
     
     internal func getRowHeight(at position: Int) -> CGFloat {
         
-        guard let rowElement = self.getRowElementAt(position: position) else {
-            return 0
-        }
-        return rowElement.getHeight()
+        return self.getRowElementAt(position: position)?.getHeight() ?? 0
     }
     
     internal func getRowEstimatedHeight(at position: Int) -> CGFloat {
         
-        guard let rowElement = self.getRowElementAt(position: position) else {
-            return 0
-        }
-        return rowElement.getEstimatedHeight()
+        return self.getRowElementAt(position: position)?.getEstimatedHeight() ?? 0
     }
     
     internal func getHeaderEstimatedHeight(at position: Int) -> CGFloat {
         
-        guard let headerElement = self.headerElement else {
-            return 0
-        }
-        return headerElement.getEstimatedHeight()
+        return self.headerElement?.getEstimatedHeight() ?? 0
     }
     
     internal func getFooterEstimatedHeight(at position: Int) -> CGFloat {
         
-        guard let footerElement = self.footerElement else {
-            return 0
-        }
-        return footerElement.getEstimatedHeight()
+        return self.footerElement?.getEstimatedHeight() ?? 0
     }
     
     internal func getHeaderElementAt(position: Int) -> ALHeaderFooterElement? {

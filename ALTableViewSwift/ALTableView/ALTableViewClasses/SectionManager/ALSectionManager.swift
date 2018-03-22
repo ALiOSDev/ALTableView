@@ -161,7 +161,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         return footerElement
     }
 
-    //MARK: - Sections Header & Footer height
+    //MARK: - Sections Header height
 
     internal func getHeaderHeightFrom(indexPath: IndexPath) -> CGFloat {
         
@@ -188,6 +188,8 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         }
         return sectionElement.getHeaderHeight()
     }
+    
+    //MARK: - Sections Footer height 
     
     internal func getFooterHeightFrom(indexPath: IndexPath) -> CGFloat {
         
