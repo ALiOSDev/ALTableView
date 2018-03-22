@@ -54,16 +54,6 @@ class ALSectionElement {
         return self.footerElement?.getViewFrom(tableView: tableView)
     }
     
-    internal func getHeaderHeight() -> CGFloat {
-
-        return self.headerElement?.getHeight() ?? 0.0
-    }
-
-    internal func getFooterHeight() -> CGFloat {
-
-        return self.footerElement?.getHeight() ?? 0.0
-    }
-    
     internal func getNumberOfRows() -> Int {
         
         if self.isOpened {
@@ -84,32 +74,42 @@ class ALSectionElement {
         return rowElement
     }
     
-    internal func getRowHeight(at position: Int) -> CGFloat {
-        
-        return self.getRowElementAt(position: position)?.getHeight() ?? 0
-    }
-    
     internal func getRowEstimatedHeight(at position: Int) -> CGFloat {
         
-        return self.getRowElementAt(position: position)?.getEstimatedHeight() ?? 0
+        return self.getRowElementAt(position: position)?.getEstimatedHeight() ?? 0.0
     }
     
-    internal func getHeaderEstimatedHeight(at position: Int) -> CGFloat {
+    internal func getHeaderEstimatedHeight() -> CGFloat {
         
-        return self.headerElement?.getEstimatedHeight() ?? 0
+        return self.headerElement?.getEstimatedHeight() ?? 0.0
     }
     
-    internal func getFooterEstimatedHeight(at position: Int) -> CGFloat {
+    internal func getFooterEstimatedHeight() -> CGFloat {
         
-        return self.footerElement?.getEstimatedHeight() ?? 0
+        return self.footerElement?.getEstimatedHeight() ?? 0.0
     }
     
-    internal func getHeaderElementAt(position: Int) -> ALHeaderFooterElement? {
+    internal func getRowHeight(at position: Int) -> CGFloat {
+        
+        return self.getRowElementAt(position: position)?.getHeight() ?? 0.0
+    }
+    
+    internal func getHeaderHeight() -> CGFloat {
+        
+        return self.headerElement?.getHeight() ?? 0.0
+    }
+    
+    internal func getFooterHeight() -> CGFloat {
+        
+        return self.footerElement?.getHeight() ?? 0.0
+    }
+    
+    internal func getHeaderElement() -> ALHeaderFooterElement? {
         
         return self.headerElement
     }
     
-    internal func getFooterElementAt(position: Int) -> ALHeaderFooterElement? {
+    internal func getFooterElement() -> ALHeaderFooterElement? {
         
         return self.footerElement
     }

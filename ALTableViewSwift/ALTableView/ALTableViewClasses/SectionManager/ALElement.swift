@@ -31,12 +31,12 @@ class ALElement {
         return self.dataObject
     }
     
-    internal func getHeight() -> CGFloat {
+    internal func getEstimatedHeight() -> CGFloat {
         
         return self.height
     }
     
-    internal func getEstimatedHeight() -> CGFloat {
+    internal func getHeight() -> CGFloat {
         if self.estimateHeightMode {
             return UITableViewAutomaticDimension
         }

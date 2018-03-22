@@ -116,10 +116,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func setRowElementHeight(height: CGFloat, section: Int, row: Int) {
         
-        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row) else {
-            return
-        }
-        rowElement.setCellHeight(height: height)
+        self.getRowElementAtSection(section: section, row: row)?.setCellHeight(height: height)
     }
     
     //MARK: - Get Row Elements
@@ -144,7 +141,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getHeaderElementAtSection(section: Int) -> ALHeaderFooterElement? {
         
-        let headerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getHeaderElementAt(position: section)
+        let headerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getHeaderElement()
         return headerElement
     }
     
@@ -157,7 +154,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getFooterElementAtSection(section: Int) -> ALHeaderFooterElement? {
         
-        let footerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getFooterElementAt(position: section)
+        let footerElement: ALHeaderFooterElement? = self.sectionElements[safe: section]?.getFooterElement()
         return footerElement
     }
 
@@ -186,7 +183,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
             return 0
         }
-        return sectionElement.getHeaderHeight()
+        return sectionElement.getHeaderEstimatedHeight()
     }
     
     //MARK: - Sections Footer height 
@@ -214,7 +211,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
         guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
             return 0
         }
-        return sectionElement.getFooterHeight()
+        return sectionElement.getFooterEstimatedHeight()
     }
     
     //MARK: - ALSectionHeaderViewDelegate

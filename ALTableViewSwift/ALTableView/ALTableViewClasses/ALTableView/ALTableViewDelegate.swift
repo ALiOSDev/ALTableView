@@ -16,13 +16,12 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.sectionManager.getCellEstimatedHeightFrom(indexPath: indexPath)
+        return self.sectionManager.getCellHeightFrom(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let estimatedHeight: CGFloat = self.sectionManager.getCellHeightFrom(indexPath: indexPath)
-        return estimatedHeight
+        return self.sectionManager.getCellEstimatedHeightFrom(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
@@ -77,15 +76,13 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Modifying Header and Footer of Sections
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        
-        let estimatedHeight: CGFloat = self.sectionManager.getHeaderHeightFrom(section: section)
-        return estimatedHeight
+        print(self.sectionManager.getHeaderEstimatedHeightFrom(section: section))
+       return self.sectionManager.getHeaderEstimatedHeightFrom(section: section)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
-        let estimatedHeight: CGFloat = self.sectionManager.getFooterHeightFrom(section: section)
-        return estimatedHeight
+        return self.sectionManager.getFooterEstimatedHeightFrom(section: section)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -100,12 +97,12 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return self.sectionManager.getHeaderEstimatedHeightFrom(section: section)
+        return self.sectionManager.getHeaderHeightFrom(section: section)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return self.sectionManager.getFooterEstimatedHeightFrom(section: section)
+        return self.sectionManager.getFooterHeightFrom(section: section)
     }
     
     //MARK: - Private methods

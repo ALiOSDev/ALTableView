@@ -62,7 +62,7 @@ class MasterViewController: UITableViewController {
     
     func createElements() -> [ALSectionElement] {
         var sectionElements = [ALSectionElement]()
-        for _ in 0...2 {
+//        for _ in 0...2 {
             var rowElements = Array<ALRowElement>()
             let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: masterTableViewCellString, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
             let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), identifier: master2TableViewCellString, dataObject: 12, estimateHeightMode: true)
@@ -74,7 +74,7 @@ class MasterViewController: UITableViewController {
             let section = ALSectionElement(rowElements: rowElements, headerElement: headerElement, footerElement: nil, isExpandable: true)
             
             sectionElements.append(section)
-        }
+//        }
 
         return sectionElements
     }
