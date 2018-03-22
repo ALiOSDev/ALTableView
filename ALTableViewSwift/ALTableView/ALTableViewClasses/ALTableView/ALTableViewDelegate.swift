@@ -32,7 +32,7 @@ extension ALTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         //We set up the cellHeight again to avoid stuttering scroll when using automatic dimension with cells
-        let cellHeight = cell.frame.size.height
+        let cellHeight: CGFloat = cell.frame.size.height
         self.sectionManager.setRowElementHeight(height: cellHeight, indexPath: indexPath)
         
         if self.isLastIndexPath(indexPath: indexPath, tableView: tableView) {
@@ -76,8 +76,8 @@ extension ALTableView: UITableViewDelegate {
     //MARK: - Modifying Header and Footer of Sections
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        print(self.sectionManager.getHeaderEstimatedHeightFrom(section: section))
-       return self.sectionManager.getHeaderEstimatedHeightFrom(section: section)
+
+        return self.sectionManager.getHeaderEstimatedHeightFrom(section: section)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {

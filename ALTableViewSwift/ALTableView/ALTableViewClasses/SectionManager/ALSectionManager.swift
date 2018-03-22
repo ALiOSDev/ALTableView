@@ -39,10 +39,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getNumberOfRows(in section: Int) -> Int {
         
-        guard let numberOfRows = self.sectionElements[safe: section]?.getNumberOfRows() else {
-            return 0
-        }
-        return numberOfRows
+        return self.sectionElements[safe: section]?.getNumberOfRows() ?? 0
     }
     
     //MARK: - Getter Cell
@@ -54,31 +51,21 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellFrom(tableView: UITableView, section: Int, row: Int) -> UITableViewCell? {
         
-        guard let rowElement: ALRowElement = self.getRowElementAtSection(section: section, row: row)  else {
-            return nil
-        }
-        let cell: UITableViewCell = rowElement.getViewFrom(tableView: tableView)
-        return cell
+        return self.getRowElementAtSection(section: section, row: row)?.getViewFrom(tableView: tableView)
     }
     
     //MARK: - Getter Header
     
     internal func getHeaderFrom(tableView: UITableView, section: Int) -> UIView? {
-        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return nil
-        }
-        let view = sectionElement.getHeaderFrom(tableView: tableView)
-        return view
+        
+        return self.sectionElements[safe: section]?.getHeaderFrom(tableView: tableView)
     }
     
     //MARK: - Getter Footer
     
     internal func getFooterFrom(tableView: UITableView, section: Int) -> UIView? {
-        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return nil
-        }
-        let view = sectionElement.getFooterFrom(tableView: tableView)
-        return view
+        
+        return self.sectionElements[safe: section]?.getFooterFrom(tableView: tableView)
     }
     
     //MARK: - Cell height
@@ -90,10 +77,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellHeightFrom(section: Int, row: Int) -> CGFloat {
         
-        guard let rowHeight = self.sectionElements[safe: section]?.getRowHeight(at: row) else {
-            return 0
-        }
-        return rowHeight
+        return self.sectionElements[safe: section]?.getRowHeight(at: row) ?? 0.0
     }
     
     internal func getCellEstimatedHeightFrom(indexPath: IndexPath) -> CGFloat {
@@ -103,10 +87,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getCellEstimatedHeightFrom(section: Int, row: Int) -> CGFloat {
         
-        guard let rowHeight = self.sectionElements[safe: section]?.getRowEstimatedHeight(at: row) else {
-            return 0
-        }
-        return rowHeight
+        return self.sectionElements[safe: section]?.getRowEstimatedHeight(at: row) ?? 0.0
     }
     
     internal func setRowElementHeight(height: CGFloat, indexPath: IndexPath) {
@@ -180,10 +161,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getHeaderEstimatedHeightFrom(section: Int) -> CGFloat {
         
-        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return 0
-        }
-        return sectionElement.getHeaderEstimatedHeight()
+        return self.sectionElements[safe: section]?.getHeaderEstimatedHeight() ?? 0.0
     }
     
     //MARK: - Sections Footer height 
@@ -195,10 +173,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getFooterHeightFrom(section: Int) -> CGFloat {
         
-        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return 0
-        }
-        return sectionElement.getFooterHeight()
+        return self.sectionElements[safe: section]?.getFooterHeight() ?? 0.0
     }
     
     internal func getFooterEstimatedHeightFrom(indexPath: IndexPath) -> CGFloat {
@@ -208,10 +183,7 @@ class ALSectionManager: ALSectionHeaderViewDelegate {
     
     internal func getFooterEstimatedHeightFrom(section: Int) -> CGFloat {
         
-        guard let sectionElement: ALSectionElement = self.sectionElements[safe: section] else {
-            return 0
-        }
-        return sectionElement.getFooterEstimatedHeight()
+        return self.sectionElements[safe: section]?.getFooterEstimatedHeight() ?? 0.0
     }
     
     //MARK: - ALSectionHeaderViewDelegate
