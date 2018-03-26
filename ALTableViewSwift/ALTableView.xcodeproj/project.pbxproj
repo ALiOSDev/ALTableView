@@ -27,6 +27,9 @@
 		4594BACB2068CDD100028322 /* ALSectionManagerHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594BACA2068CDD100028322 /* ALSectionManagerHeaders.swift */; };
 		4594BACD2068CDDA00028322 /* ALSectionManagerFooters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594BACC2068CDDA00028322 /* ALSectionManagerFooters.swift */; };
 		45B21DCC2068D04000513E33 /* Collection+ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DCB2068D04000513E33 /* Collection+ALTableView.swift */; };
+		45B21DD12068D18500513E33 /* ALSectionElementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD02068D18500513E33 /* ALSectionElementRow.swift */; };
+		45B21DD32068D19500513E33 /* ALSectionElementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */; };
+		45B21DD52068D1A100513E33 /* ALSectionElementFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */; };
 		45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F94204FC9D500CB6C0C /* ALRowElement.swift */; };
 		45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */; };
 		45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */; };
@@ -88,6 +91,9 @@
 		4594BACA2068CDD100028322 /* ALSectionManagerHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManagerHeaders.swift; sourceTree = "<group>"; };
 		4594BACC2068CDDA00028322 /* ALSectionManagerFooters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManagerFooters.swift; sourceTree = "<group>"; };
 		45B21DCB2068D04000513E33 /* Collection+ALTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ALTableView.swift"; sourceTree = "<group>"; };
+		45B21DD02068D18500513E33 /* ALSectionElementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementRow.swift; sourceTree = "<group>"; };
+		45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementHeader.swift; sourceTree = "<group>"; };
+		45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementFooter.swift; sourceTree = "<group>"; };
 		45B87F94204FC9D500CB6C0C /* ALRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRowElement.swift; sourceTree = "<group>"; };
 		45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElement.swift; sourceTree = "<group>"; };
 		45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManager.swift; sourceTree = "<group>"; };
@@ -211,10 +217,10 @@
 		4594BAC52068CD1800028322 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				456C3D422060EEB20036AC78 /* ALHeaderFooterElement.swift */,
-				45B87F94204FC9D500CB6C0C /* ALRowElement.swift */,
-				45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */,
 				456C3D442060F0BB0036AC78 /* ALElement.swift */,
+				45B21DCF2068D09800513E33 /* HeaderFooter */,
+				45B21DCE2068D09200513E33 /* Row */,
+				45B21DCD2068D08700513E33 /* Section */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -225,6 +231,33 @@
 				45B21DCB2068D04000513E33 /* Collection+ALTableView.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		45B21DCD2068D08700513E33 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */,
+				45B21DD02068D18500513E33 /* ALSectionElementRow.swift */,
+				45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */,
+				45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		45B21DCE2068D09200513E33 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				45B87F94204FC9D500CB6C0C /* ALRowElement.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		45B21DCF2068D09800513E33 /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				456C3D422060EEB20036AC78 /* ALHeaderFooterElement.swift */,
+			);
+			path = HeaderFooter;
 			sourceTree = "<group>";
 		};
 		45B87F92204FC9A200CB6C0C /* ALTableViewClasses */ = {
@@ -615,6 +648,8 @@
 				45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */,
 				45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */,
 				4594BAC72068CDB700028322 /* ALSectionManagerSections.swift in Sources */,
+				45B21DD12068D18500513E33 /* ALSectionElementRow.swift in Sources */,
+				45B21DD32068D19500513E33 /* ALSectionElementHeader.swift in Sources */,
 				ED7872AA205C480A00E335F0 /* ALTableViewDelegate.swift in Sources */,
 				ED7872A6205C45D000E335F0 /* ALTableViewRowManaging.swift in Sources */,
 				ED7872A8205C475B00E335F0 /* ALTableViewSectionManaging.swift in Sources */,
@@ -623,6 +658,7 @@
 				45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */,
 				45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */,
 				4568AF542059482100570B99 /* Master2TableViewCell.swift in Sources */,
+				45B21DD52068D1A100513E33 /* ALSectionElementFooter.swift in Sources */,
 				453235A0204FC8E5003BB2C7 /* MasterViewController.swift in Sources */,
 				4532359E204FC8E5003BB2C7 /* AppDelegate.swift in Sources */,
 				ED7872AC205C481500E335F0 /* ALTableViewDataSource.swift in Sources */,
