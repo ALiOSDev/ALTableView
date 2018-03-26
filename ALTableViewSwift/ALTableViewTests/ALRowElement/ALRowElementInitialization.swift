@@ -31,10 +31,10 @@ class ALRowElementInitialization: XCTestCase {
     
     func testDefaultConstructor() {
         let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
-        alTableView.register(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
+        alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
         
         let dataObject = "Test"
-        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), cellIdentifier: cellIdentifier, dataObject: dataObject)
+        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: cellIdentifier, dataObject: dataObject)
         if let rowDataObject = rowElement.getDataObject() as? String {
             XCTAssert(rowDataObject == dataObject, "Data Object does not match the passed one")
         } else {
@@ -56,12 +56,12 @@ class ALRowElementInitialization: XCTestCase {
         let cellHeight: CGFloat = 50.0
         let estimateHeightMode = true
         let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
-        alTableView.register(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
+        alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
         
         let dataObject = "Test"
         let labelTextPressed = "Pressed"
         let labelTextDeselected = "Deselected"
-        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), cellIdentifier: cellIdentifier, dataObject: dataObject, cellStyle: .default, estimateHeightMode: estimateHeightMode, cellHeight: cellHeight, pressedHandler: { (viewController, cell) in
+        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: cellIdentifier, dataObject: dataObject, cellStyle: .default, estimateHeightMode: estimateHeightMode, height: cellHeight, pressedHandler: { (viewController, cell) in
             if let masterCell = cell as? MasterTableViewCell {
                 masterCell.labelText.text = labelTextPressed
             } else {

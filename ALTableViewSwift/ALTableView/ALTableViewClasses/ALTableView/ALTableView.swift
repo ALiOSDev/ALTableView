@@ -16,8 +16,8 @@ import UIKit
 }
 
 enum ALPosition: Int {
-    case begining = -1
-    case end = -2
+    case begining = -1000
+    case end = -1001
 }
 
 class ALTableView: NSObject {

@@ -64,7 +64,7 @@ extension ALSectionManager {
     
     internal func getRowElementAtSection(section: Int, row: Int) -> ALRowElement? {
         
-        let rowElement: ALRowElement? = self.sectionElements[ALSafe: section]?.getRowElementAt(position: row)
+        let rowElement: ALRowElement? = self.sectionElements[ALSafe: section]?.getRowElementAt(index: row)
         return rowElement
     }
     
@@ -75,6 +75,7 @@ extension ALSectionManager {
         guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section] else {
             return false
         }
+        
         return sectionElement.insert(rowElements: rowElements, at: row)
     }
     
