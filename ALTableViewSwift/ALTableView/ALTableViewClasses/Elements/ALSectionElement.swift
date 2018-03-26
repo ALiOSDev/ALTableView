@@ -70,7 +70,7 @@ class ALSectionElement {
     
     internal func getRowElementAt(position: Int) -> ALRowElement? {
         
-        let rowElement: ALRowElement? = self.rowElements[safe: position]
+        let rowElement: ALRowElement? = self.rowElements[ALSafe: position]
         return rowElement
     }
     
