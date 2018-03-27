@@ -20,6 +20,33 @@ enum ALPosition: Int {
     case end = -1001
 }
 
+//enum ALPosition {
+//    case begining
+//    case end(Array<Any>)
+//
+//    func indexInsert() -> Int {
+//        switch self {
+//        case .begining:
+//            return 0
+//        case .end(let array):
+//            return array.count
+//
+//        }
+//    }
+//
+//    func index() -> Int {
+//        switch self {
+//        case .begining:
+//            return 0
+//        case .end(let array):
+//            return array.count - 1
+//
+//        }
+//    }
+//}
+
+
+
 class ALTableView: NSObject {
 
     //MARK: - Properties

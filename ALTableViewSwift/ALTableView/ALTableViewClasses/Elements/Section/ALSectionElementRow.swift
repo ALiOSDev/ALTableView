@@ -14,31 +14,30 @@ extension ALSectionElement {
     
     internal func getRowElementAt(index: Int) -> ALRowElement? {
         
-        let index: Int = self.getRealIndexGet(index: index)
-        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
-            return nil
-        }
+//        let index: Int = self.getRealIndexGet(index: index)
+//        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
+//            return nil
+//        }
         
-        let rowElement: ALRowElement? = self.rowElements[ALSafe: index]
-        return rowElement
+        return self.rowElements[ALSafe: index]
     }
     
     internal func getRowHeight(at index: Int) -> CGFloat {
         
-        let index = self.getRealIndexGet(index: index)
-        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
-            return 0.0
-        }
+//        let index = self.getRealIndexGet(index: index)
+//        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
+//            return 0.0
+//        }
         
         return self.getRowElementAt(index: index)?.getHeight() ?? 0.0
     }
     
     internal func getRowEstimatedHeight(at index: Int) -> CGFloat {
         
-        let index = self.getRealIndexGet(index: index)
-        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
-            return 0.0
-        }
+//        let index = self.getRealIndexGet(index: index)
+//        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
+//            return 0.0
+//        }
         
         return self.getRowElementAt(index: index)?.getEstimatedHeight() ?? 0.0
     }
@@ -46,13 +45,8 @@ extension ALSectionElement {
     //MARK: - Managing the insertion of new cells
     
     internal func insert(rowElements: Array<ALRowElement>, at index: Int) -> Bool {
-        let index = self.getRealIndexInsert(index: index)
-        
-        guard self.isCorrectIndexInsert(index: index, numberOfElements: self.rowElements.count) else {
-            return false
-        }
-        self.rowElements.insert(contentsOf: rowElements, at: index)
-        return true
+
+        return self.rowElements.safeInsert(contentsOf: rowElements, at: index)
     }
     
     //MARK: - Managing the deletion of new cells
@@ -71,42 +65,42 @@ extension ALSectionElement {
     
     internal func replace(rowElements: Array<ALRowElement>, at index: Int) -> Bool {
         
-        let index = self.getRealIndexInsert(index: index)
-        
-        guard self.deleteRowElements(numberOfRowElements: rowElements.count, at: index),
-            self.insert(rowElements: rowElements, at: index) else {
-                return false
-        }
+//        let index = self.getRealIndexInsert(index: index)
+//
+//        guard self.deleteRowElements(numberOfRowElements: rowElements.count, at: index),
+//            self.insert(rowElements: rowElements, at: index) else {
+//                return false
+//        }
         return true
     }
     
-    private func getRealIndexInsert(index: Int) -> Int {
-        switch index {
-        case ALPosition.begining.rawValue:
-            return 0
-        case ALPosition.end.rawValue:
-            return self.rowElements.count
-        default:
-            return index
-        }
-    }
+//    private func getRealIndexInsert(index: Int) -> Int {
+//        switch index {
+//        case ALPosition.begining.rawValue:
+//            return 0
+//        case ALPosition.end.rawValue:
+//            return self.rowElements.count
+//        default:
+//            return index
+//        }
+//    }
     
-    private func getRealIndexGet(index: Int) -> Int {
-        switch index {
-        case ALPosition.begining.rawValue:
-            return 0
-        case ALPosition.end.rawValue:
-            return self.rowElements.count - 1
-        default:
-            return index
-        }
-    }
+//    private func getRealIndexGet(index: Int) -> Int {
+//        switch index {
+//        case ALPosition.begining.rawValue:
+//            return 0
+//        case ALPosition.end.rawValue:
+//            return self.rowElements.count - 1
+//        default:
+//            return index
+//        }
+//    }
     
-    private func isCorrectIndexInsert(index: Int, numberOfElements: Int) -> Bool {
-        return index <= numberOfElements && index >= 0
-    }
+//    private func isCorrectIndexInsert(index: Int, numberOfElements: Int) -> Bool {
+//        return index <= numberOfElements && index >= 0
+//    }
     
-    private func isCorrectIndexGet(index: Int, numberOfElements: Int) -> Bool {
-        return index < numberOfElements && index >= 0
-    }
+//    private func isCorrectIndexGet(index: Int, numberOfElements: Int) -> Bool {
+//        return index < numberOfElements && index >= 0
+//    }
 }
