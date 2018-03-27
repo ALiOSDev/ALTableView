@@ -52,9 +52,16 @@ class ALRowElementInitialization: XCTestCase {
         }
     }
     
-    func testCustomConstructor() {
+     func testCustomConstructor1() {
+        self.testCustomConstructor(estimateHeightMode: true)
+    }
+    
+     func testCustomConstructor2() {
+        self.testCustomConstructor(estimateHeightMode: false)
+    }
+    
+    func testCustomConstructor(estimateHeightMode: Bool = true) {
         let cellHeight: CGFloat = 50.0
-        let estimateHeightMode = true
         let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
         alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
         
@@ -92,7 +99,12 @@ class ALRowElementInitialization: XCTestCase {
             XCTFail("Data Object class does not match the passed one")
         }
         
-        XCTAssert(rowElement.getHeight() == cellHeight, "The height is not the default one")
+        if estimateHeightMode {
+            XCTAssert(rowElement.getHeight() == UITableViewAutomaticDimension, "The height is not the default one")
+        } else {
+            XCTAssert(rowElement.getHeight() == cellHeight, "The height is not the default one")
+        }
+        
         XCTAssert(rowElement.isEstimateHeightMode() == estimateHeightMode, "The estimate mode does not match the passed one")
         
         if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
