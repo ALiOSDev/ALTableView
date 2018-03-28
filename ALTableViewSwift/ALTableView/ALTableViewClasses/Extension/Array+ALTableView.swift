@@ -96,7 +96,7 @@ extension Array {
     
     private func getIndexOperator(operation: ALOperation, position: ALPosition) -> ALIndexOperator {
         
-        return operation.getIndexOperator(position: position, elements: self)
+        return operation.getIndexOperator(position: position, numberOfElements: self.count)
     }
     
 

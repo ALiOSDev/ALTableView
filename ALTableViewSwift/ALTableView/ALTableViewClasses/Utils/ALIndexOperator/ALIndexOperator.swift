@@ -30,13 +30,13 @@ enum ALOperation {
     case delete
     case replace
     
-    func getIndexOperator(position: ALPosition, elements: Array<Any>) -> ALIndexOperator {
+    func getIndexOperator(position: ALPosition, numberOfElements: Int) -> ALIndexOperator {
         
         switch position {
         case ALPosition.begining:
             return self.getBeginingOperator()
         case ALPosition.end:
-            return self.getEndOperator(elements: elements)
+            return self.getEndOperator(numberOfElements: numberOfElements)
         case ALPosition.middle:
             return self.getMiddleOperator(index: position.getValue())
         }
@@ -48,13 +48,13 @@ enum ALOperation {
         return ALFirstPosition()
     }
     
-    private func getEndOperator(elements: Array<Any>) -> ALIndexOperator {
+    private func getEndOperator(numberOfElements: Int) -> ALIndexOperator {
         
         switch self {
         case .insert:
-            return ALLastPosition(elements: elements)
+            return ALLastPosition(numberOfElements: numberOfElements)
         default:
-            return ALLastElement(elements: elements)
+            return ALLastElement(numberOfElements: numberOfElements)
         }
     }
     
@@ -72,31 +72,32 @@ protocol ALIndexOperator {
 
 class ALLastElement: ALIndexOperator {
     
-    let elements: Array<Any>
+    let numberOfElements: Int
     
-    init(elements: Array<Any>) {
+    init(numberOfElements: Int) {
         
-        self.elements = elements
+        self.numberOfElements = numberOfElements - 1
     }
     
     func calculateIndex() -> Int {
         
-        return self.elements.count - 1
+        return self.numberOfElements
     }
     
 }
 
 class ALLastPosition: ALIndexOperator {
-    let elements: Array<Any>
     
-    init(elements: Array<Any>) {
+    let numberOfElements: Int
+    
+    init(numberOfElements: Int) {
         
-        self.elements = elements
+        self.numberOfElements = numberOfElements
     }
     
     func calculateIndex() -> Int {
         
-        return self.elements.count
+        return self.numberOfElements
     }
     
 }

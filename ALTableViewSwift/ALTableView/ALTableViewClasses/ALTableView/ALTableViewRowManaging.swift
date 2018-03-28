@@ -17,7 +17,7 @@ extension ALTableView {
         guard self.sectionManager.insert(rowElements: rowElements, section: section, position: position) else {
             return false
         }
-        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count, operation: .insert)
         self.tableView?.beginUpdates()
         self.tableView?.insertRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
@@ -79,7 +79,7 @@ extension ALTableView {
         guard self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, position: position) else {
             return false
         }
-        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count, operation: .delete)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
@@ -143,7 +143,7 @@ extension ALTableView {
         guard self.sectionManager.replace(rowElements: rowElements, section: section, position: position) else {
             return false
         }
-        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count, operation: .replace)
         self.tableView?.beginUpdates()
         self.tableView?.reloadRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
@@ -181,36 +181,21 @@ extension ALTableView {
 
 extension ALTableView {
     
-    private func getIndexPathes(section: Int, position: ALPosition, numberOfRowElements: Int) -> Array<IndexPath>{
+    private func getIndexPathes(section: Int, position: ALPosition, numberOfRowElements: Int, operation: ALOperation) -> Array<IndexPath>{
         
-        var mutableRow = 0
-        switch position {
-        case ALPosition.begining:
-            mutableRow = 0
-        case ALPosition.end:
-            mutableRow = self.sectionManager.getNumberOfRows(in: section)
-        case ALPosition.middle:
-            mutableRow = position.getValue()
-            
-        }
-//        var mutableRow = row
-//        switch mutableRow {
-//        case ALPosition.begining.rawValue:
-//            mutableRow = 0
-//        case ALPosition.end.rawValue:
-//            mutableRow = self.sectionManager.getNumberOfRows(in: section)
-//        default:
-//            break
-//        }
+        let numberOfElements: Int = self.sectionManager.getNumberOfRows(in: section)
+        let indexOperator: ALIndexOperator = operation.getIndexOperator(position: position, numberOfElements: numberOfElements)
+        let row: Int = indexOperator.calculateIndex()
         
         var indexPathes: Array<IndexPath> = [IndexPath]()
         for i in 0..<numberOfRowElements {
-            let indexPath: IndexPath = IndexPath(row: i + mutableRow, section: section)
+            let indexPath: IndexPath = IndexPath(row: i + row, section: section)
             indexPathes.append(indexPath)
         }
         
         return indexPathes
     }
+    
 }
 
 //MARK: - ALSectionManagerProtocol
@@ -219,7 +204,7 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionOpened(at section: Int, numberOfElements: Int) {
         
-        let indexPathes = self.getIndexPathes(section: section, position: .begining, numberOfRowElements: numberOfElements)
+        let indexPathes = self.getIndexPathes(section: section, position: .begining, numberOfRowElements: numberOfElements, operation: .insert)
         self.tableView?.beginUpdates()
         self.tableView?.insertRows(at: indexPathes, with: .top)
         self.tableView?.endUpdates()
@@ -227,7 +212,7 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionClosed(at section: Int, numberOfElements: Int) {
         
-        let indexPathes = self.getIndexPathes(section: section, position: .begining, numberOfRowElements: numberOfElements)
+        let indexPathes = self.getIndexPathes(section: section, position: .begining, numberOfRowElements: numberOfElements, operation: .delete)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: .top)
         self.tableView?.endUpdates()

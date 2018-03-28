@@ -17,7 +17,7 @@ extension ALTableView {
         guard self.sectionManager.insert(sectionElements: sectionElements, position: position) else {
             return false
         }
-        let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count)
+        let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count, operation: .replace)
         self.tableView?.beginUpdates()
         self.tableView?.insertSections(indexSection, with: animation)
         self.tableView?.endUpdates()
@@ -79,7 +79,7 @@ extension ALTableView {
         guard self.sectionManager.delete(numberOfSectionElements: sectionElements.count, position: position) else {
             return false
         }
-        let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count)
+        let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count, operation: .replace)
         self.tableView?.beginUpdates()
         self.tableView?.deleteSections(indexSection, with: animation)
         self.tableView?.endUpdates()
@@ -140,7 +140,7 @@ extension ALTableView {
         guard self.sectionManager.replace(sectionElements: sectionElements, position: position) else {
             return false
         }
-        let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count)
+        let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count, operation: .replace)
         self.tableView?.beginUpdates()
         self.tableView?.reloadSections(indexSection, with: animation)
         self.tableView?.endUpdates()
@@ -184,21 +184,15 @@ extension ALTableView {
 
 extension ALTableView {
     
-    private func getIndexSections(position: ALPosition, numberOfSectionElements: Int) -> IndexSet {
+    private func getIndexSections(position: ALPosition, numberOfSectionElements: Int, operation: ALOperation) -> IndexSet {
         
-        var mutableSection = 0
-        switch position {
-        case ALPosition.begining:
-            mutableSection = 0
-        case ALPosition.end:
-            mutableSection = self.sectionManager.getNumberOfSections()
-        case ALPosition.middle:
-            mutableSection = position.getValue()
+        let indexOperator: ALIndexOperator = operation.getIndexOperator(position: position, numberOfElements: numberOfSectionElements)
+        let section: Int = indexOperator.calculateIndex()
 
-        }
-        let lowerIndex: Int = mutableSection
-        let higherIndex: Int = mutableSection + numberOfSectionElements
+        let lowerIndex: Int = section
+        let higherIndex: Int = section + numberOfSectionElements
         let indexSet: IndexSet = IndexSet(integersIn: lowerIndex..<higherIndex)
         return indexSet
     }
+    
 }
