@@ -25,7 +25,7 @@ class ALArrayExtensionTests: XCTestCase {
     
     func testGetSingleElement() {
         for i in 0..<self.array.count {
-            if let dataObject = self.array[ALSafe: i] {
+            if let dataObject = self.array[ALSafePosition: .middle(i)] {
                 XCTAssert(dataObject == i, "Value at index is incorrect")
             } else {
                 XCTFail("Could not retrieve object when should had to")
@@ -46,10 +46,10 @@ class ALArrayExtensionTests: XCTestCase {
     }
     
     func testGetSingleElementOutOfBounds() {
-        if let _ = self.array[ALSafe: -1] {
+        if let _ = self.array[ALSafePosition: .middle(-1)] {
             XCTFail("Retrieved object when it should not have to")
         }
-        if let _ = self.array[ALSafe: self.array.count] {
+        if let _ = self.array[ALSafePosition: .middle(self.array.count)] {
             XCTFail("Retrieved object when it should not have to")
         }
     }
