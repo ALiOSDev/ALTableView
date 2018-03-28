@@ -8,6 +8,21 @@
 
 import Foundation
 
+enum ALPosition {
+    case begining
+    case end
+    case middle(Int)
+    
+    func getValue() -> Int{
+        switch self {
+        case .middle(let value):
+            return value
+        default:
+            return 0
+        }
+    }
+}
+
 enum ALOperation {
     
     case get
@@ -15,15 +30,15 @@ enum ALOperation {
     case delete
     case replace
     
-    func getIndexOperator(index: Int, elements: Array<Any>) -> ALIndexOperator {
+    func getIndexOperator(position: ALPosition, elements: Array<Any>) -> ALIndexOperator {
         
-        switch index {
-        case ALPosition.begining.rawValue:
+        switch position {
+        case ALPosition.begining:
             return self.getBeginingOperator()
-        case ALPosition.end.rawValue:
+        case ALPosition.end:
             return self.getEndOperator(elements: elements)
-        default:
-            return self.getMiddleOperator(index: index)
+        case ALPosition.middle:
+            return self.getMiddleOperator(index: position.getValue())
         }
         
     }

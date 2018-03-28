@@ -32,13 +32,13 @@ class ALArrayExtensionTests: XCTestCase {
             }
         }
         
-        if let dataObject = self.array[ALSafe: ALPosition.end.rawValue] {
+        if let dataObject = self.array[ALSafePosition: ALPosition.end] {
             XCTAssert(dataObject == 4, "Value at index is incorrect")
         } else {
             XCTFail("Could not retrieve object when should had to")
         }
         
-        if let dataObject = self.array[ALSafe: ALPosition.begining.rawValue] {
+        if let dataObject = self.array[ALSafePosition: ALPosition.begining] {
             XCTAssert(dataObject == 0, "Value at index is incorrect")
         } else {
             XCTFail("Could not retrieve object when should had to")
@@ -72,6 +72,24 @@ class ALArrayExtensionTests: XCTestCase {
         self.insertCollection(collection: collection, baseCollection: self.array, index: 1)
     }
     
+    func testInsertCollection4() {
+        
+        let collection = [5,6,7]
+        self.insertCollection(collection: collection, baseCollection: self.array, position: .begining)
+    }
+    
+    func testInsertCollection5() {
+        
+        let collection = [5,6,7]
+        self.insertCollection(collection: collection, baseCollection: self.array, position: .end)
+    }
+    
+    func testInsertCollection6() {
+        
+        let collection = [5,6,7]
+        self.insertCollection(collection: collection, baseCollection: self.array, position: .middle(1))
+    }
+    
     func testInsertCollectionOutOfBounds() {
         
         let expectedCapacity = self.array.count
@@ -90,6 +108,7 @@ class ALArrayExtensionTests: XCTestCase {
         
         let collection = [5,6]
         self.replaceCollection(collection: collection, baseCollection: self.array, index: 0)
+        self.replaceCollection(collection: collection, baseCollection: self.array, position: .begining)
     }
     
     func testReplacementCollection2() {
@@ -105,6 +124,18 @@ class ALArrayExtensionTests: XCTestCase {
         self.replaceCollection(collection: collection, baseCollection: self.array, index: 1)
     }
     
+    func testReplacementCollection4() {
+        
+        let collection = [5,6]
+        self.replaceCollection(collection: collection, baseCollection: self.array, position: .begining)
+    }
+    
+    func testReplacementCollection5() {
+        
+        let collection = [5,6]
+        self.replaceCollection(collection: collection, baseCollection: self.array, position: .middle(1))
+    }
+    
     func testReplacementCollection1OutOfBounds() {
         
         let expectedCapacity = self.array.count
@@ -117,6 +148,9 @@ class ALArrayExtensionTests: XCTestCase {
             XCTFail("Inserted collection when it should not have to")
         }
         if self.array.safeReplace(contentsOf: collection, at: self.array.count){
+            XCTFail("Inserted collection when it should not have to")
+        }
+        if self.array.safeReplace(contentsOf: collection, at: .end){
             XCTFail("Inserted collection when it should not have to")
         }
         XCTAssertTrue(self.array.count == expectedCapacity, "It does not contain the required number of elements")
@@ -137,6 +171,15 @@ class ALArrayExtensionTests: XCTestCase {
         self.deleteCollection(numberOfElements: 2, baseCollection: self.array, index: 1)
     }
     
+    func testDeleteCollection4() {
+        self.deleteCollection(numberOfElements: 2, baseCollection: self.array, position: .begining)
+    }
+    
+    func testDeleteCollection5() {
+        
+        self.deleteCollection(numberOfElements: 2, baseCollection: self.array, position: .middle(1))
+    }
+    
     func testDeleteCollection1OutOfBounds() {
         
         let expectedCapacity = self.array.count
@@ -149,6 +192,9 @@ class ALArrayExtensionTests: XCTestCase {
             XCTFail("Inserted collection when it should not have to")
         }
         if self.array.safeDelete(numberOfElements: numberOfElements, at: self.array.count) {
+            XCTFail("Inserted collection when it should not have to")
+        }
+        if self.array.safeDelete(numberOfElements: numberOfElements, at: .end) {
             XCTFail("Inserted collection when it should not have to")
         }
         XCTAssertTrue(self.array.count == expectedCapacity, "It does not contain the required number of elements")
@@ -164,11 +210,29 @@ class ALArrayExtensionTests: XCTestCase {
         XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
     }
     
+    func insertCollection(collection:[Int], baseCollection: [Int], position: ALPosition) {
+        let expectedCapacity = collection.count + baseCollection.count
+        var mutablecollection = baseCollection;
+        
+        XCTAssertTrue(mutablecollection.safeInsert(contentsOf: collection, at: position))
+        XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
+        XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
+    }
+    
     func replaceCollection(collection:[Int], baseCollection: [Int], index: Int) {
         let expectedCapacity = baseCollection.count
         var mutablecollection = baseCollection;
         
         XCTAssertTrue(mutablecollection.safeReplace(contentsOf: collection, at: index))
+        XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
+        XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
+    }
+    
+    func replaceCollection(collection:[Int], baseCollection: [Int], position: ALPosition) {
+        let expectedCapacity = baseCollection.count
+        var mutablecollection = baseCollection;
+        
+        XCTAssertTrue(mutablecollection.safeReplace(contentsOf: collection, at: position))
         XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
         XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
     }
@@ -180,7 +244,15 @@ class ALArrayExtensionTests: XCTestCase {
         XCTAssertTrue(mutablecollection.safeDelete(numberOfElements: numberOfElements, at: index))
         XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
         
-//        XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
+    }
+    
+    func deleteCollection(numberOfElements:Int, baseCollection: [Int], position: ALPosition) {
+        let expectedCapacity = baseCollection.count - numberOfElements
+        var mutablecollection = baseCollection;
+        
+        XCTAssertTrue(mutablecollection.safeDelete(numberOfElements: numberOfElements, at: position))
+        XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
+        
     }
 
     

@@ -12,16 +12,26 @@ import UIKit
 
 extension ALTableView {
     
-    public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    public func insert(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard self.sectionManager.insert(rowElements: rowElements, section: section, row: row) else {
+        guard self.sectionManager.insert(rowElements: rowElements, section: section, position: position) else {
             return false
         }
-        let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.insertRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
         return true
+    }
+    
+    public func insert(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElements: [rowElement], section: section, position: position, animation: animation)
+    }
+    
+    public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.insert(rowElements: rowElements, section: section, position: .middle(row), animation: animation)
     }
     
     public func insert(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -41,22 +51,22 @@ extension ALTableView {
     
     public func insert(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElement: rowElement, section: section, row: ALPosition.begining.rawValue)
+        return self.insert(rowElement: rowElement, section: section, position: .begining, animation: animation)
     }
     
     public func insert(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElements: rowElements, section: section, row: ALPosition.begining.rawValue)
+        return self.insert(rowElements: rowElements, section: section, position: .begining, animation: animation)
     }
     
     public func insert(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElement: rowElement, section: section, row: ALPosition.end.rawValue)
+        return self.insert(rowElement: rowElement, section: section, position: .end, animation: animation)
     }
     
     public func insert(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.insert(rowElements: rowElements, section: section, row: ALPosition.end.rawValue)
+        return self.insert(rowElements: rowElements, section: section, position: .end, animation: animation)
     }
 }
 
@@ -64,16 +74,28 @@ extension ALTableView {
 
 extension ALTableView {
     
-    public func remove(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    public func remove(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, row: row) else {
+        guard self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, position: position) else {
             return false
         }
-        let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
         return true
+    }
+    
+    public func remove(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(rowElements: [rowElement], section: section, position: position, animation: animation)
+    }
+    
+    
+    
+    public func remove(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.remove(rowElements: rowElements, section: section, position: .middle(row), animation: animation)
     }
     
     public func remove(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -93,22 +115,22 @@ extension ALTableView {
     
     public func remove(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: section, row: ALPosition.begining.rawValue)
+        return self.remove(rowElement: rowElement, section: section, position: .begining, animation: animation)
     }
     
     public func remove(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElements: rowElements, section: section, row: ALPosition.begining.rawValue)
+        return self.remove(rowElements: rowElements, section: section, position: .begining, animation: animation)
     }
     
     public func remove(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: section, row: ALPosition.end.rawValue)
+        return self.remove(rowElement: rowElement, section: section, position: .end, animation: animation)
     }
     
     public func remove(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElements: rowElements, section: section, row: ALPosition.end.rawValue)
+        return self.remove(rowElements: rowElements, section: section, position: .end, animation: animation)
     }
 }
 
@@ -116,16 +138,26 @@ extension ALTableView {
 
 extension ALTableView {
     
-    public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    public func replace(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard self.sectionManager.replace(rowElements: rowElements, section: section, row: row) else {
+        guard self.sectionManager.replace(rowElements: rowElements, section: section, position: position) else {
             return false
         }
-        let indexPathes = self.getIndexPathes(section: section, row: row, numberOfRowElements: rowElements.count)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count)
         self.tableView?.beginUpdates()
         self.tableView?.reloadRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
         return true
+    }
+    
+    public func replace(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.replace(rowElements: [rowElement], section: section, position: position, animation: animation)
+    }
+    
+    public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+        
+        return self.replace(rowElements: rowElements, section: section, position: .middle(row), animation: animation)
     }
     
     public func replace(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
@@ -149,17 +181,27 @@ extension ALTableView {
 
 extension ALTableView {
     
-    private func getIndexPathes(section: Int, row: Int, numberOfRowElements: Int) -> Array<IndexPath>{
+    private func getIndexPathes(section: Int, position: ALPosition, numberOfRowElements: Int) -> Array<IndexPath>{
         
-        var mutableRow = row
-        switch mutableRow {
-        case ALPosition.begining.rawValue:
+        var mutableRow = 0
+        switch position {
+        case ALPosition.begining:
             mutableRow = 0
-        case ALPosition.end.rawValue:
+        case ALPosition.end:
             mutableRow = self.sectionManager.getNumberOfRows(in: section)
-        default:
-            break
+        case ALPosition.middle:
+            mutableRow = position.getValue()
+            
         }
+//        var mutableRow = row
+//        switch mutableRow {
+//        case ALPosition.begining.rawValue:
+//            mutableRow = 0
+//        case ALPosition.end.rawValue:
+//            mutableRow = self.sectionManager.getNumberOfRows(in: section)
+//        default:
+//            break
+//        }
         
         var indexPathes: Array<IndexPath> = [IndexPath]()
         for i in 0..<numberOfRowElements {
@@ -177,7 +219,7 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionOpened(at section: Int, numberOfElements: Int) {
         
-        let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements)
+        let indexPathes = self.getIndexPathes(section: section, position: .begining, numberOfRowElements: numberOfElements)
         self.tableView?.beginUpdates()
         self.tableView?.insertRows(at: indexPathes, with: .top)
         self.tableView?.endUpdates()
@@ -185,7 +227,7 @@ extension ALTableView: ALSectionManagerProtocol {
     
     func sectionClosed(at section: Int, numberOfElements: Int) {
         
-        let indexPathes = self.getIndexPathes(section: section, row: 0, numberOfRowElements: numberOfElements)
+        let indexPathes = self.getIndexPathes(section: section, position: .begining, numberOfRowElements: numberOfElements)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: .top)
         self.tableView?.endUpdates()

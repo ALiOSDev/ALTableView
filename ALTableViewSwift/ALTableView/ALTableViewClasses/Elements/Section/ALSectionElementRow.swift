@@ -29,22 +29,22 @@ extension ALSectionElement {
     
     //MARK: - Managing the insertion of new cells
     
-    internal func insert(rowElements: Array<ALRowElement>, at index: Int) -> Bool {
+    internal func insert(rowElements: Array<ALRowElement>, at position: ALPosition) -> Bool {
 
-        return self.rowElements.safeInsert(contentsOf: rowElements, at: index)
+        return self.rowElements.safeInsert(contentsOf: rowElements, at: position)
     }
     
     //MARK: - Managing the deletion of new cells
     
-    internal func deleteRowElements(numberOfRowElements: Int, at index: Int) -> Bool {
+    internal func deleteRowElements(numberOfRowElements: Int, at position: ALPosition) -> Bool {
         
-        return self.rowElements.safeDelete(numberOfElements: numberOfRowElements, at:index)
+        return self.rowElements.safeDelete(numberOfElements: numberOfRowElements, at:position)
     }
     
     //MARK: - Managing the replacement of new cells
     
-    internal func replace(rowElements: Array<ALRowElement>, at index: Int) -> Bool {
+    internal func replace(rowElements: Array<ALRowElement>, at position: ALPosition) -> Bool {
         
-        return self.rowElements.safeReplace(contentsOf: rowElements, at: index)
+        return self.rowElements.safeReplace(contentsOf: rowElements, at: position)
     }
 }

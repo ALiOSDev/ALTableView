@@ -15,10 +15,7 @@ import UIKit
     @objc optional func tableViewWillEndDragging()
 }
 
-enum ALPosition: Int {
-    case begining = -1000
-    case end = -1001
-}
+
 
 //enum ALPosition {
 //    case begining

@@ -70,29 +70,29 @@ extension ALSectionManager {
     
     //MARK: - Managing rows
     
-    internal func insert(rowElements: Array<ALRowElement>, section: Int, row: Int) -> Bool {
+    internal func insert(rowElements: Array<ALRowElement>, section: Int, position: ALPosition) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section] else {
             return false
         }
         
-        return sectionElement.insert(rowElements: rowElements, at: row)
+        return sectionElement.insert(rowElements: rowElements, at: position)
     }
     
-    internal func delete(numberOfRowElements: Int, section: Int, row: Int) -> Bool {
+    internal func delete(numberOfRowElements: Int, section: Int, position: ALPosition) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section] else {
             return false
         }
-        return sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: row)
+        return sectionElement.deleteRowElements(numberOfRowElements: numberOfRowElements, at: position)
     }
     
-    internal func replace(rowElements: Array<ALRowElement>, section: Int, row: Int) -> Bool {
+    internal func replace(rowElements: Array<ALRowElement>, section: Int, position: ALPosition) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section] else {
             return false
         }
-        return sectionElement.replace(rowElements: rowElements, at: row)
+        return sectionElement.replace(rowElements: rowElements, at: position)
     }
     
 }

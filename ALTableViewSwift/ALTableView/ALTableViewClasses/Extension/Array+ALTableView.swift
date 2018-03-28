@@ -16,14 +16,24 @@ extension Array {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
 
     internal subscript (ALSafe index: Index) -> Element? {
+        let position: ALPosition = ALPosition.middle(index)
+        return self[ALSafePosition: position]
+    }
+    
+    internal subscript (ALSafePosition position: ALPosition) -> Element? {
         
-        let index: Int = self.getRealIndex(operation: .get, index: index)
+        let index: Int = self.getRealIndex(operation: .get, position: position)
         return indices.contains(index) ? self[index] : nil
     }
     
     internal mutating func safeInsert<C>(contentsOf newElements: C, at i: Int) -> Bool where C : Collection, Element == C.Element {
+        let position: ALPosition = ALPosition.middle(i)
+        return self.safeInsert(contentsOf: newElements, at: position)
+    }
+    
+    internal mutating func safeInsert<C>(contentsOf newElements: C, at position: ALPosition) -> Bool where C : Collection, Element == C.Element {
         
-        let index: Int = self.getRealIndex(operation: .insert, index: i)
+        let index: Int = self.getRealIndex(operation: .insert, position: position)
         guard index >= 0 && index <= self.count else {
             return false
         }
@@ -32,27 +42,36 @@ extension Array {
     }
     
     internal mutating func safeReplace<C>(contentsOf newElements: C, at i: Int) -> Bool where C: Collection, Element == C.Element {
+        let position: ALPosition = ALPosition.middle(i)
+        return self.safeReplace(contentsOf: newElements, at: position)
+    }
+    
+    internal mutating func safeReplace<C>(contentsOf newElements: C, at position: ALPosition) -> Bool where C: Collection, Element == C.Element {
         
-        let initialIndex = i
-        let finalIndex = i + Int(newElements.count)
-        guard i >= 0,
+        let initialIndex = self.getRealIndex(operation: .replace, position: position)
+        let finalIndex = initialIndex + Int(newElements.count)
+        guard initialIndex >= 0,
             finalIndex <= self.count else {
-            return false
+                return false
         }
         
         let headArray = self[0..<initialIndex]
         let tailArray = self[finalIndex..<self.count]
         self = Array(headArray + newElements + tailArray)
-
+        
         return true
         
     }
     
     internal mutating func safeDelete(numberOfElements: Int, at i: Int) -> Bool {
-        
-        let initialIndex = i
-        let finalIndex = i + numberOfElements
-        guard i >= 0,
+        let position: ALPosition = ALPosition.middle(i)
+        return self.safeDelete(numberOfElements: numberOfElements, at: position)
+    }
+    
+    internal mutating func safeDelete(numberOfElements: Int, at position: ALPosition) -> Bool {
+        let initialIndex = self.getRealIndex(operation: .delete, position: position)
+        let finalIndex = initialIndex + numberOfElements
+        guard initialIndex >= 0,
             finalIndex <= self.count else {
                 return false
         }
@@ -63,16 +82,16 @@ extension Array {
         return true
     }
     
-    private func getRealIndex(operation: ALOperation, index: Int) -> Int {
+    private func getRealIndex(operation: ALOperation, position: ALPosition) -> Int {
         
-        let indexOperator: ALIndexOperator = self.getIndexOperator(operation: operation, index: index)
+        let indexOperator: ALIndexOperator = self.getIndexOperator(operation: operation, position: position)
         return indexOperator.calculateIndex()
         
     }
     
-    private func getIndexOperator(operation: ALOperation, index: Int) -> ALIndexOperator {
+    private func getIndexOperator(operation: ALOperation, position: ALPosition) -> ALIndexOperator {
         
-        return operation.getIndexOperator(index: index, elements: self)
+        return operation.getIndexOperator(position: position, elements: self)
     }
     
 
