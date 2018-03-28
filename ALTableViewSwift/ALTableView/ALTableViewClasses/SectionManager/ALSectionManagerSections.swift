@@ -26,23 +26,7 @@ extension ALSectionManager {
         
         return self.sectionElements.safeReplace(contentsOf: sectionElements, at: position)
     }
-    
-//    internal func insert(sectionElements: Array<ALSectionElement>, section: Int) -> Bool {
-//
-//        return self.sectionElements.safeInsert(contentsOf: sectionElements, at: section)
-//    }
-    
-//    internal func delete(numberOfSectionElements: Int, section: Int) -> Bool {
-//
-//        return self.sectionElements.safeDelete(numberOfElements: numberOfSectionElements, at:section)
-//    }
-//
-//    internal func replace(sectionElements: Array<ALSectionElement>, section: Int) -> Bool {
-//
-//        return self.sectionElements.safeReplace(contentsOf: sectionElements, at: section)
-//    }
-    
-    
+
     internal func replaceAllSections(sectionElements: Array<ALSectionElement>) {
         
         self.sectionElements = sectionElements
