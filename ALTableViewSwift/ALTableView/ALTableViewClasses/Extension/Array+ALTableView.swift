@@ -16,6 +16,7 @@ extension Array {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
 
     internal subscript (ALSafe index: Index) -> Element? {
+        
         let position: ALPosition = ALPosition.middle(index)
         return self[ALSafePosition: position]
     }
@@ -27,6 +28,7 @@ extension Array {
     }
     
     internal mutating func safeInsert<C>(contentsOf newElements: C, at i: Int) -> Bool where C : Collection, Element == C.Element {
+        
         let position: ALPosition = ALPosition.middle(i)
         return self.safeInsert(contentsOf: newElements, at: position)
     }
@@ -42,6 +44,7 @@ extension Array {
     }
     
     internal mutating func safeReplace<C>(contentsOf newElements: C, at i: Int) -> Bool where C: Collection, Element == C.Element {
+        
         let position: ALPosition = ALPosition.middle(i)
         return self.safeReplace(contentsOf: newElements, at: position)
     }
@@ -64,11 +67,13 @@ extension Array {
     }
     
     internal mutating func safeDelete(numberOfElements: Int, at i: Int) -> Bool {
+        
         let position: ALPosition = ALPosition.middle(i)
         return self.safeDelete(numberOfElements: numberOfElements, at: position)
     }
     
     internal mutating func safeDelete(numberOfElements: Int, at position: ALPosition) -> Bool {
+        
         let initialIndex = self.getRealIndex(operation: .delete, position: position)
         let finalIndex = initialIndex + numberOfElements
         guard initialIndex >= 0,
@@ -99,6 +104,7 @@ extension Array {
 }
 
 extension Array where Element: Equatable {
+    
     /// SwifterSwift: Check if array contains an array of elements.
     ///
     ///        [1, 2, 3, 4, 5].contains([1, 2]) -> true
