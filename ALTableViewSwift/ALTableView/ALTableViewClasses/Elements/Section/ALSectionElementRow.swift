@@ -14,30 +14,15 @@ extension ALSectionElement {
     
     internal func getRowElementAt(index: Int) -> ALRowElement? {
         
-//        let index: Int = self.getRealIndexGet(index: index)
-//        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
-//            return nil
-//        }
-        
         return self.rowElements[ALSafe: index]
     }
     
     internal func getRowHeight(at index: Int) -> CGFloat {
         
-//        let index = self.getRealIndexGet(index: index)
-//        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
-//            return 0.0
-//        }
-        
         return self.getRowElementAt(index: index)?.getHeight() ?? 0.0
     }
     
     internal func getRowEstimatedHeight(at index: Int) -> CGFloat {
-        
-//        let index = self.getRealIndexGet(index: index)
-//        guard self.isCorrectIndexGet(index: index, numberOfElements: self.rowElements.count) else {
-//            return 0.0
-//        }
         
         return self.getRowElementAt(index: index)?.getEstimatedHeight() ?? 0.0
     }

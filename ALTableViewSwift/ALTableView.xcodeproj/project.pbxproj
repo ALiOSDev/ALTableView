@@ -26,7 +26,6 @@
 		4594BAC92068CDC400028322 /* ALSectionManagerRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594BAC82068CDC400028322 /* ALSectionManagerRows.swift */; };
 		4594BACB2068CDD100028322 /* ALSectionManagerHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594BACA2068CDD100028322 /* ALSectionManagerHeaders.swift */; };
 		4594BACD2068CDDA00028322 /* ALSectionManagerFooters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594BACC2068CDDA00028322 /* ALSectionManagerFooters.swift */; };
-		45B21DCC2068D04000513E33 /* Collection+ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DCB2068D04000513E33 /* Collection+ALTableView.swift */; };
 		45B21DD12068D18500513E33 /* ALSectionElementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD02068D18500513E33 /* ALSectionElementRow.swift */; };
 		45B21DD32068D19500513E33 /* ALSectionElementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */; };
 		45B21DD52068D1A100513E33 /* ALSectionElementFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */; };
@@ -36,6 +35,8 @@
 		45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */; };
 		45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */; };
 		45BADD63206A19AE00EBD49A /* Array+ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BADD62206A19AE00EBD49A /* Array+ALTableView.swift */; };
+		45BADD67206A2F7B00EBD49A /* ALIndexOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BADD66206A2F7B00EBD49A /* ALIndexOperator.swift */; };
+		45BADD6A206A307100EBD49A /* ALArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BADD69206A307100EBD49A /* ALArrayExtensionTests.swift */; };
 		45F29A3220638D2300C6F79D /* MasterHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F29A3120638D2300C6F79D /* MasterHeaderFooter.swift */; };
 		45F29A3420638D3500C6F79D /* MasterHeaderFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F29A3320638D3500C6F79D /* MasterHeaderFooter.xib */; };
 		94F23D7F7B20C86954396599 /* Pods_ALTableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404A46833267F79B65BBFB13 /* Pods_ALTableViewTests.framework */; };
@@ -92,7 +93,6 @@
 		4594BAC82068CDC400028322 /* ALSectionManagerRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManagerRows.swift; sourceTree = "<group>"; };
 		4594BACA2068CDD100028322 /* ALSectionManagerHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManagerHeaders.swift; sourceTree = "<group>"; };
 		4594BACC2068CDDA00028322 /* ALSectionManagerFooters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManagerFooters.swift; sourceTree = "<group>"; };
-		45B21DCB2068D04000513E33 /* Collection+ALTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ALTableView.swift"; sourceTree = "<group>"; };
 		45B21DD02068D18500513E33 /* ALSectionElementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementRow.swift; sourceTree = "<group>"; };
 		45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementHeader.swift; sourceTree = "<group>"; };
 		45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementFooter.swift; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManager.swift; sourceTree = "<group>"; };
 		45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableView.swift; sourceTree = "<group>"; };
 		45BADD62206A19AE00EBD49A /* Array+ALTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ALTableView.swift"; sourceTree = "<group>"; };
+		45BADD66206A2F7B00EBD49A /* ALIndexOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALIndexOperator.swift; sourceTree = "<group>"; };
+		45BADD69206A307100EBD49A /* ALArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALArrayExtensionTests.swift; sourceTree = "<group>"; };
 		45F29A3120638D2300C6F79D /* MasterHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterHeaderFooter.swift; sourceTree = "<group>"; };
 		45F29A3320638D3500C6F79D /* MasterHeaderFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterHeaderFooter.xib; sourceTree = "<group>"; };
 		481760E8A716D3C675CECE04 /* Pods_ALTableViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALTableViewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 		453235B3204FC8E5003BB2C7 /* ALTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				45BADD68206A305500EBD49A /* Extensions */,
 				ED7872B2205C584800E335F0 /* ALTableView */,
 				ED7872B1205C584000E335F0 /* ALSectionManager */,
 				ED7872B0205C583700E335F0 /* ALSectionElement */,
@@ -232,7 +235,6 @@
 		45B21DCA2068D02200513E33 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				45B21DCB2068D04000513E33 /* Collection+ALTableView.swift */,
 				45BADD62206A19AE00EBD49A /* Array+ALTableView.swift */,
 			);
 			path = Extension;
@@ -268,6 +270,7 @@
 		45B87F92204FC9A200CB6C0C /* ALTableViewClasses */ = {
 			isa = PBXGroup;
 			children = (
+				45BADD64206A2F0B00EBD49A /* Utils */,
 				45B21DCA2068D02200513E33 /* Extension */,
 				ED7872A4205C458000E335F0 /* ALTableView */,
 				4594BAC52068CD1800028322 /* Elements */,
@@ -286,6 +289,30 @@
 				4594BACC2068CDDA00028322 /* ALSectionManagerFooters.swift */,
 			);
 			path = SectionManager;
+			sourceTree = "<group>";
+		};
+		45BADD64206A2F0B00EBD49A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				45BADD65206A2F5A00EBD49A /* ALIndexOperator */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		45BADD65206A2F5A00EBD49A /* ALIndexOperator */ = {
+			isa = PBXGroup;
+			children = (
+				45BADD66206A2F7B00EBD49A /* ALIndexOperator.swift */,
+			);
+			path = ALIndexOperator;
+			sourceTree = "<group>";
+		};
+		45BADD68206A305500EBD49A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45BADD69206A307100EBD49A /* ALArrayExtensionTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8AC93138E9F886B5B24283A9 /* Pods */ = {
@@ -646,7 +673,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B21DCC2068D04000513E33 /* Collection+ALTableView.swift in Sources */,
 				456C3D452060F0BB0036AC78 /* ALElement.swift in Sources */,
 				4594BAC92068CDC400028322 /* ALSectionManagerRows.swift in Sources */,
 				453235A2204FC8E5003BB2C7 /* DetailViewController.swift in Sources */,
@@ -655,6 +681,7 @@
 				45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */,
 				4594BAC72068CDB700028322 /* ALSectionManagerSections.swift in Sources */,
 				45B21DD12068D18500513E33 /* ALSectionElementRow.swift in Sources */,
+				45BADD67206A2F7B00EBD49A /* ALIndexOperator.swift in Sources */,
 				45B21DD32068D19500513E33 /* ALSectionElementHeader.swift in Sources */,
 				ED7872AA205C480A00E335F0 /* ALTableViewDelegate.swift in Sources */,
 				ED7872A6205C45D000E335F0 /* ALTableViewRowManaging.swift in Sources */,
@@ -680,6 +707,7 @@
 			files = (
 				ED7872AF205C511A00E335F0 /* ALRowElementInitialization.swift in Sources */,
 				45B21DD72068D42900513E33 /* ALSectionElementRowTests.swift in Sources */,
+				45BADD6A206A307100EBD49A /* ALArrayExtensionTests.swift in Sources */,
 				453235B5204FC8E5003BB2C7 /* ALTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
