@@ -34,6 +34,7 @@ class ALSectionManager {
     //MARK: - Number of Sections & Cells
     
     internal func getNumberOfSections() -> Int {
+
         return self.sectionElements.count
     }
     

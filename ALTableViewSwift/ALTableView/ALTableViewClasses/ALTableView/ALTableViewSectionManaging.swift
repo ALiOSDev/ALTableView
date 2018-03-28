@@ -135,7 +135,7 @@ extension ALTableView {
 
 extension ALTableView {
     
-    public func replace(sectionElements: Array<ALSectionElement>, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func replace(sectionElements: Array<ALSectionElement>, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         guard self.sectionManager.replace(sectionElements: sectionElements, position: position) else {
             return false
@@ -147,7 +147,7 @@ extension ALTableView {
         return true
     }
     
-    public func replace(sectionElement: ALSectionElement, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func replace(sectionElement: ALSectionElement, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.replace(sectionElements: [sectionElement], position: position, animation: animation)
     }

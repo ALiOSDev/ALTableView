@@ -12,7 +12,7 @@ import UIKit
 
 extension ALTableView {
     
-    public func insert(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func insert(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         guard self.sectionManager.insert(rowElements: rowElements, section: section, position: position) else {
             return false
@@ -24,7 +24,7 @@ extension ALTableView {
         return true
     }
     
-    public func insert(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func insert(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElements: [rowElement], section: section, position: position, animation: animation)
     }
@@ -74,7 +74,7 @@ extension ALTableView {
 
 extension ALTableView {
     
-    public func remove(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func remove(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         guard self.sectionManager.delete(numberOfRowElements: rowElements.count, section: section, position: position) else {
             return false
@@ -86,7 +86,7 @@ extension ALTableView {
         return true
     }
     
-    public func remove(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func remove(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(rowElements: [rowElement], section: section, position: position, animation: animation)
     }
@@ -138,7 +138,7 @@ extension ALTableView {
 
 extension ALTableView {
     
-    public func replace(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func replace(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         guard self.sectionManager.replace(rowElements: rowElements, section: section, position: position) else {
             return false
@@ -150,7 +150,7 @@ extension ALTableView {
         return true
     }
     
-    public func replace(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func replace(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.replace(rowElements: [rowElement], section: section, position: position, animation: animation)
     }
