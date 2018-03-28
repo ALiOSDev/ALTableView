@@ -122,6 +122,38 @@ class ALArrayExtensionTests: XCTestCase {
         XCTAssertTrue(self.array.count == expectedCapacity, "It does not contain the required number of elements")
     }
     
+    func testDeleteCollection1() {
+        self.deleteCollection(numberOfElements: 2, baseCollection: self.array, index: 0)
+    }
+    
+    func testDeleteCollection2() {
+        let numberOfElements = 2
+        let endIndex = self.array.count - numberOfElements
+        self.deleteCollection(numberOfElements: numberOfElements, baseCollection: self.array, index: endIndex)
+    }
+    
+    func testDeleteCollection3() {
+        
+        self.deleteCollection(numberOfElements: 2, baseCollection: self.array, index: 1)
+    }
+    
+    func testDeleteCollection1OutOfBounds() {
+        
+        let expectedCapacity = self.array.count
+        let numberOfElements = 2
+        if self.array.safeDelete(numberOfElements: numberOfElements, at: -1) {
+            XCTFail("Inserted collection when it should not have to")
+        }
+        XCTAssertTrue(self.array.count == expectedCapacity, "It does not contain the required number of elements")
+        if self.array.safeDelete(numberOfElements: numberOfElements, at: self.array.count - 1) {
+            XCTFail("Inserted collection when it should not have to")
+        }
+        if self.array.safeDelete(numberOfElements: numberOfElements, at: self.array.count) {
+            XCTFail("Inserted collection when it should not have to")
+        }
+        XCTAssertTrue(self.array.count == expectedCapacity, "It does not contain the required number of elements")
+    }
+    
     
     func insertCollection(collection:[Int], baseCollection: [Int], index: Int) {
         let expectedCapacity = collection.count + baseCollection.count
@@ -139,6 +171,16 @@ class ALArrayExtensionTests: XCTestCase {
         XCTAssertTrue(mutablecollection.safeReplace(contentsOf: collection, at: index))
         XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
         XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
+    }
+    
+    func deleteCollection(numberOfElements:Int, baseCollection: [Int], index: Int) {
+        let expectedCapacity = baseCollection.count - numberOfElements
+        var mutablecollection = baseCollection;
+        
+        XCTAssertTrue(mutablecollection.safeDelete(numberOfElements: numberOfElements, at: index))
+        XCTAssertTrue(mutablecollection.count == expectedCapacity, "It does not contain the required number of elements")
+        
+//        XCTAssertTrue(mutablecollection.contains(collection), "It must contain the inserted collection")
     }
 
     

@@ -38,54 +38,13 @@ extension ALSectionElement {
     
     internal func deleteRowElements(numberOfRowElements: Int, at index: Int) -> Bool {
         
-        let endIndex: Int = index + numberOfRowElements
-        guard self.rowElements.indices.contains(endIndex) else {
-            return false
-        }
-        self.rowElements.removeSubrange(index...endIndex)
-        return true
+        return self.rowElements.safeDelete(numberOfElements: numberOfRowElements, at:index)
     }
     
     //MARK: - Managing the replacement of new cells
     
     internal func replace(rowElements: Array<ALRowElement>, at index: Int) -> Bool {
         
-//        let index = self.getRealIndexInsert(index: index)
-//
-//        guard self.deleteRowElements(numberOfRowElements: rowElements.count, at: index),
-//            self.insert(rowElements: rowElements, at: index) else {
-//                return false
-//        }
-        return true
+        return self.rowElements.safeReplace(contentsOf: rowElements, at: index)
     }
-    
-//    private func getRealIndexInsert(index: Int) -> Int {
-//        switch index {
-//        case ALPosition.begining.rawValue:
-//            return 0
-//        case ALPosition.end.rawValue:
-//            return self.rowElements.count
-//        default:
-//            return index
-//        }
-//    }
-    
-//    private func getRealIndexGet(index: Int) -> Int {
-//        switch index {
-//        case ALPosition.begining.rawValue:
-//            return 0
-//        case ALPosition.end.rawValue:
-//            return self.rowElements.count - 1
-//        default:
-//            return index
-//        }
-//    }
-    
-//    private func isCorrectIndexInsert(index: Int, numberOfElements: Int) -> Bool {
-//        return index <= numberOfElements && index >= 0
-//    }
-    
-//    private func isCorrectIndexGet(index: Int, numberOfElements: Int) -> Bool {
-//        return index < numberOfElements && index >= 0
-//    }
 }

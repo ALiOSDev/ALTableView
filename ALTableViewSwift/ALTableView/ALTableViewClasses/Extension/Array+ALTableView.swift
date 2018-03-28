@@ -16,6 +16,7 @@ extension Array {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
 
     internal subscript (ALSafe index: Index) -> Element? {
+        
         let index: Int = self.getRealIndex(operation: .get, index: index)
         return indices.contains(index) ? self[index] : nil
     }
@@ -31,6 +32,7 @@ extension Array {
     }
     
     internal mutating func safeReplace<C>(contentsOf newElements: C, at i: Int) -> Bool where C: Collection, Element == C.Element {
+        
         let initialIndex = i
         let finalIndex = i + Int(newElements.count)
         guard i >= 0,
@@ -38,25 +40,38 @@ extension Array {
             return false
         }
         
-
-//        if finalIndex > self.count {
-//            return false
-//        }
         let headArray = self[0..<initialIndex]
         let tailArray = self[finalIndex..<self.count]
-        self = headArray + Array(newElements) + tailArray
+        self = Array(headArray + newElements + tailArray)
 
         return true
         
     }
     
+    internal mutating func safeDelete(numberOfElements: Int, at i: Int) -> Bool {
+        
+        let initialIndex = i
+        let finalIndex = i + numberOfElements
+        guard i >= 0,
+            finalIndex <= self.count else {
+                return false
+        }
+        let headArray = self[0..<initialIndex]
+        let tailArray = self[finalIndex..<self.count]
+        self = Array(headArray + tailArray)
+        
+        return true
+    }
+    
     private func getRealIndex(operation: ALOperation, index: Int) -> Int {
+        
         let indexOperator: ALIndexOperator = self.getIndexOperator(operation: operation, index: index)
         return indexOperator.calculateIndex()
         
     }
     
     private func getIndexOperator(operation: ALOperation, index: Int) -> ALIndexOperator {
+        
         return operation.getIndexOperator(index: index, elements: self)
     }
     
