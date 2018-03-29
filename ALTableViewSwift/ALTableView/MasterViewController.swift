@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
     
     let masterTableViewCellString = "MasterTableViewCell"
     let master2TableViewCellString = "Master2TableViewCell"
-
+    let masterTableViewHeaderFooterString = "MasterHeaderFooter"
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     var alTableView: ALTableView?
@@ -69,11 +69,9 @@ class MasterViewController: UITableViewController {
             rowElements.append(rowElement)
             rowElements.append(rowElement2)
             
-            let labelTitle: UILabel = UILabel()
-            labelTitle.text = "Header Test"
-            labelTitle.backgroundColor = .green
+            let headerElement = ALHeaderFooterElement(identifier: masterTableViewHeaderFooterString, dataObject: "Header Test", estimateHeightMode: true)
             
-            let section = ALSectionElement(rowElements: rowElements, viewHeader: labelTitle, headerHeight: 40, isExpandable: true)
+            let section = ALSectionElement(rowElements: rowElements, headerElement: headerElement, footerElement: nil, isExpandable: true)
             
             sectionElements.append(section)
         }
@@ -82,8 +80,9 @@ class MasterViewController: UITableViewController {
     }
 
     func registerCells() {
-        self.alTableView?.register(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString)
-        self.alTableView?.register(nibName: master2TableViewCellString, reuseIdentifier: master2TableViewCellString)
+        self.alTableView?.registerCell(nibName: masterTableViewCellString, reuseIdentifier: masterTableViewCellString)
+        self.alTableView?.registerCell(nibName: master2TableViewCellString, reuseIdentifier: master2TableViewCellString)
+        self.alTableView?.registerHeaderFooter(nibName: masterTableViewHeaderFooterString, reuseIdentifier: masterTableViewHeaderFooterString)
     }
 
 
