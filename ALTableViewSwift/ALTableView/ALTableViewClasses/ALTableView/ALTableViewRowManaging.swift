@@ -14,7 +14,7 @@ extension ALTableView {
     
     private func insert(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section],
+        guard let sectionElement: ALSectionElement = self.getSectionElementAt(index: section),
             sectionElement.insert(rowElements: rowElements, at: position) else {
                 return false
         }
@@ -79,7 +79,7 @@ extension ALTableView {
     private func remove(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         
-        guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section],
+        guard let sectionElement: ALSectionElement = self.getSectionElementAt(index: section),
             sectionElement.deleteRowElements(numberOfRowElements: rowElements.count, at: position) else {
                 return false
         }
@@ -144,7 +144,7 @@ extension ALTableView {
     
     private func replace(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard let sectionElement: ALSectionElement = self.sectionElements[ALSafe: section],
+        guard let sectionElement: ALSectionElement = self.getSectionElementAt(index: section),
             sectionElement.replace(rowElements: rowElements, at: position) else {
                 return false
         }
@@ -188,7 +188,7 @@ extension ALTableView {
     
     private func getIndexPathes(section: Int, position: ALPosition, numberOfRowElements: Int, operation: ALOperation) -> Array<IndexPath>{
         
-        let numberOfElements: Int = self.sectionElements[ALSafe: section]?.getNumberOfRows() ?? 0
+        let numberOfElements: Int = self.getSectionElementAt(index: section)?.getNumberOfRows() ?? 0
         let indexOperator: ALIndexOperator = operation.getIndexOperator(position: position, numberOfElements: numberOfElements)
         let row: Int = indexOperator.calculateIndex()
         

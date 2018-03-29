@@ -193,7 +193,6 @@
 			children = (
 				45BADD68206A305500EBD49A /* Extensions */,
 				ED7872B2205C584800E335F0 /* ALTableView */,
-				ED7872B1205C584000E335F0 /* ALSectionManager */,
 				ED7872B0205C583700E335F0 /* ALSectionElement */,
 				ED7872AD205C50E000E335F0 /* ALRowElement */,
 				453235B4204FC8E5003BB2C7 /* ALTableViewTests.swift */,
@@ -341,13 +340,6 @@
 				45B21DD62068D42900513E33 /* ALSectionElementRowTests.swift */,
 			);
 			path = ALSectionElement;
-			sourceTree = "<group>";
-		};
-		ED7872B1205C584000E335F0 /* ALSectionManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ALSectionManager;
 			sourceTree = "<group>";
 		};
 		ED7872B2205C584800E335F0 /* ALTableView */ = {

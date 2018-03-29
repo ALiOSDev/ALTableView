@@ -187,6 +187,10 @@ extension ALTableView {
 
 extension ALTableView {
     
+    internal func getSectionElementAt(index: Int) -> ALSectionElement?{
+        return self.sectionElements[ALSafe: index]
+    }
+    
     private func getIndexSections(position: ALPosition, numberOfSectionElements: Int, operation: ALOperation) -> IndexSet {
         
         let indexOperator: ALIndexOperator = operation.getIndexOperator(position: position, numberOfElements: numberOfSectionElements)
