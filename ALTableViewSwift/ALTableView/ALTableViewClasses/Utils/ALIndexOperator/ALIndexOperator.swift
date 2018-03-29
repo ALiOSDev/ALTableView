@@ -45,7 +45,12 @@ enum ALOperation {
     
     private func getBeginingOperator() -> ALIndexOperator {
         
-        return ALFirstPosition()
+        switch self {
+        case .insert:
+            return ALFirstPosition()
+        default:
+            return ALFirstElement()
+        }
     }
     
     private func getEndOperator(numberOfElements: Int) -> ALIndexOperator {
