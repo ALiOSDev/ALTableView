@@ -14,19 +14,18 @@ extension ALTableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        let numberOfSections: Int = self.sectionManager.getNumberOfSections()
-        return numberOfSections
+        return self.sectionElements.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let numberOfRows: Int = self.sectionManager.getNumberOfRows(in: section)
-        return numberOfRows
+        return self.sectionElements[ALSafe: section]?.getNumberOfRows() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell: UITableViewCell = self.sectionManager.getCellFrom(tableView: tableView, indexPath: indexPath)  else {
+        
+        guard let cell: UITableViewCell = self.sectionElements[ALSafe: indexPath.section]?.getRowElementAt(index: indexPath.row)?.getViewFrom(tableView: tableView)  else {
             return UITableViewCell()
         }
         return cell

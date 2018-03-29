@@ -14,7 +14,7 @@ extension ALTableView {
     
     private func insert(sectionElements: Array<ALSectionElement>, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard self.sectionManager.insert(sectionElements: sectionElements, position: position) else {
+        guard self.sectionElements.safeInsert(contentsOf: sectionElements, at: position) else {
             return false
         }
         let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count, operation: .replace)
@@ -76,7 +76,7 @@ extension ALTableView {
     
     private func remove(sectionElements: Array<ALSectionElement>, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard self.sectionManager.delete(numberOfSectionElements: sectionElements.count, position: position) else {
+        guard self.sectionElements.safeDelete(numberOfElements: sectionElements.count, at:position) else {
             return false
         }
         let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count, operation: .replace)
@@ -137,7 +137,7 @@ extension ALTableView {
     
     private func replace(sectionElements: Array<ALSectionElement>, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        guard self.sectionManager.replace(sectionElements: sectionElements, position: position) else {
+        guard self.sectionElements.safeReplace(contentsOf: sectionElements, at: position) else {
             return false
         }
         let indexSection = self.getIndexSections(position: position, numberOfSectionElements: sectionElements.count, operation: .replace)
@@ -175,7 +175,10 @@ extension ALTableView {
     
     public func replaceAllSections(sectionElements: Array<ALSectionElement>) {
         
-        self.sectionManager.replaceAllSections(sectionElements: sectionElements)
+        self.sectionElements = sectionElements
+        self.sectionElements.forEach { (sectionElement: ALSectionElement) in
+            sectionElement.delegate = self
+        }
         self.tableView?.reloadData()
     }
 }

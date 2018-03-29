@@ -54,30 +54,6 @@ class ALSectionElement {
         
         return self.rowElements.count
     }
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-    
-
-    
-
-    
-//    internal func getSectionTitleIndex() -> String {
-//        return self.sectionTitleIndex
-//    }
-    
-
-    
 
 }
 

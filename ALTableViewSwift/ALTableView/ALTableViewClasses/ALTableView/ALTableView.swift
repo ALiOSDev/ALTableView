@@ -19,20 +19,24 @@ class ALTableView: NSObject {
 
     //MARK: - Properties
     
-    internal let sectionManager: ALSectionManager
+    internal var sectionElements: Array<ALSectionElement>
     public weak var delegate: ALTableViewProtocol?
     public weak var viewController: UIViewController?
     public weak var tableView: UITableView?
+    
     
     //MARK: - Initializers
     
     init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
         
-        self.sectionManager = ALSectionManager(sectionElements: sectionElements)
+//        self.sectionManager = ALSectionManager(sectionElements: sectionElements)
+        self.sectionElements = sectionElements
         self.viewController = viewController
         self.tableView = tableView
         super.init()
-        self.sectionManager.delegate = self
+        self.sectionElements.forEach { (sectionElement: ALSectionElement) in
+            sectionElement.delegate = self
+        }
     }
     
     //MARK: - Public methods
@@ -53,6 +57,7 @@ class ALTableView: NSObject {
     
 
 }
+
 
 
 

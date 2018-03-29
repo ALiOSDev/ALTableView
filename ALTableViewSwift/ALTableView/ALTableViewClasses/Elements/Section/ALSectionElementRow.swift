@@ -12,6 +12,7 @@ extension ALSectionElement {
     
     //MARK: - Getters
     
+    //TODO do not expose this method. Manage row changes from inside the section
     internal func getRowElementAt(index: Int) -> ALRowElement? {
         
         return self.rowElements[ALSafe: index]
