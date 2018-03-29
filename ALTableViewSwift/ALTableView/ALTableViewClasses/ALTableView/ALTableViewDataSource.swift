@@ -24,10 +24,6 @@ extension ALTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        guard let cell: UITableViewCell = self.getSectionElementAt(index: indexPath.section)?.getRowElementAt(index: indexPath.row)?.getViewFrom(tableView: tableView)  else {
-            return UITableViewCell()
-        }
-        return cell
+        return self.getSectionElementAt(index: indexPath.section)?.getCellViewFrom(row: indexPath.row, tableView: tableView) ?? UITableViewCell()
     }
 }

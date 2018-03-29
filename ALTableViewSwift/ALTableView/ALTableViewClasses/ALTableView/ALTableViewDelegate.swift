@@ -33,7 +33,7 @@ extension ALTableView: UITableViewDelegate {
         
         //We set up the cellHeight again to avoid stuttering scroll when using automatic dimension with cells
         let cellHeight: CGFloat = cell.frame.size.height
-        self.getSectionElementAt(index: indexPath.section)?.getRowElementAt(index: indexPath.row)?.setCellHeight(height: cellHeight)
+        self.getSectionElementAt(index: indexPath.section)?.setRowElementHeight(row: indexPath.row, height: cellHeight)
         
         if self.isLastIndexPath(indexPath: indexPath, tableView: tableView) {
             //We reached the end of the tableView
@@ -51,12 +51,10 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
-            let rowElement: ALRowElement = self.getSectionElementAt(index: indexPath.section)?.getRowElementAt(index: indexPath.row) else {
+        guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath) else {
             return
         }
-        rowElement.rowElementPressed(viewController: self.viewController, cell: cell)
-        
+        self.getSectionElementAt(index: indexPath.section)?.rowElementPressed(row: indexPath.row, viewController: self.viewController, cell: cell)
     }
     
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -66,11 +64,10 @@ extension ALTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath),
-            let rowElement: ALRowElement = self.getSectionElementAt(index: indexPath.section)?.getRowElementAt(index: indexPath.row) else {
+        guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath) else {
             return
         }
-        rowElement.rowElementDeselected(cell: cell)
+        self.getSectionElementAt(index: indexPath.section)?.rowElementDeselected(row: indexPath.row, cell: cell)
     }
     
     //MARK: - Modifying Header and Footer of Sections
@@ -105,8 +102,12 @@ extension ALTableView: UITableViewDelegate {
         return self.getSectionElementAt(index: section)?.getFooterHeight() ?? 0.0
     }
     
-    //MARK: - Private methods
-    
+}
+
+//MARK: - Private methods
+
+extension ALTableView {
+   
     private func isLastIndexPath (indexPath: IndexPath, tableView: UITableView) -> Bool {
         
         let isLastSection: Bool = indexPath.section == tableView.numberOfSections

@@ -8,14 +8,21 @@
 
 import UIKit
 
+//MARK: - Getters
 extension ALSectionElement {
     
-    //MARK: - Getters
+    //MARK: - Get Cell View
     
-    //TODO do not expose this method. Manage row changes from inside the section
-    internal func getRowElementAt(index: Int) -> ALRowElement? {
+    internal func getCellViewFrom(row: Int, tableView: UITableView) -> UITableViewCell? {
         
-        return self.rowElements[ALSafe: index]
+       return self.getRowElementAt(index: row)?.getViewFrom(tableView: tableView)
+    }
+
+    //MARK: - Managing height of cells
+    
+    internal func setRowElementHeight(row: Int, height: CGFloat) -> Void {
+        
+        self.getRowElementAt(index: row)?.setCellHeight(height: height)
     }
     
     internal func getRowHeight(at index: Int) -> CGFloat {
@@ -47,5 +54,27 @@ extension ALSectionElement {
     internal func replace(rowElements: Array<ALRowElement>, at position: ALPosition) -> Bool {
         
         return self.rowElements.safeReplace(contentsOf: rowElements, at: position)
+    }
+    
+    //MARK: - Cell events
+    
+    internal func rowElementPressed(row: Int, viewController: UIViewController?, cell: UITableViewCell) {
+        
+        self.getRowElementAt(index: row)?.rowElementPressed(viewController: viewController, cell: cell)
+    }
+    
+    internal func rowElementDeselected(row: Int, cell: UITableViewCell) {
+        
+        self.getRowElementAt(index: row)?.rowElementDeselected(cell: cell)
+    }
+}
+
+//MARK: - Support methods
+
+extension ALSectionElement {
+    
+    internal func getRowElementAt(index: Int) -> ALRowElement? {
+        
+        return self.rowElements[ALSafe: index]
     }
 }
