@@ -13,7 +13,7 @@ public typealias ALHeaderFooterCreatedHandler = (Any, UITableViewHeaderFooterVie
 public typealias ALHeaderFooterDeselectedHandler = (UITableViewHeaderFooterView) -> Void
 
 //Implemented by ALHeaderFooterElement
-protocol ALHeaderFooterElementProtocol {
+public protocol ALHeaderFooterElementProtocol {
     func headerFooterElementPressed(view: UITableViewHeaderFooterView)
 }
 
@@ -33,7 +33,7 @@ extension ALHeaderFooterProtocol {
     }
 }
 
-class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
+public class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
 
     private var pressedHandler: ALHeaderFooterPressedHandler?
     private var createdHandler: ALHeaderFooterCreatedHandler?
@@ -65,7 +65,7 @@ class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
     
     //MARK: - ALHeaderFooterElementProtocol
     
-    func headerFooterElementPressed(view: UITableViewHeaderFooterView) {
+    public func headerFooterElementPressed(view: UITableViewHeaderFooterView) {
         
         if let view: ALHeaderFooterProtocol = view as?  ALHeaderFooterProtocol {
             view.viewPressed()

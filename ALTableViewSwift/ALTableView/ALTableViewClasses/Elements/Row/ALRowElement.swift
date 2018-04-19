@@ -13,7 +13,7 @@ public typealias ALCellCreatedHandler = (Any, UITableViewCell) -> Void
 public typealias ALCellDeselectedHandler = (UITableViewCell) -> Void
 
 //Implemented by ALRowElement
-protocol ALRowElementProtocol {
+public protocol ALRowElementProtocol {
     func rowElementPressed(viewController: UIViewController?, cell: UITableViewCell)
     func rowElementDeselected(cell: UITableViewCell)
 }
@@ -39,7 +39,7 @@ extension ALCellProtocol {
     }
 }
 
-class ALRowElement: ALElement, ALRowElementProtocol  {
+public class ALRowElement: ALElement, ALRowElementProtocol  {
     
     //MARK: - Properties
     
@@ -91,7 +91,7 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
 
     //MARK: - ALRowElementProtocol
     
-    func rowElementPressed(viewController: UIViewController?, cell: UITableViewCell) {
+    public func rowElementPressed(viewController: UIViewController?, cell: UITableViewCell) {
         
         if let cell: ALCellProtocol = cell as? ALCellProtocol {
             cell.cellPressed(viewController: viewController)
@@ -102,7 +102,7 @@ class ALRowElement: ALElement, ALRowElementProtocol  {
         }
     }
     
-    func rowElementDeselected(cell: UITableViewCell) {
+    public func rowElementDeselected(cell: UITableViewCell) {
         
         if let cell: ALCellProtocol = cell as? ALCellProtocol {
             cell.cellDeselected()
