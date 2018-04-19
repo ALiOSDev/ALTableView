@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ALTableView"
-  s.version      = "0.1.3
+  s.version      = "0.1.3"
   s.summary      = "ALTableView Pod"
 
   s.homepage     = "https://github.com/ALiOSDev/ALTableView"
