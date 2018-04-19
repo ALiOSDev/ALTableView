@@ -15,61 +15,49 @@ import UIKit
     @objc optional func tableViewWillEndDragging()
 }
 
-enum ALPosition: Int {
-    case begining = -1
-    case end = -2
-}
-
 class ALTableView: NSObject {
 
     //MARK: - Properties
     
-    internal let sectionManager: ALSectionManager
+    internal var sectionElements: Array<ALSectionElement>
     public weak var delegate: ALTableViewProtocol?
     public weak var viewController: UIViewController?
     public weak var tableView: UITableView?
+    
     
     //MARK: - Initializers
     
     init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
         
-        self.sectionManager = ALSectionManager(sectionElements: sectionElements)
+//        self.sectionManager = ALSectionManager(sectionElements: sectionElements)
+        self.sectionElements = sectionElements
         self.viewController = viewController
         self.tableView = tableView
         super.init()
-        self.sectionManager.delegate = self
+        self.sectionElements.forEach { (sectionElement: ALSectionElement) in
+            sectionElement.delegate = self
+        }
     }
     
     //MARK: - Public methods
     
-    public func register(nibName: String, reuseIdentifier: String) {
+    public func registerCell(nibName: String, reuseIdentifier: String) {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         self.tableView?.register(nib, forCellReuseIdentifier: reuseIdentifier)
     }
     
-    //MARK: - Private methods
-    
-    internal func checkParameters(section: Int, row: Int?) -> Bool {
-        
-        //TODO Test section and row conditions
-        guard section < self.sectionManager.getNumberOfSections()  else {
-            print("Attempting to insert in a non-existing section")
-            return false
-        }
-        
-        guard let row: Int = row,
-            row < self.sectionManager.getNumberOfRows(in: section) else {
-                print("Attempting to insert in a non-existing row")
-                return false
-        }
-        
-        return true
+    public func registerHeaderFooter(nibName: String, reuseIdentifier: String) {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        self.tableView?.register(nib, forHeaderFooterViewReuseIdentifier: reuseIdentifier)
     }
     
-
+    //MARK: - Private methods
+    
 
 }
+
 
 
 

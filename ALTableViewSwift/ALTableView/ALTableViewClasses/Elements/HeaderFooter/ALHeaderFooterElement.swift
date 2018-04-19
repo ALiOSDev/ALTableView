@@ -23,6 +23,16 @@ public protocol ALHeaderFooterProtocol {
     func viewCreated(dataObject: Any) -> Void
 }
 
+extension ALHeaderFooterProtocol {
+    public func viewPressed () -> Void {
+        
+    }
+    
+    public func viewCreated(dataObject: Any) -> Void {
+        print("ALHeaderFooterProtocol")
+    }
+}
+
 class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
 
     private var pressedHandler: ALHeaderFooterPressedHandler?

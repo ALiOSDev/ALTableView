@@ -24,7 +24,6 @@ class ALElement {
         self.height = height
     }
     
-    
     //MARK: - Getters
     
     internal func getDataObject() -> Any {
@@ -32,8 +31,15 @@ class ALElement {
         return self.dataObject
     }
     
-    internal func getHeight() -> CGFloat {
+    internal func getEstimatedHeight() -> CGFloat {
         
+        return self.height
+    }
+    
+    internal func getHeight() -> CGFloat {
+        if self.estimateHeightMode {
+            return UITableViewAutomaticDimension
+        }
         return self.height
     }
     

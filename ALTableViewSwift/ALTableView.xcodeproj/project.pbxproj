@@ -22,10 +22,18 @@
 		4568AF552059482100570B99 /* Master2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4568AF532059482100570B99 /* Master2TableViewCell.xib */; };
 		456C3D432060EEB30036AC78 /* ALHeaderFooterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C3D422060EEB20036AC78 /* ALHeaderFooterElement.swift */; };
 		456C3D452060F0BB0036AC78 /* ALElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C3D442060F0BB0036AC78 /* ALElement.swift */; };
+		45B21DD12068D18500513E33 /* ALSectionElementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD02068D18500513E33 /* ALSectionElementRow.swift */; };
+		45B21DD32068D19500513E33 /* ALSectionElementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */; };
+		45B21DD52068D1A100513E33 /* ALSectionElementFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */; };
+		45B21DD72068D42900513E33 /* ALSectionElementRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B21DD62068D42900513E33 /* ALSectionElementRowTests.swift */; };
 		45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F94204FC9D500CB6C0C /* ALRowElement.swift */; };
 		45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */; };
-		45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */; };
 		45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */; };
+		45BADD63206A19AE00EBD49A /* Array+ALTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BADD62206A19AE00EBD49A /* Array+ALTableView.swift */; };
+		45BADD67206A2F7B00EBD49A /* ALIndexOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BADD66206A2F7B00EBD49A /* ALIndexOperator.swift */; };
+		45BADD6A206A307100EBD49A /* ALArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BADD69206A307100EBD49A /* ALArrayExtensionTests.swift */; };
+		45F29A3220638D2300C6F79D /* MasterHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F29A3120638D2300C6F79D /* MasterHeaderFooter.swift */; };
+		45F29A3420638D3500C6F79D /* MasterHeaderFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F29A3320638D3500C6F79D /* MasterHeaderFooter.xib */; };
 		94F23D7F7B20C86954396599 /* Pods_ALTableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404A46833267F79B65BBFB13 /* Pods_ALTableViewTests.framework */; };
 		B0B4F2256521CF874D5A3264 /* Pods_ALTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF377A08D787F06C53A0BB93 /* Pods_ALTableView.framework */; };
 		ED7872A6205C45D000E335F0 /* ALTableViewRowManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7872A5205C45D000E335F0 /* ALTableViewRowManaging.swift */; };
@@ -76,10 +84,18 @@
 		4568AF532059482100570B99 /* Master2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Master2TableViewCell.xib; sourceTree = "<group>"; };
 		456C3D422060EEB20036AC78 /* ALHeaderFooterElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALHeaderFooterElement.swift; sourceTree = "<group>"; };
 		456C3D442060F0BB0036AC78 /* ALElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALElement.swift; sourceTree = "<group>"; };
+		45B21DD02068D18500513E33 /* ALSectionElementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementRow.swift; sourceTree = "<group>"; };
+		45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementHeader.swift; sourceTree = "<group>"; };
+		45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElementFooter.swift; sourceTree = "<group>"; };
+		45B21DD62068D42900513E33 /* ALSectionElementRowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ALSectionElementRowTests.swift; path = ALTableView/ALTableViewClasses/Elements/Section/ALSectionElementRowTests.swift; sourceTree = SOURCE_ROOT; };
 		45B87F94204FC9D500CB6C0C /* ALRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRowElement.swift; sourceTree = "<group>"; };
 		45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElement.swift; sourceTree = "<group>"; };
-		45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionManager.swift; sourceTree = "<group>"; };
 		45B87F9A204FCA0E00CB6C0C /* ALTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableView.swift; sourceTree = "<group>"; };
+		45BADD62206A19AE00EBD49A /* Array+ALTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ALTableView.swift"; sourceTree = "<group>"; };
+		45BADD66206A2F7B00EBD49A /* ALIndexOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALIndexOperator.swift; sourceTree = "<group>"; };
+		45BADD69206A307100EBD49A /* ALArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALArrayExtensionTests.swift; sourceTree = "<group>"; };
+		45F29A3120638D2300C6F79D /* MasterHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterHeaderFooter.swift; sourceTree = "<group>"; };
+		45F29A3320638D3500C6F79D /* MasterHeaderFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterHeaderFooter.xib; sourceTree = "<group>"; };
 		481760E8A716D3C675CECE04 /* Pods_ALTableViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALTableViewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D9D1876C1A0D08B1F82B96 /* Pods-ALTableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ALTableViewTests/Pods-ALTableViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		9785B62BD214453C88DAAFB4 /* Pods-ALTableViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ALTableViewUITests/Pods-ALTableViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +144,8 @@
 				450E56C52054409F00095E88 /* MasterTableViewCell.xib */,
 				4568AF522059482100570B99 /* Master2TableViewCell.swift */,
 				4568AF532059482100570B99 /* Master2TableViewCell.xib */,
+				45F29A3120638D2300C6F79D /* MasterHeaderFooter.swift */,
+				45F29A3320638D3500C6F79D /* MasterHeaderFooter.xib */,
 			);
 			path = Master;
 			sourceTree = "<group>";
@@ -173,8 +191,8 @@
 		453235B3204FC8E5003BB2C7 /* ALTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				45BADD68206A305500EBD49A /* Extensions */,
 				ED7872B2205C584800E335F0 /* ALTableView */,
-				ED7872B1205C584000E335F0 /* ALSectionManager */,
 				ED7872B0205C583700E335F0 /* ALSectionElement */,
 				ED7872AD205C50E000E335F0 /* ALRowElement */,
 				453235B4204FC8E5003BB2C7 /* ALTableViewTests.swift */,
@@ -192,25 +210,85 @@
 			path = ALTableViewUITests;
 			sourceTree = "<group>";
 		};
+		4594BAC52068CD1800028322 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				456C3D442060F0BB0036AC78 /* ALElement.swift */,
+				45B21DCF2068D09800513E33 /* HeaderFooter */,
+				45B21DCE2068D09200513E33 /* Row */,
+				45B21DCD2068D08700513E33 /* Section */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		45B21DCA2068D02200513E33 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				45BADD62206A19AE00EBD49A /* Array+ALTableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		45B21DCD2068D08700513E33 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */,
+				45B21DD02068D18500513E33 /* ALSectionElementRow.swift */,
+				45B21DD22068D19500513E33 /* ALSectionElementHeader.swift */,
+				45B21DD42068D1A100513E33 /* ALSectionElementFooter.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		45B21DCE2068D09200513E33 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				45B87F94204FC9D500CB6C0C /* ALRowElement.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		45B21DCF2068D09800513E33 /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				456C3D422060EEB20036AC78 /* ALHeaderFooterElement.swift */,
+			);
+			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
 		45B87F92204FC9A200CB6C0C /* ALTableViewClasses */ = {
 			isa = PBXGroup;
 			children = (
+				45BADD64206A2F0B00EBD49A /* Utils */,
+				45B21DCA2068D02200513E33 /* Extension */,
 				ED7872A4205C458000E335F0 /* ALTableView */,
-				45B87F93204FC9BB00CB6C0C /* SectionManager */,
+				4594BAC52068CD1800028322 /* Elements */,
 			);
 			path = ALTableViewClasses;
 			sourceTree = "<group>";
 		};
-		45B87F93204FC9BB00CB6C0C /* SectionManager */ = {
+		45BADD64206A2F0B00EBD49A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				456C3D422060EEB20036AC78 /* ALHeaderFooterElement.swift */,
-				45B87F94204FC9D500CB6C0C /* ALRowElement.swift */,
-				45B87F96204FC9E100CB6C0C /* ALSectionElement.swift */,
-				45B87F98204FC9F400CB6C0C /* ALSectionManager.swift */,
-				456C3D442060F0BB0036AC78 /* ALElement.swift */,
+				45BADD65206A2F5A00EBD49A /* ALIndexOperator */,
 			);
-			path = SectionManager;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		45BADD65206A2F5A00EBD49A /* ALIndexOperator */ = {
+			isa = PBXGroup;
+			children = (
+				45BADD66206A2F7B00EBD49A /* ALIndexOperator.swift */,
+			);
+			path = ALIndexOperator;
+			sourceTree = "<group>";
+		};
+		45BADD68206A305500EBD49A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45BADD69206A307100EBD49A /* ALArrayExtensionTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8AC93138E9F886B5B24283A9 /* Pods */ = {
@@ -259,15 +337,9 @@
 		ED7872B0205C583700E335F0 /* ALSectionElement */ = {
 			isa = PBXGroup;
 			children = (
+				45B21DD62068D42900513E33 /* ALSectionElementRowTests.swift */,
 			);
 			path = ALSectionElement;
-			sourceTree = "<group>";
-		};
-		ED7872B1205C584000E335F0 /* ALSectionManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ALSectionManager;
 			sourceTree = "<group>";
 		};
 		ED7872B2205C584800E335F0 /* ALTableView */ = {
@@ -396,6 +468,7 @@
 				453235AA204FC8E5003BB2C7 /* LaunchScreen.storyboard in Resources */,
 				453235A7204FC8E5003BB2C7 /* Assets.xcassets in Resources */,
 				4568AF552059482100570B99 /* Master2TableViewCell.xib in Resources */,
+				45F29A3420638D3500C6F79D /* MasterHeaderFooter.xib in Resources */,
 				453235A5204FC8E5003BB2C7 /* Main.storyboard in Resources */,
 				450E56C72054409F00095E88 /* MasterTableViewCell.xib in Resources */,
 			);
@@ -573,13 +646,18 @@
 				453235A2204FC8E5003BB2C7 /* DetailViewController.swift in Sources */,
 				45B87F95204FC9D500CB6C0C /* ALRowElement.swift in Sources */,
 				45B87F9B204FCA0E00CB6C0C /* ALTableView.swift in Sources */,
+				45B21DD12068D18500513E33 /* ALSectionElementRow.swift in Sources */,
+				45BADD67206A2F7B00EBD49A /* ALIndexOperator.swift in Sources */,
+				45B21DD32068D19500513E33 /* ALSectionElementHeader.swift in Sources */,
 				ED7872AA205C480A00E335F0 /* ALTableViewDelegate.swift in Sources */,
 				ED7872A6205C45D000E335F0 /* ALTableViewRowManaging.swift in Sources */,
 				ED7872A8205C475B00E335F0 /* ALTableViewSectionManaging.swift in Sources */,
+				45F29A3220638D2300C6F79D /* MasterHeaderFooter.swift in Sources */,
+				45BADD63206A19AE00EBD49A /* Array+ALTableView.swift in Sources */,
 				450E56C62054409F00095E88 /* MasterTableViewCell.swift in Sources */,
 				45B87F97204FC9E100CB6C0C /* ALSectionElement.swift in Sources */,
-				45B87F99204FC9F400CB6C0C /* ALSectionManager.swift in Sources */,
 				4568AF542059482100570B99 /* Master2TableViewCell.swift in Sources */,
+				45B21DD52068D1A100513E33 /* ALSectionElementFooter.swift in Sources */,
 				453235A0204FC8E5003BB2C7 /* MasterViewController.swift in Sources */,
 				4532359E204FC8E5003BB2C7 /* AppDelegate.swift in Sources */,
 				ED7872AC205C481500E335F0 /* ALTableViewDataSource.swift in Sources */,
@@ -592,6 +670,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7872AF205C511A00E335F0 /* ALRowElementInitialization.swift in Sources */,
+				45B21DD72068D42900513E33 /* ALSectionElementRowTests.swift in Sources */,
+				45BADD6A206A307100EBD49A /* ALArrayExtensionTests.swift in Sources */,
 				453235B5204FC8E5003BB2C7 /* ALTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
