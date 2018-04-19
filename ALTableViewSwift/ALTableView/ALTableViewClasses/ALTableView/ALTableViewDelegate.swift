@@ -14,22 +14,22 @@ extension ALTableView: UITableViewDelegate {
     
     //MARK: - Configuring Rows
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return self.getSectionElementAt(index: indexPath.section)?.getRowHeight(at: indexPath.row) ?? 0.0
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return self.getSectionElementAt(index: indexPath.section)?.getRowEstimatedHeight(at: indexPath.row) ?? 0.0
     }
     
-    func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+    public func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
         
         return 0
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         //We set up the cellHeight again to avoid stuttering scroll when using automatic dimension with cells
         let cellHeight: CGFloat = cell.frame.size.height
@@ -43,13 +43,13 @@ extension ALTableView: UITableViewDelegate {
     
     //MARK: - Managing selections
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         return indexPath
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath) else {
             return
@@ -57,12 +57,12 @@ extension ALTableView: UITableViewDelegate {
         self.getSectionElementAt(index: indexPath.section)?.rowElementPressed(row: indexPath.row, viewController: self.viewController, cell: cell)
     }
     
-    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+    public func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
         
         return indexPath
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         guard let cell: UITableViewCell = tableView.cellForRow(at: indexPath) else {
             return
@@ -72,32 +72,32 @@ extension ALTableView: UITableViewDelegate {
     
     //MARK: - Modifying Header and Footer of Sections
     
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
 
         return self.getSectionElementAt(index: section)?.getHeaderEstimatedHeight() ?? 0.0
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
         return self.getSectionElementAt(index: section)?.getFooterEstimatedHeight() ?? 0.0
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         return self.getSectionElementAt(index: section)?.getHeaderFrom(tableView: tableView)
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         return self.getSectionElementAt(index: section)?.getFooterFrom(tableView: tableView)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return self.getSectionElementAt(index: section)?.getHeaderHeight() ?? 0.0
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         return self.getSectionElementAt(index: section)?.getFooterHeight() ?? 0.0
     }

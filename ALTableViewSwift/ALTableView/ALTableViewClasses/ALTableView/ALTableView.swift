@@ -8,14 +8,14 @@
 
 import UIKit
 
-@objc protocol ALTableViewProtocol: class {
+@objc public protocol ALTableViewProtocol: class {
     @objc optional func tableViewPullToRefresh()
     @objc optional func tableViewDidReachEnd()
     @objc optional func tableViewWillBeginDragging()
     @objc optional func tableViewWillEndDragging()
 }
 
-class ALTableView: NSObject {
+public class ALTableView: NSObject {
 
     //MARK: - Properties
     

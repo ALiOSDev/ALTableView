@@ -14,7 +14,7 @@ protocol ALSectionHeaderViewDelegate: class {
     func sectionClosed(sectionElement: ALSectionElement)
 }
 
-class ALSectionElement {
+public class ALSectionElement {
 
     //MARK: - Properties
     
@@ -61,7 +61,7 @@ class ALSectionElement {
 
 extension ALSectionElement: Equatable {
     
-    static func ==(lhs: ALSectionElement, rhs: ALSectionElement) -> Bool {
+    public static func ==(lhs: ALSectionElement, rhs: ALSectionElement) -> Bool {
         
         return lhs === rhs
     }

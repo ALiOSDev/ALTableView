@@ -12,17 +12,17 @@ import UIKit
 
 extension ALTableView: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         
         return self.sectionElements.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.getSectionElementAt(index: section)?.getNumberOfRows() ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return self.getSectionElementAt(index: indexPath.section)?.getCellViewFrom(row: indexPath.row, tableView: tableView) ?? UITableViewCell()
     }

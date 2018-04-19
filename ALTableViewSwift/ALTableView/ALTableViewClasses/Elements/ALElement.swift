@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ALElement {
+public class ALElement {
     
     internal var estimateHeightMode: Bool
     internal var height: CGFloat
