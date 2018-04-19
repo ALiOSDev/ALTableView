@@ -7,11 +7,12 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
   s.author       = "Abimael Barea, Lorenzo Villarroel"
+  s.swift_version = '4.0'
 
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/ALiOSDev/ALTableView", :tag => "#{s.version}"}
+  s.source       = { :git => "https://github.com/ALiOSDev/ALTableView.git", :tag => "#{s.version}"}
 
-  s.source_files = 'ALTableViewSwift/ALTableView/ALTableViewClasses/*.{swift,h,m}'
+  s.source_files = 'ALTableViewSwift/ALTableView/ALTableViewClasses/**/*.{swift,h,m}'
 
 end
