@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/ALiOSDev/ALTableView", :tag => "#{s.version}"}
 
-  s.source_files = 'ALTableViewSwift/ALTableView/ALTableViewClasses/**.{swift,h,m}'
+  s.source_files = 'ALTableViewSwift/ALTableView/ALTableViewClasses/*.{swift,h,m}'
 
 end
