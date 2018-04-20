@@ -40,7 +40,7 @@ public class ALHeaderFooterElement: ALElement, ALHeaderFooterElementProtocol {
     
     //MARK: - Initializers
     
-    init(identifier: String, dataObject: Any, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALHeaderFooterPressedHandler? = nil, createdHandler: ALHeaderFooterCreatedHandler? = nil) {
+    public init(identifier: String, dataObject: Any, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALHeaderFooterPressedHandler? = nil, createdHandler: ALHeaderFooterCreatedHandler? = nil) {
         
         self.pressedHandler = pressedHandler
         self.createdHandler = createdHandler

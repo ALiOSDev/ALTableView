@@ -31,7 +31,7 @@ public class ALSectionElement {
     
     //MARK: - Initializers
     
-    init(rowElements: Array<ALRowElement>, headerElement: ALHeaderFooterElement?, footerElement: ALHeaderFooterElement?, headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false) {
+    public init(rowElements: Array<ALRowElement>, headerElement: ALHeaderFooterElement?, footerElement: ALHeaderFooterElement?, headerHeight: CGFloat = 0, footerHeight: CGFloat = 0, isExpandable: Bool = false) {
         
         self.headerElement = headerElement
         self.footerElement = footerElement

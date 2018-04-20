@@ -54,7 +54,7 @@ public class ALRowElement: ALElement, ALRowElementProtocol  {
     
     //MARK: - Initializers
     
-    init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+    public init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
         
         self.className = className
         self.cellStyle = cellStyle
