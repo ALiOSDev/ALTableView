@@ -3,57 +3,56 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		293E2161114D239BAB4A57EBFF3DD2A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		3D0B5A7E86517B46BD96F8D5496FEF0A /* Pods-ALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B2FD48E8A51255774D04CB4C43EE37 /* Pods-ALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55A579A2A313DC0B0B6DC11A97B53AD8 /* Pods-ALTableViewUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79E9FC227EAD0A5F854C26AD824DEEA8 /* Pods-ALTableViewUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E3C0B5704BE96C238B6717E7A4FA630 /* Pods-ALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F39356A6E066A0AF9B78C31A7A68DB32 /* Pods-ALTableView-dummy.m */; };
+		3D0B5A7E86517B46BD96F8D5496FEF0A /* Pods-ALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 193765CA53AF1BEF89157D70EC6AEAA7 /* Pods-ALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B560DBC8077686BA0438CE3616DB282 /* Pods-TestALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD898B1F223B78BEF914C1F4CA39EA11 /* Pods-TestALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E3C0B5704BE96C238B6717E7A4FA630 /* Pods-ALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2687CDBD31E918BA983A674A4CE81B1A /* Pods-ALTableView-dummy.m */; };
 		92E9AFA847B2F9F1ADBDBFC176D7448A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		A3C1BFD6D294FF261CCA31025B37EB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A6842107B998A260B55DE5A279B40408 /* Pods-ALTableViewTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9964CAA80903EC8C28C365D5A473974 /* Pods-ALTableViewTests-dummy.m */; };
-		C7F0767804EE5497280F0F47140A0F34 /* Pods-ALTableViewTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC7C9B2AEC237A41E9AE94AE023EB209 /* Pods-ALTableViewTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA314033AFAA1567E0746324FF5C47B7 /* Pods-ALTableViewUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C70E1A70D7AC858D803FAB2DDA6E2016 /* Pods-ALTableViewUITests-dummy.m */; };
+		A6842107B998A260B55DE5A279B40408 /* Pods-ALTableViewTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 967188619D0A4F10CD6A3EB849D47E09 /* Pods-ALTableViewTests-dummy.m */; };
+		AD641DA54B9038AAF0718D18A4297473 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C7F0767804EE5497280F0F47140A0F34 /* Pods-ALTableViewTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD3F5BE26ACFA9CB2C3D57859F28C4C /* Pods-ALTableViewTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE11EB7D3947D8A14C912A3E0C87C596 /* Pods-TestALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D02FF507439D9805A7BEA22229C1F2 /* Pods-TestALTableView-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02D57DE665BBA49C2686C3445E10283D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05FCB5D5AB34519BE0418DBB4556C42F /* Pods_ALTableViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableViewTests.framework; path = "Pods-ALTableViewTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0943FF2417275B381D7D847D02CF43DF /* Pods-ALTableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewTests.release.xcconfig"; sourceTree = "<group>"; };
-		0E5D4B40033ED068493335B492CE1D65 /* Pods-ALTableView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		17F486DA40C8E6E4F80A9FC19895B2FC /* Pods-ALTableView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView-frameworks.sh"; sourceTree = "<group>"; };
-		272EDD25E8C1773F543E48A441D5A4BA /* Pods_ALTableViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableViewUITests.framework; path = "Pods-ALTableViewUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BED0FEBECA058474E68E24C2BEBD651 /* Pods-ALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView.debug.xcconfig"; sourceTree = "<group>"; };
-		2C7E2C6A5DB1791B046AF1234381193E /* Pods-ALTableViewUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewUITests-resources.sh"; sourceTree = "<group>"; };
-		3434D1A832BFABC8AD70233B2DDF2C55 /* Pods-ALTableViewTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewTests-frameworks.sh"; sourceTree = "<group>"; };
-		4D0516F9DBD949FF1A108044BDC4F779 /* Pods-ALTableViewUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableViewUITests.modulemap"; sourceTree = "<group>"; };
-		53A67F7507661A1EEF04B110223B5394 /* Pods-ALTableView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView-resources.sh"; sourceTree = "<group>"; };
-		553B03F82421965D33D8558A2414DC9A /* Pods-ALTableViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewUITests.release.xcconfig"; sourceTree = "<group>"; };
-		635A48AD304F5D526E42C2049D378AD9 /* Pods-ALTableViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewTests.debug.xcconfig"; sourceTree = "<group>"; };
-		63F0599F8F6F051CCE3A554A3DAE3AE9 /* Pods-ALTableViewUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableViewUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		007F19C5F220CADECB7B31472310EEB4 /* Pods-ALTableViewTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableViewTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		01CD16F3EB0FDC7A7CE13B2E54AE042D /* Pods-TestALTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TestALTableView.modulemap"; sourceTree = "<group>"; };
+		01F687E78D5127CE527641F7B0C865BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16ED62C4710E7076D67DB36EF946C0FC /* Pods-ALTableViewTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableViewTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		193765CA53AF1BEF89157D70EC6AEAA7 /* Pods-ALTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableView-umbrella.h"; sourceTree = "<group>"; };
+		20D16A866A1AB3E82DBB6708B21B65B0 /* Pods_TestALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TestALTableView.framework; path = "Pods-TestALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B22BA8E525A652324FACD4839EF515 /* Pods-TestALTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestALTableView.release.xcconfig"; sourceTree = "<group>"; };
+		264F1069FF39040055A39C7513E63641 /* Pods_ALTableViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableViewTests.framework; path = "Pods-ALTableViewTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2687CDBD31E918BA983A674A4CE81B1A /* Pods-ALTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableView-dummy.m"; sourceTree = "<group>"; };
+		45E8547E8AB00D77600768A206CCBBE7 /* Pods-TestALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestALTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		57FAE6E3BBE22C89F6B82C687407F7AE /* Pods-ALTableView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableView-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6BFB9FD321D51E8398147FE2887D6285 /* Pods-ALTableViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		722010EE561045FBA425B06A0CE7789E /* Pods-ALTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView.release.xcconfig"; sourceTree = "<group>"; };
-		79E9FC227EAD0A5F854C26AD824DEEA8 /* Pods-ALTableViewUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableViewUITests-umbrella.h"; sourceTree = "<group>"; };
-		897FF8152667F4FCFCECEA13B1BDDB86 /* Pods-ALTableView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableView-acknowledgements.plist"; sourceTree = "<group>"; };
-		92FC67714B7CF6C1C220A24CED4A0B9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E375A04BFA50856601362052FC1A0B7 /* Pods-ALTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableView.modulemap"; sourceTree = "<group>"; };
+		73844C70D7212B1F54C3D69768465966 /* Pods-ALTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView.release.xcconfig"; sourceTree = "<group>"; };
+		78802938915E11AD0D6AE9C556DECAB2 /* Pods-TestALTableView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TestALTableView-acknowledgements.plist"; sourceTree = "<group>"; };
+		7DEEFBEBD54A9805B6B6DD5219189BD2 /* Pods-ALTableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		83B89FFD1A96FBEE2402C563B36990AF /* Pods-ALTableViewTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewTests-resources.sh"; sourceTree = "<group>"; };
+		866C2D78F3450C7CCD0CF0F707498CB5 /* Pods-ALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		86C7C73ABE278B56B6163C340FF88586 /* Pods-ALTableViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90E70CA1D5967247AF89250DAA129217 /* Pods-TestALTableView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestALTableView-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D1F939C3897F46F3C0F8DC397E30DEC /* Pods-ALTableViewUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewUITests-frameworks.sh"; sourceTree = "<group>"; };
-		A06127E1D644A08163EE31D8493EE140 /* Pods-ALTableViewTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableViewTests.modulemap"; sourceTree = "<group>"; };
-		A67D2932A71B3FE9A935122DD64B7EA1 /* Pods-ALTableViewTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableViewTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		ACF705051E58FF5835A99E58B6BB5A74 /* Pods-ALTableViewTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewTests-resources.sh"; sourceTree = "<group>"; };
-		AE22AC07C3AAF9F186792114F12DBA09 /* Pods_ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableView.framework; path = "Pods-ALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFB703BA0B743625B35E4D980802F4DB /* Pods-ALTableViewUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableViewUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C5669B2609E8B09F6441A019D4BD4DDB /* Pods-ALTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableView.modulemap"; sourceTree = "<group>"; };
-		C70E1A70D7AC858D803FAB2DDA6E2016 /* Pods-ALTableViewUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableViewUITests-dummy.m"; sourceTree = "<group>"; };
-		C94BCF0CF18D00D38074033ABED65B82 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9B2FD48E8A51255774D04CB4C43EE37 /* Pods-ALTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableView-umbrella.h"; sourceTree = "<group>"; };
-		CC7C9B2AEC237A41E9AE94AE023EB209 /* Pods-ALTableViewTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableViewTests-umbrella.h"; sourceTree = "<group>"; };
-		D5F6F6B1C574B570A830CE0254B8E374 /* Pods-ALTableViewTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableViewTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F39356A6E066A0AF9B78C31A7A68DB32 /* Pods-ALTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableView-dummy.m"; sourceTree = "<group>"; };
-		F9964CAA80903EC8C28C365D5A473974 /* Pods-ALTableViewTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableViewTests-dummy.m"; sourceTree = "<group>"; };
+		967188619D0A4F10CD6A3EB849D47E09 /* Pods-ALTableViewTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableViewTests-dummy.m"; sourceTree = "<group>"; };
+		97D02FF507439D9805A7BEA22229C1F2 /* Pods-TestALTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TestALTableView-dummy.m"; sourceTree = "<group>"; };
+		9A610C940B19D3DFF071DD11DE40B802 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4261D92E1A80F28E06D3B1825F96FE8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A60CFF31243575E80FCF59FF486A262B /* Pods-TestALTableView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestALTableView-frameworks.sh"; sourceTree = "<group>"; };
+		B632A8320E33DD4491A076A5AC34A684 /* Pods-TestALTableView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TestALTableView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BCBAF0357DA80EB33541E870B6F06028 /* Pods-ALTableView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableView-acknowledgements.plist"; sourceTree = "<group>"; };
+		C427B80433C059E2C83CBA9B4347F3E1 /* Pods-ALTableViewTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewTests-frameworks.sh"; sourceTree = "<group>"; };
+		D97B0A6A1E6ED4FF16D3658784D1D0F3 /* Pods-ALTableView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView-resources.sh"; sourceTree = "<group>"; };
+		DD898B1F223B78BEF914C1F4CA39EA11 /* Pods-TestALTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TestALTableView-umbrella.h"; sourceTree = "<group>"; };
+		E4D4894D401AE96F2F1D21C70DB06A7C /* Pods-ALTableViewTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableViewTests.modulemap"; sourceTree = "<group>"; };
+		E8B24AA3BF5E0D8AC9E6D188F36DDA7E /* Pods_ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableView.framework; path = "Pods-ALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD3F5BE26ACFA9CB2C3D57859F28C4C /* Pods-ALTableViewTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableViewTests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +64,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C3855A7742ACE3703D354B23572ACDB /* Frameworks */ = {
+		B78E6DD1F79184E2E6D2136571892D4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293E2161114D239BAB4A57EBFF3DD2A2 /* Foundation.framework in Frameworks */,
+				AD641DA54B9038AAF0718D18A4297473 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,60 +83,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37F7FD4E412169F50F1A53FA3211546C /* Products */ = {
+		24D40FA3632DB98731793434C8E1D4CB /* Pods-ALTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE22AC07C3AAF9F186792114F12DBA09 /* Pods_ALTableView.framework */,
-				05FCB5D5AB34519BE0418DBB4556C42F /* Pods_ALTableViewTests.framework */,
-				272EDD25E8C1773F543E48A441D5A4BA /* Pods_ALTableViewUITests.framework */,
+				01F687E78D5127CE527641F7B0C865BA /* Info.plist */,
+				E4D4894D401AE96F2F1D21C70DB06A7C /* Pods-ALTableViewTests.modulemap */,
+				16ED62C4710E7076D67DB36EF946C0FC /* Pods-ALTableViewTests-acknowledgements.markdown */,
+				007F19C5F220CADECB7B31472310EEB4 /* Pods-ALTableViewTests-acknowledgements.plist */,
+				967188619D0A4F10CD6A3EB849D47E09 /* Pods-ALTableViewTests-dummy.m */,
+				C427B80433C059E2C83CBA9B4347F3E1 /* Pods-ALTableViewTests-frameworks.sh */,
+				83B89FFD1A96FBEE2402C563B36990AF /* Pods-ALTableViewTests-resources.sh */,
+				EAD3F5BE26ACFA9CB2C3D57859F28C4C /* Pods-ALTableViewTests-umbrella.h */,
+				86C7C73ABE278B56B6163C340FF88586 /* Pods-ALTableViewTests.debug.xcconfig */,
+				7DEEFBEBD54A9805B6B6DD5219189BD2 /* Pods-ALTableViewTests.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-ALTableViewTests";
+			path = "Target Support Files/Pods-ALTableViewTests";
 			sourceTree = "<group>";
 		};
-		37F95C744D190CC49839B578DBAD5AFD /* Targets Support Files */ = {
+		5918EF8E44FA6DB9469BD166F81BC4F7 /* Pods-TestALTableView */ = {
 			isa = PBXGroup;
 			children = (
-				579F5CDC9BCCF658D3B3F6FEA29BDDBB /* Pods-ALTableView */,
-				A71F54D458B518C4E13D34073F389BA3 /* Pods-ALTableViewTests */,
-				6DC40B0C50FC27FD25ED1309DDD99C20 /* Pods-ALTableViewUITests */,
+				A4261D92E1A80F28E06D3B1825F96FE8 /* Info.plist */,
+				01CD16F3EB0FDC7A7CE13B2E54AE042D /* Pods-TestALTableView.modulemap */,
+				B632A8320E33DD4491A076A5AC34A684 /* Pods-TestALTableView-acknowledgements.markdown */,
+				78802938915E11AD0D6AE9C556DECAB2 /* Pods-TestALTableView-acknowledgements.plist */,
+				97D02FF507439D9805A7BEA22229C1F2 /* Pods-TestALTableView-dummy.m */,
+				A60CFF31243575E80FCF59FF486A262B /* Pods-TestALTableView-frameworks.sh */,
+				90E70CA1D5967247AF89250DAA129217 /* Pods-TestALTableView-resources.sh */,
+				DD898B1F223B78BEF914C1F4CA39EA11 /* Pods-TestALTableView-umbrella.h */,
+				45E8547E8AB00D77600768A206CCBBE7 /* Pods-TestALTableView.debug.xcconfig */,
+				21B22BA8E525A652324FACD4839EF515 /* Pods-TestALTableView.release.xcconfig */,
+			);
+			name = "Pods-TestALTableView";
+			path = "Target Support Files/Pods-TestALTableView";
+			sourceTree = "<group>";
+		};
+		635DDF57676A1B129F10F59DCE6251B6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				859CF0D5B431310CBCC2EE9A13CE80EA /* Pods-ALTableView */,
+				24D40FA3632DB98731793434C8E1D4CB /* Pods-ALTableViewTests */,
+				5918EF8E44FA6DB9469BD166F81BC4F7 /* Pods-TestALTableView */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		579F5CDC9BCCF658D3B3F6FEA29BDDBB /* Pods-ALTableView */ = {
-			isa = PBXGroup;
-			children = (
-				C94BCF0CF18D00D38074033ABED65B82 /* Info.plist */,
-				C5669B2609E8B09F6441A019D4BD4DDB /* Pods-ALTableView.modulemap */,
-				0E5D4B40033ED068493335B492CE1D65 /* Pods-ALTableView-acknowledgements.markdown */,
-				897FF8152667F4FCFCECEA13B1BDDB86 /* Pods-ALTableView-acknowledgements.plist */,
-				F39356A6E066A0AF9B78C31A7A68DB32 /* Pods-ALTableView-dummy.m */,
-				17F486DA40C8E6E4F80A9FC19895B2FC /* Pods-ALTableView-frameworks.sh */,
-				53A67F7507661A1EEF04B110223B5394 /* Pods-ALTableView-resources.sh */,
-				C9B2FD48E8A51255774D04CB4C43EE37 /* Pods-ALTableView-umbrella.h */,
-				2BED0FEBECA058474E68E24C2BEBD651 /* Pods-ALTableView.debug.xcconfig */,
-				722010EE561045FBA425B06A0CE7789E /* Pods-ALTableView.release.xcconfig */,
-			);
-			name = "Pods-ALTableView";
-			path = "Target Support Files/Pods-ALTableView";
-			sourceTree = "<group>";
-		};
-		6DC40B0C50FC27FD25ED1309DDD99C20 /* Pods-ALTableViewUITests */ = {
-			isa = PBXGroup;
-			children = (
-				92FC67714B7CF6C1C220A24CED4A0B9E /* Info.plist */,
-				4D0516F9DBD949FF1A108044BDC4F779 /* Pods-ALTableViewUITests.modulemap */,
-				63F0599F8F6F051CCE3A554A3DAE3AE9 /* Pods-ALTableViewUITests-acknowledgements.markdown */,
-				BFB703BA0B743625B35E4D980802F4DB /* Pods-ALTableViewUITests-acknowledgements.plist */,
-				C70E1A70D7AC858D803FAB2DDA6E2016 /* Pods-ALTableViewUITests-dummy.m */,
-				9D1F939C3897F46F3C0F8DC397E30DEC /* Pods-ALTableViewUITests-frameworks.sh */,
-				2C7E2C6A5DB1791B046AF1234381193E /* Pods-ALTableViewUITests-resources.sh */,
-				79E9FC227EAD0A5F854C26AD824DEEA8 /* Pods-ALTableViewUITests-umbrella.h */,
-				6BFB9FD321D51E8398147FE2887D6285 /* Pods-ALTableViewUITests.debug.xcconfig */,
-				553B03F82421965D33D8558A2414DC9A /* Pods-ALTableViewUITests.release.xcconfig */,
-			);
-			name = "Pods-ALTableViewUITests";
-			path = "Target Support Files/Pods-ALTableViewUITests";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -145,27 +134,36 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				37F7FD4E412169F50F1A53FA3211546C /* Products */,
-				37F95C744D190CC49839B578DBAD5AFD /* Targets Support Files */,
+				A5F333DF13D2F1D36A7DB126BCCFF2F4 /* Products */,
+				635DDF57676A1B129F10F59DCE6251B6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A71F54D458B518C4E13D34073F389BA3 /* Pods-ALTableViewTests */ = {
+		859CF0D5B431310CBCC2EE9A13CE80EA /* Pods-ALTableView */ = {
 			isa = PBXGroup;
 			children = (
-				02D57DE665BBA49C2686C3445E10283D /* Info.plist */,
-				A06127E1D644A08163EE31D8493EE140 /* Pods-ALTableViewTests.modulemap */,
-				A67D2932A71B3FE9A935122DD64B7EA1 /* Pods-ALTableViewTests-acknowledgements.markdown */,
-				D5F6F6B1C574B570A830CE0254B8E374 /* Pods-ALTableViewTests-acknowledgements.plist */,
-				F9964CAA80903EC8C28C365D5A473974 /* Pods-ALTableViewTests-dummy.m */,
-				3434D1A832BFABC8AD70233B2DDF2C55 /* Pods-ALTableViewTests-frameworks.sh */,
-				ACF705051E58FF5835A99E58B6BB5A74 /* Pods-ALTableViewTests-resources.sh */,
-				CC7C9B2AEC237A41E9AE94AE023EB209 /* Pods-ALTableViewTests-umbrella.h */,
-				635A48AD304F5D526E42C2049D378AD9 /* Pods-ALTableViewTests.debug.xcconfig */,
-				0943FF2417275B381D7D847D02CF43DF /* Pods-ALTableViewTests.release.xcconfig */,
+				9A610C940B19D3DFF071DD11DE40B802 /* Info.plist */,
+				6E375A04BFA50856601362052FC1A0B7 /* Pods-ALTableView.modulemap */,
+				57FAE6E3BBE22C89F6B82C687407F7AE /* Pods-ALTableView-acknowledgements.markdown */,
+				BCBAF0357DA80EB33541E870B6F06028 /* Pods-ALTableView-acknowledgements.plist */,
+				2687CDBD31E918BA983A674A4CE81B1A /* Pods-ALTableView-dummy.m */,
+				D97B0A6A1E6ED4FF16D3658784D1D0F3 /* Pods-ALTableView-resources.sh */,
+				193765CA53AF1BEF89157D70EC6AEAA7 /* Pods-ALTableView-umbrella.h */,
+				866C2D78F3450C7CCD0CF0F707498CB5 /* Pods-ALTableView.debug.xcconfig */,
+				73844C70D7212B1F54C3D69768465966 /* Pods-ALTableView.release.xcconfig */,
 			);
-			name = "Pods-ALTableViewTests";
-			path = "Target Support Files/Pods-ALTableViewTests";
+			name = "Pods-ALTableView";
+			path = "Target Support Files/Pods-ALTableView";
+			sourceTree = "<group>";
+		};
+		A5F333DF13D2F1D36A7DB126BCCFF2F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8B24AA3BF5E0D8AC9E6D188F36DDA7E /* Pods_ALTableView.framework */,
+				264F1069FF39040055A39C7513E63641 /* Pods_ALTableViewTests.framework */,
+				20D16A866A1AB3E82DBB6708B21B65B0 /* Pods_TestALTableView.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -187,6 +185,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		39D19D584636E2A4235ABED38B9942C3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B560DBC8077686BA0438CE3616DB282 /* Pods-TestALTableView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A5D3EC1923A599CBA2F7B28725C7B22 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,32 +209,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7E44008DF213D6D68FE61ECBE02EF63 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55A579A2A313DC0B0B6DC11A97B53AD8 /* Pods-ALTableViewUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2B0BF9978EAF7E22C765A6CD39D4D9BF /* Pods-ALTableViewUITests */ = {
+		00E567186B5E9BBD8B75CC28ADAECF62 /* Pods-TestALTableView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC2467E16CE9BED33C9A36FB3DA0B3D0 /* Build configuration list for PBXNativeTarget "Pods-ALTableViewUITests" */;
+			buildConfigurationList = 6553FB7C9E9D87F79E88583F807BBE2E /* Build configuration list for PBXNativeTarget "Pods-TestALTableView" */;
 			buildPhases = (
-				6B26777B7EDB56D70E17C8247CDEBAB2 /* Sources */,
-				4C3855A7742ACE3703D354B23572ACDB /* Frameworks */,
-				A7E44008DF213D6D68FE61ECBE02EF63 /* Headers */,
+				2BB4107440601E916FDF807E8482D86D /* Sources */,
+				B78E6DD1F79184E2E6D2136571892D4A /* Frameworks */,
+				39D19D584636E2A4235ABED38B9942C3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-ALTableViewUITests";
-			productName = "Pods-ALTableViewUITests";
-			productReference = 272EDD25E8C1773F543E48A441D5A4BA /* Pods_ALTableViewUITests.framework */;
+			name = "Pods-TestALTableView";
+			productName = "Pods-TestALTableView";
+			productReference = 20D16A866A1AB3E82DBB6708B21B65B0 /* Pods_TestALTableView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9ACBC670A8DA89C3FC1AB5CD2A2D9115 /* Pods-ALTableView */ = {
@@ -245,7 +243,7 @@
 			);
 			name = "Pods-ALTableView";
 			productName = "Pods-ALTableView";
-			productReference = AE22AC07C3AAF9F186792114F12DBA09 /* Pods_ALTableView.framework */;
+			productReference = E8B24AA3BF5E0D8AC9E6D188F36DDA7E /* Pods_ALTableView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BDAF8CDD819045043AB76E1DBABEEB48 /* Pods-ALTableViewTests */ = {
@@ -262,7 +260,7 @@
 			);
 			name = "Pods-ALTableViewTests";
 			productName = "Pods-ALTableViewTests";
-			productReference = 05FCB5D5AB34519BE0418DBB4556C42F /* Pods_ALTableViewTests.framework */;
+			productReference = 264F1069FF39040055A39C7513E63641 /* Pods_ALTableViewTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -282,23 +280,23 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 37F7FD4E412169F50F1A53FA3211546C /* Products */;
+			productRefGroup = A5F333DF13D2F1D36A7DB126BCCFF2F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9ACBC670A8DA89C3FC1AB5CD2A2D9115 /* Pods-ALTableView */,
 				BDAF8CDD819045043AB76E1DBABEEB48 /* Pods-ALTableViewTests */,
-				2B0BF9978EAF7E22C765A6CD39D4D9BF /* Pods-ALTableViewUITests */,
+				00E567186B5E9BBD8B75CC28ADAECF62 /* Pods-TestALTableView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6B26777B7EDB56D70E17C8247CDEBAB2 /* Sources */ = {
+		2BB4107440601E916FDF807E8482D86D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA314033AFAA1567E0746324FF5C47B7 /* Pods-ALTableViewUITests-dummy.m in Sources */,
+				EE11EB7D3947D8A14C912A3E0C87C596 /* Pods-TestALTableView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,39 +319,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		20C7C49D8423AA04AD3198C8827AE631 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 553B03F82421965D33D8558A2414DC9A /* Pods-ALTableViewUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ALTableViewUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ALTableViewUITests/Pods-ALTableViewUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ALTableViewUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		26F954BA177A9A46FFFD4E23ED11D67A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -414,7 +379,7 @@
 		};
 		4434A7CB1FFE35A9C21E7CA6139E2B8F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BED0FEBECA058474E68E24C2BEBD651 /* Pods-ALTableView.debug.xcconfig */;
+			baseConfigurationReference = 866C2D78F3450C7CCD0CF0F707498CB5 /* Pods-ALTableView.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -444,9 +409,9 @@
 			};
 			name = Debug;
 		};
-		44ECF4AF92548662812583B8167407D9 /* Debug */ = {
+		70A8A342D58A748EF6D712734F08453E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BFB9FD321D51E8398147FE2887D6285 /* Pods-ALTableViewUITests.debug.xcconfig */;
+			baseConfigurationReference = 45E8547E8AB00D77600768A206CCBBE7 /* Pods-TestALTableView.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -457,17 +422,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ALTableViewUITests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TestALTableView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ALTableViewUITests/Pods-ALTableViewUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TestALTableView/Pods-TestALTableView.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ALTableViewUITests;
+				PRODUCT_NAME = Pods_TestALTableView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,7 +443,7 @@
 		};
 		85867FA5E694E2E954D5248A6B9967E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 722010EE561045FBA425B06A0CE7789E /* Pods-ALTableView.release.xcconfig */;
+			baseConfigurationReference = 73844C70D7212B1F54C3D69768465966 /* Pods-ALTableView.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -511,7 +476,7 @@
 		};
 		A5C5126DED695AEB1F76DC7F254CDB89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 635A48AD304F5D526E42C2049D378AD9 /* Pods-ALTableViewTests.debug.xcconfig */;
+			baseConfigurationReference = 86C7C73ABE278B56B6163C340FF88586 /* Pods-ALTableViewTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -540,6 +505,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		C775B24DFE05EE1692673EA6D25AE700 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B22BA8E525A652324FACD4839EF515 /* Pods-TestALTableView.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TestALTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TestALTableView/Pods-TestALTableView.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TestALTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -606,7 +604,7 @@
 		};
 		E9CF497A28B47D745A51C1C82351C68F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0943FF2417275B381D7D847D02CF43DF /* Pods-ALTableViewTests.release.xcconfig */;
+			baseConfigurationReference = 7DEEFBEBD54A9805B6B6DD5219189BD2 /* Pods-ALTableViewTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -658,20 +656,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6553FB7C9E9D87F79E88583F807BBE2E /* Build configuration list for PBXNativeTarget "Pods-TestALTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A8A342D58A748EF6D712734F08453E /* Debug */,
+				C775B24DFE05EE1692673EA6D25AE700 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7A22B56DA0D28D6B89179762BA3CE6A7 /* Build configuration list for PBXNativeTarget "Pods-ALTableViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5C5126DED695AEB1F76DC7F254CDB89 /* Debug */,
 				E9CF497A28B47D745A51C1C82351C68F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BC2467E16CE9BED33C9A36FB3DA0B3D0 /* Build configuration list for PBXNativeTarget "Pods-ALTableViewUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				44ECF4AF92548662812583B8167407D9 /* Debug */,
-				20C7C49D8423AA04AD3198C8827AE631 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

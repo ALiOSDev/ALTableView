@@ -1,20 +1,30 @@
-# Uncomment the next line to define a global platform for your project
+# Uncomment this line to define a global platform for your project
+
 platform :ios, '9.0'
 
+workspace 'ALTableView'
+use_frameworks!
+
+def app_pods
+    project 'TestALTableView/TestALTableView.xcodeproj'
+end
+
+def framework_pods
+    project 'ALTableView/ALTableView.xcodeproj'
+end
+
 target 'ALTableView' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+    
+    framework_pods
+    # Pods for ALTableView
+    
+    target 'ALTableViewTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    
+end
 
-  # Pods for ALTableView
-
-  target 'ALTableViewTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ALTableViewUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'TestALTableView' do
+    app_pods
 end

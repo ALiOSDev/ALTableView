@@ -1,6 +1,0 @@
-framework module Pods_ALTableViewUITests {
-  umbrella header "Pods-ALTableViewUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

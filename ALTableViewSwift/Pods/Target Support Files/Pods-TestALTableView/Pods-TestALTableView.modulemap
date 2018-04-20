@@ -1,0 +1,6 @@
+framework module Pods_TestALTableView {
+  umbrella header "Pods-TestALTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}
