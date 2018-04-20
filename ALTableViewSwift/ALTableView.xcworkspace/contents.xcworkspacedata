@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ALTableView.xcodeproj">
+      location = "group:ALTableView/ALTableView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TestALTableView/TestALTableView.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
