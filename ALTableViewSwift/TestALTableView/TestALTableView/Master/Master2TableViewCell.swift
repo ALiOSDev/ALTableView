@@ -11,6 +11,9 @@ import ALTableView
 
 class Master2TableViewCell: UITableViewCell, ALCellProtocol {
 
+    static let nib = "Master2TableViewCell"
+    static let reuseIdentifier = "Master2TableViewCellReuseIdentifier"
+    
     @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
