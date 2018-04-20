@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ALTableView"
-  s.version      = "0.1.3"
+  s.version      = "0.1.5"
   s.summary      = "ALTableView Pod"
 
   s.homepage     = "https://github.com/ALiOSDev/ALTableView"
@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/ALiOSDev/ALTableView.git", :tag => "#{s.version}"}
 
-  s.source_files = 'ALTableViewSwift/ALTableView/ALTableViewClasses/**/*.{swift,h,m}'
+  s.source_files = 'ALTableViewSwift/ALTableView/ALTableView/ALTableViewClasses/**/*.{swift,h,m}'
 
 end
