@@ -27,7 +27,7 @@ public class ALTableView: NSObject {
     
     //MARK: - Initializers
     
-    init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
+    public init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
         
 //        self.sectionManager = ALSectionManager(sectionElements: sectionElements)
         self.sectionElements = sectionElements
