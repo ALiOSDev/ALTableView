@@ -31,6 +31,7 @@ class MasterViewController: UITableViewController {
         self.tableView.delegate = self.alTableView
         self.tableView.dataSource = self.alTableView
         self.tableView.reloadData()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
     
     override func viewWillAppear(_ animated: Bool) {
