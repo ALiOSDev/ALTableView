@@ -11,18 +11,10 @@ import ALTableView
 
 class MasterTableViewCell: UITableViewCell, ALCellProtocol {
     
-    @IBOutlet weak var labelText: UILabel!
+    static let nib = "MasterTableViewCell"
+    static let reuseIdentifier = "MasterTableViewCellReuseIdentifier"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var labelText: UILabel!
     
     public func cellCreated(dataObject: Any) {
         if let title = dataObject as? String {
@@ -31,11 +23,11 @@ class MasterTableViewCell: UITableViewCell, ALCellProtocol {
     }
     
     public func cellPressed(viewController: UIViewController?) {
-//        print(self.labelText.text)
+        self.labelText.text = "Tapped"
     }
     
-//    func cellCreated(dataObject: Any) {
-//        
-//    }
+    func cellDeselected() {
+        self.labelText.text = "Deselected"
+    }
     
 }
