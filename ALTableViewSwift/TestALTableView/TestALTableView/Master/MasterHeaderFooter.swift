@@ -11,6 +11,9 @@ import ALTableView
 
 class MasterHeaderFooter: UITableViewHeaderFooterView, ALHeaderFooterProtocol {
 
+    static let nib = "MasterHeaderFooter"
+    static let reuseIdentifier = "MasterHeaderFooterReuseIdentifier"
+    
     @IBOutlet weak var labelText: UILabel!
     /*
     // Only override draw() if you perform custom drawing.
