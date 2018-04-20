@@ -1,13 +1,37 @@
 ALTableView
 ==============
 
-Download
+Installation
 --------
+
+The development of the Objective-C part of this project has been discontinued. The latest stable version of the Objective-C code is in the version [0.1.1](https://github.com/ALiOSDev/ALTableView/tree/0.1.1)
 
 This framework is still on development. We cannot guarantee yet that all the features work.
 
-You can try it adding [these classes](https://github.com/ALiOSDev/ALTableView/tree/master/ALTableViewFrameworkExamples/ALTableViewFrameworkExamples/ALTableViewClasses) to your project.
+The latest stable version for swift is  [0.1.5](https://github.com/ALiOSDev/ALTableView/tree/0.1.5)
 
+
+**CocoaPods**
+
+To integrate ALTableView into your Xcode project using CocoaPods, specify it in your Podfile:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'ALTableView', '~> 0.1.5'
+end
+```
+
+Alternatively, you can try adding [these classes](https://github.com/ALiOSDev/ALTableView/tree/master/ALTableViewSwift/ALTableView/ALTableView/ALTableViewClasses) to your project.
+
+Requirements
+--------
+
+Swift 4.0
+iOS 9.0
 
 How it works
 --------
@@ -32,214 +56,106 @@ Easy to use, just inherit from UITableViewCell, and implement those 3 methods.
 - **cellCreated** receive like parameter the data that you want to show in the cell
 - **cellDeselected** it is call when your cell is deselected
 
-```objective-c
+```swift
 
-#import "Example1Cell1.h"
+import UIKit
+import ALTableView
 
-@implementation Example1Cell1
-
--(void) cellPressed: (UIViewController *) viewController {
-    self.label.text = @"Tapping cells is funny, huh?";
+class MasterTableViewCell: UITableViewCell, ALCellProtocol {
+    
+    static let nib = "MasterTableViewCell"
+    static let reuseIdentifier = "MasterTableViewCellReuseIdentifier"
+    
+    @IBOutlet weak var labelText: UILabel!
+    
+    public func cellCreated(dataObject: Any) {
+        if let title = dataObject as? String {
+            self.labelText.text = title
+        }
+    }
+    
+    public func cellPressed(viewController: UIViewController?) {
+        self.labelText.text = "Tapped"
+    }
+    
+    func cellDeselected() {
+        self.labelText.text = "Deselected"
+    }
+    
 }
-
--(void) cellCreated: (NSNumber *) object {
-    self.label.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
-}
-
--(void) cellDeselected {
-    self.label.text = [NSString stringWithFormat:@"deselected"];
-}
-
-@end
 
 ```
 
 Create a RowElement that encapsules your cell and data
 
-```objective-c
+```swift
 
-RowElement * row1 = [RowElement rowElementWithClassName:[Example1Cell1 class] object:@40 heightCell:@40 cellIdentifier:nil];
+let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Cell text", estimateHeightMode: true)
 
 ```
 
 If you don't want to implement the 3 methods you can use blocks instead
 
-```objective-c
+```swift
 
-RowElement * row2 = [RowElement rowElementWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle 
-    CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
-        cell.textLabel.text = @"Cell selected";
-    } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell)  {
-        cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
-        cell.detailTextLabel.text = @"hola";
-    } CellDeselectedHandler:^(UITableViewCell * cell) {
-        cell.textLabel.text = @"Cell deselected";
-    }];
-    
+let rowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Cell text", estimateHeightMode: true, pressedHandler: { (viewController, cell) in
+                if let cell = cell as? MasterTableViewCell {
+                    cell.labelText.text = "Tapped"
+                }
+                
+            }, createdHandler: { (dataObject, cell) in
+                if let title = dataObject as? String, let cell = cell as? MasterTableViewCell {
+                    cell.labelText.text = title
+                }
+            }) { (cell) in
+                if let cell = cell as? MasterTableViewCell {
+                    cell.labelText.text = "Deselected"
+                }
+            }
 ```
 
-Example of Custom TableView
+Example of ALTableView
 --------
 
-You can inherit from ALTableView just like if you inherit from a UITableViewController.
-
-```objective-c
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self registerCells];
-    [self replaceAllSectionElements:[self createElements]];
-}
-
--(void) registerCells {
-    [self registerClass:[Example1Cell1 class] CellIdentifier:@"Example1Cell1"];
-}
-
-- (NSMutableArray *) createElements {
-    // Build Sections
-    NSMutableArray * sections = [NSMutableArray array];
-    NSMutableArray * rows = [NSMutableArray array];
-    
-    
-    // First section ************
-    
-    [rows addObject:[RowElement rowElementWithClassName:[Example1Cell2 class] object:@60 heightCell:@60]];
-
-    RowElement * row3 = [RowElement rowElementWithClassName:[UITableViewCell class] object:@40 heightCell:@40 cellIdentifier:nil CellStyle:UITableViewCellStyleSubtitle
-                                         CellPressedHandler:^(UIViewController * viewController, UITableViewCell * cell) {
-                                             cell.textLabel.text = @"Cell selected";
-                                             
-                                             for (NSDictionary *dic in [[self retrieveAllElements] allValues]) {
-                                                 NSLog(@"%@", dic);
-                                             }
-                                         } CellCreatedHandler:^(NSNumber * object, UITableViewCell * cell) {
-                                             cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
-                                             cell.detailTextLabel.text = @"hola";
-                                         } CellDeselectedHandler:^(UITableViewCell * cell) {
-                                             cell.textLabel.text = @"Cell deselected";
-                                         }];
-    [rows addObject:row3];
-    
-    SectionElement * sectionElement = [SectionElement sectionElementWithSectionTitleIndex:nil viewHeader:nil viewFooter:nil heightHeader:@0 heightFooter:@0 cellObjects:rows isExpandable:NO];
-    [sections addObject:sectionElement];
-    
-    
-    // Second section ************
-    
-    rows = [NSMutableArray array];
-    
-    NSDictionary *params2 = @{
-                             PARAM_ROWELEMENT_CLASS:[UITableViewCell class],
-                             PARAM_ROWELEMENT_OBJECT:@40,
-                             PARAM_ROWELEMENT_HEIGHTCELL:@40,
-                             PARAM_ROWELEMENT_CELL_STYLE:[NSNumber numberWithLong:UITableViewCellStyleSubtitle],
-                             PARAM_ROWELEMENT_CELL_PRESSED:^(UIViewController * viewController, UITableViewCell * cell) {
-                                 cell.textLabel.text = @"Cell selected";
-                             },
-                             PARAM_ROWELEMENT_CELL_CREATED:^(NSNumber * object, UITableViewCell * cell) {
-                                 cell.textLabel.text = [NSString stringWithFormat:@"My height is: %@",[object stringValue]];
-                                 cell.detailTextLabel.text = @"hola";
-                             }};
-    [rows addObject:[RowElement rowElementWithParams:params2]];
-    
-    UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
-    labelTitle.text = @"Section 2 Header";
-    labelTitle.backgroundColor = [UIColor greenColor];
-    
-    NSDictionary *paramsSection = @{
-                              PARAM_SECTIONELEMENT_VIEW_HEADER:labelTitle,
-                              PARAM_SECTIONELEMENT_HEIGHT_HEADER:@40,
-                              PARAM_SECTIONELEMENT_CELL_OBJECTS:rows,
-                              PARAM_SECTIONELEMENT_IS_EXPANDABLE:[NSNumber numberWithBool:YES]
-                              };    
-    [sections addObject:[SectionElement sectionElementWithParams:paramsSection]];
-    
-    return sections;
-}
-
-```
-
-And now in your Swift code.
 
 ```swift
 
+import UIKit
+import ALTableView
 
- override func viewDidLoad() {
-    super.viewDidLoad()
-
-    registerCells()
-    replaceAllSectionElements(createElements())
- }
-        
-func registerCells() {
-    self.registerClass(Example4Cell1.classForCoder(), cellIdentifier: "Example4Cell1")
-}
+class MasterViewController: UITableViewController {
     
-func createElements() -> NSMutableArray {
-        let sections = NSMutableArray()
-        var rows = NSMutableArray()
+    var alTableView: ALTableView?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let sectionElements = self.createElements()
         
-        
-        // First section ************
-        
-        rows.addObject(RowElement.init(className: Example4Cell1.classForCoder(), object: 40, heightCell: 60, cellIdentifier: nil))
-        
-        let row2 = RowElement.init(className: UITableViewCell.classForCoder(), object: 40, heightCell: 60, cellIdentifier: nil, cellStyle: UITableViewCellStyle.Subtitle,
-            cellPressedHandler: { viewController, cell in
-                cell.textLabel!!.text = "Cell selected"
-                cell.detailTextLabel!!.text = "adios"
-            },
-            cellCreatedHandler: { (object, cell) -> Void in
-                cell.textLabel!!.text = "My height is: " + object.stringValue
-                cell.detailTextLabel!!.text = "Hola"
-            },
-            cellDeselectedHandler: { cell in
-                cell.textLabel!!.text = "Cell deselected"
-        })
-        rows.addObject(row2)
-        
-        let sectionElement = SectionElement.init(sectionTitleIndex: nil, viewHeader: nil, viewFooter: nil, heightHeader: 0, heightFooter: 0, cellObjects: rows, isExpandable: false)
-        sections.addObject(sectionElement)
-        
-        
-        // Second section ************
-        
-        rows = NSMutableArray()
-        
-        let blockCreated : @convention(block) (object: AnyObject, cell: UITableViewCell) -> Void = { object, cell in
-            cell.textLabel!.text = "My height is: " + object.stringValue
-            cell.detailTextLabel!.text = "Hola"
+        self.alTableView = ALTableView(sectionElements: sectionElements, viewController: self, tableView: self.tableView)
+        self.registerCells()
+        self.tableView.delegate = self.alTableView
+        self.tableView.dataSource = self.alTableView
+        self.tableView.reloadData()
+    }
+    
+    func createElements() -> [ALSectionElement] {
+        var sectionElements = [ALSectionElement]()
+        for _ in 0...2 { //Typically you will iterate over your datasource
+            var rowElements = Array<ALRowElement>()
+            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Cell text", estimateHeightMode: true)
+            rowElements.append(rowElement)
+
+            let section = ALSectionElement(rowElements: rowElements, headerElement: nil, footerElement: nil, isExpandable: true)
+            sectionElements.append(section)
         }
         
-        let blockPressed : @convention(block) (viewController: UIViewController, cell: UITableViewCell) -> Void = { viewController, cell in
-            cell.textLabel!.text = "Cell selected"
-            cell.detailTextLabel!.text = "adios"
-        }
-        
-        let params2 : [String : AnyObject] = [
-            PARAM_ROWELEMENT_CLASS:UITableViewCell.classForCoder(),
-            PARAM_ROWELEMENT_OBJECT:40 as NSNumber,
-            PARAM_ROWELEMENT_HEIGHTCELL:40 as NSNumber,
-            PARAM_ROWELEMENT_CELL_STYLE:UITableViewCellStyle.Subtitle.rawValue as NSNumber,
-            PARAM_ROWELEMENT_CELL_CREATED:unsafeBitCast(blockCreated, AnyObject.self),
-            PARAM_ROWELEMENT_CELL_PRESSED:unsafeBitCast(blockPressed, AnyObject.self)
-        ]
-        rows.addObject(RowElement.init(params: params2))
-        
-        let labelTitle = UILabel.init(frame: CGRectMake(0, 0, view.frame.size.width, 40))
-        labelTitle.text = "Section 2 Header"
-        labelTitle.backgroundColor = UIColor.blueColor()
-        
-        let paramsSection : [String : AnyObject] = [
-            PARAM_SECTIONELEMENT_VIEW_HEADER:labelTitle,
-            PARAM_SECTIONELEMENT_HEIGHT_HEADER:40 as NSNumber,
-            PARAM_SECTIONELEMENT_CELL_OBJECTS:rows,
-            PARAM_SECTIONELEMENT_IS_EXPANDABLE:true as NSNumber
-        ]
-        sections.addObject(SectionElement.init(params: paramsSection))
+        return sectionElements
+    }
     
-        return sections;
+    func registerCells() {
+        self.alTableView?.registerCell(nibName: MasterTableViewCell.nib, reuseIdentifier: MasterTableViewCell.reuseIdentifier)
+
+    }
 }
 
 ```
@@ -249,7 +165,6 @@ Authors
 
 Abimael Barea [@elabi3](https://github.com/elabi3) - 
 Lorenzo Villarroel [@lorencr7](https://github.com/lorencr7) 
-
 
 License
 -------
