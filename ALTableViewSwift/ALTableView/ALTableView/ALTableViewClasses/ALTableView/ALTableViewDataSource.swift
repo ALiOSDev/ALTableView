@@ -26,4 +26,5 @@ extension ALTableView: UITableViewDataSource {
         
         return self.getSectionElementAt(index: indexPath.section)?.getCellViewFrom(row: indexPath.row, tableView: tableView) ?? UITableViewCell()
     }
+
 }
