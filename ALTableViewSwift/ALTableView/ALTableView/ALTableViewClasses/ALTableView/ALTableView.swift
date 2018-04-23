@@ -29,14 +29,16 @@ public class ALTableView: NSObject {
     
     public init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
         
-//        self.sectionManager = ALSectionManager(sectionElements: sectionElements)
         self.sectionElements = sectionElements
-        self.viewController = viewController
-        self.tableView = tableView
         super.init()
+        self.viewController = viewController
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView = tableView
         self.sectionElements.forEach { (sectionElement: ALSectionElement) in
             sectionElement.delegate = self
         }
+      
     }
     
     //MARK: - Public methods

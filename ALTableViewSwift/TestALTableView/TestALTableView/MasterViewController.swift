@@ -28,8 +28,6 @@ class MasterViewController: UITableViewController {
         
         self.alTableView = ALTableView(sectionElements: sectionElements, viewController: self, tableView: self.tableView)
         self.registerCells()
-        self.tableView.delegate = self.alTableView
-        self.tableView.dataSource = self.alTableView
         self.tableView.reloadData()
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
