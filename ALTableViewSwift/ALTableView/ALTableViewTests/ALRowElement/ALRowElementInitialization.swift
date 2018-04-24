@@ -29,99 +29,99 @@ class ALRowElementInitialization: XCTestCase {
         self.viewController = nil
     }
     
-    func testDefaultConstructor() {
-        let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
-        alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
-        
-        let dataObject = "Test"
-        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: cellIdentifier, dataObject: dataObject)
-        if let rowDataObject = rowElement.getDataObject() as? String {
-            XCTAssert(rowDataObject == dataObject, "Data Object does not match the passed one")
-        } else {
-            XCTFail("Data Object class does not match the passed one")
-        }
-        
-        XCTAssert(rowElement.getHeight() == 44, "The height is not the default one")
-        
-        if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
-            if let cellText = cell.labelText.text {
-                XCTAssert(cellText == dataObject, "Cell text does not match the passed one")
-            }
-        } else {
-            XCTFail("Cell class does not match the passed one")
-        }
-    }
-    
-     func testCustomConstructor1() {
-        self.testCustomConstructor(estimateHeightMode: true)
-    }
-    
-     func testCustomConstructor2() {
-        self.testCustomConstructor(estimateHeightMode: false)
-    }
-    
-    func testCustomConstructor(estimateHeightMode: Bool = true) {
-        let cellHeight: CGFloat = 50.0
-        let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
-        alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
-        
-        let dataObject = "Test"
-        let labelTextPressed = "Pressed"
-        let labelTextDeselected = "Deselected"
-        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: cellIdentifier, dataObject: dataObject, cellStyle: .default, estimateHeightMode: estimateHeightMode, height: cellHeight, pressedHandler: { (viewController, cell) in
-            if let masterCell = cell as? MasterTableViewCell {
-                masterCell.labelText.text = labelTextPressed
-            } else {
-                XCTFail("Cell incorrect")
-            }
-        }, createdHandler: { (object, cell) in
-            if let masterCell = cell as? MasterTableViewCell {
-                if let string = object as? String {
-                    XCTAssert(string == dataObject, "Data Object does not match the passed one")
-                    masterCell.labelText.text = string
-                } else {
-                    XCTFail("Data Object Incorrect")
-                }
-            } else {
-                XCTFail("Cell incorrect")
-            }
-        }, deselectedHandler: { (cell) in
-            if let masterCell = cell as? MasterTableViewCell {
-                masterCell.labelText.text = labelTextDeselected
-            } else {
-                XCTFail("Cell incorrect")
-            }
-        })
-
-        if let rowDataObject = rowElement.getDataObject() as? String {
-            XCTAssert(rowDataObject == dataObject, "Data Object does not match the passed one")
-        } else {
-            XCTFail("Data Object class does not match the passed one")
-        }
-        
-        if estimateHeightMode {
-            XCTAssert(rowElement.getHeight() == UITableViewAutomaticDimension, "The height is not the default one")
-        } else {
-            XCTAssert(rowElement.getHeight() == cellHeight, "The height is not the default one")
-        }
-        
-        XCTAssert(rowElement.isEstimateHeightMode() == estimateHeightMode, "The estimate mode does not match the passed one")
-        
-        if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
-            if let cellText = cell.labelText.text {
-                XCTAssert(cellText == dataObject, "Cell text does not match the passed one")
-            }
-            rowElement.rowElementPressed(viewController: viewController, cell: cell)
-            if let cellText = cell.labelText.text {
-                XCTAssert(cellText == labelTextPressed, "Cell text does not match the passed one")
-            }
-            rowElement.rowElementDeselected(cell: cell)
-            if let cellText = cell.labelText.text {
-                XCTAssert(cellText == labelTextDeselected, "Cell text does not match the passed one")
-            }
-        } else {
-            XCTFail("Cell class does not match the passed one")
-        }
-    }
+//    func testDefaultConstructor() {
+//        let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
+//        alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
+//        
+//        let dataObject = "Test"
+//        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: cellIdentifier, dataObject: dataObject)
+//        if let rowDataObject = rowElement.getDataObject() as? String {
+//            XCTAssert(rowDataObject == dataObject, "Data Object does not match the passed one")
+//        } else {
+//            XCTFail("Data Object class does not match the passed one")
+//        }
+//        
+//        XCTAssert(rowElement.getHeight() == 44, "The height is not the default one")
+//        
+//        if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
+//            if let cellText = cell.labelText.text {
+//                XCTAssert(cellText == dataObject, "Cell text does not match the passed one")
+//            }
+//        } else {
+//            XCTFail("Cell class does not match the passed one")
+//        }
+//    }
+//    
+//     func testCustomConstructor1() {
+//        self.testCustomConstructor(estimateHeightMode: true)
+//    }
+//    
+//     func testCustomConstructor2() {
+//        self.testCustomConstructor(estimateHeightMode: false)
+//    }
+//    
+//    func testCustomConstructor(estimateHeightMode: Bool = true) {
+//        let cellHeight: CGFloat = 50.0
+//        let alTableView = ALTableView(sectionElements: [], viewController: viewController, tableView: tableView)
+//        alTableView.registerCell(nibName: cellIdentifier, reuseIdentifier: cellIdentifier)
+//        
+//        let dataObject = "Test"
+//        let labelTextPressed = "Pressed"
+//        let labelTextDeselected = "Deselected"
+//        let rowElement: ALRowElement = ALRowElement(className: MasterTableViewCell.classForCoder(), identifier: cellIdentifier, dataObject: dataObject, cellStyle: .default, estimateHeightMode: estimateHeightMode, height: cellHeight, pressedHandler: { (viewController, cell) in
+//            if let masterCell = cell as? MasterTableViewCell {
+//                masterCell.labelText.text = labelTextPressed
+//            } else {
+//                XCTFail("Cell incorrect")
+//            }
+//        }, createdHandler: { (object, cell) in
+//            if let masterCell = cell as? MasterTableViewCell {
+//                if let string = object as? String {
+//                    XCTAssert(string == dataObject, "Data Object does not match the passed one")
+//                    masterCell.labelText.text = string
+//                } else {
+//                    XCTFail("Data Object Incorrect")
+//                }
+//            } else {
+//                XCTFail("Cell incorrect")
+//            }
+//        }, deselectedHandler: { (cell) in
+//            if let masterCell = cell as? MasterTableViewCell {
+//                masterCell.labelText.text = labelTextDeselected
+//            } else {
+//                XCTFail("Cell incorrect")
+//            }
+//        })
+//
+//        if let rowDataObject = rowElement.getDataObject() as? String {
+//            XCTAssert(rowDataObject == dataObject, "Data Object does not match the passed one")
+//        } else {
+//            XCTFail("Data Object class does not match the passed one")
+//        }
+//        
+//        if estimateHeightMode {
+//            XCTAssert(rowElement.getHeight() == UITableViewAutomaticDimension, "The height is not the default one")
+//        } else {
+//            XCTAssert(rowElement.getHeight() == cellHeight, "The height is not the default one")
+//        }
+//        
+//        XCTAssert(rowElement.isEstimateHeightMode() == estimateHeightMode, "The estimate mode does not match the passed one")
+//        
+//        if let cell = rowElement.getViewFrom(tableView: tableView) as? MasterTableViewCell {
+//            if let cellText = cell.labelText.text {
+//                XCTAssert(cellText == dataObject, "Cell text does not match the passed one")
+//            }
+//            rowElement.rowElementPressed(viewController: viewController, cell: cell)
+//            if let cellText = cell.labelText.text {
+//                XCTAssert(cellText == labelTextPressed, "Cell text does not match the passed one")
+//            }
+//            rowElement.rowElementDeselected(cell: cell)
+//            if let cellText = cell.labelText.text {
+//                XCTAssert(cellText == labelTextDeselected, "Cell text does not match the passed one")
+//            }
+//        } else {
+//            XCTFail("Cell class does not match the passed one")
+//        }
+//    }
     
 }

@@ -31,42 +31,42 @@ extension ALTableView {
         return self.insert(rowElements: [rowElement], section: section, position: position, animation: animation)
     }
     
-    public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElements: rowElements, section: section, position: .middle(row), animation: animation)
     }
     
-    public func insert(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElement: rowElement, section: indexPath.section, row: indexPath.row, animation: animation)
     }
     
-    public func insert(rowElement: ALRowElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElement: ALRowElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElements: [rowElement], section: section, row: row, animation: animation)
     }
     
-    public func insert(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
     
-    public func insert(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElement: rowElement, section: section, position: .begining, animation: animation)
     }
     
-    public func insert(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElements: rowElements, section: section, position: .begining, animation: animation)
     }
     
-    public func insert(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElement: rowElement, section: section, position: .end, animation: animation)
     }
     
-    public func insert(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func insert(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.insert(rowElements: rowElements, section: section, position: .end, animation: animation)
     }
@@ -76,63 +76,60 @@ extension ALTableView {
 
 extension ALTableView {
     
-    private func remove(rowElements: Array<ALRowElement>, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
-        
+    private func remove(rowElements: Int, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
         guard let sectionElement: ALSectionElement = self.getSectionElementAt(index: section),
-            sectionElement.deleteRowElements(numberOfRowElements: rowElements.count, at: position) else {
+            sectionElement.deleteRowElements(numberOfRowElements: rowElements, at: position) else {
                 return false
         }
-        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements.count, operation: .delete)
+        let indexPathes = self.getIndexPathes(section: section, position: position, numberOfRowElements: rowElements, operation: .delete)
         self.tableView?.beginUpdates()
         self.tableView?.deleteRows(at: indexPathes, with: animation)
         self.tableView?.endUpdates()
         return true
     }
     
-    private func remove(rowElement: ALRowElement, section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
+    private func remove(section: Int, position: ALPosition, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElements: [rowElement], section: section, position: position, animation: animation)
+        return self.remove(rowElements: 1, section: section, position: position, animation: animation)
     }
     
-    
-    
-    public func remove(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(rowElements: Int, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(rowElements: rowElements, section: section, position: .middle(row), animation: animation)
     }
     
-    public func remove(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: indexPath.section, row: indexPath.row, animation: animation)
+        return self.remove(section: indexPath.section, row: indexPath.row, animation: animation)
     }
     
-    public func remove(rowElement: ALRowElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove( section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElements: [rowElement], section: section, row: row, animation: animation)
+        return self.remove(rowElements: 1, section: section, row: row, animation: animation)
     }
     
-    public func remove(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(rowElements: Int, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }
     
-    public func remove(rowElement: ALRowElement, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: section, position: .begining, animation: animation)
+        return self.remove(section: section, position: .begining, animation: animation)
     }
     
-    public func remove(rowElements: Array<ALRowElement>, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(rowElements: Int, atTheBeginingOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(rowElements: rowElements, section: section, position: .begining, animation: animation)
     }
     
-    public func remove(rowElement: ALRowElement, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
-        return self.remove(rowElement: rowElement, section: section, position: .end, animation: animation)
+        return self.remove(section: section, position: .end, animation: animation)
     }
     
-    public func remove(rowElements: Array<ALRowElement>, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func remove(rowElements: Int, atTheEndOfSection section: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.remove(rowElements: rowElements, section: section, position: .end, animation: animation)
     }
@@ -160,23 +157,23 @@ extension ALTableView {
         return self.replace(rowElements: [rowElement], section: section, position: position, animation: animation)
     }
     
-    public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func replace(rowElements: Array<ALRowElement>, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.replace(rowElements: rowElements, section: section, position: .middle(row), animation: animation)
     }
     
-    public func replace(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func replace(rowElement: ALRowElement, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.replace(rowElement: rowElement, section: indexPath.section, row: indexPath.row, animation: animation)
     }
     
-    public func replace(rowElement: ALRowElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func replace(rowElement: ALRowElement, section: Int, row: Int, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.replace(rowElements: [rowElement], section: section, row: row, animation: animation)
         
     }
     
-    public func replace(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
+    @discardableResult public func replace(rowElements: Array<ALRowElement>, at indexPath: IndexPath, animation: UITableViewRowAnimation = .top) -> Bool {
         
         return self.replace(rowElements: rowElements, section: indexPath.section, row: indexPath.row, animation: animation)
     }

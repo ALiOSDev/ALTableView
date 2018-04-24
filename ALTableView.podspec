@@ -1,9 +1,27 @@
+#
+# Be sure to run `pod lib lint ALTableView.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#
+
 Pod::Spec.new do |s|
   s.name         = "ALTableView"
-  s.version      = "0.1.5"
-  s.summary      = "ALTableView Pod"
+  s.version      = "0.1.6"
+  s.summary      = "An easy way to manage UITableView and UITableViewController"
 
-  s.homepage     = "https://github.com/ALiOSDev/ALTableView"
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = <<-DESC
+This framework is a generic UITableViewDataSource and UITableViewDelegate which will help you to reduce all the code you have to copy-paste everytime you create a tableView. For doing that you only need to create  SectionElement array and for each one a RowElement array.
+                       DESC
+
+  s.homepage     = "https://github.com/ALiOSDev/ALTableView.git"
   s.license      = "MIT"
 
   s.author       = "Abimael Barea, Lorenzo Villarroel"
@@ -13,6 +31,18 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/ALiOSDev/ALTableView.git", :tag => "#{s.version}"}
 
+  # s.social_media_url = 'https://twitter.com/ALTableView'
+
+  s.ios.deployment_target = '8.0'
+
   s.source_files = 'ALTableViewSwift/ALTableView/ALTableView/ALTableViewClasses/**/*.{swift,h,m}'
+
+  # s.resource_bundles = {
+  #   'ALTableView' => ['ALTableView/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
 
 end
