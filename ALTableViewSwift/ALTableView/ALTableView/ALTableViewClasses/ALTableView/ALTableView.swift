@@ -11,8 +11,6 @@ import UIKit
 @objc public protocol ALTableViewProtocol: class {
     @objc optional func tableViewPullToRefresh()
     @objc optional func tableViewDidReachEnd()
-    @objc optional func tableViewWillBeginDragging()
-    @objc optional func tableViewWillEndDragging()
 }
 
 public class ALTableView: NSObject {
