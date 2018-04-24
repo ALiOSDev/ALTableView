@@ -9,7 +9,7 @@
 import UIKit
 import ALTableView
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, ALTableViewProtocol {
     
     var detailViewController: DetailViewController? = nil
     var alTableView: ALTableView?
@@ -27,9 +27,11 @@ class MasterViewController: UITableViewController {
         let sectionElements = self.createElements()
         
         self.alTableView = ALTableView(sectionElements: sectionElements, viewController: self, tableView: self.tableView)
+        self.alTableView?.delegate = self
         self.registerCells()
         self.tableView.reloadData()
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
+        self.alTableView?.addPullToRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +60,7 @@ class MasterViewController: UITableViewController {
     
     func createElements() -> [ALSectionElement] {
         var sectionElements = [ALSectionElement]()
-        for _ in 0...2 {
+        for _ in 0...4 {
             var rowElements = Array<ALRowElement>()
             let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
             let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), identifier: Master2TableViewCell.reuseIdentifier, dataObject: 12, estimateHeightMode: true)
@@ -81,6 +83,13 @@ class MasterViewController: UITableViewController {
         self.alTableView?.registerHeaderFooter(nibName: MasterHeaderFooter.nib, reuseIdentifier: MasterHeaderFooter.reuseIdentifier)
     }
     
+    func tableViewPullToRefresh() {
+        print("Refreshed")
+    }
+    
+    func tableViewDidReachEnd() {
+        print("End Reached")
+    }
     
 }
 

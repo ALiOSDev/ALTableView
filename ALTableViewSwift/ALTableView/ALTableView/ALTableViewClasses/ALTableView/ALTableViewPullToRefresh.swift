@@ -10,6 +10,8 @@ import UIKit
 
 extension ALTableView {
     
+    private static let refreshControlTag = 1000
+    
     public func addPullToRefresh(title: String = "", titleColor: UIColor = .black, backgroundColor: UIColor = .clear, tintColor: UIColor = .black) {
         
         if let tableView = self.tableView {
@@ -21,12 +23,23 @@ extension ALTableView {
             if #available(iOS 10.0, *) {
                 tableView.refreshControl = refreshControl
             } else {
+                refreshControl.tag = ALTableView.refreshControlTag
                 tableView.addSubview(refreshControl)
             }
         }
     }
     
     @objc private func refreshTriggered(_ sender: Any) {
+        
         self.delegate?.tableViewPullToRefresh?()
+        if let tableView = self.tableView {
+            if #available(iOS 10.0, *) {
+                tableView.refreshControl?.endRefreshing()
+            } else {
+                if let refreshControl = tableView.viewWithTag(ALTableView.refreshControlTag) as? UIRefreshControl {
+                    refreshControl.endRefreshing()
+                }
+            }
+        }
     }
 }
