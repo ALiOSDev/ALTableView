@@ -8,7 +8,7 @@ The development of the Objective-C part of this project has been discontinued. T
 
 This framework is still on development. We cannot guarantee yet that all the features work.
 
-The latest stable version for swift is  [0.1.5](https://github.com/ALiOSDev/ALTableView/tree/0.1.5)
+The latest stable version for swift is  [0.1.6](https://github.com/ALiOSDev/ALTableView/tree/0.1.6)
 
 
 **CocoaPods**
@@ -21,7 +21,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'ALTableView', '~> 0.1.5'
+    pod 'ALTableView', '~> 0.1.6'
 end
 ```
 
