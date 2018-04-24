@@ -110,8 +110,8 @@ extension ALTableView {
    
     private func isLastIndexPath (indexPath: IndexPath, tableView: UITableView) -> Bool {
         
-        let isLastSection: Bool = indexPath.section == tableView.numberOfSections
-        let isLastRow: Bool = indexPath.row == tableView.numberOfRows(inSection: indexPath.section)
+        let isLastSection: Bool = indexPath.section == tableView.numberOfSections - 1
+        let isLastRow: Bool = indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
         return isLastSection && isLastRow
     }
     

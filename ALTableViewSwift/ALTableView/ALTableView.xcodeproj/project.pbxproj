@@ -28,6 +28,7 @@
 		453A35C02089D56F00187F68 /* ALArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A35BD2089D56F00187F68 /* ALArrayExtensionTests.swift */; };
 		453A35C12089D56F00187F68 /* ALRowElementInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A35BF2089D56F00187F68 /* ALRowElementInitialization.swift */; };
 		45422DDB208A010E007DC6D1 /* ALTableViewEditingManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45422DDA208A010E007DC6D1 /* ALTableViewEditingManaging.swift */; };
+		45E91DC4208F14FF006FFCEB /* ALTableViewPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E91DC3208F14FF006FFCEB /* ALTableViewPullToRefresh.swift */; };
 		C322833F91ED3CE2CA2EC36F /* Pods_ALTableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6008E8BF800AFD239EE0BC /* Pods_ALTableViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		453A35BD2089D56F00187F68 /* ALArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALArrayExtensionTests.swift; sourceTree = "<group>"; };
 		453A35BF2089D56F00187F68 /* ALRowElementInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALRowElementInitialization.swift; sourceTree = "<group>"; };
 		45422DDA208A010E007DC6D1 /* ALTableViewEditingManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewEditingManaging.swift; sourceTree = "<group>"; };
+		45E91DC3208F14FF006FFCEB /* ALTableViewPullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTableViewPullToRefresh.swift; sourceTree = "<group>"; };
 		85B4AE96D7836F5DF3EA6636 /* Pods-ALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableView.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ALTableView/Pods-ALTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C60924975A25C76054241D /* Pods-ALTableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALTableViewTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ALTableViewTests/Pods-ALTableViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		A54B1F9348215D3388C59AB2 /* Pods_ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				453A359B2089D56400187F68 /* ALTableView.swift */,
 				453A359C2089D56400187F68 /* ALTableViewDataSource.swift */,
 				45422DDA208A010E007DC6D1 /* ALTableViewEditingManaging.swift */,
+				45E91DC3208F14FF006FFCEB /* ALTableViewPullToRefresh.swift */,
 			);
 			path = ALTableView;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				453A35B62089D56400187F68 /* ALSectionElementRow.swift in Sources */,
 				45422DDB208A010E007DC6D1 /* ALTableViewEditingManaging.swift in Sources */,
 				453A35B12089D56400187F68 /* ALTableViewDataSource.swift in Sources */,
+				45E91DC4208F14FF006FFCEB /* ALTableViewPullToRefresh.swift in Sources */,
 				453A35AE2089D56400187F68 /* ALTableViewDelegate.swift in Sources */,
 				453A35B42089D56400187F68 /* ALSectionElement.swift in Sources */,
 				453A35B82089D56400187F68 /* ALElement.swift in Sources */,
@@ -633,6 +637,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ALTableView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +663,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ALTableView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -35,7 +35,7 @@ extension ALTableView {
         
         switch editingStyle {
         case .delete:
-            self.remove(at: indexPath)
+            self.remove(at: indexPath, animation: .automatic)
         default:
             break
         }
