@@ -27,8 +27,13 @@ class MasterHeaderFooter: UITableViewHeaderFooterView, ALHeaderFooterProtocol {
         if let title: String = dataObject as? String {
             self.labelText.text = title
         }
-        self.contentView.backgroundColor = .green
-//        self.labelText.backgroundColor = .red
+        
+        if #available(iOS 10.0, *) {
+            self.contentView.backgroundColor = .green
+        } else {
+            self.backgroundView = UIView()
+            self.backgroundView?.backgroundColor = .green
+        }
     }
 
 }
