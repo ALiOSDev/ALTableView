@@ -152,13 +152,13 @@
 		453A35972089D56400187F68 /* ALTableView */ = {
 			isa = PBXGroup;
 			children = (
-				453A35982089D56400187F68 /* ALTableViewRowManaging.swift */,
-				453A35992089D56400187F68 /* ALTableViewDelegate.swift */,
-				453A359A2089D56400187F68 /* ALTableViewSectionManaging.swift */,
 				453A359B2089D56400187F68 /* ALTableView.swift */,
 				453A359C2089D56400187F68 /* ALTableViewDataSource.swift */,
+				453A35992089D56400187F68 /* ALTableViewDelegate.swift */,
 				45422DDA208A010E007DC6D1 /* ALTableViewEditingManaging.swift */,
 				45E91DC3208F14FF006FFCEB /* ALTableViewPullToRefresh.swift */,
+				453A35982089D56400187F68 /* ALTableViewRowManaging.swift */,
+				453A359A2089D56400187F68 /* ALTableViewSectionManaging.swift */,
 			);
 			path = ALTableView;
 			sourceTree = "<group>";
