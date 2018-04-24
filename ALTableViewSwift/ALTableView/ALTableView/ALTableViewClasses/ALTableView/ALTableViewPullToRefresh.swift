@@ -12,13 +12,14 @@ extension ALTableView {
     
     private static let refreshControlTag = 1000
     
-    public func addPullToRefresh(title: String = "", titleColor: UIColor = .black, backgroundColor: UIColor = .clear, tintColor: UIColor = .black) {
+    public func addPullToRefresh(title: NSAttributedString = NSAttributedString(string: ""), backgroundColor: UIColor = .clear, tintColor: UIColor = .black) {
         
         if let tableView = self.tableView {
-            let refreshControl = UIRefreshControl()
+            let refreshControl: UIRefreshControl = UIRefreshControl()
             refreshControl.backgroundColor = backgroundColor
             refreshControl.tintColor = tintColor
             refreshControl.addTarget(self, action: #selector(refreshTriggered(_:)), for: .valueChanged)
+            refreshControl.attributedTitle = title
             
             if #available(iOS 10.0, *) {
                 tableView.refreshControl = refreshControl

@@ -31,7 +31,7 @@ class MasterViewController: UITableViewController, ALTableViewProtocol {
         self.registerCells()
         self.tableView.reloadData()
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
-        self.alTableView?.addPullToRefresh()
+        self.alTableView?.addPullToRefresh(title: NSAttributedString(string: "Refreshing..."), backgroundColor: .green, tintColor: .blue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
