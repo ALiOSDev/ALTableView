@@ -36,7 +36,7 @@ iOS 9.0
 How it works
 --------
 
-This framework inherit from UITableViewController and manage the delegate and datasource of UITableView for you. For doing that you only need to create  SectionElement array and for each one a RowElement array.
+This framework is a generic UITableViewDataSource and UITableViewDelegate which will help you to reduce all the code you have to copy-paste everytime you create a tableView. For doing that you only need to create  SectionElement array and for each one a RowElement array.
 
 <img src="https://github.com/ALiOSDev/ALTableView/blob/master/screenshots/ALTableViewDiagram.png">
 
