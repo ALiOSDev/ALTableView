@@ -33,7 +33,7 @@ This framework is a generic UITableViewDataSource and UITableViewDelegate which 
 
   # s.social_media_url = 'https://twitter.com/ALTableView'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'ALTableViewSwift/ALTableView/ALTableView/ALTableViewClasses/**/*.{swift,h,m}'
 
