@@ -8,7 +8,7 @@ The development of the Objective-C part of this project has been discontinued. T
 
 This framework is still on development. We cannot guarantee yet that all the features work.
 
-The latest stable version for swift is  [0.1.6](https://github.com/ALiOSDev/ALTableView/tree/0.1.6)
+The latest stable version for swift is  [0.2.0](https://github.com/ALiOSDev/ALTableView/tree/0.2.0), which includes support for swift 4.2
 
 
 **CocoaPods**
@@ -30,7 +30,7 @@ Alternatively, you can try adding [these classes](https://github.com/ALiOSDev/AL
 Requirements
 --------
 
-Swift 4.0
+Swift 4.2
 iOS 9.0
 
 How it works

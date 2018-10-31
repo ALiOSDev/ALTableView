@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "ALTableView"
-  s.version      = "0.1.6"
+  s.version      = "0.2.0"
   s.summary      = "An easy way to manage UITableView and UITableViewController"
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ This framework is a generic UITableViewDataSource and UITableViewDelegate which 
   s.license      = "MIT"
 
   s.author       = "Abimael Barea, Lorenzo Villarroel"
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 
   s.platform     = :ios, "9.0"
 
