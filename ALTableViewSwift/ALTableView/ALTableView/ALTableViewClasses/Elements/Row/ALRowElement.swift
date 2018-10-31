@@ -46,7 +46,7 @@ public class ALRowElement: ALElement, ALRowElementProtocol  {
 
     private var className: AnyClass //TODO es posible que el className no sea necesario
 
-    private let cellStyle: UITableViewCellStyle
+    private let cellStyle: UITableViewCell.CellStyle
     
     private var pressedHandler: ALCellPressedHandler?
     private var createdHandler: ALCellCreatedHandler?
@@ -54,7 +54,7 @@ public class ALRowElement: ALElement, ALRowElementProtocol  {
     
     //MARK: - Initializers
     
-    public init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+    public init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCell.CellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
         
         self.className = className
         self.cellStyle = cellStyle

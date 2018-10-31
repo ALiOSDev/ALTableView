@@ -38,7 +38,7 @@ public class ALElement {
     
     internal func getHeight() -> CGFloat {
         if self.estimateHeightMode {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
         return self.height
     }
