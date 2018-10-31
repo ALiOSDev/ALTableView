@@ -19,15 +19,24 @@ public class ALTableView: NSObject {
     
     internal var sectionElements: Array<ALSectionElement>
     public weak var delegate: ALTableViewProtocol?
+    public weak var editingDelegate: ALTableViewRowEditingProtocol?
     public weak var viewController: UIViewController?
     public weak var tableView: UITableView?
+    public var editingAllowed: Bool
+    public var movingRowsAllowed: Bool
     
     
     //MARK: - Initializers
     
-    public init(sectionElements: Array<ALSectionElement>, viewController: UIViewController, tableView: UITableView) {
+    public init(sectionElements: Array<ALSectionElement>,
+                viewController: UIViewController,
+                tableView: UITableView,
+                editingAllowed: Bool = false,
+                movingRowsAllowed: Bool = false) {
         
         self.sectionElements = sectionElements
+        self.editingAllowed = editingAllowed
+        self.movingRowsAllowed = movingRowsAllowed
         super.init()
         self.viewController = viewController
         tableView.delegate = self
