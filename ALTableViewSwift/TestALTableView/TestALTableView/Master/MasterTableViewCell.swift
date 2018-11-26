@@ -16,7 +16,7 @@ class MasterTableViewCell: UITableViewCell, ALCellProtocol {
     
     @IBOutlet weak var labelText: UILabel!
     
-    public func cellCreated(dataObject: Any) {
+    public func cellCreated(dataObject: Any?) {
         if let title = dataObject as? String {
             self.labelText.text = title
         }

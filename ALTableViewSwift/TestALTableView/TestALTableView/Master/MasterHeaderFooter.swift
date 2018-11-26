@@ -23,7 +23,7 @@ class MasterHeaderFooter: UITableViewHeaderFooterView, ALHeaderFooterProtocol {
     }
     */
     
-    func viewCreated(dataObject: Any) {
+    func viewCreated(dataObject: Any?) {
         if let title: String = dataObject as? String {
             self.labelText.text = title
         }
