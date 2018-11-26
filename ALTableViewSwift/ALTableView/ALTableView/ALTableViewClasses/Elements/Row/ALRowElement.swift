@@ -9,7 +9,7 @@
 import UIKit
 
 public typealias ALCellPressedHandler = (UIViewController?, UITableViewCell) -> Void
-public typealias ALCellCreatedHandler = (Any, UITableViewCell) -> Void
+public typealias ALCellCreatedHandler = (Any?, UITableViewCell) -> Void
 public typealias ALCellDeselectedHandler = (UITableViewCell) -> Void
 
 //Implemented by ALRowElement
@@ -22,7 +22,7 @@ public protocol ALRowElementProtocol {
 public protocol ALCellProtocol {
     func cellPressed (viewController: UIViewController?) -> Void
     func cellDeselected () -> Void
-    func cellCreated(dataObject: Any) -> Void
+    func cellCreated(dataObject: Any?) -> Void
 }
 
 extension ALCellProtocol {
@@ -34,7 +34,7 @@ extension ALCellProtocol {
         
     }
     
-    public func cellCreated(dataObject: Any) -> Void {
+    public func cellCreated(dataObject: Any?) -> Void {
         print("ALCellProtocol")
     }
 }
@@ -54,7 +54,7 @@ public class ALRowElement: ALElement, ALRowElementProtocol  {
     
     //MARK: - Initializers
     
-    public init(className: AnyClass, identifier: String, dataObject: Any, cellStyle: UITableViewCell.CellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
+    public init(className: AnyClass, identifier: String, dataObject: Any?, cellStyle: UITableViewCell.CellStyle = .default, estimateHeightMode: Bool = false, height: CGFloat = 44.0, pressedHandler: ALCellPressedHandler? = nil, createdHandler: ALCellCreatedHandler? = nil, deselectedHandler: ALCellDeselectedHandler? = nil) {
         
         self.className = className
         self.cellStyle = cellStyle

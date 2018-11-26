@@ -26,7 +26,7 @@ class Master2TableViewCell: UITableViewCell, ALCellProtocol {
         // Configure the view for the selected state
     }
     
-    public func cellCreated(dataObject: Any) {
+    public func cellCreated(dataObject: Any?) {
         if let title = dataObject as? Int {
             self.label.text = String(title)
         }

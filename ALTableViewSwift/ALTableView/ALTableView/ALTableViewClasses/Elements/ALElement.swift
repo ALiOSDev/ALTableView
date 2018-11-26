@@ -13,10 +13,10 @@ public class ALElement {
     internal var estimateHeightMode: Bool
     internal var height: CGFloat
     internal let identifier: String
-    internal let dataObject: Any
+    internal let dataObject: Any?
     
     
-    init(identifier: String, dataObject: Any,estimateHeightMode: Bool, height: CGFloat) {
+    init(identifier: String, dataObject: Any?, estimateHeightMode: Bool, height: CGFloat) {
         
         self.identifier = identifier
         self.dataObject = dataObject
@@ -26,7 +26,7 @@ public class ALElement {
     
     //MARK: - Getters
     
-    internal func getDataObject() -> Any {
+    internal func getDataObject() -> Any? {
         
         return self.dataObject
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 public typealias ALHeaderFooterPressedHandler = (UITableViewHeaderFooterView) -> Void
-public typealias ALHeaderFooterCreatedHandler = (Any, UITableViewHeaderFooterView) -> Void
+public typealias ALHeaderFooterCreatedHandler = (Any?, UITableViewHeaderFooterView) -> Void
 public typealias ALHeaderFooterDeselectedHandler = (UITableViewHeaderFooterView) -> Void
 
 //Implemented by ALHeaderFooterElement
@@ -20,7 +20,7 @@ public protocol ALHeaderFooterElementProtocol {
 //Implemented by UITableViewCell
 public protocol ALHeaderFooterProtocol {
     func viewPressed () -> Void
-    func viewCreated(dataObject: Any) -> Void
+    func viewCreated(dataObject: Any?) -> Void
 }
 
 extension ALHeaderFooterProtocol {
@@ -28,7 +28,7 @@ extension ALHeaderFooterProtocol {
         
     }
     
-    public func viewCreated(dataObject: Any) -> Void {
+    public func viewCreated(dataObject: Any?) -> Void {
         print("ALHeaderFooterProtocol")
     }
 }
