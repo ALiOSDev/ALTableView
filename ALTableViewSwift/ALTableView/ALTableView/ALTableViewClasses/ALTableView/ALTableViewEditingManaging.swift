@@ -10,7 +10,7 @@ import UIKit
 
 public protocol ALTableViewRowEditingProtocol: class {
     func rowMoved(from sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
-    func rowDeleted(indexPath: IndexPath)
+    func rowDeleted(indexPath: IndexPath, dataObject: Any?)
 }
 
 extension ALTableView {
@@ -42,7 +42,8 @@ extension ALTableView {
         switch editingStyle {
         case .delete:
             if self.remove(at: indexPath, animation: .automatic) {
-                editingDelegate?.rowDeleted(indexPath: indexPath)
+                let dataObject = self.getSectionElementAt(index: indexPath.section)?.getRowElementAt(index: indexPath.row)?.getDataObject()
+                editingDelegate?.rowDeleted(indexPath: indexPath, dataObject: dataObject)
             }
             
         default:
