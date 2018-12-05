@@ -8,7 +8,7 @@ The development of the Objective-C part of this project has been discontinued. T
 
 This framework is still on development. We cannot guarantee yet that all the features work.
 
-The latest stable version for swift is  [0.3.1](https://github.com/ALiOSDev/ALTableView/tree/0.3.1), which includes support for swift 4.2
+The latest stable version for swift is  [0.3.2](https://github.com/ALiOSDev/ALTableView/tree/0.3.2), which includes support for swift 4.2
 
 
 **CocoaPods**
