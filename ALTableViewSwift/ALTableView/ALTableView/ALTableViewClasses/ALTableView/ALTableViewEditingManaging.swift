@@ -33,8 +33,8 @@ extension ALTableView {
     }
     
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        
-        return editingAllowed
+        let canEditRow = self.getSectionElementAt(index: indexPath.section)?.getRowElementAt(index: indexPath.row)?.editingAllowed ?? false
+        return canEditRow
     }
     
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -22,7 +22,6 @@ public class ALTableView: NSObject {
     public weak var editingDelegate: ALTableViewRowEditingProtocol?
     public weak var viewController: UIViewController?
     public weak var tableView: UITableView?
-    public var editingAllowed: Bool
     public var movingRowsAllowed: Bool
     
     
@@ -31,11 +30,9 @@ public class ALTableView: NSObject {
     public init(sectionElements: Array<ALSectionElement>,
                 viewController: UIViewController,
                 tableView: UITableView,
-                editingAllowed: Bool = false,
                 movingRowsAllowed: Bool = false) {
         
         self.sectionElements = sectionElements
-        self.editingAllowed = editingAllowed
         self.movingRowsAllowed = movingRowsAllowed
         super.init()
         self.viewController = viewController

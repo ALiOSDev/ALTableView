@@ -62,7 +62,7 @@ class MasterViewController: UITableViewController, ALTableViewProtocol {
         var sectionElements = [ALSectionElement]()
         for _ in 0...4 {
             var rowElements = Array<ALRowElement>()
-            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true)
+            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true, editingAllowed: true)
             let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), identifier: Master2TableViewCell.reuseIdentifier, dataObject: 12, estimateHeightMode: true)
             rowElements.append(rowElement)
             rowElements.append(rowElement2)
