@@ -35,7 +35,6 @@ extension ALTableView: UITableViewDelegate {
         let cellHeight: CGFloat = cell.frame.size.height
         self.getSectionElementAt(index: indexPath.section)?.setRowElementHeight(row: indexPath.row, height: cellHeight)
         
-        print(indexPath)
         if self.isLastIndexPath(indexPath: indexPath, tableView: tableView) {
             //We reached the end of the tableView
             self.delegate?.tableViewDidReachEnd?()
