@@ -8,8 +8,9 @@
 
 import UIKit
 import ALTableView
+import SwipeCellKit
 
-class MasterTableViewCell: UITableViewCell, ALCellProtocol {
+class MasterTableViewCell: SwipeTableViewCell, ALCellProtocol {
     
     static let nib = "MasterTableViewCell"
     static let reuseIdentifier = "MasterTableViewCellReuseIdentifier"
@@ -20,6 +21,7 @@ class MasterTableViewCell: UITableViewCell, ALCellProtocol {
         if let title = dataObject as? String {
             self.labelText.text = title
         }
+        delegate = self
     }
     
     public func cellPressed(viewController: UIViewController?) {
@@ -28,6 +30,33 @@ class MasterTableViewCell: UITableViewCell, ALCellProtocol {
     
     func cellDeselected() {
         self.labelText.text = "Deselected"
+    }
+    
+}
+
+extension MasterTableViewCell: SwipeTableViewCellDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        var actions = [SwipeAction]()
+        switch orientation {
+        case .right:
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+                print("cell deleted")
+                // handle action by updating model with deletion
+            }
+            actions.append(deleteAction)
+            break
+        case .left:
+            let wishlistAction = SwipeAction(style: .default, title: "Wishlist") { action, indexPath in
+                print("cell wishlist")
+                // handle action by updating model with deletion
+            }
+            wishlistAction.backgroundColor = .blue
+            actions.append(wishlistAction)
+            break
+        }
+        
+        return actions
     }
     
 }

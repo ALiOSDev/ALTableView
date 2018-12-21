@@ -7,37 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D0B5A7E86517B46BD96F8D5496FEF0A /* Pods-ALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 193765CA53AF1BEF89157D70EC6AEAA7 /* Pods-ALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B560DBC8077686BA0438CE3616DB282 /* Pods-TestALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD898B1F223B78BEF914C1F4CA39EA11 /* Pods-TestALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E3C0B5704BE96C238B6717E7A4FA630 /* Pods-ALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2687CDBD31E918BA983A674A4CE81B1A /* Pods-ALTableView-dummy.m */; };
-		92E9AFA847B2F9F1ADBDBFC176D7448A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A3C1BFD6D294FF261CCA31025B37EB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A6842107B998A260B55DE5A279B40408 /* Pods-ALTableViewTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 967188619D0A4F10CD6A3EB849D47E09 /* Pods-ALTableViewTests-dummy.m */; };
-		AD641DA54B9038AAF0718D18A4297473 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		C7F0767804EE5497280F0F47140A0F34 /* Pods-ALTableViewTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD3F5BE26ACFA9CB2C3D57859F28C4C /* Pods-ALTableViewTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE11EB7D3947D8A14C912A3E0C87C596 /* Pods-TestALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D02FF507439D9805A7BEA22229C1F2 /* Pods-TestALTableView-dummy.m */; };
+		095E8D6D0FCBFCB00AEFA2DEEDF12B71 /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA003A20C3527387C3A39C3452761A1D /* SwipeAnimator.swift */; };
+		1D8B1AE6E9AB0600B03650C6BAFA2F24 /* SwipeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5CF45D2D750123BB078EB7B375B0E /* SwipeFeedback.swift */; };
+		213344D4B8669E875D5B639BC1231B5A /* SwipeAccessibilityCustomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A2C78F90E62D4C6758DE64D2D771F0 /* SwipeAccessibilityCustomAction.swift */; };
+		38ABFA35A32D36CDB99F3859077FF1A6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AAEA5B5D2785C87FB2253913E686ED /* Extensions.swift */; };
+		3AAF5B90D53B071454F50365DC98DB24 /* SwipeCollectionViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22239ADDB87FAD1706C881FFC570A8DC /* SwipeCollectionViewCell+Display.swift */; };
+		421918D88AEE3B97A81B496E84A2CECE /* Pods-ALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 193765CA53AF1BEF89157D70EC6AEAA7 /* Pods-ALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4400A34B5F8164147E830FCA8BC92828 /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D3C18FCC326736C158562FDC6FC4 /* Swipeable.swift */; };
+		4D47F4EB2A4A2FA0233CCFD1AA06E036 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		50AF56E2B8B1F5D1E498E7BD113320CF /* SwipeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C9D5ADE765E39BC0BB6AF105B9D00 /* SwipeCollectionViewCellDelegate.swift */; };
+		5FFF57CA7D1A216E8164F168717242A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		665EF7DDA41444FC4EB5B91AB0D059CB /* SwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4081885FB3D652A5406B4A431098BDE /* SwipeController.swift */; };
+		6E130C15438AA644ABFB2DADA461186D /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFA09C7B4A9C06F2AACF4FDFF0F802 /* SwipeTableViewCellDelegate.swift */; };
+		6F28DA892CA314A0D85D7BB08FFC04A5 /* SwipeTableViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26CDCF75B782E07A07DD3252E3E380 /* SwipeTableViewCell+Display.swift */; };
+		719D5FF8DB409ED7CC62AF08233B8325 /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F853018F6E95992B4E07CA890613 /* SwipeActionButton.swift */; };
+		917C4AF08A5D33195C556C671A010E04 /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354361ED084775926B8EF62B670FAEA8 /* SwipeActionTransitioning.swift */; };
+		929F3B64B213BE671427B1FCFEFF928B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		99FCCC0959E68A39B8CF962EEE5D633C /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F14738E47DFACA7EF95849DD65FD5 /* SwipeExpanding.swift */; };
+		9A207AC03784F6B200AD409C639FF4EE /* SwipeCellKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A8FA6DBCC9AE6059B1AA0B4F1AF277 /* SwipeCellKit-dummy.m */; };
+		9BA3CD99DF4F7C1552CA93F4C5C4653B /* SwipeExpansionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D152118CFC9042FFE718E60238BFC5 /* SwipeExpansionStyle.swift */; };
+		A115B5008CF451B35F620342D180CF27 /* SwipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23024183045FAC608C3F116796C0BA7A /* SwipeCollectionViewCell.swift */; };
+		AA5B00A30C11CFA245802DBCAB39EA0E /* SwipeCollectionViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BBB327B33EE0E2BFC5E678EF74BD1 /* SwipeCollectionViewCell+Accessibility.swift */; };
+		AD23D515CC571991AAD81D432540363B /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70684FF0C74D51A16C7D2C652AD0649 /* SwipeTableViewCell.swift */; };
+		AE59517F1AB32B208AFD49FB4990B99C /* Pods-TestALTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD898B1F223B78BEF914C1F4CA39EA11 /* Pods-TestALTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B30B36DCE3ECA1DF76721D15601BFCB1 /* SwipeTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6DC25A614C54ADF1BBD2FD0566A5D /* SwipeTransitionLayout.swift */; };
+		B98E11D082D108F5770AF38FD9F93DC6 /* Pods-TestALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D02FF507439D9805A7BEA22229C1F2 /* Pods-TestALTableView-dummy.m */; };
+		CAE6E362C76387F87DC8A5C775729DF0 /* SwipeTableViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBAE04DEF0695F29D8B0BA52A4685E4 /* SwipeTableViewCell+Accessibility.swift */; };
+		D1CBFDF4C75E35EE9D4EA0FB7441C1AF /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15CD5EF99AAD2E96EC791213FE621F /* SwipeAction.swift */; };
+		DD0105DF7E7ACB22E7236D73D9C332C7 /* SwipeCellKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54DBECC9C72FAC59DC6BA752B4AAE1C6 /* SwipeCellKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E88C2ECC8AE24B0ECD310953598F877C /* Pods-ALTableViewTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD3F5BE26ACFA9CB2C3D57859F28C4C /* Pods-ALTableViewTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9F12E04E0A0641566B51DEDC1993EB5 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC63E696A60DDE081BD3EC8E90EFE4 /* SwipeActionsView.swift */; };
+		F7E819825F96394C8F8578DAB86E3D18 /* SwipeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0F166173353E13F6F5C99A6A347B1 /* SwipeOptions.swift */; };
+		F854655F5BD0904E44E34319BE7BA00B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		FE5C0668963FD13FB26FE95F555FFE1B /* Pods-ALTableViewTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 967188619D0A4F10CD6A3EB849D47E09 /* Pods-ALTableViewTests-dummy.m */; };
+		FEDC03DDB1F2AC128FC70EFB53BA38F5 /* Pods-ALTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2687CDBD31E918BA983A674A4CE81B1A /* Pods-ALTableView-dummy.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70BDE92CC3BB932B4859D43F173F6A83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7A614404BD7188AC4129765BF7BDE5A;
+			remoteInfo = "Pods-ALTableView";
+		};
+		B1DD966FCDE3D18DF67F519FF540EADA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9F71D7E9E2043F7DBC166840755C36B;
+			remoteInfo = SwipeCellKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		007F19C5F220CADECB7B31472310EEB4 /* Pods-ALTableViewTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableViewTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		01CD16F3EB0FDC7A7CE13B2E54AE042D /* Pods-TestALTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TestALTableView.modulemap"; sourceTree = "<group>"; };
 		01F687E78D5127CE527641F7B0C865BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A45AF5E3025FA01A7F1C0224C76DBA /* SwipeCellKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-prefix.pch"; sourceTree = "<group>"; };
+		0A4F44480E114A41B07C11FFBC94B6BD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16ED62C4710E7076D67DB36EF946C0FC /* Pods-ALTableViewTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableViewTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		193765CA53AF1BEF89157D70EC6AEAA7 /* Pods-ALTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableView-umbrella.h"; sourceTree = "<group>"; };
-		20D16A866A1AB3E82DBB6708B21B65B0 /* Pods_TestALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TestALTableView.framework; path = "Pods-TestALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D26CDCF75B782E07A07DD3252E3E380 /* SwipeTableViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Display.swift"; path = "Source/SwipeTableViewCell+Display.swift"; sourceTree = "<group>"; };
 		21B22BA8E525A652324FACD4839EF515 /* Pods-TestALTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestALTableView.release.xcconfig"; sourceTree = "<group>"; };
-		264F1069FF39040055A39C7513E63641 /* Pods_ALTableViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableViewTests.framework; path = "Pods-ALTableViewTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22239ADDB87FAD1706C881FFC570A8DC /* SwipeCollectionViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Display.swift"; path = "Source/SwipeCollectionViewCell+Display.swift"; sourceTree = "<group>"; };
+		23024183045FAC608C3F116796C0BA7A /* SwipeCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCell.swift; path = Source/SwipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2687CDBD31E918BA983A674A4CE81B1A /* Pods-ALTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableView-dummy.m"; sourceTree = "<group>"; };
+		354361ED084775926B8EF62B670FAEA8 /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionTransitioning.swift; path = Source/SwipeActionTransitioning.swift; sourceTree = "<group>"; };
+		35A8FA6DBCC9AE6059B1AA0B4F1AF277 /* SwipeCellKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeCellKit-dummy.m"; sourceTree = "<group>"; };
+		36EBCE0AED5326CE7655D30423044E26 /* Pods_ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableView.framework; path = "Pods-ALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4113D3C18FCC326736C158562FDC6FC4 /* Swipeable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swipeable.swift; path = Source/Swipeable.swift; sourceTree = "<group>"; };
+		451A3E436326FE42C11AAD7774A7EAB8 /* SwipeCellKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwipeCellKit.modulemap; sourceTree = "<group>"; };
 		45E8547E8AB00D77600768A206CCBBE7 /* Pods-TestALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestALTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		4E15CD5EF99AAD2E96EC791213FE621F /* SwipeAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAction.swift; path = Source/SwipeAction.swift; sourceTree = "<group>"; };
+		4EBAE04DEF0695F29D8B0BA52A4685E4 /* SwipeTableViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Accessibility.swift"; path = "Source/SwipeTableViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		501214F2ED32E9BADB553439DE8E29BF /* SwipeCellKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.xcconfig; sourceTree = "<group>"; };
+		51A6227A6EADAA070CBCC292864D3E43 /* SwipeCellKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwipeCellKit.framework; path = SwipeCellKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54DBECC9C72FAC59DC6BA752B4AAE1C6 /* SwipeCellKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-umbrella.h"; sourceTree = "<group>"; };
 		57FAE6E3BBE22C89F6B82C687407F7AE /* Pods-ALTableView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALTableView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6E375A04BFA50856601362052FC1A0B7 /* Pods-ALTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableView.modulemap"; sourceTree = "<group>"; };
 		73844C70D7212B1F54C3D69768465966 /* Pods-ALTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView.release.xcconfig"; sourceTree = "<group>"; };
+		76E5CF45D2D750123BB078EB7B375B0E /* SwipeFeedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeFeedback.swift; path = Source/SwipeFeedback.swift; sourceTree = "<group>"; };
 		78802938915E11AD0D6AE9C556DECAB2 /* Pods-TestALTableView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TestALTableView-acknowledgements.plist"; sourceTree = "<group>"; };
+		7C0C9D5ADE765E39BC0BB6AF105B9D00 /* SwipeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCellDelegate.swift; path = Source/SwipeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		7DEEFBEBD54A9805B6B6DD5219189BD2 /* Pods-ALTableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		804BBB327B33EE0E2BFC5E678EF74BD1 /* SwipeCollectionViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Accessibility.swift"; path = "Source/SwipeCollectionViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		812F14738E47DFACA7EF95849DD65FD5 /* SwipeExpanding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpanding.swift; path = Source/SwipeExpanding.swift; sourceTree = "<group>"; };
 		83B89FFD1A96FBEE2402C563B36990AF /* Pods-ALTableViewTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewTests-resources.sh"; sourceTree = "<group>"; };
+		85DC63E696A60DDE081BD3EC8E90EFE4 /* SwipeActionsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionsView.swift; path = Source/SwipeActionsView.swift; sourceTree = "<group>"; };
 		866C2D78F3450C7CCD0CF0F707498CB5 /* Pods-ALTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		86C7C73ABE278B56B6163C340FF88586 /* Pods-ALTableViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALTableViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90DBCEC68E5B0D9DEC6360F0DBD4F824 /* Pods_TestALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TestALTableView.framework; path = "Pods-TestALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E70CA1D5967247AF89250DAA129217 /* Pods-TestALTableView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestALTableView-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		967188619D0A4F10CD6A3EB849D47E09 /* Pods-ALTableViewTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALTableViewTests-dummy.m"; sourceTree = "<group>"; };
@@ -45,44 +106,93 @@
 		9A610C940B19D3DFF071DD11DE40B802 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4261D92E1A80F28E06D3B1825F96FE8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A60CFF31243575E80FCF59FF486A262B /* Pods-TestALTableView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestALTableView-frameworks.sh"; sourceTree = "<group>"; };
+		AE5A071C7C958FD624A3FDAFF42C027A /* Pods_ALTableViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableViewTests.framework; path = "Pods-ALTableViewTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B632A8320E33DD4491A076A5AC34A684 /* Pods-TestALTableView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TestALTableView-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BCBAF0357DA80EB33541E870B6F06028 /* Pods-ALTableView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALTableView-acknowledgements.plist"; sourceTree = "<group>"; };
+		C4081885FB3D652A5406B4A431098BDE /* SwipeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeController.swift; path = Source/SwipeController.swift; sourceTree = "<group>"; };
 		C427B80433C059E2C83CBA9B4347F3E1 /* Pods-ALTableViewTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableViewTests-frameworks.sh"; sourceTree = "<group>"; };
+		C5D152118CFC9042FFE718E60238BFC5 /* SwipeExpansionStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpansionStyle.swift; path = Source/SwipeExpansionStyle.swift; sourceTree = "<group>"; };
+		C7AAEA5B5D2785C87FB2253913E686ED /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Source/Extensions.swift; sourceTree = "<group>"; };
+		CADFA09C7B4A9C06F2AACF4FDFF0F802 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCellDelegate.swift; path = Source/SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		D97B0A6A1E6ED4FF16D3658784D1D0F3 /* Pods-ALTableView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALTableView-resources.sh"; sourceTree = "<group>"; };
 		DD898B1F223B78BEF914C1F4CA39EA11 /* Pods-TestALTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TestALTableView-umbrella.h"; sourceTree = "<group>"; };
 		E4D4894D401AE96F2F1D21C70DB06A7C /* Pods-ALTableViewTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ALTableViewTests.modulemap"; sourceTree = "<group>"; };
-		E8B24AA3BF5E0D8AC9E6D188F36DDA7E /* Pods_ALTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ALTableView.framework; path = "Pods-ALTableView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5A0F166173353E13F6F5C99A6A347B1 /* SwipeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeOptions.swift; path = Source/SwipeOptions.swift; sourceTree = "<group>"; };
+		E5B3F853018F6E95992B4E07CA890613 /* SwipeActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionButton.swift; path = Source/SwipeActionButton.swift; sourceTree = "<group>"; };
+		E70684FF0C74D51A16C7D2C652AD0649 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCell.swift; path = Source/SwipeTableViewCell.swift; sourceTree = "<group>"; };
+		EA003A20C3527387C3A39C3452761A1D /* SwipeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAnimator.swift; path = Source/SwipeAnimator.swift; sourceTree = "<group>"; };
 		EAD3F5BE26ACFA9CB2C3D57859F28C4C /* Pods-ALTableViewTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALTableViewTests-umbrella.h"; sourceTree = "<group>"; };
+		EFC6DC25A614C54ADF1BBD2FD0566A5D /* SwipeTransitionLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTransitionLayout.swift; path = Source/SwipeTransitionLayout.swift; sourceTree = "<group>"; };
+		F2A2C78F90E62D4C6758DE64D2D771F0 /* SwipeAccessibilityCustomAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAccessibilityCustomAction.swift; path = Source/SwipeAccessibilityCustomAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3BFCE0A9B1F87F7EC54443E4FE560C68 /* Frameworks */ = {
+		2E78AAE9B3A32E72EA6351548F94B4CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C1BFD6D294FF261CCA31025B37EB8A /* Foundation.framework in Frameworks */,
+				4D47F4EB2A4A2FA0233CCFD1AA06E036 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B78E6DD1F79184E2E6D2136571892D4A /* Frameworks */ = {
+		6AD2A3A6E9E3373655C6E4F6E60BC6B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD641DA54B9038AAF0718D18A4297473 /* Foundation.framework in Frameworks */,
+				5FFF57CA7D1A216E8164F168717242A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB1C483A71E9637EED9D2071E4AE642D /* Frameworks */ = {
+		8700F2D083BC9325EB1064AFCF3CFF9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E9AFA847B2F9F1ADBDBFC176D7448A /* Foundation.framework in Frameworks */,
+				F854655F5BD0904E44E34319BE7BA00B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED328827E5016C8394DBC43F6F723B29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				929F3B64B213BE671427B1FCFEFF928B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03E3D2981BD7A7A79DA075AC890A9384 /* SwipeCellKit */ = {
+			isa = PBXGroup;
+			children = (
+				C7AAEA5B5D2785C87FB2253913E686ED /* Extensions.swift */,
+				4113D3C18FCC326736C158562FDC6FC4 /* Swipeable.swift */,
+				F2A2C78F90E62D4C6758DE64D2D771F0 /* SwipeAccessibilityCustomAction.swift */,
+				4E15CD5EF99AAD2E96EC791213FE621F /* SwipeAction.swift */,
+				E5B3F853018F6E95992B4E07CA890613 /* SwipeActionButton.swift */,
+				85DC63E696A60DDE081BD3EC8E90EFE4 /* SwipeActionsView.swift */,
+				354361ED084775926B8EF62B670FAEA8 /* SwipeActionTransitioning.swift */,
+				EA003A20C3527387C3A39C3452761A1D /* SwipeAnimator.swift */,
+				23024183045FAC608C3F116796C0BA7A /* SwipeCollectionViewCell.swift */,
+				804BBB327B33EE0E2BFC5E678EF74BD1 /* SwipeCollectionViewCell+Accessibility.swift */,
+				22239ADDB87FAD1706C881FFC570A8DC /* SwipeCollectionViewCell+Display.swift */,
+				7C0C9D5ADE765E39BC0BB6AF105B9D00 /* SwipeCollectionViewCellDelegate.swift */,
+				C4081885FB3D652A5406B4A431098BDE /* SwipeController.swift */,
+				812F14738E47DFACA7EF95849DD65FD5 /* SwipeExpanding.swift */,
+				C5D152118CFC9042FFE718E60238BFC5 /* SwipeExpansionStyle.swift */,
+				76E5CF45D2D750123BB078EB7B375B0E /* SwipeFeedback.swift */,
+				E5A0F166173353E13F6F5C99A6A347B1 /* SwipeOptions.swift */,
+				E70684FF0C74D51A16C7D2C652AD0649 /* SwipeTableViewCell.swift */,
+				4EBAE04DEF0695F29D8B0BA52A4685E4 /* SwipeTableViewCell+Accessibility.swift */,
+				1D26CDCF75B782E07A07DD3252E3E380 /* SwipeTableViewCell+Display.swift */,
+				CADFA09C7B4A9C06F2AACF4FDFF0F802 /* SwipeTableViewCellDelegate.swift */,
+				EFC6DC25A614C54ADF1BBD2FD0566A5D /* SwipeTransitionLayout.swift */,
+				2C55A9837D6C18B513716D0C672AC8B6 /* Support Files */,
+			);
+			name = SwipeCellKit;
+			path = SwipeCellKit;
+			sourceTree = "<group>";
+		};
 		24D40FA3632DB98731793434C8E1D4CB /* Pods-ALTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +209,20 @@
 			);
 			name = "Pods-ALTableViewTests";
 			path = "Target Support Files/Pods-ALTableViewTests";
+			sourceTree = "<group>";
+		};
+		2C55A9837D6C18B513716D0C672AC8B6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A4F44480E114A41B07C11FFBC94B6BD /* Info.plist */,
+				451A3E436326FE42C11AAD7774A7EAB8 /* SwipeCellKit.modulemap */,
+				501214F2ED32E9BADB553439DE8E29BF /* SwipeCellKit.xcconfig */,
+				35A8FA6DBCC9AE6059B1AA0B4F1AF277 /* SwipeCellKit-dummy.m */,
+				08A45AF5E3025FA01A7F1C0224C76DBA /* SwipeCellKit-prefix.pch */,
+				54DBECC9C72FAC59DC6BA752B4AAE1C6 /* SwipeCellKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwipeCellKit";
 			sourceTree = "<group>";
 		};
 		5918EF8E44FA6DB9469BD166F81BC4F7 /* Pods-TestALTableView */ = {
@@ -119,6 +243,14 @@
 			path = "Target Support Files/Pods-TestALTableView";
 			sourceTree = "<group>";
 		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		635DDF57676A1B129F10F59DCE6251B6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,12 +261,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		681CC403AA064C99FB621D3F38F8F554 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03E3D2981BD7A7A79DA075AC890A9384 /* SwipeCellKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				A5F333DF13D2F1D36A7DB126BCCFF2F4 /* Products */,
+				681CC403AA064C99FB621D3F38F8F554 /* Pods */,
+				CF0BE824E92CB3B5296C522C9D2AC01B /* Products */,
 				635DDF57676A1B129F10F59DCE6251B6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -156,86 +297,127 @@
 			path = "Target Support Files/Pods-ALTableView";
 			sourceTree = "<group>";
 		};
-		A5F333DF13D2F1D36A7DB126BCCFF2F4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E8B24AA3BF5E0D8AC9E6D188F36DDA7E /* Pods_ALTableView.framework */,
-				264F1069FF39040055A39C7513E63641 /* Pods_ALTableViewTests.framework */,
-				20D16A866A1AB3E82DBB6708B21B65B0 /* Pods_TestALTableView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		CF0BE824E92CB3B5296C522C9D2AC01B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				36EBCE0AED5326CE7655D30423044E26 /* Pods_ALTableView.framework */,
+				AE5A071C7C958FD624A3FDAFF42C027A /* Pods_ALTableViewTests.framework */,
+				90DBCEC68E5B0D9DEC6360F0DBD4F824 /* Pods_TestALTableView.framework */,
+				51A6227A6EADAA070CBCC292864D3E43 /* SwipeCellKit.framework */,
 			);
-			name = iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		39D19D584636E2A4235ABED38B9942C3 /* Headers */ = {
+		23FD781223C3C9B0A3D1D3F9F742485C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B560DBC8077686BA0438CE3616DB282 /* Pods-TestALTableView-umbrella.h in Headers */,
+				AE59517F1AB32B208AFD49FB4990B99C /* Pods-TestALTableView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A5D3EC1923A599CBA2F7B28725C7B22 /* Headers */ = {
+		674D9EE54B1A4C2191F9DA98B4913F8E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7F0767804EE5497280F0F47140A0F34 /* Pods-ALTableViewTests-umbrella.h in Headers */,
+				421918D88AEE3B97A81B496E84A2CECE /* Pods-ALTableView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A587EFD8463E93360DA9C4A1908C0D0C /* Headers */ = {
+		6BCF434ADB21A831CA3F50784D143EEB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D0B5A7E86517B46BD96F8D5496FEF0A /* Pods-ALTableView-umbrella.h in Headers */,
+				E88C2ECC8AE24B0ECD310953598F877C /* Pods-ALTableViewTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		725F233007E52576EC57B8ABD4FE9DE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0105DF7E7ACB22E7236D73D9C332C7 /* SwipeCellKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00E567186B5E9BBD8B75CC28ADAECF62 /* Pods-TestALTableView */ = {
+		683F596421617833C662BB2548A663C6 /* Pods-ALTableViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6553FB7C9E9D87F79E88583F807BBE2E /* Build configuration list for PBXNativeTarget "Pods-TestALTableView" */;
+			buildConfigurationList = 5F11F823CEF9F6B99B750EEC4171527E /* Build configuration list for PBXNativeTarget "Pods-ALTableViewTests" */;
 			buildPhases = (
-				2BB4107440601E916FDF807E8482D86D /* Sources */,
-				B78E6DD1F79184E2E6D2136571892D4A /* Frameworks */,
-				39D19D584636E2A4235ABED38B9942C3 /* Headers */,
+				6BCF434ADB21A831CA3F50784D143EEB /* Headers */,
+				A4260F3D136283FB485FAF776F3E9D95 /* Sources */,
+				6AD2A3A6E9E3373655C6E4F6E60BC6B5 /* Frameworks */,
+				E041551CD51750790EF79DA1C852740D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3113B37DE33676465F098795DE536E7A /* PBXTargetDependency */,
+			);
+			name = "Pods-ALTableViewTests";
+			productName = "Pods-ALTableViewTests";
+			productReference = AE5A071C7C958FD624A3FDAFF42C027A /* Pods_ALTableViewTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9F71D7E9E2043F7DBC166840755C36B /* SwipeCellKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DB504AE88F4721F9D5AAB1C779AE1C /* Build configuration list for PBXNativeTarget "SwipeCellKit" */;
+			buildPhases = (
+				725F233007E52576EC57B8ABD4FE9DE2 /* Headers */,
+				A64844194129D0EEE8AD7A90D65EA0CE /* Sources */,
+				8700F2D083BC9325EB1064AFCF3CFF9F /* Frameworks */,
+				CA97602B4FDE37B4CB194E46A61651CC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-TestALTableView";
-			productName = "Pods-TestALTableView";
-			productReference = 20D16A866A1AB3E82DBB6708B21B65B0 /* Pods_TestALTableView.framework */;
+			name = SwipeCellKit;
+			productName = SwipeCellKit;
+			productReference = 51A6227A6EADAA070CBCC292864D3E43 /* SwipeCellKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9ACBC670A8DA89C3FC1AB5CD2A2D9115 /* Pods-ALTableView */ = {
+		C24FC38AC8DABA2D3150BEE623195F85 /* Pods-TestALTableView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00ED86C2E784E3E2BC6B94EA8DE9A021 /* Build configuration list for PBXNativeTarget "Pods-ALTableView" */;
+			buildConfigurationList = FB2B43105785D7E87C88111DFB8EB4F5 /* Build configuration list for PBXNativeTarget "Pods-TestALTableView" */;
 			buildPhases = (
-				8F7867AC7D38DADB4778D72EAE11ED5B /* Sources */,
-				3BFCE0A9B1F87F7EC54443E4FE560C68 /* Frameworks */,
-				A587EFD8463E93360DA9C4A1908C0D0C /* Headers */,
+				23FD781223C3C9B0A3D1D3F9F742485C /* Headers */,
+				ED1C3D449576F2F245B02A80CB57A3C3 /* Sources */,
+				2E78AAE9B3A32E72EA6351548F94B4CC /* Frameworks */,
+				CF3C60A90A0F743BFB0668F9BB4E2FBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C59E0FCDAF9A38043BFCF3F987E219A8 /* PBXTargetDependency */,
+			);
+			name = "Pods-TestALTableView";
+			productName = "Pods-TestALTableView";
+			productReference = 90DBCEC68E5B0D9DEC6360F0DBD4F824 /* Pods_TestALTableView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E7A614404BD7188AC4129765BF7BDE5A /* Pods-ALTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB3C4BA897A14139D6A6CD65F6484D22 /* Build configuration list for PBXNativeTarget "Pods-ALTableView" */;
+			buildPhases = (
+				674D9EE54B1A4C2191F9DA98B4913F8E /* Headers */,
+				0D118295D9B69E3B20E7A2A38D663AA2 /* Sources */,
+				ED328827E5016C8394DBC43F6F723B29 /* Frameworks */,
+				74900BBB737E7764F515F6C8C0FC6187 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -243,24 +425,7 @@
 			);
 			name = "Pods-ALTableView";
 			productName = "Pods-ALTableView";
-			productReference = E8B24AA3BF5E0D8AC9E6D188F36DDA7E /* Pods_ALTableView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BDAF8CDD819045043AB76E1DBABEEB48 /* Pods-ALTableViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7A22B56DA0D28D6B89179762BA3CE6A7 /* Build configuration list for PBXNativeTarget "Pods-ALTableViewTests" */;
-			buildPhases = (
-				92C6668FC788690834A4174895594066 /* Sources */,
-				FB1C483A71E9637EED9D2071E4AE642D /* Frameworks */,
-				3A5D3EC1923A599CBA2F7B28725C7B22 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-ALTableViewTests";
-			productName = "Pods-ALTableViewTests";
-			productReference = 264F1069FF39040055A39C7513E63641 /* Pods_ALTableViewTests.framework */;
+			productReference = 36EBCE0AED5326CE7655D30423044E26 /* Pods_ALTableView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -280,171 +445,163 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A5F333DF13D2F1D36A7DB126BCCFF2F4 /* Products */;
+			productRefGroup = CF0BE824E92CB3B5296C522C9D2AC01B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9ACBC670A8DA89C3FC1AB5CD2A2D9115 /* Pods-ALTableView */,
-				BDAF8CDD819045043AB76E1DBABEEB48 /* Pods-ALTableViewTests */,
-				00E567186B5E9BBD8B75CC28ADAECF62 /* Pods-TestALTableView */,
+				E7A614404BD7188AC4129765BF7BDE5A /* Pods-ALTableView */,
+				683F596421617833C662BB2548A663C6 /* Pods-ALTableViewTests */,
+				C24FC38AC8DABA2D3150BEE623195F85 /* Pods-TestALTableView */,
+				B9F71D7E9E2043F7DBC166840755C36B /* SwipeCellKit */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		74900BBB737E7764F515F6C8C0FC6187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA97602B4FDE37B4CB194E46A61651CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3C60A90A0F743BFB0668F9BB4E2FBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E041551CD51750790EF79DA1C852740D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		2BB4107440601E916FDF807E8482D86D /* Sources */ = {
+		0D118295D9B69E3B20E7A2A38D663AA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE11EB7D3947D8A14C912A3E0C87C596 /* Pods-TestALTableView-dummy.m in Sources */,
+				FEDC03DDB1F2AC128FC70EFB53BA38F5 /* Pods-ALTableView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F7867AC7D38DADB4778D72EAE11ED5B /* Sources */ = {
+		A4260F3D136283FB485FAF776F3E9D95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3C0B5704BE96C238B6717E7A4FA630 /* Pods-ALTableView-dummy.m in Sources */,
+				FE5C0668963FD13FB26FE95F555FFE1B /* Pods-ALTableViewTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92C6668FC788690834A4174895594066 /* Sources */ = {
+		A64844194129D0EEE8AD7A90D65EA0CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6842107B998A260B55DE5A279B40408 /* Pods-ALTableViewTests-dummy.m in Sources */,
+				38ABFA35A32D36CDB99F3859077FF1A6 /* Extensions.swift in Sources */,
+				4400A34B5F8164147E830FCA8BC92828 /* Swipeable.swift in Sources */,
+				213344D4B8669E875D5B639BC1231B5A /* SwipeAccessibilityCustomAction.swift in Sources */,
+				D1CBFDF4C75E35EE9D4EA0FB7441C1AF /* SwipeAction.swift in Sources */,
+				719D5FF8DB409ED7CC62AF08233B8325 /* SwipeActionButton.swift in Sources */,
+				E9F12E04E0A0641566B51DEDC1993EB5 /* SwipeActionsView.swift in Sources */,
+				917C4AF08A5D33195C556C671A010E04 /* SwipeActionTransitioning.swift in Sources */,
+				095E8D6D0FCBFCB00AEFA2DEEDF12B71 /* SwipeAnimator.swift in Sources */,
+				9A207AC03784F6B200AD409C639FF4EE /* SwipeCellKit-dummy.m in Sources */,
+				AA5B00A30C11CFA245802DBCAB39EA0E /* SwipeCollectionViewCell+Accessibility.swift in Sources */,
+				3AAF5B90D53B071454F50365DC98DB24 /* SwipeCollectionViewCell+Display.swift in Sources */,
+				A115B5008CF451B35F620342D180CF27 /* SwipeCollectionViewCell.swift in Sources */,
+				50AF56E2B8B1F5D1E498E7BD113320CF /* SwipeCollectionViewCellDelegate.swift in Sources */,
+				665EF7DDA41444FC4EB5B91AB0D059CB /* SwipeController.swift in Sources */,
+				99FCCC0959E68A39B8CF962EEE5D633C /* SwipeExpanding.swift in Sources */,
+				9BA3CD99DF4F7C1552CA93F4C5C4653B /* SwipeExpansionStyle.swift in Sources */,
+				1D8B1AE6E9AB0600B03650C6BAFA2F24 /* SwipeFeedback.swift in Sources */,
+				F7E819825F96394C8F8578DAB86E3D18 /* SwipeOptions.swift in Sources */,
+				CAE6E362C76387F87DC8A5C775729DF0 /* SwipeTableViewCell+Accessibility.swift in Sources */,
+				6F28DA892CA314A0D85D7BB08FFC04A5 /* SwipeTableViewCell+Display.swift in Sources */,
+				AD23D515CC571991AAD81D432540363B /* SwipeTableViewCell.swift in Sources */,
+				6E130C15438AA644ABFB2DADA461186D /* SwipeTableViewCellDelegate.swift in Sources */,
+				B30B36DCE3ECA1DF76721D15601BFCB1 /* SwipeTransitionLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED1C3D449576F2F245B02A80CB57A3C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B98E11D082D108F5770AF38FD9F93DC6 /* Pods-TestALTableView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3113B37DE33676465F098795DE536E7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ALTableView";
+			target = E7A614404BD7188AC4129765BF7BDE5A /* Pods-ALTableView */;
+			targetProxy = 70BDE92CC3BB932B4859D43F173F6A83 /* PBXContainerItemProxy */;
+		};
+		C59E0FCDAF9A38043BFCF3F987E219A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwipeCellKit;
+			target = B9F71D7E9E2043F7DBC166840755C36B /* SwipeCellKit */;
+			targetProxy = B1DD966FCDE3D18DF67F519FF540EADA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		26F954BA177A9A46FFFD4E23ED11D67A /* Release */ = {
+		043D418830EF07E955A5591744B88D6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 501214F2ED32E9BADB553439DE8E29BF /* SwipeCellKit.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwipeCellKit/SwipeCellKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwipeCellKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		4434A7CB1FFE35A9C21E7CA6139E2B8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 866C2D78F3450C7CCD0CF0F707498CB5 /* Pods-ALTableView.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView/Pods-ALTableView.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ALTableView;
+				MODULEMAP_FILE = "Target Support Files/SwipeCellKit/SwipeCellKit.modulemap";
+				PRODUCT_MODULE_NAME = SwipeCellKit;
+				PRODUCT_NAME = SwipeCellKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		70A8A342D58A748EF6D712734F08453E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45E8547E8AB00D77600768A206CCBBE7 /* Pods-TestALTableView.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TestALTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TestALTableView/Pods-TestALTableView.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TestALTableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		85867FA5E694E2E954D5248A6B9967E2 /* Release */ = {
+		2C270B9887BFBE343EE8D5B460C1BCB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73844C70D7212B1F54C3D69768465966 /* Pods-ALTableView.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -457,14 +614,18 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView/Pods-ALTableView.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ALTableView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,72 +635,7 @@
 			};
 			name = Release;
 		};
-		A5C5126DED695AEB1F76DC7F254CDB89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C7C73ABE278B56B6163C340FF88586 /* Pods-ALTableViewTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ALTableViewTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ALTableViewTests/Pods-ALTableViewTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ALTableViewTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C775B24DFE05EE1692673EA6D25AE700 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21B22BA8E525A652324FACD4839EF515 /* Pods-TestALTableView.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TestALTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TestALTableView/Pods-TestALTableView.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TestALTableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */ = {
+		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -571,6 +667,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -592,20 +689,100 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		E9CF497A28B47D745A51C1C82351C68F /* Release */ = {
+		62480D73BBA5AD65A8658CADFC7F587F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45E8547E8AB00D77600768A206CCBBE7 /* Pods-TestALTableView.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TestALTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TestALTableView/Pods-TestALTableView.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		74F7F1F226644D8F6A2F8EFD94721820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B22BA8E525A652324FACD4839EF515 /* Pods-TestALTableView.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TestALTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TestALTableView/Pods-TestALTableView.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8F19602818DD5C8C37DEB62206288650 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7DEEFBEBD54A9805B6B6DD5219189BD2 /* Pods-ALTableViewTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -618,16 +795,191 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ALTableViewTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ALTableViewTests/Pods-ALTableViewTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ALTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BAAE417611EDFF2A8848ABB8FCE209C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 866C2D78F3450C7CCD0CF0F707498CB5 /* Pods-ALTableView.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ALTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ALTableView/Pods-ALTableView.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E5CCC796CECF9DDE2B8E7095E041317F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C7C73ABE278B56B6163C340FF88586 /* Pods-ALTableViewTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ALTableViewTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ALTableViewTests/Pods-ALTableViewTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F3B5403FED35B3BA058A95F2E57FC908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 501214F2ED32E9BADB553439DE8E29BF /* SwipeCellKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwipeCellKit/SwipeCellKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwipeCellKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwipeCellKit/SwipeCellKit.modulemap";
+				PRODUCT_MODULE_NAME = SwipeCellKit;
+				PRODUCT_NAME = SwipeCellKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -638,11 +990,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00ED86C2E784E3E2BC6B94EA8DE9A021 /* Build configuration list for PBXNativeTarget "Pods-ALTableView" */ = {
+		25DB504AE88F4721F9D5AAB1C779AE1C /* Build configuration list for PBXNativeTarget "SwipeCellKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4434A7CB1FFE35A9C21E7CA6139E2B8F /* Debug */,
-				85867FA5E694E2E954D5248A6B9967E2 /* Release */,
+				043D418830EF07E955A5591744B88D6F /* Debug */,
+				F3B5403FED35B3BA058A95F2E57FC908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -650,26 +1002,35 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */,
-				26F954BA177A9A46FFFD4E23ED11D67A /* Release */,
+				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
+				C4EAA84F44D044E108500A81C635F21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6553FB7C9E9D87F79E88583F807BBE2E /* Build configuration list for PBXNativeTarget "Pods-TestALTableView" */ = {
+		5F11F823CEF9F6B99B750EEC4171527E /* Build configuration list for PBXNativeTarget "Pods-ALTableViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70A8A342D58A748EF6D712734F08453E /* Debug */,
-				C775B24DFE05EE1692673EA6D25AE700 /* Release */,
+				E5CCC796CECF9DDE2B8E7095E041317F /* Debug */,
+				8F19602818DD5C8C37DEB62206288650 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A22B56DA0D28D6B89179762BA3CE6A7 /* Build configuration list for PBXNativeTarget "Pods-ALTableViewTests" */ = {
+		AB3C4BA897A14139D6A6CD65F6484D22 /* Build configuration list for PBXNativeTarget "Pods-ALTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5C5126DED695AEB1F76DC7F254CDB89 /* Debug */,
-				E9CF497A28B47D745A51C1C82351C68F /* Release */,
+				BAAE417611EDFF2A8848ABB8FCE209C4 /* Debug */,
+				2C270B9887BFBE343EE8D5B460C1BCB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB2B43105785D7E87C88111DFB8EB4F5 /* Build configuration list for PBXNativeTarget "Pods-TestALTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62480D73BBA5AD65A8658CADFC7F587F /* Debug */,
+				74F7F1F226644D8F6A2F8EFD94721820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

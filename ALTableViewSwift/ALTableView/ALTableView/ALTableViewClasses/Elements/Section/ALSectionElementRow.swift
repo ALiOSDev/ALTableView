@@ -73,7 +73,7 @@ extension ALSectionElement {
 
 extension ALSectionElement {
     
-    internal func getRowElementAt(index: Int) -> ALRowElement? {
+    public func getRowElementAt(index: Int) -> ALRowElement? {
         
         return self.rowElements[ALSafe: index]
     }
