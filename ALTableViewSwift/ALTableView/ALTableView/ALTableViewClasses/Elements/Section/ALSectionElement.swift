@@ -41,7 +41,7 @@ public class ALSectionElement {
     
     //MARK: - Getters
 
-    internal func getNumberOfRows() -> Int {
+    public func getNumberOfRows() -> Int {
         
         if self.isOpened {
             return self.rowElements.count
@@ -50,7 +50,7 @@ public class ALSectionElement {
         }
     }
     
-    internal func getNumberOfRealRows() -> Int {
+    public func getNumberOfRealRows() -> Int {
         
         return self.rowElements.count
     }
