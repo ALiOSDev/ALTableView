@@ -43,7 +43,10 @@ extension ALSectionElement {
 extension ALSectionElement {
     
     fileprivate func setUpHeaderRecognizer (viewHeader: UIView) -> Void {
-        
+        if let headerTapGesture = self.headerTapGesture {
+            viewHeader.removeGestureRecognizer(headerTapGesture)
+            self.headerTapGesture = nil
+        }
         if self.headerTapGesture == nil {
             self.headerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.toggleOpen(sender:)))
             if let headerTapGesture = self.headerTapGesture {
@@ -53,14 +56,14 @@ extension ALSectionElement {
         }
     }
     
-    @objc fileprivate func toggleOpen(sender: Any) {
+    @objc func toggleOpen(sender: Any) {
         
         if self.isExpandable {
             self.toggleOpenWith(userAction: true)
         }
     }
     
-    fileprivate func toggleOpenWith(userAction: Bool) {
+    func toggleOpenWith(userAction: Bool) {
         
         guard let delegate = self.delegate else {
             return

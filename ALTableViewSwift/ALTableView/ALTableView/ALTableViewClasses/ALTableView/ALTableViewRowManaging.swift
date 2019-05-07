@@ -204,6 +204,20 @@ extension ALTableView {
 
 extension ALTableView: ALSectionHeaderViewDelegate {
     
+    public func openSection(section: Int) {
+        guard let section = getSectionElementAt(index: section), !section.isOpened else {
+            return
+        }
+        section.toggleOpen(sender: self)
+    }
+    
+    public func closeSection(section: Int) {
+        guard let section = getSectionElementAt(index: section), section.isOpened else {
+            return
+        }
+        section.toggleOpen(sender: self)
+    }
+    
     func sectionOpened(sectionElement: ALSectionElement) {
         
         guard let section: Int = sectionElements.index(of: sectionElement) else {
