@@ -56,14 +56,14 @@ extension ALSectionElement {
         }
     }
     
-    @objc fileprivate func toggleOpen(sender: Any) {
+    @objc func toggleOpen(sender: Any) {
         
         if self.isExpandable {
             self.toggleOpenWith(userAction: true)
         }
     }
     
-    fileprivate func toggleOpenWith(userAction: Bool) {
+    func toggleOpenWith(userAction: Bool) {
         
         guard let delegate = self.delegate else {
             return

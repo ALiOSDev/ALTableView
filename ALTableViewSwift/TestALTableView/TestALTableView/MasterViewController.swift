@@ -59,60 +59,60 @@ class MasterViewController: UITableViewController, ALTableViewProtocol {
         }
     }
     
-//    func createElements() -> [ALSectionElement] {
-//        var sectionElements = [ALSectionElement]()
-//        var rowElements = Array<ALRowElement>()
-//        for _ in 0...8 {
-//
-//            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true, editingAllowed: true)
-//            let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), identifier: Master2TableViewCell.reuseIdentifier, dataObject: 12, estimateHeightMode: true)
-//            rowElements.append(rowElement)
-//            rowElements.append(rowElement2)
-//
-//
-//
-//
-//        }
-//
-//        let headerElement = ALHeaderFooterElement(identifier: MasterHeaderFooter.reuseIdentifier, dataObject: "Header Test", estimateHeightMode: true)
-//
-//        let section = ALSectionElement(rowElements: rowElements, headerElement: headerElement, footerElement: nil, isExpandable: true)
-//
-//        sectionElements.append(section)
-////        sectionElements.append(ALSectionElement(rowElements: [ALRowElement](), headerElement: nil, footerElement: nil, isExpandable: true))
-//
-//        return sectionElements
-//    }
-    
-        func createElements() -> [ALSectionElement] {
-            var sectionElements = [ALSectionElement]()
-            var rowElements = Array<ALRowElement>()
-            for i in 0...8 {
-                let element = OrderElement(orderId: TextStyles.ordersElement(text: "\(i)"),
-                                         orderAmount: TextStyles.ordersElement(text: "\(i)\(i)\(i)"),
-                                         orderCreationDate: Date(),
-                                         orderStatus: TextStyles.ordersElement(text: "status \(i)\(i)\(i)"),
-                                         delegate: nil)
+    func createElements() -> [ALSectionElement] {
+        var sectionElements = [ALSectionElement]()
+        var rowElements = Array<ALRowElement>()
+        for _ in 0...8 {
 
-                let rowElement = ALRowElement(className: OrdersTableViewCell.classForCoder(),
-                                              identifier: OrdersTableViewCell.reuseIdentifier,
-                                              dataObject: element,
-                                              estimateHeightMode: true,
-                                              height: 92.0)
+            let rowElement = ALRowElement(className:MasterTableViewCell.classForCoder(), identifier: MasterTableViewCell.reuseIdentifier, dataObject: "Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1Texto 1", estimateHeightMode: true, editingAllowed: true)
+            let rowElement2 = ALRowElement(className:Master2TableViewCell.classForCoder(), identifier: Master2TableViewCell.reuseIdentifier, dataObject: 12, estimateHeightMode: true)
+            rowElements.append(rowElement)
+            rowElements.append(rowElement2)
+
+
+
+
+        }
+
+        let headerElement = ALHeaderFooterElement(identifier: MasterHeaderFooter.reuseIdentifier, dataObject: "Header Test", estimateHeightMode: true)
+
+        let section = ALSectionElement(rowElements: rowElements, headerElement: headerElement, footerElement: nil, isExpandable: true)
+
+        sectionElements.append(section)
+//        sectionElements.append(ALSectionElement(rowElements: [ALRowElement](), headerElement: nil, footerElement: nil, isExpandable: true))
+
+        return sectionElements
+    }
+    
+//        func createElements() -> [ALSectionElement] {
+//            var sectionElements = [ALSectionElement]()
+//            var rowElements = Array<ALRowElement>()
+//            for i in 0...8 {
+//                let element = OrderElement(orderId: TextStyles.ordersElement(text: "\(i)"),
+//                                         orderAmount: TextStyles.ordersElement(text: "\(i)\(i)\(i)"),
+//                                         orderCreationDate: Date(),
+//                                         orderStatus: TextStyles.ordersElement(text: "status \(i)\(i)\(i)"),
+//                                         delegate: nil)
+//
 //                let rowElement = ALRowElement(className: OrdersTableViewCell.classForCoder(),
 //                                              identifier: OrdersTableViewCell.reuseIdentifier,
 //                                              dataObject: element,
-//                                              estimateHeightMode: true)
-                rowElements.append(rowElement)
-
-
-            }
-            let section = ALSectionElement(rowElements: rowElements, headerElement: nil, footerElement: nil, isExpandable: true)
-
-            sectionElements.append(section)
-
-            return sectionElements
-        }
+//                                              estimateHeightMode: true,
+//                                              height: 92.0)
+////                let rowElement = ALRowElement(className: OrdersTableViewCell.classForCoder(),
+////                                              identifier: OrdersTableViewCell.reuseIdentifier,
+////                                              dataObject: element,
+////                                              estimateHeightMode: true)
+//                rowElements.append(rowElement)
+//
+//
+//            }
+//            let section = ALSectionElement(rowElements: rowElements, headerElement: nil, footerElement: nil, isExpandable: true)
+//
+//            sectionElements.append(section)
+//
+//            return sectionElements
+//        }
     
     func registerCells() {
         self.alTableView?.registerCell(nibName: MasterTableViewCell.nib, reuseIdentifier: MasterTableViewCell.reuseIdentifier)
