@@ -43,7 +43,10 @@ extension ALSectionElement {
 extension ALSectionElement {
     
     fileprivate func setUpHeaderRecognizer (viewHeader: UIView) -> Void {
-        
+        if let headerTapGesture = self.headerTapGesture {
+            viewHeader.removeGestureRecognizer(headerTapGesture)
+            self.headerTapGesture = nil
+        }
         if self.headerTapGesture == nil {
             self.headerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.toggleOpen(sender:)))
             if let headerTapGesture = self.headerTapGesture {
