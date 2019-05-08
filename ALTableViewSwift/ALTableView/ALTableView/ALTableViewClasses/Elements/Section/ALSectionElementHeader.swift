@@ -57,7 +57,10 @@ extension ALSectionElement {
     }
     
     @objc func toggleOpen(sender: Any) {
-        
+        if let tapGesture = sender as? UITapGestureRecognizer,
+            let headerView = tapGesture.view as? UITableViewHeaderFooterView {
+            self.headerElement?.headerFooterElementPressed(view: headerView)
+        }
         if self.isExpandable {
             self.toggleOpenWith(userAction: true)
         }
