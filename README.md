@@ -163,7 +163,7 @@ class MasterViewController: UITableViewController {
 Authors
 --------
 
-Abimael Barea [@elabi3](https://github.com/elabi3) - 
+Abimael Barea [@abimaelbarea](https://github.com/abimaelbarea) - 
 Lorenzo Villarroel [@lorencr7](https://github.com/lorencr7) 
 
 License
